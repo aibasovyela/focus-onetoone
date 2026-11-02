@@ -1,50 +1,50 @@
 import express from 'express';
-import fs from 'fs';
-import { fileURLToPath } from 'url';
-import { dirname, join } from 'path';
+import { readJson, writeJson, requireSession } from '../lib/store.js';
 
 const router = express.Router();
-const __dirname = dirname(fileURLToPath(import.meta.url));
-const dbPath = join(__dirname, '../db');
 
-// POST /api/homework/submit — загрузить ДЗ
+router.use(requireSession);
+
+// POST /api/homework/submit — сдать ДЗ
 router.post('/submit', (req, res) => {
-  const { sessionId, moduleId, content } = req.body;
+  const { moduleId, content } = req.body || {};
 
-  if (!sessionId || !moduleId || !content) {
-    return res.status(400).json({ error: 'Требуются все параметры' });
+  if (!moduleId || !content || typeof content !== 'string') {
+    return res.status(400).json({ error: 'Требуются moduleId и content' });
   }
 
-  // В реальном приложении — сохранять в БД с привязкой к студенту
   const homework = {
     id: `hw-${Date.now()}`,
+    studentId: req.student.id,
     moduleId,
-    sessionId,
-    content,
+    content: content.slice(0, 20000),
     submittedAt: new Date().toISOString(),
     status: 'submitted',
     feedback: null
   };
 
+  const all = readJson('homework.json', []);
+  all.push(homework);
+  writeJson('homework.json', all);
+
   res.json({
     success: true,
     homeworkId: homework.id,
-    message: 'ДЗ загружено, ожидает проверки'
+    message: 'ДЗ отправлено, ожидает проверки'
   });
 });
 
-// GET /api/homework/:moduleId — получить ДЗ по модулю
+// GET /api/homework/:moduleId — задание и сданные ответы ученика
 router.get('/:moduleId', (req, res) => {
-  try {
-    const modules = JSON.parse(fs.readFileSync(join(dbPath, 'modules.json'), 'utf8'));
-    const module = modules.modules.find(m => m.id === req.params.moduleId);
-    if (!module || !module.homework) {
-      return res.status(404).json({ error: 'ДЗ не найдено' });
-    }
-    res.json(module.homework);
-  } catch (error) {
-    res.status(500).json({ error: 'Ошибка загрузки ДЗ' });
+  const { modules = [] } = readJson('modules.json', {});
+  const module = modules.find(m => m.id === req.params.moduleId);
+  if (!module || !module.homework) {
+    return res.status(404).json({ error: 'ДЗ не найдено' });
   }
+  const submissions = readJson('homework.json', [])
+    .filter(h => h.studentId === req.student.id && h.moduleId === module.id)
+    .map(({ studentId, ...h }) => h);
+  res.json({ ...module.homework, submissions });
 });
 
 export default router;

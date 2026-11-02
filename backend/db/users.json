@@ -1,19 +1,19 @@
 {
+  "_help": "Как добавить ученика: скопируй блок student-template в students, дай уникальный id, имя (как показывать на дашборде), личный PIN (6-20 символов), openModules — сколько модулей открыто (1 = только первый; после созвона N ставь N+1, после 5-го — 6), calls — даты созвонов по номерам модулей (\"2026-11-10 19:00\" или null = дата уточняется). После правки перезапуск не нужен.",
   "students": [
     {
-      "id": "student-1",
-      "pin": "focus2026",
-      "name": "Ученик 1",
-      "email": "student1@example.com",
-      "modules": {
-        "module-1": { "status": "active", "progress": 0 },
-        "module-2": { "status": "locked", "progress": 0 },
-        "module-3": { "status": "locked", "progress": 0 },
-        "module-4": { "status": "locked", "progress": 0 },
-        "module-5": { "status": "locked", "progress": 0 }
-      },
-      "homework": {}
+      "id": "demo",
+      "name": "Гость",
+      "pins": ["focus2026", "learn2026", "master2026"],
+      "openModules": 1,
+      "calls": { "1": null, "2": null, "3": null, "4": null, "5": null }
     }
   ],
-  "pins": ["focus2026", "learn2026", "master2026"]
+  "student-template": {
+    "id": "student-1",
+    "name": "Имя Фамилия",
+    "pins": ["личный-пин"],
+    "openModules": 1,
+    "calls": { "1": null, "2": null, "3": null, "4": null, "5": null }
+  }
 }

@@ -1,49 +1,36 @@
 // Управление аутентификацией
 const AUTH = (() => {
   const SESSION_KEY = 'focusSessionId';
-  const PIN_KEY = 'focusPinHash';
 
   const login = async (pin) => {
-    try {
-      const response = await fetch('/api/auth/login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ pin })
-      });
-
-      if (!response.ok) {
-        throw new Error('Неверный PIN');
-      }
-
-      const data = await response.json();
-      sessionStorage.setItem(SESSION_KEY, data.sessionId);
-      sessionStorage.setItem(PIN_KEY, hashPin(pin));
-      return data;
-    } catch (error) {
-      throw new Error('Ошибка входа: ' + error.message);
+    const response = await fetch('api/auth/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ pin })
+    });
+    const data = await response.json().catch(() => ({}));
+    if (!response.ok) {
+      throw new Error(data.error || 'Неверный PIN');
     }
+    localStorage.setItem(SESSION_KEY, data.sessionId);
+    return data;
   };
 
-  const logout = () => {
-    sessionStorage.removeItem(SESSION_KEY);
-    sessionStorage.removeItem(PIN_KEY);
+  const clear = () => localStorage.removeItem(SESSION_KEY);
+
+  const logout = async () => {
+    const sessionId = getSessionId();
+    clear();
+    if (sessionId) {
+      await fetch('api/auth/logout', { method: 'POST', headers: { 'X-Session-Id': sessionId } }).catch(() => {});
+    }
     location.reload();
   };
 
-  const isAuthenticated = () => {
-    return !!sessionStorage.getItem(SESSION_KEY);
-  };
+  const isAuthenticated = () => !!localStorage.getItem(SESSION_KEY);
+  const getSessionId = () => localStorage.getItem(SESSION_KEY);
 
-  const getSessionId = () => {
-    return sessionStorage.getItem(SESSION_KEY);
-  };
-
-  const hashPin = (pin) => {
-    // Простой хеш для примера (в бою нужна криптография)
-    return btoa(pin);
-  };
-
-  return { login, logout, isAuthenticated, getSessionId };
+  return { login, logout, clear, isAuthenticated, getSessionId };
 })();
 
 // DOM элементы
@@ -54,46 +41,40 @@ const pinInput = document.getElementById('pinInput');
 const loginError = document.getElementById('loginError');
 const logoutBtn = document.getElementById('logoutBtn');
 
-// Обработка формы входа
+const showDashboard = () => {
+  loginScreen.style.display = 'none';
+  dashboardScreen.style.display = 'block';
+  APP.init();
+};
+
+// Вызывается при 401 — сессия истекла или недействительна
+const showLogin = (message = '') => {
+  AUTH.clear();
+  dashboardScreen.style.display = 'none';
+  loginScreen.style.display = 'flex';
+  loginError.textContent = message;
+};
+
 loginForm.addEventListener('submit', async (e) => {
   e.preventDefault();
   const pin = pinInput.value.trim();
-
   if (!pin) {
     loginError.textContent = 'Введите PIN';
     return;
   }
-
+  const btn = loginForm.querySelector('button');
+  btn.disabled = true;
   try {
     loginError.textContent = '';
     await AUTH.login(pin);
+    pinInput.value = '';
     showDashboard();
   } catch (error) {
     loginError.textContent = error.message;
     pinInput.value = '';
+  } finally {
+    btn.disabled = false;
   }
 });
 
-// Выход
-logoutBtn.addEventListener('click', () => {
-  AUTH.logout();
-});
-
-// Показать экран входа или кабинет
-const showDashboard = () => {
-  loginScreen.style.display = 'none';
-  dashboardScreen.style.display = 'block';
-};
-
-const showLogin = () => {
-  loginScreen.style.display = 'block';
-  dashboardScreen.style.display = 'none';
-  pinInput.focus();
-};
-
-// Проверить аутентификацию при загрузке
-if (AUTH.isAuthenticated()) {
-  showDashboard();
-} else {
-  showLogin();
-}
+logoutBtn.addEventListener('click', () => AUTH.logout());

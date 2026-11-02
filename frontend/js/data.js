@@ -1,74 +1,38 @@
 // API для работы с данными
 const API = (() => {
-  const baseUrl = '/api';
+  const baseUrl = 'api';
 
-  const request = async (endpoint, options = {}) => {
-    try {
-      const response = await fetch(`${baseUrl}${endpoint}`, {
-        headers: {
-          'Content-Type': 'application/json',
-          ...options.headers
-        },
-        ...options
-      });
-
-      if (!response.ok) {
-        const error = await response.json();
-        throw new Error(error.error || 'Ошибка запроса');
+  const request = async (endpoint, options = {}, as = 'json') => {
+    const response = await fetch(`${baseUrl}${endpoint}`, {
+      ...options,
+      headers: {
+        'Content-Type': 'application/json',
+        'X-Session-Id': AUTH.getSessionId() || '',
+        ...options.headers
       }
+    });
 
-      return await response.json();
-    } catch (error) {
-      console.error('API Error:', error);
-      throw error;
+    if (response.status === 401) {
+      showLogin('Сессия завершена — войдите заново');
+      throw new Error('unauthorized');
     }
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({}));
+      throw new Error(error.error || 'Ошибка запроса');
+    }
+    return as === 'text' ? response.text() : response.json();
   };
 
   return {
-    // Модули
+    getMe: () => request('/modules/me'),
     getModules: () => request('/modules'),
     getModule: (moduleId) => request(`/modules/${moduleId}`),
-
-    // ДЗ
-    submitHomework: (sessionId, moduleId, content) =>
+    getCheatsheet: (moduleId) => request(`/modules/${moduleId}/cheatsheet`, {}, 'text'),
+    getHomework: (moduleId) => request(`/homework/${moduleId}`),
+    submitHomework: (moduleId, content) =>
       request('/homework/submit', {
         method: 'POST',
-        body: JSON.stringify({ sessionId, moduleId, content })
-      }),
-    getHomework: (moduleId) => request(`/homework/${moduleId}`),
-
-    // Проверка сессии
-    verifySession: (sessionId) =>
-      request('/auth/verify', {
-        method: 'POST',
-        body: JSON.stringify({ sessionId })
+        body: JSON.stringify({ moduleId, content })
       })
   };
 })();
-
-// Кэш данных
-const CACHE = (() => {
-  let modules = null;
-
-  return {
-    setModules: (data) => { modules = data; },
-    getModules: () => modules,
-    clearAll: () => { modules = null; }
-  };
-})();
-
-// Загрузить модули с кэшированием
-const loadModules = async () => {
-  if (CACHE.getModules()) {
-    return CACHE.getModules();
-  }
-
-  try {
-    const modules = await API.getModules();
-    CACHE.setModules(modules);
-    return modules;
-  } catch (error) {
-    console.error('Ошибка загрузки модулей:', error);
-    throw error;
-  }
-};

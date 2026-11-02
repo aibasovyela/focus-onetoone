@@ -8,3 +8,4 @@ build/
 .idea/
 .vscode/settings.json
 backend/db/sessions.json
+backend/db/homework.json
