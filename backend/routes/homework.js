@@ -1,5 +1,20 @@
 import express from 'express';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
+import { dirname, join } from 'path';
 import { readJson, writeJson, requireSession } from '../lib/store.js';
+
+const materialsPath = join(dirname(fileURLToPath(import.meta.url)), '../../materials');
+
+// ДЗ из meta.json урока важнее базового из modules.json
+const homeworkFor = (module) => {
+  const file = join(materialsPath, module.id, 'meta.json');
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8')).homework || module.homework;
+  } catch {
+    return module.homework;
+  }
+};
 
 const router = express.Router();
 
@@ -38,13 +53,14 @@ router.post('/submit', (req, res) => {
 router.get('/:moduleId', (req, res) => {
   const { modules = [] } = readJson('modules.json', {});
   const module = modules.find(m => m.id === req.params.moduleId);
-  if (!module || !module.homework) {
+  const homework = module && homeworkFor(module);
+  if (!homework) {
     return res.status(404).json({ error: 'ДЗ не найдено' });
   }
   const submissions = readJson('homework.json', [])
     .filter(h => h.studentId === req.student.id && h.moduleId === module.id)
     .map(({ studentId, ...h }) => h);
-  res.json({ ...module.homework, submissions });
+  res.json({ ...homework, submissions });
 });
 
 export default router;

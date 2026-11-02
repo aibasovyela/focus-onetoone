@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 412" width="100%" role="img" aria-label="Анатомия агента">
+  <defs>
+    <marker id="aa" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+  <text x="180" y="30" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F1112">Из чего состоит агент</text>
+  <g font-family="Golos Text, Arial, sans-serif">
+    <rect x="16" y="48" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <circle cx="44" cy="76" r="15" fill="#8B5CF6"/>
+    <text x="44" y="81" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">1</text>
+    <text x="72" y="72" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Роль и инструкции</text>
+    <text x="72" y="92" font-size="12" fill="#45433F">должностная: кто он и как работает</text>
+
+    <rect x="16" y="122" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <circle cx="44" cy="150" r="15" fill="#8B5CF6"/>
+    <text x="44" y="155" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">2</text>
+    <text x="72" y="146" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Память</text>
+    <text x="72" y="166" font-size="12" fill="#45433F">файл о тебе, он его перечитывает</text>
+
+    <rect x="16" y="196" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <circle cx="44" cy="224" r="15" fill="#8B5CF6"/>
+    <text x="44" y="229" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">3</text>
+    <text x="72" y="220" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Инструменты</text>
+    <text x="72" y="240" font-size="12" fill="#45433F">руки: файлы, поиск, документы</text>
+
+    <rect x="16" y="270" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <circle cx="44" cy="298" r="15" fill="#8B5CF6"/>
+    <text x="44" y="303" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">4</text>
+    <text x="72" y="294" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Расписание</text>
+    <text x="72" y="314" font-size="12" fill="#45433F">будильник с заданием</text>
+
+    <rect x="16" y="344" width="328" height="56" rx="12" fill="#24124A"/>
+    <circle cx="44" cy="372" r="15" fill="#FFB59A"/>
+    <text x="44" y="377" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#24124A">5</text>
+    <text x="72" y="368" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">Канал: Telegram</text>
+    <text x="72" y="388" font-size="12" fill="#D2C2FF">где вы общаетесь каждый день</text>
+  </g>
+  <g stroke="#8B5CF6" stroke-width="2" marker-end="url(#aa)">
+    <line x1="180" y1="105" x2="180" y2="116"/>
+    <line x1="180" y1="179" x2="180" y2="190"/>
+    <line x1="180" y1="253" x2="180" y2="264"/>
+    <line x1="180" y1="327" x2="180" y2="338"/>
+  </g>
+</svg>

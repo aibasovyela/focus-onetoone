@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 476" width="100%">
+  <text x="180" y="26" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F1112">Три режима Claude</text>
+
+  <rect x="16" y="44" width="328" height="120" rx="14" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1.5"/>
+  <rect x="16" y="44" width="6" height="120" rx="3" fill="#8B5CF6"/>
+  <text x="36" y="68" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="1">01 · CHAT</text>
+  <text x="36" y="91" font-family="Unbounded, Arial, sans-serif" font-size="14" font-weight="700" fill="#0F1112">Подумать и написать</text>
+  <text x="36" y="114" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Тексты, анализ, длинные документы,</text>
+  <text x="36" y="132" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Projects с файлами, артефакты</text>
+  <text x="36" y="152" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8C8880">где: claude.ai и приложение</text>
+
+  <rect x="16" y="176" width="328" height="120" rx="14" fill="#D2C2FF"/>
+  <text x="36" y="200" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="1">02 · COWORK</text>
+  <text x="36" y="223" font-family="Unbounded, Arial, sans-serif" font-size="14" font-weight="700" fill="#24124A">Сделать с моими файлами</text>
+  <text x="36" y="246" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#24124A">Папка на компьютере, задача в много</text>
+  <text x="36" y="264" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#24124A">шагов: разложить, собрать отчёт</text>
+  <text x="36" y="284" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9">где: приложение на компьютере</text>
+
+  <rect x="16" y="308" width="328" height="120" rx="14" fill="#24124A"/>
+  <text x="36" y="332" font-family="IBM Plex Mono, monospace" font-size="11" fill="#D2C2FF" letter-spacing="1">03 · CODE</text>
+  <text x="36" y="355" font-family="Unbounded, Arial, sans-serif" font-size="14" font-weight="700" fill="#F7F5F0">Чтобы заработала штука</text>
+  <text x="36" y="378" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#EEEAE2">Сайт, скрипт, калькулятор, бот —</text>
+  <text x="36" y="396" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#EEEAE2">словами, без программиста</text>
+  <text x="36" y="416" font-family="IBM Plex Mono, monospace" font-size="11" fill="#FFB59A">где: браузер, приложение, терминал</text>
+
+  <text x="180" y="456" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Не уверен, какой выбрать? Начни с Chat</text>
+</svg>

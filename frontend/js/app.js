@@ -68,7 +68,7 @@ const APP = (() => {
       return `
         <li class="route-step is-${m.status}">
           <div class="route-dot">${m.status === 'done' ? '✓' : m.number}</div>
-          <${open ? `a href="#${m.id}"` : 'div'} class="route-card">
+          <a href="#${m.id}" class="route-card">
             <div class="route-top">
               <span class="eyebrow">Блок ${m.number} · ${esc(m.tag || '')}</span>
             </div>
@@ -78,32 +78,30 @@ const APP = (() => {
               <span class="pill ${st.pill}">${st.label}</span>
               <span class="label">Созвон: ${formatDate(m.callDate)}</span>
             </div>
-            ${open ? '<span class="route-open">Открыть блок →</span>' : ''}
-          </${open ? 'a' : 'div'}>
+            <span class="route-open">${open ? 'Открыть урок →' : 'Посмотреть план →'}</span>
+          </a>
         </li>`;
     }).join('');
   };
 
-  // Детали модуля
+  // Детали модуля: хиро → оглавление → план созвона → урок → ДЗ → материалы
   const showModuleDetail = (module) => {
     modulesView.style.display = 'none';
     moduleDetailView.style.display = 'block';
+    const locked = module.status === 'locked';
 
     document.getElementById('detailModuleNumber').textContent = `Блок ${module.number} из ${modules.length} · ${module.tag || ''}`;
     document.getElementById('detailModuleTitle').textContent = module.title;
-    document.getElementById('detailModuleDescription').textContent = module.description;
-    document.getElementById('detailResult').textContent = module.result;
+    document.getElementById('detailPromise').textContent = module.promise || module.description;
     const st = STATUS[module.status] || STATUS.locked;
     document.getElementById('detailMeta').innerHTML =
       `<span class="pill pill-light">${st.label}</span><span class="label">Созвон: ${formatDate(module.callDate)} · 2 часа</span>`;
+    document.getElementById('detailOutcomes').innerHTML = (module.goals || []).map(g => `<li>${esc(g)}</li>`).join('');
 
-    document.getElementById('detailGoalsList').innerHTML =
-      module.goals.map(g => `<li>${esc(g)}</li>`).join('');
-
-    document.getElementById('detailMaterialsList').innerHTML = module.materials.map(mt => {
+    document.getElementById('detailMaterialsList').innerHTML = (module.materials || []).map(mt => {
       const icon = mt.type === 'video' ? '▶' : '✦';
       const href = mt.type === 'cheatsheet' ? '#cheatsheetBlock' : (mt.url || '');
-      const available = mt.available !== false && href;
+      const available = !locked && mt.available !== false && href;
       return `
         <li>
           <${available ? `a href="${esc(href)}" data-scroll="${mt.type === 'cheatsheet' ? 1 : ''}"` : 'div'} class="material-item ${available ? '' : 'material-unavailable'}">
@@ -112,12 +110,21 @@ const APP = (() => {
               <div class="material-type">${mt.type === 'video' ? 'Запись' : 'Шпаргалка'}</div>
               <div class="material-title">${esc(mt.title)}</div>
             </div>
-            <span class="material-badge">${available ? '↓' : esc(mt.note || 'скоро')}</span>
+            <span class="material-badge">${available ? '↓' : esc(locked ? 'после созвона' : (mt.note || 'скоро'))}</span>
           </${available ? 'a' : 'div'}>
         </li>`;
     }).join('');
 
-    const hw = module.homework;
+    renderHomework(module, module.homework, locked);
+    document.getElementById('lesson').innerHTML = '<p class="label">Загружаю урок…</p>';
+    document.getElementById('planList').innerHTML = '';
+    document.getElementById('cheatsheetBlock').style.display = locked ? 'none' : '';
+    loadLesson(module);
+    if (!locked) { loadCheatsheet(module.id); loadHomeworkStatus(module.id); }
+    window.scrollTo(0, 0);
+  };
+
+  const renderHomework = (module, hw, locked) => {
     document.getElementById('detailHomeworkContent').innerHTML = hw ? `
       <div class="homework-item">
         <h3 class="homework-title">${esc(hw.title)}</h3>
@@ -125,12 +132,69 @@ const APP = (() => {
         ${hw.criteria?.length ? `<div class="label hw-label">Готово, если</div><ul class="criteria-list">${hw.criteria.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
         <div class="homework-due">Срок: ${hw.dueDate ? formatDate(hw.dueDate) : esc(hw.dueLabel || 'дата уточняется')}</div>
         <div class="homework-status" id="homeworkStatus"></div>
-        <button class="btn btn-primary hw-btn" data-hw="${esc(module.id)}">Сдать ДЗ</button>
+        ${locked ? '' : `<button class="btn btn-primary hw-btn" data-hw="${esc(module.id)}">Сдать ДЗ</button>`}
       </div>` : '<p class="label">Задание появится после созвона</p>';
+  };
 
-    loadCheatsheet(module.id);
-    loadHomeworkStatus(module.id);
-    window.scrollTo(0, 0);
+  // Урок: план по минутам + лонгрид; для закрытого блока — только предпросмотр
+  const loadLesson = async (module) => {
+    const box = document.getElementById('lesson');
+    try {
+      const data = await API.getLesson(module.id);
+      if (location.hash.slice(1) !== module.id) return; // успели уйти на другой блок
+      if (data.promise) document.getElementById('detailPromise').textContent = data.promise;
+      if (data.outcomes?.length) {
+        document.getElementById('detailOutcomes').innerHTML = data.outcomes.map(o => `<li>${esc(String(o).replace(/^к концу созвона( у тебя)?\s*[:—-]?\s*/i, ''))}</li>`).join('');
+      }
+
+      const plan = data.plan || [];
+      let t = 0;
+      document.getElementById('planList').innerHTML = plan.map(p => {
+        const from = t; t += Number(p.min) || 0;
+        const hm = (m) => `${Math.floor(m / 60)}:${String(m % 60).padStart(2, '0')}`;
+        return `<li style="--w:${Math.max(6, (p.min / 120) * 100)}%">
+          <span class="tl-time">${hm(from)}–${hm(t)}</span>
+          <div class="tl-body"><strong>${esc(p.title)}</strong>${p.text ? `<span>${esc(p.text)}</span>` : ''}</div>
+          <span class="tl-min">${p.min} мин</span>
+        </li>`;
+      }).join('');
+      document.getElementById('planTotal').textContent = plan.length ? `${plan.length} блоков · ${t} минут живой работы` : '';
+      document.getElementById('plan').style.display = plan.length ? '' : 'none';
+
+      if (data.homework) renderHomework(module, data.homework, data.locked);
+      if (!data.locked) loadHomeworkStatus(module.id);
+
+      const lockedNote = document.getElementById('lockedNote');
+      if (data.locked) {
+        box.innerHTML = '';
+        lockedNote.style.display = '';
+        lockedNote.innerHTML = `<span class="eyebrow">Блок закрыт</span><p>Полный урок, промпты и материалы откроются после созвона ${module.number}. Пока — план, чтобы знать, что нас ждёт.</p>`;
+        buildToc([]);
+        return;
+      }
+      lockedNote.style.display = 'none';
+      const { html, toc } = MD.render(data.markdown || '', { diagrams: data.diagrams || {} });
+      box.innerHTML = html;
+      buildToc(toc);
+    } catch (error) {
+      if (error.message !== 'unauthorized') box.innerHTML = `<p class="label">${esc(error.message)}</p>`;
+    }
+  };
+
+  const buildToc = (toc) => {
+    const items = [{ id: 'plan', title: 'План созвона' }, ...toc, { id: 'homework', title: 'Домашнее задание' }, { id: 'materials', title: 'Материалы' }]
+      .filter(i => document.getElementById(i.id) && document.getElementById(i.id).style.display !== 'none');
+    document.getElementById('tocList').innerHTML = items.map(i => `<li><a href="#${esc(i.id)}" data-toc="${esc(i.id)}">${esc(i.title)}</a></li>`).join('');
+    document.getElementById('tocCount').textContent = `${items.length} разделов`;
+    const details = document.querySelector('#toc details');
+    if (details) details.open = window.innerWidth >= 768;
+  };
+
+  const updateReadProgress = () => {
+    const bar = document.getElementById('readProgress');
+    if (!bar || moduleDetailView.style.display === 'none') return;
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = `${max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0}%`;
   };
 
   const loadCheatsheet = async (moduleId) => {
@@ -163,7 +227,7 @@ const APP = (() => {
   // Навигация через #module-N — работает кнопка «назад» в браузере
   const route = () => {
     const id = location.hash.slice(1);
-    const module = modules.find(m => m.id === id && m.status !== 'locked');
+    const module = modules.find(m => m.id === id);
     if (module) {
       showModuleDetail(module);
     } else {
@@ -208,6 +272,7 @@ const APP = (() => {
 
   const setupEventListeners = () => {
     window.addEventListener('hashchange', route);
+    window.addEventListener('scroll', updateReadProgress, { passive: true });
     document.getElementById('detailBackBtn').addEventListener('click', goBack);
     document.getElementById('detailBackBtn2').addEventListener('click', goBack);
     document.getElementById('homeworkCancel').addEventListener('click', closeHomeworkModal);
@@ -219,10 +284,18 @@ const APP = (() => {
       const hwBtn = e.target.closest('[data-hw]');
       if (hwBtn) openHomeworkModal(hwBtn.dataset.hw);
 
+      const tocLink = e.target.closest('a[data-toc]');
+      if (tocLink) {
+        e.preventDefault();
+        document.getElementById(tocLink.dataset.toc)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+
       const scroll = e.target.closest('a[data-scroll="1"]');
       if (scroll) {
         e.preventDefault();
-        document.getElementById('cheatsheetBlock').scrollIntoView({ behavior: 'smooth' });
+        const cs = document.getElementById('cheatsheetBlock');
+        cs.open = true;
+        cs.scrollIntoView({ behavior: 'smooth' });
       }
 
       const copy = e.target.closest('.md-copy');

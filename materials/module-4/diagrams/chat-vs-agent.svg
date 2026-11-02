@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 352" width="100%" role="img" aria-label="Чат и агент: сравнение">
+  <text x="180" y="30" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F1112">Чат или агент</text>
+  <rect x="8" y="48" width="344" height="256" rx="14" fill="#F7F5F0" stroke="#D6D0C6"/>
+  <rect x="222" y="56" width="124" height="242" rx="12" fill="#D2C2FF" fill-opacity="0.5"/>
+  <text x="166" y="84" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#8C8880">Чат</text>
+  <text x="284" y="84" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#5B33C9">Агент</text>
+  <g stroke="#D6D0C6" stroke-width="1">
+    <line x1="16" y1="98" x2="344" y2="98"/>
+    <line x1="16" y1="138" x2="344" y2="138"/>
+    <line x1="16" y1="178" x2="344" y2="178"/>
+    <line x1="16" y1="218" x2="344" y2="218"/>
+    <line x1="16" y1="258" x2="344" y2="258"/>
+  </g>
+  <g font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#45433F">
+    <text x="22" y="123">Память</text>
+    <text x="22" y="163">Действия</text>
+    <text x="22" y="203">Инструменты</text>
+    <text x="22" y="243">Время</text>
+    <text x="22" y="283">Где живёт</text>
+  </g>
+  <g font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#8C8880" text-anchor="middle">
+    <text x="166" y="123">забывает</text>
+    <text x="166" y="163">только текст</text>
+    <text x="166" y="203">нет</text>
+    <text x="166" y="243">ждёт вопроса</text>
+    <text x="166" y="283">вкладка сайта</text>
+  </g>
+  <g font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9" text-anchor="middle">
+    <text x="284" y="123">помнит тебя</text>
+    <text x="284" y="163">делает сам</text>
+    <text x="284" y="203">файлы, поиск</text>
+    <text x="284" y="243">сам, в 9:00</text>
+    <text x="284" y="283">твой Telegram</text>
+  </g>
+  <text x="180" y="334" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="15" font-weight="700" fill="#24124A">Чат отвечает. Агент делает.</text>
+</svg>

@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400" width="100%" role="img" aria-label="Агент в центре: база знаний и коннекторы к почте, таблицам, диску, календарю и CRM">
+  <rect x="0" y="0" width="360" height="400" rx="14" fill="#F7F5F0"/>
+  <text x="180" y="30" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F1112">Агент в центре данных</text>
+  <text x="180" y="50" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Знания внутри, сервисы через коннекторы</text>
+
+  <g stroke="#5B33C9" stroke-width="1.6" fill="none">
+    <line x1="180" y1="122" x2="180" y2="164"/>
+    <line x1="140" y1="187" x2="108" y2="169"/>
+    <line x1="220" y1="187" x2="252" y2="169"/>
+    <line x1="145" y1="240" x2="108" y2="273"/>
+    <line x1="215" y1="240" x2="252" y2="273"/>
+    <line x1="180" y1="256" x2="180" y2="300"/>
+  </g>
+  <g fill="#5B33C9">
+    <circle cx="108" cy="169" r="3"/><circle cx="252" cy="169" r="3"/>
+    <circle cx="108" cy="273" r="3"/><circle cx="252" cy="273" r="3"/>
+    <circle cx="180" cy="300" r="3"/><circle cx="180" cy="164" r="3"/>
+  </g>
+  <text x="188" y="148" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9">читает</text>
+
+  <rect x="90" y="66" width="180" height="56" rx="12" fill="#24124A"/>
+  <text x="180" y="89" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">База знаний</text>
+  <text x="180" y="108" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#D2C2FF">FAQ · прайс · регламенты</text>
+
+  <circle cx="180" cy="210" r="46" fill="#8B5CF6"/>
+  <text x="180" y="207" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">ИИ-агент</text>
+  <text x="180" y="225" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#FFFFFF">роль + память</text>
+
+  <g font-family="Golos Text, Arial, sans-serif" text-anchor="middle">
+    <rect x="12" y="146" width="96" height="46" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+    <text x="60" y="165" font-size="13" font-weight="600" fill="#0F1112">Почта</text>
+    <text x="60" y="182" font-size="11" fill="#45433F">разбор писем</text>
+
+    <rect x="252" y="146" width="96" height="46" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+    <text x="300" y="165" font-size="13" font-weight="600" fill="#0F1112">Таблицы</text>
+    <text x="300" y="182" font-size="11" fill="#45433F">отчёты</text>
+
+    <rect x="12" y="250" width="96" height="46" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+    <text x="60" y="269" font-size="13" font-weight="600" fill="#0F1112">Диск</text>
+    <text x="60" y="286" font-size="11" fill="#45433F">файлы, КП</text>
+
+    <rect x="252" y="250" width="96" height="46" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+    <text x="300" y="269" font-size="13" font-weight="600" fill="#0F1112">Календарь</text>
+    <text x="300" y="286" font-size="11" fill="#45433F">встречи</text>
+
+    <rect x="132" y="300" width="96" height="46" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+    <text x="180" y="319" font-size="13" font-weight="600" fill="#0F1112">CRM</text>
+    <text x="180" y="336" font-size="11" fill="#45433F">лиды, сделки</text>
+  </g>
+
+  <rect x="12" y="360" width="164" height="28" rx="10" fill="#D2C2FF"/>
+  <text x="94" y="378" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#24124A">API-ключ: стабильно</text>
+  <rect x="184" y="360" width="164" height="28" rx="10" fill="#FFB59A"/>
+  <text x="266" y="378" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#24124A">MCP: вход в аккаунт</text>
+</svg>

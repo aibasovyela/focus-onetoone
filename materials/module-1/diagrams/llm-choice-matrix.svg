@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 598" width="100%" role="img" aria-label="Матрица: ChatGPT, Claude и Gemini — какую нейросеть брать под задачу">
+<text x="20" y="34" font-family="Unbounded, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F1112">Какую нейросеть когда</text>
+<text x="20" y="54" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Сила модели в задаче: ●●● — лучший выбор</text>
+<text x="214" y="90" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">ChatGPT</text>
+<text x="268" y="90" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Claude</text>
+<text x="322" y="90" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Gemini</text>
+<rect x="12" y="102" width="336" height="34" rx="10" fill="#F7F5F0"/>
+<text x="22" y="123.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Быстрый вопрос, голос</text>
+<circle cx="202" cy="119" r="4.5" fill="#8B5CF6"/>
+<circle cx="214" cy="119" r="4.5" fill="#8B5CF6"/>
+<circle cx="226" cy="119" r="4.5" fill="#8B5CF6"/>
+<circle cx="256" cy="119" r="4.5" fill="#D2C2FF"/>
+<circle cx="268" cy="119" r="4.5" fill="#D2C2FF"/>
+<circle cx="280" cy="119" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="310" cy="119" r="4.5" fill="#D2C2FF"/>
+<circle cx="322" cy="119" r="4.5" fill="#D2C2FF"/>
+<circle cx="334" cy="119" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<text x="22" y="157.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Живой текст, тон бренда</text>
+<circle cx="202" cy="153" r="4.5" fill="#D2C2FF"/>
+<circle cx="214" cy="153" r="4.5" fill="#D2C2FF"/>
+<circle cx="226" cy="153" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="256" cy="153" r="4.5" fill="#8B5CF6"/>
+<circle cx="268" cy="153" r="4.5" fill="#8B5CF6"/>
+<circle cx="280" cy="153" r="4.5" fill="#8B5CF6"/>
+<circle cx="310" cy="153" r="4.5" fill="#D2C2FF"/>
+<circle cx="322" cy="153" r="4.5" fill="#D2C2FF"/>
+<circle cx="334" cy="153" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<rect x="12" y="170" width="336" height="34" rx="10" fill="#F7F5F0"/>
+<text x="22" y="191.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Длинные документы</text>
+<circle cx="202" cy="187" r="4.5" fill="#D2C2FF"/>
+<circle cx="214" cy="187" r="4.5" fill="#D2C2FF"/>
+<circle cx="226" cy="187" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="256" cy="187" r="4.5" fill="#8B5CF6"/>
+<circle cx="268" cy="187" r="4.5" fill="#8B5CF6"/>
+<circle cx="280" cy="187" r="4.5" fill="#8B5CF6"/>
+<circle cx="310" cy="187" r="4.5" fill="#8B5CF6"/>
+<circle cx="322" cy="187" r="4.5" fill="#8B5CF6"/>
+<circle cx="334" cy="187" r="4.5" fill="#8B5CF6"/>
+<text x="22" y="225.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Таблицы и расчёты</text>
+<circle cx="202" cy="221" r="4.5" fill="#8B5CF6"/>
+<circle cx="214" cy="221" r="4.5" fill="#8B5CF6"/>
+<circle cx="226" cy="221" r="4.5" fill="#8B5CF6"/>
+<circle cx="256" cy="221" r="4.5" fill="#D2C2FF"/>
+<circle cx="268" cy="221" r="4.5" fill="#D2C2FF"/>
+<circle cx="280" cy="221" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="310" cy="221" r="4.5" fill="#D2C2FF"/>
+<circle cx="322" cy="221" r="4.5" fill="#D2C2FF"/>
+<circle cx="334" cy="221" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<rect x="12" y="238" width="336" height="34" rx="10" fill="#F7F5F0"/>
+<text x="22" y="259.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Создать картинку</text>
+<circle cx="202" cy="255" r="4.5" fill="#8B5CF6"/>
+<circle cx="214" cy="255" r="4.5" fill="#8B5CF6"/>
+<circle cx="226" cy="255" r="4.5" fill="#8B5CF6"/>
+<circle cx="256" cy="255" r="4.5" fill="#D2C2FF"/>
+<circle cx="268" cy="255" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="280" cy="255" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="310" cy="255" r="4.5" fill="#8B5CF6"/>
+<circle cx="322" cy="255" r="4.5" fill="#8B5CF6"/>
+<circle cx="334" cy="255" r="4.5" fill="#8B5CF6"/>
+<text x="22" y="293.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Свежие новости, поиск</text>
+<circle cx="202" cy="289" r="4.5" fill="#8B5CF6"/>
+<circle cx="214" cy="289" r="4.5" fill="#8B5CF6"/>
+<circle cx="226" cy="289" r="4.5" fill="#8B5CF6"/>
+<circle cx="256" cy="289" r="4.5" fill="#D2C2FF"/>
+<circle cx="268" cy="289" r="4.5" fill="#D2C2FF"/>
+<circle cx="280" cy="289" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="310" cy="289" r="4.5" fill="#8B5CF6"/>
+<circle cx="322" cy="289" r="4.5" fill="#8B5CF6"/>
+<circle cx="334" cy="289" r="4.5" fill="#8B5CF6"/>
+<rect x="12" y="306" width="336" height="34" rx="10" fill="#F7F5F0"/>
+<text x="22" y="327.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Gmail, Docs, YouTube</text>
+<circle cx="202" cy="323" r="4.5" fill="#D2C2FF"/>
+<circle cx="214" cy="323" r="4.5" fill="#D2C2FF"/>
+<circle cx="226" cy="323" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="256" cy="323" r="4.5" fill="#D2C2FF"/>
+<circle cx="268" cy="323" r="4.5" fill="#D2C2FF"/>
+<circle cx="280" cy="323" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="310" cy="323" r="4.5" fill="#8B5CF6"/>
+<circle cx="322" cy="323" r="4.5" fill="#8B5CF6"/>
+<circle cx="334" cy="323" r="4.5" fill="#8B5CF6"/>
+<text x="22" y="361.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Сайт или прототип</text>
+<circle cx="202" cy="357" r="4.5" fill="#D2C2FF"/>
+<circle cx="214" cy="357" r="4.5" fill="#D2C2FF"/>
+<circle cx="226" cy="357" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<circle cx="256" cy="357" r="4.5" fill="#8B5CF6"/>
+<circle cx="268" cy="357" r="4.5" fill="#8B5CF6"/>
+<circle cx="280" cy="357" r="4.5" fill="#8B5CF6"/>
+<circle cx="310" cy="357" r="4.5" fill="#D2C2FF"/>
+<circle cx="322" cy="357" r="4.5" fill="#D2C2FF"/>
+<circle cx="334" cy="357" r="4" fill="none" stroke="#D6D0C6" stroke-width="1.5"/>
+<text x="20" y="392" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="0.5">ХАРАКТЕР В ОДНОЙ СТРОКЕ</text>
+<rect x="12" y="404" width="336" height="44" rx="12" fill="#FFFFFF" stroke="#D6D0C6"/>
+<rect x="12" y="404" width="8" height="44" rx="4" fill="#8B5CF6"/>
+<text x="32" y="423" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">ChatGPT</text>
+<text x="32" y="439" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">универсал «всё в одном окне»</text>
+<rect x="12" y="456" width="336" height="44" rx="12" fill="#FFFFFF" stroke="#D6D0C6"/>
+<rect x="12" y="456" width="8" height="44" rx="4" fill="#24124A"/>
+<text x="32" y="475" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Claude</text>
+<text x="32" y="491" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">тексты, документы, внимание к деталям</text>
+<rect x="12" y="508" width="336" height="44" rx="12" fill="#FFFFFF" stroke="#D6D0C6"/>
+<rect x="12" y="508" width="8" height="44" rx="4" fill="#FFB59A"/>
+<text x="32" y="527" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Gemini</text>
+<text x="32" y="543" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">экосистема Google и свежие данные</text>
+<text x="20" y="568" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9">Важная задача → прогоняй в двух моделях</text>
+<text x="20" y="586" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880">Оценки на ноябрь 2026 — модели обновляются</text>
+</svg>

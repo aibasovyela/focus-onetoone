@@ -6,8 +6,8 @@
   <meta name="theme-color" content="#0C0718">
   <meta name="robots" content="noindex">
   <title>Фокус ИИ 1:1 — кабинет ученика · Yelumio</title>
-  <link rel="stylesheet" href="css/brand.css">
-  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/brand.css?v=3">
+  <link rel="stylesheet" href="css/app.css?v=3">
 </head>
 <body>
   <!-- Экран входа -->
@@ -66,42 +66,54 @@
         </section>
       </div>
 
-      <!-- Модуль -->
+      <!-- Модуль: урок-лонгрид -->
       <div id="moduleDetailView" style="display: none;">
+        <div class="read-progress" aria-hidden="true"><i id="readProgress"></i></div>
+
         <div class="module-detail-header">
           <div class="container">
             <button id="detailBackBtn" class="back-link">← Маршрут</button>
             <div class="eyebrow" id="detailModuleNumber"></div>
             <h1 id="detailModuleTitle" class="detail-title"></h1>
-            <p id="detailModuleDescription" class="detail-desc"></p>
+            <p id="detailPromise" class="detail-promise"></p>
             <div class="detail-meta" id="detailMeta"></div>
+            <div class="outcomes">
+              <div class="eyebrow outcomes-label">К концу созвона у тебя</div>
+              <ul id="detailOutcomes"></ul>
+            </div>
           </div>
         </div>
 
         <section class="container module-detail">
-          <div class="result-card">
-            <span class="eyebrow">Результат блока</span>
-            <p id="detailResult"></p>
+          <nav class="toc" id="toc" aria-label="Содержание урока">
+            <details open>
+              <summary><span class="eyebrow">Содержание</span><span class="toc-count" id="tocCount"></span></summary>
+              <ol id="tocList"></ol>
+            </details>
+          </nav>
+
+          <div class="block" id="plan">
+            <h2 class="section-title">План созвона</h2>
+            <p class="section-sub" id="planTotal"></p>
+            <ol class="timeline" id="planList"></ol>
           </div>
 
-          <div class="block">
-            <h2 class="section-title">Что разбираем</h2>
-            <ul class="goals-list" id="detailGoalsList"></ul>
-          </div>
+          <div id="lockedNote" class="locked-note" style="display: none;"></div>
 
-          <div class="block">
-            <h2 class="section-title">Материалы</h2>
-            <ul class="materials-list" id="detailMaterialsList"></ul>
-          </div>
+          <article class="md lesson-body" id="lesson"></article>
 
-          <div class="block" id="cheatsheetBlock">
-            <h2 class="section-title">Шпаргалка</h2>
-            <article class="md" id="cheatsheet"><p class="label">Загружаю…</p></article>
-          </div>
-
-          <div class="block">
+          <div class="block" id="homework">
             <h2 class="section-title">Домашнее задание</h2>
             <div id="detailHomeworkContent"></div>
+          </div>
+
+          <div class="block" id="materials">
+            <h2 class="section-title">Материалы</h2>
+            <ul class="materials-list" id="detailMaterialsList"></ul>
+            <details class="cheatsheet" id="cheatsheetBlock">
+              <summary>Шпаргалка модуля — коротко на одной странице</summary>
+              <article class="md" id="cheatsheet"><p class="label">Загружаю…</p></article>
+            </details>
           </div>
 
           <button id="detailBackBtn2" class="btn btn-ghost back-bottom">← Вернуться к маршруту</button>
@@ -129,9 +141,9 @@
 
   <div id="toast" class="toast" role="status"></div>
 
-  <script src="js/auth.js"></script>
-  <script src="js/data.js"></script>
-  <script src="js/markdown.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/auth.js?v=3"></script>
+  <script src="js/data.js?v=3"></script>
+  <script src="js/markdown.js?v=3"></script>
+  <script src="js/app.js?v=3"></script>
 </body>
 </html>

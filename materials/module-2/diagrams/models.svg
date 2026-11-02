@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 592" width="100%" role="img" aria-label="Карта моделей: какую модель брать под задачу">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Какую модель когда</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" >Задача слева → модель справа</text>
+<rect x="12" y="64" width="336" height="184" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+<rect x="12" y="64" width="336" height="28" rx="12" fill="#8B5CF6"/>
+<rect x="12" y="78" width="336" height="14" fill="#8B5CF6"/>
+<text x="24" y="83" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" letter-spacing="0.5">КАРТИНКА</text>
+<text x="24" y="112" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Товар с этикеткой, текст</text>
+<text x="336" y="112" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">GPT Image 2.5</text>
+<line x1="24" y1="122" x2="336" y2="122" stroke="#D6D0C6"/>
+<text x="24" y="142" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Сложная сцена, новый фон</text>
+<text x="336" y="142" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Nano Banana Pro</text>
+<line x1="24" y1="152" x2="336" y2="152" stroke="#D6D0C6"/>
+<text x="24" y="172" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Много черновиков быстро</text>
+<text x="336" y="172" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Seedream 5.0 Pro</text>
+<line x1="24" y1="182" x2="336" y2="182" stroke="#D6D0C6"/>
+<text x="24" y="202" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Кинокадр, живые люди</text>
+<text x="336" y="202" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Soul Cinema</text>
+<line x1="24" y1="212" x2="336" y2="212" stroke="#D6D0C6"/>
+<text x="24" y="232" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Твоё лицо в серии</text>
+<text x="336" y="232" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Soul ID</text>
+<rect x="12" y="262" width="336" height="154" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+<rect x="12" y="262" width="336" height="28" rx="12" fill="#FFB59A"/>
+<rect x="12" y="276" width="336" height="14" fill="#FFB59A"/>
+<text x="24" y="281" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="700" letter-spacing="0.5">ВИДЕО</text>
+<text x="24" y="310" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Оживить фото товара</text>
+<text x="336" y="310" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Kling 3.0</text>
+<line x1="24" y1="320" x2="336" y2="320" stroke="#D6D0C6"/>
+<text x="24" y="340" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Люди крупно, до 30 сек</text>
+<text x="336" y="340" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Seedance 2.5</text>
+<line x1="24" y1="350" x2="336" y2="350" stroke="#D6D0C6"/>
+<text x="24" y="370" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Короткий фотореал, природа</text>
+<text x="336" y="370" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Veo 3.1</text>
+<line x1="24" y1="380" x2="336" y2="380" stroke="#D6D0C6"/>
+<text x="24" y="400" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Киношный вид кнопками</text>
+<text x="336" y="400" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Cinema Studio</text>
+<rect x="12" y="430" width="336" height="124" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+<rect x="12" y="430" width="336" height="28" rx="12" fill="#24124A"/>
+<rect x="12" y="444" width="336" height="14" fill="#24124A"/>
+<text x="24" y="449" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" letter-spacing="0.5">ЗВУК</text>
+<text x="24" y="478" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Закадровый голос RU/EN</text>
+<text x="336" y="478" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Higgsfield Audio</text>
+<line x1="24" y1="488" x2="336" y2="488" stroke="#D6D0C6"/>
+<text x="24" y="508" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Голос на казахском</text>
+<text x="336" y="508" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">ElevenLabs v4</text>
+<line x1="24" y1="518" x2="336" y2="518" stroke="#D6D0C6"/>
+<text x="24" y="538" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" >Губы под готовый голос</text>
+<text x="336" y="538" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" font-weight="600" text-anchor="end">Lipsync Studio</text>
+<text x="16" y="578" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" >Модели обновляются: проверяй новинки</text>
+</svg>

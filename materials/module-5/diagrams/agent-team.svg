@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 412" width="100%" role="img" aria-label="Команда агентов: координатор раздаёт задачи специалистам и собирает результат, у всех общая память">
+  <defs>
+    <marker id="tm-down" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8B5CF6"/>
+    </marker>
+    <marker id="tm-up" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#FFB59A"/>
+    </marker>
+  </defs>
+  <rect x="0" y="0" width="360" height="412" rx="14" fill="#F7F5F0"/>
+  <text x="180" y="30" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="600" fill="#0F1112">Команда агентов</text>
+  <text x="180" y="50" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Один планирует, другие делают</text>
+
+  <rect x="130" y="62" width="100" height="34" rx="10" fill="#FFFFFF" stroke="#D6D0C6"/>
+  <text x="180" y="84" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Ты</text>
+  <line x1="174" y1="96" x2="174" y2="120" stroke="#8B5CF6" stroke-width="2" marker-end="url(#tm-down)"/>
+  <line x1="186" y1="122" x2="186" y2="98" stroke="#FFB59A" stroke-width="2" marker-end="url(#tm-up)"/>
+  <text x="196" y="114" font-family="IBM Plex Mono, monospace" font-size="11" fill="#45433F">итог</text>
+  <text x="164" y="114" text-anchor="end" font-family="IBM Plex Mono, monospace" font-size="11" fill="#45433F">задача</text>
+
+  <rect x="24" y="124" width="312" height="56" rx="12" fill="#24124A"/>
+  <text x="180" y="148" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Координатор</text>
+  <text x="180" y="167" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#D2C2FF">стратег: делит задачу, проверяет итог</text>
+
+  <g stroke-width="2">
+    <line x1="54" y1="180" x2="54" y2="224" stroke="#8B5CF6" marker-end="url(#tm-down)"/>
+    <line x1="66" y1="226" x2="66" y2="182" stroke="#FFB59A" stroke-width="3" marker-end="url(#tm-up)"/>
+    <line x1="174" y1="180" x2="174" y2="224" stroke="#8B5CF6" marker-end="url(#tm-down)"/>
+    <line x1="186" y1="226" x2="186" y2="182" stroke="#FFB59A" stroke-width="3" marker-end="url(#tm-up)"/>
+    <line x1="294" y1="180" x2="294" y2="224" stroke="#8B5CF6" marker-end="url(#tm-down)"/>
+    <line x1="306" y1="226" x2="306" y2="182" stroke="#FFB59A" stroke-width="3" marker-end="url(#tm-up)"/>
+  </g>
+
+  <g text-anchor="middle">
+    <rect x="6" y="228" width="108" height="74" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="60" y="252" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9">Контент</text>
+    <text x="60" y="272" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">тексты</text>
+    <text x="60" y="288" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">и визуал</text>
+
+    <rect x="126" y="228" width="108" height="74" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="180" y="252" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9">Аналитика</text>
+    <text x="180" y="272" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">цифры</text>
+    <text x="180" y="288" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">и отчёты</text>
+
+    <rect x="246" y="228" width="108" height="74" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+    <text x="300" y="252" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9">Продажи</text>
+    <text x="300" y="272" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">лиды</text>
+    <text x="300" y="288" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">и ответы</text>
+  </g>
+
+  <g stroke="#8C8880" stroke-width="1.5" stroke-dasharray="4 3">
+    <line x1="60" y1="302" x2="60" y2="326"/>
+    <line x1="180" y1="302" x2="180" y2="326"/>
+    <line x1="300" y1="302" x2="300" y2="326"/>
+  </g>
+  <rect x="6" y="326" width="348" height="46" rx="12" fill="#D2C2FF"/>
+  <text x="180" y="346" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">Общая память</text>
+  <text x="180" y="363" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#24124A">факты о бизнесе, правила, решения</text>
+
+  <line x1="40" y1="392" x2="66" y2="392" stroke="#8B5CF6" stroke-width="2.5"/>
+  <text x="74" y="396" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">бриф с задачей</text>
+  <line x1="196" y1="392" x2="222" y2="392" stroke="#FFB59A" stroke-width="3.5"/>
+  <text x="230" y="396" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">результат</text>
+</svg>

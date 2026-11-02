@@ -9,14 +9,46 @@ const materialsPath = join(dirname(fileURLToPath(import.meta.url)), '../../mater
 
 router.use(requireSession);
 
+const readMeta = (moduleId) => {
+  const file = join(materialsPath, moduleId, 'meta.json');
+  if (!fs.existsSync(file)) return null;
+  try {
+    return JSON.parse(fs.readFileSync(file, 'utf8'));
+  } catch {
+    return null;
+  }
+};
+
+// Диаграммы — наши файлы, но всё равно вычищаем активное содержимое перед вставкой inline
+const cleanSvg = (svg) => svg
+  .replace(/<\?xml[^>]*>/g, '')
+  .replace(/<!DOCTYPE[^>]*>/gi, '')
+  .replace(/<(script|foreignObject|iframe|image)[\s\S]*?<\/\1>/gi, '')
+  .replace(/<(script|foreignObject|iframe|image)[^>]*\/?>/gi, '')
+  .replace(/\son\w+\s*=\s*("[^"]*"|'[^']*')/gi, '')
+  .replace(/\s(xlink:)?href\s*=\s*("(?!#)[^"]*"|'(?!#)[^']*')/gi, '');
+
+const readDiagrams = (moduleId) => {
+  const dir = join(materialsPath, moduleId, 'diagrams');
+  if (!fs.existsSync(dir)) return {};
+  return Object.fromEntries(fs.readdirSync(dir)
+    .filter(f => f.endsWith('.svg'))
+    .map(f => [f.slice(0, -4), cleanSvg(fs.readFileSync(join(dir, f), 'utf8'))]));
+};
+
 const modulesFor = (student) => {
   const { modules = [] } = readJson('modules.json', {});
   const calls = student.calls || {};
-  return modules.map(m => ({
-    ...m,
-    status: moduleStatus(student, m.number),
-    callDate: calls[m.number] || null
-  }));
+  return modules.map(m => {
+    const meta = readMeta(m.id);
+    return {
+      ...m,
+      promise: meta?.promise || null,
+      homework: meta?.homework || m.homework,
+      status: moduleStatus(student, m.number),
+      callDate: calls[m.number] || null
+    };
+  });
 };
 
 // GET /api/modules/me — ученик и его маршрут (без PIN)
@@ -41,6 +73,31 @@ router.get('/:moduleId', (req, res) => {
     return res.status(404).json({ error: 'Модуль не найден' });
   }
   res.json(module);
+});
+
+// GET /api/modules/:moduleId/lesson — урок; для закрытого модуля только предпросмотр (хиро + план)
+router.get('/:moduleId/lesson', (req, res) => {
+  const module = modulesFor(req.student).find(m => m.id === req.params.moduleId);
+  if (!module) {
+    return res.status(404).json({ error: 'Модуль не найден' });
+  }
+  const meta = readMeta(module.id) || {};
+  const preview = {
+    promise: meta.promise || module.result,
+    duration: meta.duration || '2 часа · онлайн 1:1',
+    outcomes: meta.outcomes || module.goals,
+    plan: meta.plan || []
+  };
+  if (module.status === 'locked') {
+    return res.json({ locked: true, ...preview });
+  }
+  const file = join(materialsPath, module.id, 'lesson.md');
+  res.json({
+    locked: false,
+    ...preview,
+    markdown: fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '',
+    diagrams: readDiagrams(module.id)
+  });
 });
 
 // GET /api/modules/:moduleId/cheatsheet — шпаргалка (markdown), только для открытых модулей

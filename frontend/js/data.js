@@ -27,6 +27,7 @@ const API = (() => {
     getMe: () => request('/modules/me'),
     getModules: () => request('/modules'),
     getModule: (moduleId) => request(`/modules/${moduleId}`),
+    getLesson: (moduleId) => request(`/modules/${moduleId}/lesson`),
     getCheatsheet: (moduleId) => request(`/modules/${moduleId}/cheatsheet`, {}, 'text'),
     getHomework: (moduleId) => request(`/homework/${moduleId}`),
     submitHomework: (moduleId, content) =>

@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 456" width="100%" role="img" aria-label="Путь одной задачи">
+  <defs>
+    <marker id="tp" viewBox="0 0 10 10" refX="5" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+  <text x="180" y="30" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F1112">Путь одной задачи</text>
+
+  <rect x="16" y="46" width="156" height="58" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="94" y="71" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Ты пишешь</text>
+  <text x="94" y="90" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">в Telegram</text>
+
+  <rect x="188" y="46" width="156" height="58" rx="12" fill="#FFB59A" fill-opacity="0.35" stroke="#FFB59A" stroke-width="1.5"/>
+  <text x="266" y="71" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#24124A">Будильник</text>
+  <text x="266" y="90" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сам, в 9:00</text>
+
+  <g stroke="#8B5CF6" stroke-width="2" fill="none" marker-end="url(#tp)">
+    <path d="M94 105 L148 121"/>
+    <path d="M266 105 L212 121"/>
+    <line x1="180" y1="185" x2="180" y2="200"/>
+    <line x1="180" y1="263" x2="180" y2="278"/>
+    <line x1="180" y1="341" x2="180" y2="356"/>
+  </g>
+
+  <g font-family="Golos Text, Arial, sans-serif" text-anchor="middle">
+    <rect x="16" y="128" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <text x="180" y="151" font-size="14" font-weight="700" fill="#0F1112">Перечитывает роль и память</text>
+    <text x="180" y="171" font-size="12" fill="#45433F">знает, кто ты и как работать</text>
+
+    <rect x="16" y="206" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <text x="180" y="229" font-size="14" font-weight="700" fill="#0F1112">Думает и планирует</text>
+    <text x="180" y="249" font-size="12" fill="#45433F">разбивает задачу на шаги</text>
+
+    <rect x="16" y="284" width="328" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6"/>
+    <text x="180" y="307" font-size="14" font-weight="700" fill="#0F1112">Действует инструментами</text>
+    <text x="180" y="327" font-size="12" fill="#45433F">ищет, пишет, сохраняет файлы</text>
+
+    <rect x="16" y="362" width="328" height="56" rx="12" fill="#24124A"/>
+    <text x="180" y="385" font-size="14" font-weight="700" fill="#F7F5F0">Присылает результат</text>
+    <text x="180" y="405" font-size="12" fill="#D2C2FF">тебе в чат Telegram</text>
+
+    <text x="180" y="442" font-size="12" fill="#8C8880">Важное записывает в память: завтра помнит</text>
+  </g>
+</svg>

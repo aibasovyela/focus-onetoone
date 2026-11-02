@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 432" width="100%" role="img" aria-label="Формула кадра: семь слоёв промпта">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Формула кадра</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" >7 слоёв промпта: от «что» к «как снято»</text>
+<rect x="12" y="64" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="85" r="12" fill="#8B5CF6"/>
+<text x="34" y="89.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text>
+<text x="56" y="82" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Объект</text>
+<text x="344" y="82" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">что в кадре</text>
+<text x="56" y="98" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >a matte black ceramic coffee cup</text>
+<rect x="12" y="112" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="133" r="12" fill="#8B5CF6"/>
+<text x="34" y="137.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text>
+<text x="56" y="130" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Действие</text>
+<text x="344" y="130" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">что происходит</text>
+<text x="56" y="146" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >latte art slowly forms in the cup</text>
+<rect x="12" y="160" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="181" r="12" fill="#24124A"/>
+<text x="34" y="185.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text>
+<text x="56" y="178" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Сцена</text>
+<text x="344" y="178" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">где и когда</text>
+<text x="56" y="194" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >marble counter, small cafe, 8 am</text>
+<rect x="12" y="208" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="34" cy="229" r="12" fill="#24124A"/>
+<text x="34" y="233.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text>
+<text x="56" y="226" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Свет</text>
+<text x="344" y="226" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">один главный ключ</text>
+<text x="56" y="242" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >low window light from the left</text>
+<rect x="12" y="256" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="277" r="12" fill="#24124A"/>
+<text x="34" y="281.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text>
+<text x="56" y="274" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Стиль</text>
+<text x="344" y="274" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">на что «снято»</text>
+<text x="56" y="290" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >film photo, Kodak Portra 400, grain</text>
+<rect x="12" y="304" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="325" r="12" fill="#5B33C9"/>
+<text x="34" y="329.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">6</text>
+<text x="56" y="322" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Камера</text>
+<text x="344" y="322" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">оптика и ракурс</text>
+<text x="56" y="338" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >85mm lens, f/2.8, eye level</text>
+<rect x="12" y="352" width="336" height="42" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="373" r="12" fill="#5B33C9"/>
+<text x="34" y="377.5" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" text-anchor="middle">7</text>
+<text x="56" y="370" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600">Детали</text>
+<text x="344" y="370" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#8C8880" text-anchor="end">фактура и запреты</text>
+<text x="56" y="386" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" >micro-scratches; no text, no CGI</text>
+<text x="16" y="418" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" >Главное — в начале промпта. Порядок не меняй.</text>
+</svg>

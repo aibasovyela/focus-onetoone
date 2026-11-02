@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 468" width="100%">
+  <defs>
+    <marker id="ap" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8B5CF6"/>
+    </marker>
+  </defs>
+  <text x="180" y="26" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="15" font-weight="700" fill="#0F1112">Проект в Claude Code</text>
+
+  <rect x="80" y="42" width="200" height="50" rx="12" fill="#FFB59A"/>
+  <text x="180" y="63" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">Ты</text>
+  <text x="180" y="82" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112">задача словами + правки</text>
+
+  <line x1="180" y1="94" x2="180" y2="114" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ap)"/>
+
+  <rect x="16" y="118" width="328" height="150" rx="14" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1.5"/>
+  <text x="32" y="140" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8C8880" letter-spacing="1">ПАПКА ПРОЕКТА</text>
+
+  <rect x="28" y="152" width="96" height="104" rx="10" fill="#24124A"/>
+  <text x="76" y="180" text-anchor="middle" font-family="IBM Plex Mono, monospace" font-size="11" font-weight="700" fill="#FFB59A">CLAUDE.md</text>
+  <text x="76" y="206" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#EEEAE2">правила:</text>
+  <text x="76" y="222" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#EEEAE2">стиль, тон,</text>
+  <text x="76" y="238" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#EEEAE2">запреты</text>
+
+  <rect x="132" y="152" width="96" height="104" rx="10" fill="#D2C2FF"/>
+  <text x="180" y="180" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#24124A">Скиллы</text>
+  <text x="180" y="206" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#24124A">умения:</text>
+  <text x="180" y="222" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#24124A">КП, отчёт,</text>
+  <text x="180" y="238" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#24124A">пост</text>
+
+  <rect x="236" y="152" width="96" height="104" rx="10" fill="#EEEAE2" stroke="#D6D0C6" stroke-width="1"/>
+  <text x="284" y="180" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#0F1112">Файлы</text>
+  <text x="284" y="206" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">тексты,</text>
+  <text x="284" y="222" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">фото, прайс,</text>
+  <text x="284" y="238" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">данные</text>
+
+  <line x1="180" y1="270" x2="180" y2="290" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ap)"/>
+
+  <rect x="40" y="294" width="280" height="58" rx="12" fill="#8B5CF6"/>
+  <text x="180" y="318" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="13" font-weight="700" fill="#F7F5F0">Claude Code</text>
+  <text x="180" y="338" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#F7F5F0">читает правила, пишет и запускает</text>
+
+  <line x1="180" y1="354" x2="180" y2="374" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ap)"/>
+
+  <rect x="16" y="378" width="100" height="44" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="66" y="405" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Сайт</text>
+  <rect x="130" y="378" width="100" height="44" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="180" y="405" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Скрипт</text>
+  <rect x="244" y="378" width="100" height="44" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+  <text x="294" y="405" text-anchor="middle" font-family="Unbounded, Arial, sans-serif" font-size="12" font-weight="700" fill="#5B33C9">Бот</text>
+
+  <text x="180" y="450" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Правила пишешь один раз — Claude помнит</text>
+</svg>
