@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Focus 1-on-1 — Платформа индивидуального обучения</title>
+  <link rel="stylesheet" href="/css/brand.css">
+  <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+  <!-- Экран входа -->
+  <div id="loginScreen" class="login-container">
+    <div class="login-box">
+      <h1 class="h2">Focus</h1>
+      <span class="eyebrow">Курс 1-on-1 обучения</span>
+
+      <form id="loginForm" class="login-form">
+        <input
+          type="password"
+          id="pinInput"
+          class="input"
+          placeholder="Введите ваш PIN"
+          maxlength="6"
+          autocomplete="off"
+        >
+        <div id="loginError" class="login-error"></div>
+        <button type="submit" class="btn btn-primary">Войти</button>
+        <p class="label" style="text-align: center; margin-top: 16px;">Пример PIN: focus2026</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Кабинет (скрыт по умолчанию) -->
+  <div id="dashboardScreen" style="display: none;">
+    <!-- Хедер -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <div class="header-logo">Focus 1-on-1</div>
+          <div class="header-nav">
+            <button id="userInfo" style="cursor: default;">
+              <span id="userName">Студент</span>
+            </button>
+            <button id="logoutBtn">Выход</button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Основной контент -->
+    <main class="container">
+      <!-- Модули (начальный вид) -->
+      <div id="modulesView" style="display: none;">
+        <section class="modules-section">
+          <div class="modules-header">
+            <h1 class="h1">Ваш курс</h1>
+            <p>5 модулей с индивидуальным сопровождением</p>
+          </div>
+
+          <div class="modules-grid" id="modulesGrid">
+            <!-- Динамически заполняется JavaScript -->
+          </div>
+        </section>
+      </div>
+
+      <!-- Детальный вид модуля -->
+      <div id="moduleDetailView" style="display: none;">
+        <div class="module-detail-header">
+          <div class="container">
+            <div class="eyebrow" id="detailModuleNumber"></div>
+            <h1 id="detailModuleTitle" class="h1"></h1>
+            <p id="detailModuleDescription" style="color: var(--paper); margin-top: 12px;"></p>
+          </div>
+        </div>
+
+        <section class="module-detail">
+          <div class="module-detail-content">
+            <!-- Левая колонка: описание и материалы -->
+            <div>
+              <div class="module-goals">
+                <h2 class="h3">Цели модуля</h2>
+                <ul class="goals-list" id="detailGoalsList"></ul>
+              </div>
+
+              <div class="module-materials" style="margin-top: 24px;">
+                <h2 class="h3">Материалы</h2>
+                <ul class="materials-list" id="detailMaterialsList"></ul>
+              </div>
+
+              <div class="module-homework" style="margin-top: 24px;">
+                <h2 class="h3">Домашнее задание</h2>
+                <div id="detailHomeworkContent"></div>
+              </div>
+            </div>
+
+            <!-- Правая колонка: прогресс -->
+            <div class="sidebar">
+              <div class="sidebar-card">
+                <h3>Прогресс</h3>
+                <div class="progress" style="height: 8px;">
+                  <i id="detailProgress" style="width: 0%"></i>
+                </div>
+                <div class="sidebar-stat">
+                  <span class="sidebar-label">Завершено</span>
+                  <span class="sidebar-value" id="detailProgressPercent">0%</span>
+                </div>
+              </div>
+
+              <div class="sidebar-card">
+                <h3>Статус</h3>
+                <div class="sidebar-stat">
+                  <span class="sidebar-label">Модуль</span>
+                  <span class="sidebar-value" id="detailStatus" style="font-size: 14px;">активный</span>
+                </div>
+              </div>
+
+              <button id="detailBackBtn" class="btn btn-ghost" style="width: 100%;">← Вернуться</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <!-- Модальное окно для ДЗ -->
+  <div id="homeworkModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Загрузить ДЗ</h2>
+      </div>
+      <div class="modal-body">
+        <p id="homeworkModalTitle" style="margin: 0 0 16px 0; color: var(--text2);"></p>
+        <textarea id="homeworkTextarea" placeholder="Опишите ваше решение или загрузите ссылку..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="homeworkCancel" class="btn btn-ghost">Отмена</button>
+        <button id="homeworkSubmit" class="btn btn-primary">Отправить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Скрипты -->
+  <script src="/js/auth.js"></script>
+  <script src="/js/data.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

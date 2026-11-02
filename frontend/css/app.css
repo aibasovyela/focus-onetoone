@@ -1,0 +1,547 @@
+/* Приложение Focus 1-on-1 */
+
+/* Вход (PIN-гейт) */
+.login-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: var(--dusk-linear);
+  padding: 20px;
+}
+
+.login-box {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 40px;
+  max-width: 400px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+}
+
+.login-box .eyebrow {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-form .input {
+  font-size: 18px;
+  letter-spacing: 0.1em;
+}
+
+.login-form .btn {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.login-error {
+  color: var(--danger);
+  font-size: 14px;
+  margin-top: -8px;
+}
+
+/* Основной кабинет */
+.dashboard {
+  min-height: 100vh;
+  background: var(--paper2);
+}
+
+.header {
+  background: #fff;
+  border-bottom: 1px solid var(--line);
+  padding: 16px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-logo {
+  font: 500 20px var(--f-head);
+  color: var(--violet);
+}
+
+.header-nav {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.header-nav button {
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  color: var(--text2);
+  font: 500 14px var(--f-text);
+}
+
+.header-nav button:hover {
+  color: var(--violet-ink);
+}
+
+/* Модули */
+.modules-section {
+  padding: 40px 0;
+}
+
+.modules-header {
+  margin-bottom: 32px;
+}
+
+.modules-header h1 {
+  margin: 0 0 8px 0;
+}
+
+.modules-header p {
+  color: var(--text2);
+  margin: 0;
+}
+
+.modules-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.module-card {
+  background: #fff;
+  border-radius: var(--r-card);
+  border: 1px solid var(--line);
+  overflow: hidden;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.module-card:hover {
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+}
+
+.module-card.locked {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.module-header {
+  background: var(--dusk);
+  color: var(--paper);
+  padding: 24px;
+  min-height: 140px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.module-number {
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lavender);
+  margin-bottom: 8px;
+}
+
+.module-title {
+  font: 500 20px var(--f-head);
+  margin: 0;
+}
+
+.module-body {
+  padding: 24px;
+}
+
+.module-description {
+  font: 400 14px var(--f-text);
+  color: var(--text2);
+  margin: 0 0 16px 0;
+  line-height: 1.6;
+}
+
+.module-meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.module-meta .pill {
+  font-size: 11px;
+  padding: 4px 10px;
+}
+
+.module-progress {
+  margin-bottom: 16px;
+}
+
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mute);
+  margin-bottom: 8px;
+}
+
+.btn-module {
+  width: 100%;
+}
+
+/* Детальный вид модуля */
+.module-detail {
+  padding: 40px 0;
+}
+
+.module-detail-header {
+  background: var(--dusk);
+  color: var(--paper);
+  padding: 40px 0;
+  margin-bottom: 40px;
+}
+
+.module-detail-header h1 {
+  margin: 0 0 16px 0;
+  color: var(--paper);
+}
+
+.module-detail-header .eyebrow {
+  color: var(--lavender);
+}
+
+.module-detail-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 768px) {
+  .module-detail-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+.module-goals {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.module-goals h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.goals-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.goals-list li {
+  padding-left: 28px;
+  margin-bottom: 12px;
+  position: relative;
+  font: 400 14px var(--f-text);
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.goals-list li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--violet);
+  font-weight: 600;
+}
+
+/* Материалы */
+.module-materials {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.module-materials h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.materials-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.material-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: var(--r-ctrl);
+  border: 1px solid var(--line);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: var(--ink);
+}
+
+.material-item:hover {
+  border-color: var(--violet);
+  background: rgba(139, 92, 246, 0.05);
+}
+
+.material-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--violet);
+  flex-shrink: 0;
+}
+
+.material-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.material-type {
+  font: 500 11px var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--violet-ink);
+  margin-bottom: 2px;
+}
+
+.material-title {
+  font: 500 14px var(--f-text);
+  color: var(--ink);
+  margin: 0;
+}
+
+.material-unavailable {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.material-badge {
+  background: var(--lavender);
+  color: var(--ink);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 11px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ДЗ секция */
+.module-homework {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.module-homework h2 {
+  margin: 0 0 16px 0;
+  font-size: 20px;
+}
+
+.homework-item {
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-ctrl);
+  margin-bottom: 16px;
+}
+
+.homework-title {
+  font: 500 16px var(--f-text);
+  margin: 0 0 8px 0;
+}
+
+.homework-desc {
+  font: 400 14px var(--f-text);
+  color: var(--text2);
+  margin: 0 0 12px 0;
+  line-height: 1.5;
+}
+
+.homework-due {
+  font: 500 12px var(--f-mono);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--mute);
+}
+
+.homework-btn-group {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+/* Боковая панель */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.sidebar-card {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.sidebar-card h3 {
+  margin: 0 0 16px 0;
+  font-size: 16px;
+}
+
+.sidebar-stat {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--line);
+}
+
+.sidebar-stat:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.sidebar-label {
+  font: 400 13px var(--f-text);
+  color: var(--text2);
+}
+
+.sidebar-value {
+  font: 500 20px var(--f-head);
+  color: var(--violet);
+}
+
+/* Модальное окно */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal.open {
+  display: flex;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 32px;
+  max-width: 500px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.modal-body {
+  margin-bottom: 24px;
+}
+
+.modal-body textarea {
+  width: 100%;
+  min-height: 150px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--r-ctrl);
+  font: 400 14px var(--f-text);
+  font-family: var(--f-text);
+  resize: vertical;
+}
+
+.modal-footer {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+
+.modal-footer button {
+  flex: 1;
+}
+
+@media (max-width: 600px) {
+  .modal-footer button {
+    flex: none;
+    width: 100%;
+  }
+
+  .modal-footer {
+    flex-direction: column-reverse;
+  }
+}
+
+/* Loading state */
+.loading {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--line);
+  border-radius: 50%;
+  border-top-color: var(--violet);
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .modules-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .login-box {
+    padding: 32px 20px;
+  }
+}

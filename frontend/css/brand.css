@@ -1,0 +1,324 @@
+/* Yelumio «Лаванда 2026» — токены и UI-кит для платформы обучения.
+   Цвета, шрифты, шкала, карточка, pill, курсор — из брендбука 2026. */
+
+@import url("https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600&family=Golos+Text:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --ink: #0F1112;
+  --ink2: #1A1B1F;
+  --paper: #EEEAE2;
+  --paper2: #F7F5F0;
+  --line: #D6D0C6;
+  --line-dk: #2E3034;
+  --violet: #8B5CF6;
+  --violet-ink: #5B33C9;
+  --lavender: #D2C2FF;
+  --peach: #FFB59A;
+  --deep: #24124A;
+  --end: #0C0718;
+  --mute: #8C8880;
+  --text2: #45433F;
+  --text2-dk: #BDB8AE;
+  --danger: #D23B2E;
+  --dusk: radial-gradient(130% 90% at 50% 112%, #D2C2FF 0%, #8B5CF6 30%, #24124A 72%, #0C0718 100%);
+  --dusk-linear: linear-gradient(180deg, #0C0718 0%, #24124A 38%, #5B33C9 70%, #B98BF0 88%, #FFB59A 100%);
+  --cursor: linear-gradient(180deg, #D2C2FF, #8B5CF6 62%);
+  --f-head: "Unbounded", "Helvetica Neue", Arial, sans-serif;
+  --f-text: "Golos Text", "Helvetica Neue", Arial, sans-serif;
+  --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --r-card: 16px;
+  --r-ctrl: 12px;
+  --r-pill: 999px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--f-text);
+  background: var(--paper2);
+  color: var(--ink);
+  margin: 0;
+  padding: 0;
+}
+
+/* Шкала */
+.display {
+  font: 500 96px/96px var(--f-head);
+  letter-spacing: -0.035em;
+}
+
+.h1 {
+  font: 500 64px/68px var(--f-head);
+  letter-spacing: -0.025em;
+}
+
+.h2 {
+  font: 500 36px/42px var(--f-head);
+  letter-spacing: -0.015em;
+}
+
+.h3 {
+  font: 500 24px/32px var(--f-head);
+  letter-spacing: -0.01em;
+}
+
+.lead {
+  font: 500 24px/32px var(--f-text);
+}
+
+.body {
+  font: 400 20px/30px var(--f-text);
+  color: var(--text2);
+}
+
+.body-sm {
+  font: 400 16px/24px var(--f-text);
+  color: var(--text2);
+}
+
+.label {
+  font: 400 13px/16px var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--mute);
+}
+
+.eyebrow {
+  font: 500 13px/16px var(--f-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--violet-ink);
+}
+
+/* Курсор ▮ — 3:5, мигание 1 с steps(1) */
+.cur {
+  display: inline-block;
+  width: 0.42em;
+  height: 0.7em;
+  margin-left: 0.08em;
+  background: var(--cursor);
+  vertical-align: baseline;
+  animation: blink 1s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Кнопки */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 52px;
+  padding: 0 24px;
+  border-radius: var(--r-ctrl);
+  border: 1px solid transparent;
+  font: 500 16px/1 var(--f-text);
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--violet);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--violet-ink);
+}
+
+.btn-dark {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn-dark:hover {
+  background: var(--ink2);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.btn-ghost:hover {
+  border-color: var(--ink);
+}
+
+.btn-link {
+  background: none;
+  padding: 0;
+  height: auto;
+  color: var(--violet-ink);
+}
+
+.btn:disabled {
+  background: var(--line);
+  color: var(--mute);
+  border-color: transparent;
+  cursor: default;
+}
+
+.btn-sm {
+  height: 40px;
+  padding: 0 16px;
+  font-size: 14px;
+}
+
+/* Pill / тег */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: var(--r-pill);
+  padding: 6px 14px;
+  font: 500 12px/1 var(--f-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: 1px solid currentColor;
+}
+
+.pill-accent {
+  color: var(--violet-ink);
+}
+
+/* Карточки */
+.card {
+  background: #fff;
+  border-radius: var(--r-card);
+  padding: 28px;
+  border: 1px solid var(--line);
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}
+
+.card-dark {
+  background: var(--ink2);
+  color: var(--paper);
+  border-color: var(--line-dk);
+}
+
+.card-cover {
+  border-radius: var(--r-card);
+  background: var(--dusk);
+  color: var(--paper);
+  padding: 28px;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Поле ввода */
+.input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border-radius: var(--r-ctrl);
+  border: 1px solid var(--line);
+  background: #fff;
+  font: 400 16px var(--f-text);
+  color: var(--ink);
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--violet);
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+}
+
+.input::placeholder {
+  color: var(--mute);
+}
+
+/* Прогресс курса */
+.progress {
+  height: 6px;
+  border-radius: 999px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.progress > i {
+  display: block;
+  height: 100%;
+  background: var(--violet);
+}
+
+/* Строка урока */
+.lesson {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.lesson .num {
+  font: 500 13px var(--f-mono);
+  letter-spacing: 0.1em;
+  color: var(--violet-ink);
+  width: 28px;
+}
+
+.lesson.done .num {
+  color: var(--mute);
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Утилиты */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.mt-1 { margin-top: 8px; }
+.mt-2 { margin-top: 16px; }
+.mt-3 { margin-top: 24px; }
+.mt-4 { margin-top: 32px; }
+
+.mb-1 { margin-bottom: 8px; }
+.mb-2 { margin-bottom: 16px; }
+.mb-3 { margin-bottom: 24px; }
+.mb-4 { margin-bottom: 32px; }
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+.grid-2 {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-2 {
+    grid-template-columns: 1fr;
+  }
+
+  .h1 { font-size: 40px; line-height: 48px; }
+  .h2 { font-size: 28px; line-height: 36px; }
+  .body { font-size: 16px; }
+}

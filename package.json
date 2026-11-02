@@ -1,0 +1,19 @@
+{
+  "name": "focus-onetoone",
+  "version": "1.0.0",
+  "description": "Платформа индивидуального обучения — 5 модулей, 1-on-1 созвоны, 390k ₸",
+  "main": "backend/server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "body-parser": "^1.20.2"
+  },
+  "keywords": ["education", "onetoone", "yelumio"],
+  "author": "Yelumio",
+  "license": "MIT"
+}

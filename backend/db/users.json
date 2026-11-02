@@ -1,0 +1,19 @@
+{
+  "students": [
+    {
+      "id": "student-1",
+      "pin": "focus2026",
+      "name": "Ученик 1",
+      "email": "student1@example.com",
+      "modules": {
+        "module-1": { "status": "active", "progress": 0 },
+        "module-2": { "status": "locked", "progress": 0 },
+        "module-3": { "status": "locked", "progress": 0 },
+        "module-4": { "status": "locked", "progress": 0 },
+        "module-5": { "status": "locked", "progress": 0 }
+      },
+      "homework": {}
+    }
+  ],
+  "pins": ["focus2026", "learn2026", "master2026"]
+}

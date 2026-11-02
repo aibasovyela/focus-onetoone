@@ -1,0 +1,10 @@
+node_modules/
+npm-debug.log
+.env
+.DS_Store
+dist/
+build/
+*.log
+.idea/
+.vscode/settings.json
+backend/db/sessions.json
