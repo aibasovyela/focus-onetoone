@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 336" width="100%" role="img" aria-label="Финальная защита: что показываешь">
+<defs><marker id="a-def" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">АГЕНТ В РАБОТЕ · 5+ ДНЕЙ</text>
+<rect x="12" y="34" width="336" height="62" rx="12" fill="#D2C2FF"/>
+<circle cx="38" cy="65" r="13" fill="#24124A"/>
+<text x="38" y="69.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="62" y="61" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Схема процесса</text>
+<text x="62" y="80" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">как агент встроен в твой процесс</text>
+<rect x="12" y="104" width="336" height="62" rx="12" fill="#FFB59A"/>
+<circle cx="38" cy="135" r="13" fill="#24124A"/>
+<text x="38" y="139.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="62" y="131" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Результаты теста</text>
+<text x="62" y="150" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">10+ кейсов: сколько прошло, что исправлено</text>
+<rect x="12" y="174" width="336" height="62" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="205" r="13" fill="#24124A"/>
+<text x="38" y="209.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="62" y="201" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Что сделал за 5+ дней</text>
+<text x="62" y="220" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">отчёт: что сэкономил, где ошибся, что дальше</text>
+<line x1="180" y1="244" x2="180" y2="264" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-def)"/>
+<rect x="12" y="270" width="336" height="62" rx="14" fill="#8B5CF6"/>
+<text x="26" y="296" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Вместе: что усилить</text>
+<text x="26" y="315" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">и план развития агента на 1-2 месяца</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 436" width="100%" role="img" aria-label="Агент в центре: база знаний и сервисы">
+<defs><marker id="a-hub" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">АГЕНТ САМ ИДЁТ В СЕРВИСЫ</text>
+<line x1="180" y1="190" x2="70" y2="70" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="180" y1="190" x2="290" y2="70" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="180" y1="190" x2="50" y2="190" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="180" y1="190" x2="310" y2="190" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="180" y1="190" x2="70" y2="310" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<line x1="180" y1="190" x2="290" y2="310" stroke="#FFB59A" stroke-width="2" stroke-linecap="round"/>
+<rect x="36.6367" y="50" width="66.7266" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="70" y="74.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">Почта</text>
+<rect x="248.027" y="50" width="83.9453" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="290" y="74.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">Таблицы</text>
+<rect x="19.7617" y="170" width="60.4766" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="50" y="194.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">Диск</text>
+<rect x="260.781" y="170" width="98.4375" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="310" y="194.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">Календарь</text>
+<rect x="41.2598" y="290" width="57.4805" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="70" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">CRM</text>
+<rect x="235.844" y="290" width="108.312" height="40" rx="12" fill="#FFB59A"/>
+<text x="290" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">База знаний</text>
+<circle cx="180" cy="190" r="46" fill="#24124A"/>
+<text x="180" y="195" font-family="Unbounded, Arial, sans-serif" font-size="14" font-weight="600" fill="#FFFFFF" text-anchor="middle">Агент</text>
+<line x1="52" y1="352" x2="82" y2="352" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-dasharray="5 4"/>
+<text x="90" y="356.5" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">коннектор или API-ключ</text>
+<line x1="240" y1="352" x2="270" y2="352" stroke="#FFB59A" stroke-width="2" stroke-linecap="round"/>
+<text x="278" y="356.5" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">читает</text>
+<rect x="12" y="372" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="397" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Вебхук — сервис стучится к агенту.</text>
+<text x="26" y="415" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">Коннектор и API — агент идёт в сервис</text>
+</svg>

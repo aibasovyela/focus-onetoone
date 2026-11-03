@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380" width="100%" role="img" aria-label="Лестница доверия: чтение, черновик, запись, отправка">
+<defs><marker id="a-lad" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ПРАВА ВЫДАЁМ СТУПЕНЯМИ</text>
+<rect x="78" y="36" width="270" height="58" rx="12" fill="#24124A"/>
+<text x="94" y="72" font-family="Unbounded, Arial, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">4</text>
+<text x="124" y="61" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Отправляет наружу</text>
+<text x="124" y="79" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#D2C2FF">только после «ок» или по шаблону</text>
+<rect x="56" y="100" width="292" height="58" rx="12" fill="#8B5CF6"/>
+<text x="72" y="136" font-family="Unbounded, Arial, sans-serif" font-size="20" font-weight="600" fill="#FFFFFF">3</text>
+<text x="102" y="125" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Пишет во внутренние системы</text>
+<text x="102" y="143" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#D2C2FF">строка в таблице, лид в CRM</text>
+<rect x="34" y="164" width="314" height="58" rx="12" fill="#D2C2FF"/>
+<text x="50" y="200" font-family="Unbounded, Arial, sans-serif" font-size="20" font-weight="600" fill="#24124A">2</text>
+<text x="80" y="189" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#24124A">Готовит черновики</text>
+<text x="80" y="207" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">они ждут тебя</text>
+<rect x="12" y="228" width="336" height="58" rx="12" fill="#D2C2FF"/>
+<text x="28" y="264" font-family="Unbounded, Arial, sans-serif" font-size="20" font-weight="600" fill="#24124A">1</text>
+<text x="58" y="253" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#24124A">Читает и делает сводки</text>
+<text x="58" y="271" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">ошибка ничего не ломает</text>
+<rect x="12" y="300" width="336" height="34" rx="10" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="26" y="321.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#5B33C9">На созвоне ставим ступень 1-2</text>
+<rect x="12" y="342" width="336" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="363.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">Выше — после недели без ошибок</text>
+</svg>
