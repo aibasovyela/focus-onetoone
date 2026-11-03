@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 434" width="100%" role="img" aria-label="Разделы Higgsfield: что где">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Что где в Higgsfield</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">«Торговый центр» моделей: семь отделов</text>
+<rect x="12" y="64" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="64" width="6" height="82" rx="3" fill="#8B5CF6"/>
+<text x="30" y="90" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Image</text>
+<text x="30" y="112" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">картинки, референсы,</text>
+<text x="30" y="129" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">формат, разрешение</text>
+<rect x="184" y="64" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="184" y="64" width="6" height="82" rx="3" fill="#FFB59A"/>
+<text x="202" y="90" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Video</text>
+<text x="202" y="112" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">из текста или из фото,</text>
+<text x="202" y="129" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">старт и финал-кадр</text>
+<rect x="12" y="156" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="156" width="6" height="82" rx="3" fill="#24124A"/>
+<text x="30" y="182" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Audio</text>
+<text x="30" y="204" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">голос, замена голоса,</text>
+<text x="30" y="221" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">перевод речи</text>
+<rect x="184" y="156" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="184" y="156" width="6" height="82" rx="3" fill="#D2C2FF"/>
+<text x="202" y="182" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Soul ID · Elements</text>
+<text x="202" y="204" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сохранённые герои,</text>
+<text x="202" y="221" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">товары, локации</text>
+<rect x="12" y="248" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="248" width="6" height="82" rx="3" fill="#D2C2FF"/>
+<text x="30" y="274" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Marketing Studio</text>
+<text x="30" y="296" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">готовые рекламные</text>
+<text x="30" y="313" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сценарии, UGC</text>
+<rect x="184" y="248" width="164" height="82" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="184" y="248" width="6" height="82" rx="3" fill="#FFB59A"/>
+<text x="202" y="274" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Cinema Studio</text>
+<text x="202" y="296" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">жанр, свет, объектив</text>
+<text x="202" y="313" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">— кнопками</text>
+<rect x="12" y="340" width="336" height="82" rx="12" fill="#24124A"/>
+<text x="28" y="366" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700">Инструменты правки</text>
+<text x="28" y="388" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D2C2FF">Inpaint · Outpaint · Relight</text>
+<text x="28" y="406" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D2C2FF">Angles · Skin Enhancer · Upscale</text>
+</svg>

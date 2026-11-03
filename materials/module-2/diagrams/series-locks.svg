@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 292" width="100%" role="img" aria-label="Как держать серию: четыре замка">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Серия без «плывущих» кадров</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Меняются только объект и действие</text>
+<rect x="12" y="64" width="164" height="102" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="26" y="86" width="18" height="14" rx="3" fill="#8B5CF6"/><path d="M29 86 v-4 a6 6 0 0 1 12 0 v4" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="52" y="98" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Товар</text>
+<text x="26" y="128" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">лист из реального фото,</text>
+<text x="26" y="146" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">не генерируй с нуля</text>
+<rect x="184" y="64" width="164" height="102" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="198" y="86" width="18" height="14" rx="3" fill="#8B5CF6"/><path d="M201 86 v-4 a6 6 0 0 1 12 0 v4" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="224" y="98" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Стиль-блок</text>
+<text x="198" y="128" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">свет, цвет, плёнка —</text>
+<text x="198" y="146" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">дословно во все промпты</text>
+<rect x="12" y="176" width="164" height="102" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="26" y="198" width="18" height="14" rx="3" fill="#8B5CF6"/><path d="M29 198 v-4 a6 6 0 0 1 12 0 v4" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="52" y="210" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Одна модель</text>
+<text x="26" y="240" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">не меняй посреди серии:</text>
+<text x="26" y="258" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">у каждой своя «рука»</text>
+<rect x="184" y="176" width="164" height="102" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="198" y="198" width="18" height="14" rx="3" fill="#8B5CF6"/><path d="M201 198 v-4 a6 6 0 0 1 12 0 v4" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="224" y="210" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Лицо ≥ 20%</text>
+<text x="198" y="240" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">на мелком лице модель</text>
+<text x="198" y="258" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">теряет сходство</text>
+</svg>

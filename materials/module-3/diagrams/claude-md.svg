@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 376" width="100%" role="img" aria-label="Что писать в CLAUDE.md">
+<rect x="12" y="8" width="336" height="360" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<path d="M12 20 a12 12 0 0 1 12 -12 h312 a12 12 0 0 1 12 12 v22 h-336 z" fill="#24124A"/>
+<text x="28" y="31" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#FFFFFF" font-weight="600">CLAUDE.md</text>
+<text x="334" y="31" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D2C2FF" text-anchor="end">10-30 строк</text>
+<text x="28" y="68" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#5B33C9" font-weight="600"># Проект</text>
+<text x="28" y="88" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">что это и для кого</text>
+<text x="28" y="128" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#5B33C9" font-weight="600"># Стиль</text>
+<text x="28" y="148" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">цвета, шрифты, тон, «ты» или «вы»</text>
+<text x="28" y="188" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#5B33C9" font-weight="600"># Как работать</text>
+<text x="28" y="208" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сначала план · меняй только то, что прошу</text>
+<text x="28" y="248" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#5B33C9" font-weight="600"># Запреты</text>
+<text x="28" y="268" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">не удаляй файлы без подтверждения</text>
+<text x="28" y="308" font-family="IBM Plex Mono, monospace" font-size="12.5" fill="#5B33C9" font-weight="600"># Проверка</text>
+<text x="28" y="328" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">перед «готово» — ширина телефона</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 374" width="100%" role="img" aria-label="Формат кадра под площадку: 9:16, 4:5, 16:9">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Формат — сразу</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Режим «auto» иногда ломает формат</text>
+<rect x="16" y="90" width="90" height="160" rx="10" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="61.0" y="176.0" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#5B33C9" font-weight="700" text-anchor="middle">9:16</text>
+<text x="61.0" y="274" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">Reels,</text>
+<text x="61.0" y="291" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">сторис</text>
+<rect x="122" y="110" width="112" height="140" rx="10" fill="#D2C2FF" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="178.0" y="186.0" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#5B33C9" font-weight="700" text-anchor="middle">4:5</text>
+<text x="178.0" y="274" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">лента</text>
+<rect x="250" y="196" width="96" height="54" rx="10" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="298.0" y="229.0" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#5B33C9" font-weight="700" text-anchor="middle">16:9</text>
+<text x="298.0" y="274" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">сайт,</text>
+<text x="298.0" y="291" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">YouTube</text>
+<rect x="12" y="306" width="336" height="56" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="328" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">РАЗРЕШЕНИЕ</text>
+<text x="26" y="348" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Фото — 2K явно, 4K — печать и билборд</text>
+</svg>

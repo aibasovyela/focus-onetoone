@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 312" width="100%" role="img" aria-label="Мини-сайт за вечер: 90 минут по шагам">
+<text x="20" y="20" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">МИНИ-САЙТ ЗА ВЕЧЕР · 90 МИНУТ</text>
+<rect x="12.0" y="30" width="54.7" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="68.7" y="30" width="18.2" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="88.9" y="30" width="36.4" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="127.3" y="30" width="145.8" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="275.1" y="30" width="72.9" height="14" rx="4" fill="#8B5CF6"/>
+<line x1="30" y1="74" x2="30" y2="282" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<circle cx="30" cy="74" r="15" fill="#8B5CF6"/>
+<text x="30" y="78.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">15</text>
+<text x="56" y="72" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">ТЗ</text>
+<text x="56" y="89" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">в Chat: «сделай ТЗ по 6 пунктам»</text>
+<circle cx="30" cy="126" r="15" fill="#D2C2FF"/>
+<text x="30" y="130.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">5</text>
+<text x="56" y="124" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">План</text>
+<text x="56" y="141" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">читаешь и подтверждаешь</text>
+<circle cx="30" cy="178" r="15" fill="#8B5CF6"/>
+<text x="30" y="182.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">10</text>
+<text x="56" y="176" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Первая версия</text>
+<text x="56" y="193" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">открываешь превью</text>
+<circle cx="30" cy="230" r="15" fill="#D2C2FF"/>
+<text x="30" y="234.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">40</text>
+<text x="56" y="228" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Правки</text>
+<text x="56" y="245" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">3-5 кругов: тексты, цвета, кнопка</text>
+<circle cx="30" cy="282" r="15" fill="#8B5CF6"/>
+<text x="30" y="286.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">20</text>
+<text x="56" y="280" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Проверка</text>
+<text x="56" y="297" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">чек-лист на телефоне, публикация</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 362" width="100%" role="img" aria-label="Два пути к видео: из текста и из фото">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Два пути к видео</text>
+<rect x="12" y="48" width="336" height="132" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="72" font-family="IBM Plex Mono, monospace" font-size="12" fill="#45433F" font-weight="600" letter-spacing="0.5">TEXT-TO-VIDEO</text>
+<text x="26" y="92" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Сцена с нуля по описанию</text>
+<rect x="26" y="108" width="118" height="54" rx="10" fill="#EEEAE2"/>
+<text x="85" y="140" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">Слова</text>
+<line x1="152" y1="135" x2="196" y2="135" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="206" y="108" width="128" height="54" rx="10" fill="#24124A"/>
+<text x="270" y="140" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">Новая сцена</text>
+<rect x="12" y="192" width="336" height="132" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="26" y="216" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">IMAGE-TO-VIDEO · ОСНОВНОЙ</text>
+<text x="26" y="236" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Утверждённый кадр оживает</text>
+<rect x="26" y="252" width="118" height="54" rx="10" fill="#D2C2FF"/>
+<text x="85" y="284" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">Hero-фото</text>
+<line x1="152" y1="279" x2="196" y2="279" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="206" y="252" width="128" height="54" rx="10" fill="#24124A"/>
+<text x="270" y="284" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">Кадр движется</text>
+<text x="16" y="350" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Товар, свет и композицию держит фото</text>
+</svg>
