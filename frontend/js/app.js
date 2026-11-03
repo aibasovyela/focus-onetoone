@@ -9,6 +9,20 @@ const APP = (() => {
 
   let modules = [];
   let ready = false;
+  let currentId = null;       // открытый модуль
+  let lesson = null;          // { moduleId, data } — ответ /lesson для открытого модуля
+  let afterDeckClose = null;  // действие после закрытия плеера (например, прокрутка к ДЗ)
+
+  // #module-1 — страница модуля, #module-1/12 — плеер на 12-м слайде
+  const parseHash = () => {
+    const [id = '', slide = ''] = decodeURIComponent(location.hash.slice(1)).split('/');
+    return { id, slide: /^\d+$/.test(slide) ? Number(slide) : null };
+  };
+
+  const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
+  const ICON_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_NEXT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_READ = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
 
   const STATUS = {
     done: { label: 'Пройден', pill: 'pill-done' },
@@ -84,19 +98,26 @@ const APP = (() => {
     }).join('');
   };
 
-  // Детали модуля: хиро → оглавление → план созвона → урок → ДЗ → материалы
+  // Детали модуля: компактное хиро с «Начать урок» → табы (главы / что получишь / план) → урок → ДЗ → материалы
   const showModuleDetail = (module) => {
     modulesView.style.display = 'none';
     moduleDetailView.style.display = 'block';
     const locked = module.status === 'locked';
+    lesson = null;
 
     document.getElementById('detailModuleNumber').textContent = `Блок ${module.number} из ${modules.length} · ${module.tag || ''}`;
     document.getElementById('detailModuleTitle').textContent = module.title;
-    document.getElementById('detailPromise').textContent = module.promise || module.description;
+    const promise = document.getElementById('detailPromise');
+    promise.textContent = module.promise || module.description;
+    promise.classList.add('is-clamped');
     const st = STATUS[module.status] || STATUS.locked;
     document.getElementById('detailMeta').innerHTML =
       `<span class="pill pill-light">${st.label}</span><span class="label">Созвон: ${formatDate(module.callDate)} · 2 часа</span>`;
-    document.getElementById('detailOutcomes').innerHTML = (module.goals || []).map(g => `<li>${esc(g)}</li>`).join('');
+    document.getElementById('detailCta').innerHTML = locked ? '' : '<div class="lc-skeleton" aria-hidden="true"></div>';
+    document.getElementById('chaptersBlock').hidden = true;
+    moduleDetailView.classList.remove('has-deck');
+    renderOutcomes(module.goals || []);
+    renderTabs(locked);
 
     document.getElementById('detailMaterialsList').innerHTML = (module.materials || []).map(mt => {
       const icon = mt.type === 'video' ? '▶' : '✦';
@@ -116,12 +137,133 @@ const APP = (() => {
     }).join('');
 
     renderHomework(module, module.homework, locked);
-    document.getElementById('lesson').innerHTML = '<p class="label">Загружаю урок…</p>';
+    document.getElementById('lesson').innerHTML = '';
+    document.getElementById('lesson').style.display = '';
+    document.getElementById('toc').style.display = 'none';
     document.getElementById('planList').innerHTML = '';
     document.getElementById('cheatsheetBlock').style.display = locked ? 'none' : '';
     loadLesson(module);
     if (!locked) { loadCheatsheet(module.id); loadHomeworkStatus(module.id); }
     window.scrollTo(0, 0);
+  };
+
+  const renderOutcomes = (list) => {
+    document.getElementById('detailOutcomes').innerHTML = list
+      .map(o => `<li>${esc(String(o).replace(/^к концу созвона( у тебя)?\s*[:—-]?\s*/i, ''))}</li>`).join('');
+  };
+
+  // Табы обзора: «Что получишь» · «План созвона»
+  const renderTabs = (locked = false, active) => {
+    const hasPlan = document.getElementById('planList').children.length > 0;
+    const tabs = [['outcomes', 'Что получишь'], ...(hasPlan ? [['plan', 'План созвона']] : [])];
+    const box = document.getElementById('overviewTabs');
+    const current = active || box.dataset.active || tabs[0][0];
+    const k = Math.max(0, tabs.findIndex(t => t[0] === current));
+    box.style.setProperty('--n', tabs.length);
+    box.hidden = tabs.length < 2;
+    box.dataset.active = tabs[k][0];
+    box.innerHTML = `<span class="seg-thumb" aria-hidden="true" style="transform:translateX(${k * 100}%)"></span>` +
+      tabs.map(([key, label], n) => `<button type="button" role="tab" data-tab-key="${key}" aria-selected="${n === k}">${esc(label)}</button>`).join('');
+    document.querySelectorAll('#overview .tab-panel').forEach(p => { p.hidden = p.dataset.panel !== tabs[k][0]; });
+    document.getElementById('overview').classList.toggle('is-locked', locked);
+  };
+
+  const selectTab = (key) => {
+    const box = document.getElementById('overviewTabs');
+    const btns = [...box.querySelectorAll('[data-tab-key]')];
+    const k = btns.findIndex(b => b.dataset.tabKey === key);
+    if (k < 0) return;
+    box.dataset.active = key;
+    btns.forEach((b, n) => b.setAttribute('aria-selected', String(n === k)));
+    box.querySelector('.seg-thumb').style.transform = `translateX(${k * 100}%)`;
+    document.querySelectorAll('#overview .tab-panel').forEach(p => { p.hidden = p.dataset.panel !== key; });
+  };
+
+  const minutes = (n) => Math.max(1, Math.round(n * 0.4));
+
+  // Карточка «Начать / Продолжить урок» в хиро и список глав — по прогрессу из localStorage
+  const renderDeckEntry = () => {
+    if (!lesson?.data.deck) return;
+    const id = lesson.moduleId;
+    const p = DECK.progress(id, lesson.data.deck);
+    const curCh = p.chapters.find(c => c.current) || p.chapters[0];
+    const resume = p.started && !p.done;
+    const start = resume ? p.pos : 0;
+    const label = p.done ? 'Пройти ещё раз' : resume ? 'Продолжить' : 'Начать урок';
+    const head = resume ? `Глава ${curCh.n + 1} из ${p.chapters.length}` : p.done ? 'Урок пройден' : 'Урок в слайдах';
+    const title = resume ? curCh.title : `${p.chapters.length} ${DECK.plural(p.chapters.length, ['глава', 'главы', 'глав'])} · ${DECK.slidesWord(p.total)}`;
+    const sub = resume ? `Слайд ${p.pos + 1} из ${p.total} · осталось ~${minutes(p.total - p.pos)} мин` : `~${minutes(p.total)} мин · листай ← → или свайпом`;
+    const frac = p.done ? 1 : resume ? (p.pos + 1) / p.total : 0;
+    const cover = (resume ? curCh : p.chapters[0]).cover;
+    document.getElementById('detailCta').innerHTML = `
+      <button class="lesson-card" type="button" data-deck-start="${start}">
+        <span class="lc-media">${cover ? `<img src="media/${esc(id)}/${esc(cover)}" alt="" onerror="this.remove()">` : ''}</span>
+        <span class="lc-body">
+          <span class="lc-kicker">${esc(head)}</span>
+          <span class="lc-title">${esc(title)}</span>
+          <span class="lc-sub">${esc(sub)}</span>
+          <span class="lc-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>
+        </span>
+        <span class="lc-btn">${ICON_PLAY}<span>${label}</span></span>
+      </button>`;
+    document.getElementById('chaptersMeta').textContent = `${p.chapters.filter(c => c.done).length} из ${p.chapters.length} пройдено`;
+    document.getElementById('chaptersPanel').innerHTML = p.chapters.map((c, k) => {
+      const here = c.current && resume;
+      const state = c.done ? 'пройдена' : here ? 'ты здесь' : c.seen ? `${c.seen} из ${c.count}` : `${minutes(c.count)} мин`;
+      return `
+        <li><button type="button" class="ch-row${c.done ? ' is-done' : ''}${here ? ' is-current' : ''}" data-deck-start="${here ? p.pos : c.start}">
+          <span class="ch-thumb">${c.cover ? `<img src="media/${esc(id)}/${esc(c.cover)}" alt="" loading="lazy" onerror="this.remove()">` : ''}<span class="ch-num">${k + 1}</span></span>
+          <span class="ch-txt"><b>${esc(c.title)}</b><small>${DECK.slidesWord(c.count)} · ${esc(state)}</small>
+            <span class="ch-bar" aria-hidden="true"><i style="transform:scaleX(${c.count ? c.seen / c.count : 0})"></i></span></span>
+          <span class="ch-st" aria-hidden="true">${c.done ? ICON_CHECK : ICON_NEXT}</span>
+        </button></li>`;
+    }).join('');
+    document.getElementById('chaptersBlock').hidden = false;
+    document.getElementById('textVersionBtn').hidden = !lesson.data.markdown;
+  };
+
+  const openDeck = (start) => {
+    const { id } = parseHash();
+    history.pushState({ deck: 1 }, '', `#${id}/${Number(start) + 1}`);
+    syncDeck();
+  };
+
+  const closeDeck = () => {
+    if (history.state?.deck) { history.back(); return; } // hashchange → route → DECK.close()
+    history.replaceState(null, '', `#${parseHash().id}`);
+    DECK.close();
+  };
+
+  // Плеер следует за хэшем: #module-1/N — открыт, #module-1 — закрыт (кнопка «назад» закрывает плеер)
+  const syncDeck = () => {
+    const { id, slide } = parseHash();
+    const deck = lesson && lesson.moduleId === id ? lesson.data.deck : null;
+    if (slide && deck) {
+      if (DECK.isOpen()) { DECK.goTo(slide - 1); return; }
+      if (!history.state?.deck) { // прямая ссылка на слайд: подкладываем страницу модуля под плеер
+        history.replaceState(null, '', `#${id}`);
+        history.pushState({ deck: 1 }, '', `#${id}/${slide}`);
+      }
+      DECK.open({
+        moduleId: id,
+        deck,
+        diagrams: lesson.data.diagrams,
+        start: slide - 1,
+        onChange: (i) => history.replaceState(history.state, '', `#${id}/${i + 1}`),
+        requestClose: closeDeck,
+        onHomework: () => { afterDeckClose = () => document.getElementById('homework').scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+        onClose: () => {
+          renderDeckEntry();
+          const next = afterDeckClose;
+          afterDeckClose = null;
+          requestAnimationFrame(() => { next ? next() : document.querySelector('.lesson-card')?.focus({ preventScroll: true }); });
+        }
+      });
+    } else if (!slide && DECK.isOpen()) {
+      DECK.close();
+    } else if (slide && lesson && lesson.moduleId === id && !deck) {
+      history.replaceState(null, '', `#${id}`); // у модуля нет слайдов — остаёмся на лонгриде
+    }
   };
 
   const renderHomework = (module, hw, locked) => {
@@ -136,16 +278,14 @@ const APP = (() => {
       </div>` : '<p class="label">Задание появится после созвона</p>';
   };
 
-  // Урок: план по минутам + лонгрид; для закрытого блока — только предпросмотр
+  // Урок: план по минутам + слайды (deck.json) или лонгрид (lesson.md); для закрытого блока — только предпросмотр
   const loadLesson = async (module) => {
     const box = document.getElementById('lesson');
     try {
       const data = await API.getLesson(module.id);
-      if (location.hash.slice(1) !== module.id) return; // успели уйти на другой блок
+      if (parseHash().id !== module.id) return; // успели уйти на другой блок
       if (data.promise) document.getElementById('detailPromise').textContent = data.promise;
-      if (data.outcomes?.length) {
-        document.getElementById('detailOutcomes').innerHTML = data.outcomes.map(o => `<li>${esc(String(o).replace(/^к концу созвона( у тебя)?\s*[:—-]?\s*/i, ''))}</li>`).join('');
-      }
+      if (data.outcomes?.length) renderOutcomes(data.outcomes);
 
       const plan = data.plan || [];
       let t = 0;
@@ -159,30 +299,71 @@ const APP = (() => {
         </li>`;
       }).join('');
       document.getElementById('planTotal').textContent = plan.length ? `${plan.length} блоков · ${t} минут живой работы` : '';
-      document.getElementById('plan').style.display = plan.length ? '' : 'none';
 
       if (data.homework) renderHomework(module, data.homework, data.locked);
       if (!data.locked) loadHomeworkStatus(module.id);
 
       const lockedNote = document.getElementById('lockedNote');
+      const cta = document.getElementById('detailCta');
       if (data.locked) {
         box.innerHTML = '';
         lockedNote.style.display = '';
         lockedNote.innerHTML = `<span class="eyebrow">Блок закрыт</span><p>Полный урок, промпты и материалы откроются после созвона ${module.number}. Пока — план, чтобы знать, что нас ждёт.</p>`;
+        cta.innerHTML = '';
+        renderTabs(true, 'plan');
         buildToc([]);
         return;
       }
       lockedNote.style.display = 'none';
+      lesson = { moduleId: module.id, data };
+
+      if (data.deck) {
+        // урок-слайды: лонгрид прячем (доступен по кнопке «Читать текстом»)
+        box.style.display = 'none';
+        document.getElementById('toc').style.display = 'none';
+        moduleDetailView.classList.add('has-deck');
+        renderTabs(false, 'outcomes');
+        renderDeckEntry();
+        syncDeck();
+        return;
+      }
+
+      moduleDetailView.classList.remove('has-deck');
       const { html, toc } = MD.render(data.markdown || '', { diagrams: data.diagrams || {} });
       box.innerHTML = html;
+      const words = (data.markdown || '').split(/\s+/).length;
+      cta.innerHTML = html.trim() ? `
+        <button class="cta-start" type="button" data-read-lesson>
+          <span class="cta-ic">${ICON_READ}</span>
+          <span class="cta-txt"><b>Читать урок</b><small>${toc.length} разделов · ~${Math.max(3, Math.round(words / 180))} мин чтения</small></span>
+          <span class="cta-go" aria-hidden="true">↓</span>
+        </button>` : '';
+      renderTabs(false, 'outcomes');
       buildToc(toc);
+      syncDeck();
     } catch (error) {
       if (error.message !== 'unauthorized') box.innerHTML = `<p class="label">${esc(error.message)}</p>`;
     }
   };
 
+  const showTextVersion = () => {
+    const box = document.getElementById('lesson');
+    if (!box.innerHTML.trim()) {
+      const { html, toc } = MD.render(lesson?.data.markdown || '', { diagrams: lesson?.data.diagrams || {} });
+      box.innerHTML = html;
+      buildToc(toc);
+    }
+    box.style.display = '';
+    document.getElementById('toc').style.display = '';
+    document.getElementById('textVersionBtn').hidden = true;
+    moduleDetailView.classList.remove('has-deck');
+    (document.getElementById('toc')).scrollIntoView({ behavior: 'smooth', block: 'start' });
+  };
+
   const buildToc = (toc) => {
-    const items = [{ id: 'plan', title: 'План созвона' }, ...toc, { id: 'homework', title: 'Домашнее задание' }, { id: 'materials', title: 'Материалы' }]
+    const tocEl = document.getElementById('toc');
+    tocEl.style.display = toc.length ? '' : 'none';
+    const items = [{ id: 'overview', title: 'Что получишь и план созвона' }, ...toc, { id: 'homework', title: 'Домашнее задание' }, { id: 'materials', title: 'Материалы' }]
       .filter(i => document.getElementById(i.id) && document.getElementById(i.id).style.display !== 'none');
     document.getElementById('tocList').innerHTML = items.map(i => `<li><a href="#${esc(i.id)}" data-toc="${esc(i.id)}">${esc(i.title)}</a></li>`).join('');
     document.getElementById('tocCount').textContent = `${items.length} разделов`;
@@ -192,7 +373,7 @@ const APP = (() => {
 
   const updateReadProgress = () => {
     const bar = document.getElementById('readProgress');
-    if (!bar || moduleDetailView.style.display === 'none') return;
+    if (!bar || moduleDetailView.style.display === 'none' || DECK.isOpen()) return;
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = `${max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0}%`;
   };
@@ -220,19 +401,26 @@ const APP = (() => {
   };
 
   const showList = () => {
+    currentId = null;
+    lesson = null;
     moduleDetailView.style.display = 'none';
     modulesView.style.display = 'block';
   };
 
   // Навигация через #module-N — работает кнопка «назад» в браузере
   const route = () => {
-    const id = location.hash.slice(1);
+    const { id } = parseHash();
     const module = modules.find(m => m.id === id);
-    if (module) {
-      showModuleDetail(module);
-    } else {
+    if (!module) {
+      if (DECK.isOpen()) DECK.close();
       showList();
+      return;
     }
+    if (currentId !== id) {
+      currentId = id;
+      showModuleDetail(module);
+    }
+    syncDeck();
   };
 
   const goBack = () => {
@@ -280,7 +468,22 @@ const APP = (() => {
       if (e.target === homeworkModal) closeHomeworkModal();
     });
 
+    document.getElementById('detailPromise').addEventListener('click', (e) => e.currentTarget.classList.remove('is-clamped'));
+
     document.addEventListener('click', (e) => {
+      const start = e.target.closest('[data-deck-start]');
+      if (start) { openDeck(Number(start.dataset.deckStart) || 0); return; }
+
+      const tab = e.target.closest('[data-tab-key]');
+      if (tab) { selectTab(tab.dataset.tabKey); return; }
+
+      if (e.target.closest('#textVersionBtn')) { showTextVersion(); return; }
+
+      if (e.target.closest('[data-read-lesson]')) {
+        document.getElementById('lesson').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        return;
+      }
+
       const hwBtn = e.target.closest('[data-hw]');
       if (hwBtn) openHomeworkModal(hwBtn.dataset.hw);
 

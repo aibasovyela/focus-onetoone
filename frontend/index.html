@@ -6,8 +6,9 @@
   <meta name="theme-color" content="#0C0718">
   <meta name="robots" content="noindex">
   <title>Фокус ИИ 1:1 — кабинет ученика · Yelumio</title>
-  <link rel="stylesheet" href="css/brand.css?v=3">
-  <link rel="stylesheet" href="css/app.css?v=3">
+  <link rel="stylesheet" href="css/brand.css?v=4">
+  <link rel="stylesheet" href="css/app.css?v=4">
+  <link rel="stylesheet" href="css/deck.css?v=4">
 </head>
 <body>
   <!-- Экран входа -->
@@ -66,7 +67,7 @@
         </section>
       </div>
 
-      <!-- Модуль: урок-лонгрид -->
+      <!-- Модуль: хиро + «Начать урок» → плеер слайдов (deck.json) или лонгрид (lesson.md) -->
       <div id="moduleDetailView" style="display: none;">
         <div class="read-progress" aria-hidden="true"><i id="readProgress"></i></div>
 
@@ -77,28 +78,39 @@
             <h1 id="detailModuleTitle" class="detail-title"></h1>
             <p id="detailPromise" class="detail-promise"></p>
             <div class="detail-meta" id="detailMeta"></div>
-            <div class="outcomes">
-              <div class="eyebrow outcomes-label">К концу созвона у тебя</div>
-              <ul id="detailOutcomes"></ul>
-            </div>
+            <div class="detail-cta" id="detailCta"></div>
           </div>
         </div>
 
         <section class="container module-detail">
+          <div id="lockedNote" class="locked-note" style="display: none;"></div>
+
+          <div class="block chapters" id="chaptersBlock" hidden>
+            <div class="block-head">
+              <h2 class="section-title">Главы урока</h2>
+              <span class="block-meta" id="chaptersMeta"></span>
+            </div>
+            <ol class="ch-list" id="chaptersPanel"></ol>
+            <button type="button" class="text-version" id="textVersionBtn" hidden>Текстовая версия урока — всё на одной странице</button>
+          </div>
+
+          <div class="block overview" id="overview">
+            <div class="seg overview-tabs" role="tablist" id="overviewTabs"></div>
+            <div class="tab-panel" data-panel="outcomes" role="tabpanel">
+              <ul class="outcome-list" id="detailOutcomes"></ul>
+            </div>
+            <div class="tab-panel" data-panel="plan" role="tabpanel" id="plan">
+              <p class="section-sub" id="planTotal"></p>
+              <ol class="timeline" id="planList"></ol>
+            </div>
+          </div>
+
           <nav class="toc" id="toc" aria-label="Содержание урока">
             <details open>
               <summary><span class="eyebrow">Содержание</span><span class="toc-count" id="tocCount"></span></summary>
               <ol id="tocList"></ol>
             </details>
           </nav>
-
-          <div class="block" id="plan">
-            <h2 class="section-title">План созвона</h2>
-            <p class="section-sub" id="planTotal"></p>
-            <ol class="timeline" id="planList"></ol>
-          </div>
-
-          <div id="lockedNote" class="locked-note" style="display: none;"></div>
 
           <article class="md lesson-body" id="lesson"></article>
 
@@ -141,9 +153,10 @@
 
   <div id="toast" class="toast" role="status"></div>
 
-  <script src="js/auth.js?v=3"></script>
-  <script src="js/data.js?v=3"></script>
-  <script src="js/markdown.js?v=3"></script>
-  <script src="js/app.js?v=3"></script>
+  <script src="js/auth.js?v=4"></script>
+  <script src="js/data.js?v=4"></script>
+  <script src="js/markdown.js?v=4"></script>
+  <script src="js/deck.js?v=4"></script>
+  <script src="js/app.js?v=4"></script>
 </body>
 </html>
