@@ -28,6 +28,7 @@ const APP = (() => {
   const STATUS = {
     done: { label: 'Пройден', pill: 'pill-done' },
     active: { label: 'Сейчас', pill: 'pill-accent' },
+    open: { label: 'Открыт', pill: 'pill-open' },
     locked: { label: 'Откроется после созвона', pill: 'pill-muted' }
   };
 
@@ -71,7 +72,7 @@ const APP = (() => {
     const done = modules.filter(m => m.status === 'done').length;
     const current = modules.find(m => m.status === 'active');
     document.getElementById('heroSub').textContent = current
-      ? `Сейчас — блок ${current.number}: «${current.title}». Следующие блоки открываются после каждого созвона.`
+      ? `Сейчас — блок ${current.number}: «${current.title}». ${modules.some(m => m.status === 'locked') ? 'Следующие блоки открываются после каждого созвона.' : 'Все блоки уже открыты — можно изучать заранее.'}`
       : 'Программа пройдена. Все материалы остаются с тобой.';
     document.getElementById('routeProgress').style.width = `${(done / modules.length) * 100}%`;
     document.getElementById('routeProgressLabel').textContent = `${done} из ${modules.length} пройдено`;

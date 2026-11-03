@@ -36,12 +36,14 @@ export const findStudentByPin = (pin) => {
 
 export const findStudentById = (id) => getStudents().find(s => s.id === id);
 
-// Модуль N открыт, если N <= openModules ученика
+// Модуль N открыт, если N <= openModules ученика; пройден — только когда день его созвона уже позади (Алматы).
+// Первый открытый непройденный модуль модулем «Сейчас» (active) делает modulesFor.
+const todayAlmaty = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Almaty' }).format(new Date());
 export const moduleStatus = (student, number) => {
   const open = Number(student.openModules) || 1;
-  if (number < open) return 'done';
-  if (number === open) return 'active';
-  return 'locked';
+  if (number > open) return 'locked';
+  const call = String((student.calls || {})[number] || '').slice(0, 10);
+  return call && call < todayAlmaty() ? 'done' : 'open';
 };
 
 const loadSessions = () => {

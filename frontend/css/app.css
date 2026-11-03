@@ -201,6 +201,7 @@ a.route-card:active { transform: scale(0.99); }
 .pill-muted { color: var(--mute); }
 .pill-done { color: var(--deep); background: var(--lavender); border-color: var(--lavender); }
 .pill-light { color: var(--lavender); }
+.pill-open { color: var(--violet-ink); border-color: var(--violet); }
 
 /* ---------- Модуль ---------- */
 .module-detail-header {

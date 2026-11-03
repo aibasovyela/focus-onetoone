@@ -52,7 +52,7 @@ const readDeck = (moduleId) => {
 const modulesFor = (student) => {
   const { modules = [] } = readJson('modules.json', {});
   const calls = student.calls || {};
-  return modules.map(m => {
+  const list = modules.map(m => {
     const meta = readMeta(m.id);
     return {
       ...m,
@@ -62,6 +62,9 @@ const modulesFor = (student) => {
       callDate: calls[m.number] || null
     };
   });
+  const current = list.find(m => m.status === 'open');
+  if (current) current.status = 'active';
+  return list;
 };
 
 // GET /api/modules/me — ученик и его маршрут (без PIN)
