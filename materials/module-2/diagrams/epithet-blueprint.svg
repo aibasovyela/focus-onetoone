@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 456" width="100%" role="img" aria-label="Эпитеты заменяем видимыми признаками">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Чертёж вместо эпитетов</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Слева — сток и пластик, справа — кадр</text>
+<rect x="12" y="66" width="336" height="70" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="88" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">beautiful lighting</text>
+<line x1="26" y1="84" x2="156.5" y2="84" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M28 98 l0 10 l8 0" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="112" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">one soft key from the upper left,</text>
+<text x="42" y="128" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">5600K, soft contact shadow</text>
+<rect x="12" y="144" width="336" height="70" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="166" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">realistic skin</text>
+<line x1="26" y1="162" x2="127.5" y2="162" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M28 176 l0 10 l8 0" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="190" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">visible pores, fine peach fuzz,</text>
+<text x="42" y="206" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">natural unretouched skin</text>
+<rect x="12" y="222" width="336" height="70" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="244" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">nice composition</text>
+<line x1="26" y1="240" x2="142.0" y2="240" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M28 254 l0 10 l8 0" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="268" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">product in the right third,</text>
+<text x="42" y="284" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">left 60% empty for text</text>
+<rect x="12" y="300" width="336" height="70" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="322" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">cinematic</text>
+<line x1="26" y1="318" x2="91.25" y2="318" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M28 332 l0 10 l8 0" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="346" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">35mm film, Kodak Portra 400,</text>
+<text x="42" y="362" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">visible grain, 85mm, f/2</text>
+<rect x="12" y="378" width="336" height="70" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="400" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">several cups</text>
+<line x1="26" y1="396" x2="113.0" y2="396" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round"/>
+<path d="M28 410 l0 10 l8 0" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="424" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">exactly three (3) cups</text>
+<text x="42" y="440" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">on the table</text>
+</svg>

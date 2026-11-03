@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 484" width="100%" role="img" aria-label="Формула кадра из семи слоёв на примере айс-латте">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Формула кадра</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Пример: пост кофейни про айс-латте</text>
+<line x1="30" y1="90" x2="30" y2="426" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<rect x="52" y="68" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="90" r="13" fill="#8B5CF6"/>
+<text x="30" y="94.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text>
+<text x="64" y="87" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ОБЪЕКТ</text>
+<text x="64" y="105" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">iced latte, tall clear glass, 350 ml</text>
+<rect x="52" y="124" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="146" r="13" fill="#8B5CF6"/>
+<text x="30" y="150.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">2</text>
+<text x="64" y="143" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ДЕЙСТВИЕ</text>
+<text x="64" y="161" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">milk slowly marbles into espresso</text>
+<rect x="52" y="180" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="202" r="13" fill="#8B5CF6"/>
+<text x="30" y="206.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text>
+<text x="64" y="199" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">СЦЕНА</text>
+<text x="64" y="217" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">pale marble counter, 8 am</text>
+<rect x="52" y="236" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="258" r="13" fill="#8B5CF6"/>
+<text x="30" y="262.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">4</text>
+<text x="64" y="255" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">СВЕТ</text>
+<text x="64" y="273" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">low morning sun from the right</text>
+<rect x="52" y="292" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="314" r="13" fill="#8B5CF6"/>
+<text x="30" y="318.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">5</text>
+<text x="64" y="311" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">СТИЛЬ</text>
+<text x="64" y="329" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">35mm film, Kodak Portra 400</text>
+<rect x="52" y="348" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="370" r="13" fill="#8B5CF6"/>
+<text x="30" y="374.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">6</text>
+<text x="64" y="367" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">КАМЕРА</text>
+<text x="64" y="385" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">85mm, f/2.8, medium close-up</text>
+<rect x="52" y="404" width="296" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="426" r="13" fill="#8B5CF6"/>
+<text x="30" y="430.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">7</text>
+<text x="64" y="423" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ДЕТАЛИ</text>
+<text x="64" y="441" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">condensation · NEGATIVE: steam</text>
+<text x="16" y="472" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Главное — в начале. Порядок всегда один.</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 324" width="100%" role="img" aria-label="Несколько референсов: подпиши роль каждого">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Референсы с ролями</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Подпиши в промпте, зачем каждая картинка</text>
+<rect x="12" y="64" width="164" height="170" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="26" y="78" width="136" height="62" rx="10" fill="#D2C2FF"/>
+<text x="94" y="115" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700" text-anchor="middle">Image 1</text>
+<text x="26" y="164" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ТОВАР</text>
+<text x="26" y="186" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">keep bottle shape,</text>
+<text x="26" y="204" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">label, colour exactly</text>
+<rect x="184" y="64" width="164" height="170" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="198" y="78" width="136" height="62" rx="10" fill="#FFB59A"/>
+<text x="266" y="115" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700" text-anchor="middle">Image 2</text>
+<text x="198" y="164" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">СВЕТ И НАСТРОЕНИЕ</text>
+<text x="198" y="186" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">mood reference only,</text>
+<text x="198" y="204" font-family="IBM Plex Mono, monospace" font-size="12" fill="#0F1112">ignore its subject</text>
+<rect x="12" y="248" width="336" height="64" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="28" y="272" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Одежда с референса перебивает текст:</text>
+<text x="28" y="294" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">ignore clothing in the reference</text>
+</svg>

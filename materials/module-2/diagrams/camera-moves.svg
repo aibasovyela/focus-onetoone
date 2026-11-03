@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 468" width="100%" role="img" aria-label="Движения камеры: как писать и когда брать">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Движения камеры</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Одно движение + запрет соседних</text>
+<rect x="12" y="62" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="84" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Статика</text>
+<text x="334" y="84" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">движется товар, жидкость</text>
+<text x="26" y="103" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">static locked-off camera</text>
+<rect x="12" y="120" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="142" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Наезд</text>
+<text x="334" y="142" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">акцент на товаре</text>
+<text x="26" y="161" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">slow push-in, no zoom</text>
+<rect x="12" y="178" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="200" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Облёт</text>
+<text x="334" y="200" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">товар со всех сторон</text>
+<text x="26" y="219" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">slow arc, no turntable</text>
+<rect x="12" y="236" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="258" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Панорама</text>
+<text x="334" y="258" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">раскрыть пространство</text>
+<text x="26" y="277" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">pan right, fixed point</text>
+<rect x="12" y="294" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="316" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Наклон</text>
+<text x="334" y="316" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">образ целиком</text>
+<text x="26" y="335" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">tilt up shoes to face</text>
+<rect x="12" y="352" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="374" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Фокус</text>
+<text x="334" y="374" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">внимание на товар</text>
+<text x="26" y="393" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">rack focus to product</text>
+<rect x="12" y="410" width="336" height="52" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="432" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Ручная</text>
+<text x="334" y="432" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">UGC, «живое» видео</text>
+<text x="26" y="451" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600">handheld, 1-2 cm shake</text>
+</svg>

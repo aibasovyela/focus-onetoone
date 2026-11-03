@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 396" width="100%" role="img" aria-label="Формула image-to-video: одно движение, одна камера, замки, NEGATIVE">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Оживляем кадр</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Фото модель уже видит — не описывай его</text>
+<rect x="12" y="70" width="336" height="58" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="36" cy="99" r="13" fill="#8B5CF6"/>
+<text x="36" y="104" font-family="Unbounded, Arial, sans-serif" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">+</text>
+<text x="60" y="94" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ОДНО ДВИЖЕНИЕ В СЦЕНЕ</text>
+<text x="60" y="114" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">молоко смешивается с эспрессо</text>
+<rect x="12" y="136" width="336" height="58" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="36" cy="165" r="13" fill="#8B5CF6"/>
+<text x="36" y="170" font-family="Unbounded, Arial, sans-serif" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">+</text>
+<text x="60" y="160" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ОДНО ДВИЖЕНИЕ КАМЕРЫ</text>
+<text x="60" y="180" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">камера стоит</text>
+<rect x="12" y="202" width="336" height="58" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="36" cy="231" r="13" fill="#8B5CF6"/>
+<text x="36" y="236" font-family="Unbounded, Arial, sans-serif" font-size="15" fill="#FFFFFF" font-weight="700" text-anchor="middle">+</text>
+<text x="60" y="226" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ЧТО НЕПОДВИЖНО</text>
+<text x="60" y="246" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">стакан, лого и тени заморожены</text>
+<rect x="12" y="268" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="36" cy="297" r="13" fill="#0F1112"/>
+<text x="36" y="302" font-family="Unbounded, Arial, sans-serif" font-size="15" fill="#FFB59A" font-weight="700" text-anchor="middle">−</text>
+<text x="60" y="292" font-family="IBM Plex Mono, monospace" font-size="12" fill="#45433F" font-weight="600" letter-spacing="0.5">NEGATIVE</text>
+<text x="60" y="312" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">пара нет</text>
+<rect x="12" y="338" width="336" height="46" rx="12" fill="#24124A"/>
+<text x="28" y="366" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700">Двигается только то, что ты назвал</text>
+</svg>

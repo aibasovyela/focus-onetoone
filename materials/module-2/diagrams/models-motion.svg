@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" width="100%" role="img" aria-label="Карта моделей Higgsfield для видео и голоса">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Какую модель: видео</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Задача слева, модель справа</text>
+<rect x="12" y="64" width="336" height="180" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<path d="M12 76 a12 12 0 0 1 12 -12 h312 a12 12 0 0 1 12 12 v18 h-336 z" fill="#FFB59A"/>
+<text x="26" y="84" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="700" letter-spacing="0.5">ВИДЕО</text>
+<text x="26" y="115" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Оживить товар, кадр 1:1</text>
+<text x="334" y="115" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" text-anchor="end">Kling 3.0</text>
+<text x="334" y="133" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="end">запас: Seedance 2.5</text>
+<line x1="26" y1="144" x2="334" y2="144" stroke="#D6D0C6" stroke-width="1" stroke-linecap="round"/>
+<text x="26" y="165" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Люди крупно, 10-30 с</text>
+<text x="334" y="165" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" text-anchor="end">Seedance 2.5</text>
+<text x="334" y="183" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="end">запас: Veo 3.1</text>
+<line x1="26" y1="194" x2="334" y2="194" stroke="#D6D0C6" stroke-width="1" stroke-linecap="round"/>
+<text x="26" y="215" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Короткий план, природа</text>
+<text x="334" y="215" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" text-anchor="end">Veo 3.1</text>
+<text x="334" y="233" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="end">запас: Seedance 2.5</text>
+<rect x="12" y="256" width="336" height="130" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<path d="M12 268 a12 12 0 0 1 12 -12 h312 a12 12 0 0 1 12 12 v18 h-336 z" fill="#24124A"/>
+<text x="26" y="276" font-family="Unbounded, Arial, sans-serif" font-size="12" fill="#FFFFFF" font-weight="700" letter-spacing="0.5">ГОЛОС</text>
+<text x="26" y="307" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Закадр RU / EN</text>
+<text x="334" y="307" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" text-anchor="end">Higgsfield Audio</text>
+<text x="334" y="325" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="end">запас: ElevenLabs</text>
+<line x1="26" y1="336" x2="334" y2="336" stroke="#D6D0C6" stroke-width="1" stroke-linecap="round"/>
+<text x="26" y="357" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Голос на казахском</text>
+<text x="334" y="357" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" text-anchor="end">ElevenLabs v4</text>
+<text x="334" y="375" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="end"></text>
+<text x="16" y="408" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">На осень 2026 — модели обновляются</text>
+</svg>

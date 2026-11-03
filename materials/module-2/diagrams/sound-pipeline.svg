@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 362" width="100%" role="img" aria-label="Путь от фото к готовому ролику">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">От фото к ролику</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Каждый шаг проверяешь отдельно</text>
+<rect x="12" y="66" width="336" height="62" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="97" r="14" fill="#8B5CF6"/>
+<text x="38" y="101.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">1</text>
+<text x="64" y="93" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700">Hero-фото</text>
+<text x="64" y="113" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">GPT Image 2.5 · Nano Banana Pro</text>
+<circle cx="326" cy="97" r="9" fill="#8B5CF6"/>
+<path d="M321.5 97 L325 100.5 L331 93.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="38" y1="128" x2="38" y2="140" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<rect x="12" y="140" width="336" height="62" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="171" r="14" fill="#FFB59A"/>
+<text x="38" y="175.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700" text-anchor="middle">2</text>
+<text x="64" y="167" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700">Видео</text>
+<text x="64" y="187" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">Kling 3.0 · Seedance 2.5</text>
+<circle cx="326" cy="171" r="9" fill="#8B5CF6"/>
+<path d="M321.5 171 L325 174.5 L331 167.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="38" y1="202" x2="38" y2="214" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<rect x="12" y="214" width="336" height="62" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="245" r="14" fill="#24124A"/>
+<text x="38" y="249.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">3</text>
+<text x="64" y="241" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700">Голос</text>
+<text x="64" y="261" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">Higgsfield Audio · ElevenLabs</text>
+<circle cx="326" cy="245" r="9" fill="#8B5CF6"/>
+<path d="M321.5 245 L325 248.5 L331 241.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<line x1="38" y1="276" x2="38" y2="288" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<rect x="12" y="288" width="336" height="62" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="319" r="14" fill="#D2C2FF"/>
+<text x="38" y="323.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700" text-anchor="middle">4</text>
+<text x="64" y="315" font-family="Unbounded, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="700">Сборка</text>
+<text x="64" y="335" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">CapCut: музыка и титры</text>
+<circle cx="326" cy="319" r="9" fill="#8B5CF6"/>
+<path d="M321.5 319 L325 322.5 L331 315.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

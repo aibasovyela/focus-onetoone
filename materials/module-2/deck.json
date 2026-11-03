@@ -1,0 +1,985 @@
+{
+ "version": 1,
+ "chapters": [
+  {
+   "id": "director",
+   "title": "Ты режиссёр",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Ты режиссёр, а не тот, кто жмёт кнопку",
+     "image": "cover-director.webp",
+     "text": "Нейросеть для картинок и видео — съёмочная группа без камеры. Снимает ровно то, что ты описал."
+    },
+    {
+     "type": "text",
+     "kicker": "Higgsfield",
+     "title": "Опиши кадр, как режиссёр",
+     "text": "**Higgsfield** (higgsfield.ai) — платформа, где в одном окне десятки моделей для фото, видео и голоса.\n\nСкажешь «красивая кофейня» — получишь среднюю картинку из стока. Опишешь кадр как режиссёр — его не отличить от съёмки."
+    },
+    {
+     "type": "cards",
+     "title": "Четыре правила вкуса студии",
+     "items": [
+      {
+       "front": "Жёсткий фотореализм",
+       "back": "Плёнка Kodak Portra, кожа с порами, реальный свет, зерно. Камера, объектив и диафрагма — в промпте"
+      },
+      {
+       "front": "CGI-look — это брак",
+       "back": "Глянцевый пластик, «рендерная» кожа, парящие предметы, голограммы — в корзину, даже если «вроде красиво»"
+      },
+      {
+       "front": "Реальное + необычное",
+       "back": "Сюрреальная идея, но настоящий снимок: худи в степи, где снег падает вверх"
+      },
+      {
+       "front": "Hero-кадр → референс",
+       "back": "Доводим один главный кадр, утверждаем — и всю серию делаем по нему. Лицо, товар и цвет не «плывут»"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "kicker": "Правило №1",
+     "title": "Без референса не генерируем",
+     "diagram": "reference-rule",
+     "caption": "Без картинки модель нарисует похожий, но чужой товар. Твой товар, логотип и лицо — только по реальному фото."
+    },
+    {
+     "type": "quiz",
+     "title": "Нужно фото твоего флакона масла в новом интерьере. С чего начнёшь?",
+     "options": [
+      "Подробно опишу флакон словами",
+      "Сниму флакон на телефон у окна и дам как референс",
+      "Попрошу модель сделать «похожий»"
+     ],
+     "answer": 1,
+     "explain": "Без фото модель нарисует похожий, но чужой товар. Снимок с телефона при дневном свете — уже отличный референс."
+    }
+   ]
+  },
+  {
+   "id": "formula",
+   "title": "Формула кадра",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Формула кадра: 7 слоёв промпта",
+     "image": "cover-formula.webp",
+     "text": "Хороший промпт — не набор красивых слов, а чертёж кадра. Собираем его всегда в одном порядке."
+    },
+    {
+     "type": "diagram",
+     "title": "Семь слоёв — семь вопросов",
+     "diagram": "frame-formula",
+     "caption": "Что в кадре → что происходит → где → какой свет → на что «снято» → какой камерой → детали и запреты."
+    },
+    {
+     "type": "builder",
+     "title": "Собери кадр айс-латте",
+     "parts": [
+      {
+       "label": "Объект",
+       "text": "Iced latte, tall clear glass, 350 ml.",
+       "color": "violet"
+      },
+      {
+       "label": "Действие",
+       "text": "Milk slowly marbles into the espresso.",
+       "color": "peach"
+      },
+      {
+       "label": "Сцена",
+       "text": "Pale marble counter, small coffee shop, 8 am.",
+       "color": "lavender"
+      },
+      {
+       "label": "Свет",
+       "text": "Low morning sun from the right.",
+       "color": "yellow"
+      },
+      {
+       "label": "Стиль",
+       "text": "35mm film, Kodak Portra 400, grain.",
+       "color": "deep"
+      },
+      {
+       "label": "Камера",
+       "text": "85mm, f/2.8, medium close-up.",
+       "color": "blue"
+      },
+      {
+       "label": "Детали",
+       "text": "Condensation. NEGATIVE: steam, CGI, text.",
+       "color": "ink"
+      }
+     ],
+     "caption": "Тапай слои — промпт соберётся здесь"
+    },
+    {
+     "type": "image",
+     "kicker": "Генерация · было",
+     "title": "Эпитеты вместо чертежа",
+     "image": "gen-weak.webp",
+     "caption": "«Beautiful», «cinematic», «perfect», «advertising» — модель сама решила, что в кадре. Вышел стоковый латте «отовсюду».",
+     "prompt": "beautiful iced latte in a coffee shop, cinematic, perfect lighting, high quality advertising photo"
+    },
+    {
+     "type": "image",
+     "kicker": "Генерация · стало",
+     "title": "Тот же латте по чертежу",
+     "image": "gen-strong.webp",
+     "caption": "Те же семь слоёв, что в конструкторе, только подробнее. Открой промпт и сравни.",
+     "prompt": "An iced latte in a tall clear glass, 350 ml. Milk slowly marbles into the espresso, condensation droplets run down the glass. Pale marble counter of a small coffee shop at 8 am, a paper bag of croissants softly blurred in the background. Low morning sun from the right as if from an unseen window, long soft shadow on the counter. Live-action photograph, 4:5, shot on 35mm film, Kodak Portra 400, visible grain. Medium close-up, 85mm, f/2.8, glass in the left third. Real ice cubes, visible condensation texture.\nNEGATIVE: steam, vapour, CGI gloss, plastic look, extra cups, text."
+    },
+    {
+     "type": "diagram",
+     "title": "Каждое размытое слово — в признак",
+     "diagram": "epithet-blueprint",
+     "caption": "«Красиво», «качественно», «perfect», «cinematic» тянут модель в сток и пластик. Пиши то, что видно в кадре."
+    },
+    {
+     "type": "compare",
+     "kicker": "Свет",
+     "title": "Свет без лишней лампы",
+     "bad": {
+      "label": "Плохо",
+      "text": "«light from a pendant lamp»\n\nМодель нарисует лампу в кадре."
+     },
+     "good": {
+      "label": "Хорошо",
+      "text": "«warm light falls as if from an unseen window»\n\nВ NEGATIVE — «lamp, light fixture». Свет есть, лампы нет."
+     },
+     "caption": "Свет — самый недооценённый слой: один главный источник, откуда падает и какой он."
+    },
+    {
+     "type": "bullets",
+     "kicker": "Текст на картинке",
+     "title": "Буквы — по правилам",
+     "icon": "→",
+     "items": [
+      "Не больше **1-3 слов**, слово дословно в кавычках",
+      "Шрифт — признаками: «hand-painted cream serif capitals»",
+      "Фраза `the only text is \"...\", nothing else is written anywhere`",
+      "Модель — **GPT Image 2.5**",
+      "Заголовки и цены — в Canva или CapCut, логотип — файлом"
+     ]
+    },
+    {
+     "type": "image",
+     "kicker": "Генерация · текст",
+     "title": "Одно слово в кадре",
+     "image": "gen-sign.webp",
+     "caption": "Промпт «Вывеска с текстом» из библиотеки: только «NAN», больше ничего не написано. Кириллицу модели путают чаще.",
+     "prompt": "Live-action photograph, 4:5, 35mm film grain. A small bakery storefront at dusk in winter. Above the door hangs a wooden sign; the only text is \"NAN\" in hand-painted cream serif capital letters, centred on the sign, nothing else is written anywhere. Warm light spills from the shop window onto the snowy pavement. Eye level, 35mm, f/2.8.\nNEGATIVE: extra words, misspelled letters, random signs, watermark, CGI."
+    },
+    {
+     "type": "quiz",
+     "title": "Какая фраза в промпте полезнее всего?",
+     "options": [
+      "cinematic",
+      "perfect lighting",
+      "low morning sun from the right"
+     ],
+     "answer": 2,
+     "explain": "Эпитеты тянут в сток. Направление и характер света — видимый признак, его модель может нарисовать."
+    }
+   ]
+  },
+  {
+   "id": "platform",
+   "title": "Higgsfield от А до Я",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Higgsfield от А до Я",
+     "image": "cover-platform.webp",
+     "text": "Не одна нейросеть, а «торговый центр» моделей. Главный навык — знать, в какой отдел идти."
+    },
+    {
+     "type": "diagram",
+     "title": "Что где в интерфейсе",
+     "diagram": "hf-sections",
+     "caption": "Одна модель держит текст, другая — лица, третья — движение. Одной модели на всё не бывает."
+    },
+    {
+     "type": "cards",
+     "title": "Инструменты правки",
+     "items": [
+      {
+       "front": "Inpaint",
+       "back": "Перерисовать выбранную зону"
+      },
+      {
+       "front": "Outpaint",
+       "back": "Расширить кадр за края"
+      },
+      {
+       "front": "Relight",
+       "back": "Переставить свет"
+      },
+      {
+       "front": "Angles",
+       "back": "Новый ракурс того же кадра"
+      },
+      {
+       "front": "Skin Enhancer",
+       "back": "Живая кожа вместо пластика"
+      },
+      {
+       "front": "Upscale",
+       "back": "Повысить разрешение"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "kicker": "Настройки",
+     "title": "Формат кадра — сразу",
+     "diagram": "aspect-ratios",
+     "caption": "9:16 — Reels и сторис, 4:5 — лента, 16:9 — сайт и YouTube. У части моделей по умолчанию 1K — ставь 2K явно."
+    },
+    {
+     "type": "stat",
+     "value": "1-2",
+     "unit": "варианта",
+     "title": "за одну генерацию",
+     "text": "Генерируй по 1-2 варианта и правь промпт, а не жми «повторить» двадцать раз."
+    },
+    {
+     "type": "diagram",
+     "title": "Какую модель: фото",
+     "diagram": "models-image",
+     "caption": "Товар с этикеткой — GPT Image 2.5 (качество high, 2K). Черновики — Seedream, кинокадр — Soul Cinema."
+    },
+    {
+     "type": "diagram",
+     "title": "Какую модель: видео и голос",
+     "diagram": "models-motion",
+     "caption": "Товар оживляем в Kling 3.0, людей крупно — в Seedance 2.5. Казахский голос — ElevenLabs v4."
+    },
+    {
+     "type": "steps",
+     "kicker": "Связка, как у профи",
+     "title": "Черновик → доводка → мелочи",
+     "items": [
+      {
+       "title": "Черновики",
+       "text": "Быстрые модели: Seedream, Soul Cinema"
+      },
+      {
+       "title": "Доводка",
+       "text": "Лучший вариант — в Nano Banana Pro или GPT Image 2.5"
+      },
+      {
+       "title": "Мелочи",
+       "text": "Чиним инструментами правки, а не перегенерацией"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "title": "Кадр почти хорош — правь по порядку",
+     "diagram": "fix-order",
+     "caption": "Ракурс → свет → цвет → кожа → разрешение → один дефект через Inpaint → формат через Outpaint."
+    },
+    {
+     "type": "quiz",
+     "title": "Пост с упаковкой и надписью на кириллице. Какая модель?",
+     "options": [
+      "Seedream 5.0 Pro",
+      "GPT Image 2.5",
+      "Kling 3.0"
+     ],
+     "answer": 1,
+     "explain": "Товар с этикеткой, упаковка, кириллица — GPT Image 2.5 в качестве high и 2K. Seedream — для черновиков, Kling — для видео."
+    }
+   ]
+  },
+  {
+   "id": "video",
+   "title": "Видео из фото и из идеи",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Видео: из идеи и из фото",
+     "image": "cover-video.webp",
+     "text": "Сначала утверждаем идеальное фото, потом добавляем движение. Так ты контролируешь товар, свет и композицию."
+    },
+    {
+     "type": "diagram",
+     "title": "Два пути к видео",
+     "diagram": "video-paths",
+     "caption": "Text-to-video снимает сцену с нуля. Image-to-video оживляет готовый кадр — для бизнеса основной путь."
+    },
+    {
+     "type": "diagram",
+     "kicker": "Image-to-video",
+     "title": "Формула оживления",
+     "diagram": "i2v-formula",
+     "caption": "Утверждённый кадр — замок: упаковка, лого, фон, тени и реквизит остаются как были."
+    },
+    {
+     "type": "compare",
+     "title": "Пар превращает кофейню в спа",
+     "bad": {
+      "label": "Без запрета",
+      "text": "Модели обожают дорисовывать пар, дым и туман.\n\nДаже холодный напиток «дымится», кадр похож на спа."
+     },
+     "good": {
+      "label": "С запретом",
+      "text": "`no steam, vapour, smoke, haze, mist`\n\nДля холодных ещё: `ICE-COLD drink: the air stays completely clear`."
+     },
+     "caption": "Запрет на пар пишем для напитков всегда, даже для горячих."
+    },
+    {
+     "type": "diagram",
+     "title": "Start и end frame",
+     "diagram": "start-end",
+     "caption": "Лучший способ сделать точный переход: закрытая коробка → открытая, пустая тарелка → тарелка с блюдом."
+    },
+    {
+     "type": "steps",
+     "kicker": "Text-to-video",
+     "title": "Промпт — режиссёрский сценарий",
+     "items": [
+      {
+       "title": "Стиль и сцена",
+       "text": "Общий стиль и сцена одной фразой"
+      },
+      {
+       "title": "Первый кадр",
+       "text": "С чего начинается клип"
+      },
+      {
+       "title": "План с секундами",
+       "text": "Что происходит на 0-4 и 4-8 секундах"
+      },
+      {
+       "title": "Свет и «замки»",
+       "text": "Источник света и что должно остаться неизменным"
+      },
+      {
+       "title": "Звук",
+       "text": "Шумы сцены и «No music»"
+      }
+     ],
+     "note": "В одной генерации 1-3 действия; не влезает — делим на клипы. Образец — промпт 13 в библиотеке."
+    },
+    {
+     "type": "diagram",
+     "title": "Движения камеры",
+     "diagram": "camera-moves",
+     "caption": "Правило курса: одно движение + запрет соседних. Иначе модель путает зум с наездом, а облёт — с вращением товара."
+    },
+    {
+     "type": "compare",
+     "title": "Добавь числа и точку остановки",
+     "bad": {
+      "label": "Размыто",
+      "text": "Движение без чисел и запретов\n\nМодель сама решит, куда и насколько ехать, — кадр обрывается на движении."
+     },
+     "good": {
+      "label": "Точно",
+      "text": "`slow push-in toward the cup, about 30 cm of travel, no zoom, no pan, no tilt, then settle and hold`\n\nОдно движение, длина пути и остановка в конце."
+     }
+    },
+    {
+     "type": "stat",
+     "value": "4 из 4",
+     "unit": "плохих дубля",
+     "title": "проблема в промпте, а не в удаче",
+     "text": "Меняй одну строку. Смотри клип до конца: брак прячется на 5-8 секунде. Движение пробуй в 720p без звука, финал — в 1080p."
+    },
+    {
+     "type": "table",
+     "title": "Kling или Seedance",
+     "columns": [
+      "",
+      "Kling 3.0",
+      "Seedance 2.5"
+     ],
+     "rows": [
+      [
+       "Сильная сторона",
+       "Держит стартовый кадр 1:1",
+       "Люди крупным планом"
+      ],
+      [
+       "Брать для",
+       "Товар, еда, напитки, общие планы",
+       "Лица крупно, сцены 10-30 секунд, диалог"
+      ]
+     ],
+     "caption": "Лица крупным планом Kling иногда ломает — людей оживляем в Seedance 2.5."
+    },
+    {
+     "type": "quiz",
+     "title": "Оживляешь фото стакана с логотипом. Что пишешь?",
+     "options": [
+      "Заново описываю стакан, лого и фон",
+      "Что двигается, как движется камера и что заморожено",
+      "«Make it cinematic and dynamic»"
+     ],
+     "answer": 1,
+     "explain": "Модель уже видит фото. Пиши только движение в сцене, движение камеры, что неподвижно, и NEGATIVE."
+    }
+   ]
+  },
+  {
+   "id": "series",
+   "title": "Один герой, один товар",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Консистентность: один герой и один товар",
+     "image": "cover-series.webp",
+     "text": "Одна красивая картинка — ещё не контент. Бренду нужна серия: тот же бариста, та же худи, тот же стакан."
+    },
+    {
+     "type": "diagram",
+     "title": "Референсы с ролями",
+     "diagram": "ref-roles",
+     "caption": "Грузишь несколько картинок — подпиши роль каждой прямо в промпте. Нужна другая одежда — скажи игнорировать одежду с референса."
+    },
+    {
+     "type": "image",
+     "kicker": "Генерация · лист персонажа",
+     "title": "Один герой в трёх видах",
+     "image": "gen-sheet.webp",
+     "caption": "Промпт «Лист персонажа» из библиотеки. Лист сохраняешь как Element и подставляешь через @тег в каждую генерацию.",
+     "prompt": "Character reference sheet, three panels side by side on a flat medium-grey background (#808080, never white), thin dividers. Panel 1: full body front view, feet visible. Panel 2: full body back view. Panel 3: head-and-shoulders close-up. The face is visible only in panel 3; erase the face from the full-body panels. Character: a 30-year-old barista, 175 cm, short dark hair, small scar through the LEFT eyebrow, olive linen apron over a white T-shirt, black jeans. Neutral soft even wrap-around light, near-shadowless, 5600K, eye catchlights. One identical person in all panels.\nNEGATIVE: text, gradient, vignette, cast shadows, second person."
+    },
+    {
+     "type": "bullets",
+     "title": "Правила листа персонажа",
+     "icon": "✓",
+     "items": [
+      "В рост спереди (со стопами), в рост сзади, крупно голова и плечи",
+      "Фон средне-серый, **не белый**: на белом пересвет и не видно брака",
+      "Свет мягкий, почти без теней, 5600K, блики в глазах",
+      "Приметы со стороной: «small scar through the LEFT eyebrow»",
+      "**Одно лицо на лист**: на панелях в рост лицо стирают"
+     ],
+     "note": "Иначе видео «прыгает» между двумя версиями лица."
+    },
+    {
+     "type": "stat",
+     "kicker": "Soul ID",
+     "value": "20+",
+     "unit": "фото",
+     "title": "чтобы лицо реального человека было в любом кадре",
+     "text": "Один человек при одном свете: анфас, 3/4, профиль, одно в полный рост, разные выражения. Нельзя: очки, фильтры, глубокие тени, групповые, селфи с вытянутой руки."
+    },
+    {
+     "type": "text",
+     "kicker": "Важно",
+     "title": "Чужое лицо — только с согласия",
+     "text": "Soul ID и клон голоса делаем только на себе или на человеке, который **письменно согласился**.\n\nСотрудник уволился — его цифровой двойник из рекламы тоже уходит."
+    },
+    {
+     "type": "diagram",
+     "title": "Четыре замка серии",
+     "diagram": "series-locks",
+     "caption": "Абзац про свет, цвет и плёнку копируй дословно во все промпты серии. Меняются только объект и действие."
+    },
+    {
+     "type": "quiz",
+     "title": "Лицо героя меняется от кадра к кадру. Что делать?",
+     "options": [
+      "Перебирать модели, пока не повезёт",
+      "Лист персонажа или Soul ID, лицо от 20% кадра, одна модель на серию",
+      "Чаще жать «повторить»"
+     ],
+     "answer": 1,
+     "explain": "Сходство держат лист персонажа или Soul ID. На мелком лице модель теряет сходство, а смена модели меняет «руку»."
+    }
+   ]
+  },
+  {
+   "id": "sound",
+   "title": "Голос, звук и сборка",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Голос, звук и сборка ролика",
+     "image": "cover-sound.webp",
+     "text": "Половину впечатления делает звук. Простой кадр с хорошей озвучкой выглядит как реклама с ТВ."
+    },
+    {
+     "type": "diagram",
+     "title": "От фото к готовому ролику",
+     "diagram": "sound-pipeline",
+     "caption": "Каждый шаг проверяешь отдельно: сначала кадр, потом движение, потом голос и сборка."
+    },
+    {
+     "type": "steps",
+     "title": "Три слоя звука",
+     "items": [
+      {
+       "title": "Звук сцены",
+       "text": "Seedance 2.5 генерирует сам: кофемашина, звон чашки, улица. Музыку внутри выключаем: «No music»"
+      },
+      {
+       "title": "Закадровый голос",
+       "text": "Higgsfield Audio → Voiceover: пресет или свой голос (запись до 2 минут). Казахский — ElevenLabs v4 + вычитка носителем"
+      },
+      {
+       "title": "Музыка",
+       "text": "В Higgsfield её нет: библиотека CapCut или Suno. Всегда тише голоса"
+      }
+     ]
+    },
+    {
+     "type": "stat",
+     "kicker": "Текст для уха",
+     "value": "30-35",
+     "unit": "слов",
+     "title": "на 15 секунд закадра",
+     "text": "Короткие фразы, одна мысль — одно предложение, цифры словами, без скобок и сокращений. На 10-секундный ролик — 2-3 фразы."
+    },
+    {
+     "type": "prompt",
+     "kicker": "Пример · 15 секунд",
+     "title": "Закадр для кофейни",
+     "text": "Утро в Астане начинается с холода. А заканчивается — здесь. Новый айс-латте на овсяном молоке. Сладость без сахара, бодрость без спешки. Заходи до десяти — второй стакан в подарок.",
+     "caption": "Пять фраз, 30 слов, в конце призыв, цифры словами."
+    },
+    {
+     "type": "steps",
+     "title": "Говорящий герой",
+     "items": [
+      {
+       "title": "Сначала голос",
+       "text": "Потом видео, не наоборот"
+      },
+      {
+       "title": "Стартовый кадр",
+       "text": "Губы сомкнуты, камера стоит, клип короче 30 секунд"
+      },
+      {
+       "title": "Аудио-референс",
+       "text": "Дорожку — в Seedance 2.5: губы двигаются под твой текст"
+      },
+      {
+       "title": "Переписали реплику",
+       "text": "Губы подгоняют в Lipsync Studio"
+      },
+      {
+       "title": "Двое в кадре",
+       "text": "Говорящих снимай по очереди"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "title": "Сборка в CapCut",
+     "diagram": "capcut-tracks",
+     "caption": "Видео → голос → звук сцены → музыка (тише всех) → титры. Титры держи в кадре не меньше 2 секунд."
+    },
+    {
+     "type": "quiz",
+     "title": "Что в ролике звучит тише всего?",
+     "options": [
+      "Закадровый голос",
+      "Звук сцены",
+      "Музыка"
+     ],
+     "answer": 2,
+     "explain": "Музыка всегда тише голоса. Порядок дорожек: видео → голос → звук сцены → музыка (тише всех) → титры."
+    }
+   ]
+  },
+  {
+   "id": "practice",
+   "title": "Практика на созвоне",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Практика на созвоне",
+     "image": "cover-practice.webp",
+     "text": "Всё делаем руками на твоём товаре. К концу — hero-фото, оживлённое видео и голос."
+    },
+    {
+     "type": "steps",
+     "title": "Шаги 1-5: кадр и герой",
+     "items": [
+      {
+       "title": "Бриф",
+       "text": "Товар, формат (9:16 или 4:5), фото на телефон у окна"
+      },
+      {
+       "title": "Формула",
+       "text": "Идею кадра — по 7 слоям, первый промпт на английском"
+      },
+      {
+       "title": "Товарное фото",
+       "text": "GPT Image 2.5 или Nano Banana Pro с твоим фото, 2K"
+      },
+      {
+       "title": "Три итерации",
+       "text": "Свет → композиция → фактура. Утверждаем hero-кадр"
+      },
+      {
+       "title": "Персонаж",
+       "text": "Герой бренда и его лист на сером фоне"
+      }
+     ]
+    },
+    {
+     "type": "diagram",
+     "title": "120 минут созвона",
+     "diagram": "call-path",
+     "caption": "План по блокам. Работаем на твоём реальном товаре или услуге."
+    },
+    {
+     "type": "steps",
+     "title": "Шаги 6-10: движение и звук",
+     "items": [
+      {
+       "title": "Герой с товаром",
+       "text": "Одна сцена по двум референсам с подписанными ролями"
+      },
+      {
+       "title": "Оживляем",
+       "text": "Kling 3.0 или Seedance 2.5: одно движение, 5 секунд"
+      },
+      {
+       "title": "Разбор дубля",
+       "text": "До конца, лого и форма, правим строку, финал 1080p"
+      },
+      {
+       "title": "Озвучка",
+       "text": "Текст для уха на 10-15 секунд, выбираем из 2-3 голосов"
+      },
+      {
+       "title": "Сборка",
+       "text": "CapCut: видео, голос, музыка; промпты — в библиотеку"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": "library",
+   "title": "Промпт-библиотека",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Промпт-библиотека",
+     "image": "cover-library.webp",
+     "text": "13 промптов на английском — модели понимают его точнее. В [скобках] подставляй своё, референс из слота — Image 1."
+    },
+    {
+     "type": "prompt",
+     "title": "Товар-герой (packshot)",
+     "text": "Live-action studio product photograph, 4:5. NOT a 3D render. Image 1 is the product: keep the bottle shape, label layout and colours exactly as in Image 1, do not redraw the label. A [250 ml amber glass bottle of hair oil] stands on [a rough travertine block]. Medium close-up, product in the right third, fully in frame with 10% margin. Full-frame camera, 90mm macro lens, f/5.6, focus on the label. One soft key from the upper left, 5600K, soft contact shadow on the stone. Plain [warm sand] wall behind. Real glass reflections. No text except the original label.\nNEGATIVE: CGI gloss, plastic look, floating product, warped letters, duplicated objects.",
+     "caption": "Студийное фото товара по референсу, этикетка не перерисовывается. GPT Image 2.5.",
+     "kicker": "Промпт 1 · фото"
+    },
+    {
+     "type": "prompt",
+     "title": "Одежда на улице",
+     "text": "Candid street fashion photograph, 4:5, shot on 35mm film, Kodak Portra 400, visible grain. Image 1 is the garment: keep its cut, colour and print exactly; ignore the pose and background in the reference. A [young woman in her 20s] wearing the [oversized cream hoodie] from Image 1 walks across [a snowy city square at dusk], hands in the front pocket. Medium shot, eye level, 50mm, f/2. Cold blue dusk ambient plus warm light falling from shop windows as if from an unseen source. Real skin with pores, slush on the pavement.\nNEGATIVE: plastic skin, airbrushing, CGI, extra fingers, logos, text.",
+     "caption": "Твоя вещь на модели в городе, плёночная фактура. Nano Banana Pro.",
+     "kicker": "Промпт 2 · фото"
+    },
+    {
+     "type": "prompt",
+     "title": "Портрет эксперта",
+     "text": "Editorial portrait photograph, 4:5, medium format film look, fine grain. A [dentist in her 40s] in [a white linen coat] stands by the window of [a bright minimal clinic], arms relaxed, calm half-smile, looking just past the camera. Medium close-up, face fills about a third of the frame, 85mm, f/2.2, focus on the eyes. One soft window key from the left, 5000K, gentle falloff into shadow on the right cheek, catchlights in the eyes. Visible pores, fine peach fuzz, natural unretouched skin.\nNEGATIVE: plastic skin, beauty filter, airbrushing, CGI, stock photo smile, extra fingers.",
+     "caption": "Для клиники, салона, личного бренда — без «бьюти-фильтра».",
+     "kicker": "Промпт 3 · фото"
+    },
+    {
+     "type": "prompt",
+     "title": "Еда (вид сверху)",
+     "text": "Overhead food photograph, 4:5, natural film look with soft grain. [A plate of beshbarmak with thin hand-cut noodles, tender lamb and onion sauce] on [a dark walnut table], [a bowl of broth and a small dish of baursaks] beside it, a hand reaching in from the lower right with a fork. Top-down 90-degree angle, 50mm, everything sharp. One soft daylight key from the top left, 5200K, real contact shadows under the plates. Glistening sauce, flour dust on the noodles.\nNEGATIVE: plastic food, CGI, oversaturated colours, steam, extra fingers, text, logos.",
+     "caption": "Фото для меню и доставки, рука в кадре для жизни.",
+     "kicker": "Промпт 4 · фото"
+    },
+    {
+     "type": "image",
+     "kicker": "Промпт 4 · результат",
+     "title": "Бешбармак сверху",
+     "image": "gen-food.webp",
+     "caption": "Тот же промпт с заполненными скобками, GPT Image 2.5.",
+     "prompt": "Overhead food photograph, 4:5, natural film look with soft grain. A plate of beshbarmak with thin hand-cut noodles, tender lamb and onion sauce on a dark walnut table, a bowl of broth and a small dish of baursaks beside it, a hand reaching in from the lower right with a fork. Top-down 90-degree angle, 50mm, everything sharp. One soft daylight key from the top left, 5200K, real contact shadows under the plates. Glistening sauce, flour dust on the noodles.\nNEGATIVE: plastic food, CGI, oversaturated colours, steam, extra fingers, text, logos."
+    },
+    {
+     "type": "prompt",
+     "title": "Напиток в кофейне",
+     "text": "Close-up drink photograph, 4:5, shot on 35mm film, Kodak Portra 400, grain. Image 1 is our cup: keep the cup shape and printed logo exactly. An [iced latte] in the cup from Image 1 stands on [a pale marble counter of a small coffee shop], condensation droplets on the cup, milk marbling into the espresso. Medium close-up, 85mm, f/2.8, cup in the left third, the cafe softly blurred behind. Low morning sunlight from the right as if from an unseen window, long soft shadow on the counter.\nNEGATIVE: steam, vapour, CGI gloss, distorted logo, extra cups, text.",
+     "caption": "Стакан с твоим лого, конденсат, утренний свет.",
+     "kicker": "Промпт 5 · фото"
+    },
+    {
+     "type": "prompt",
+     "title": "Интерьер",
+     "text": "Architectural interior photograph, 3:2, live-action. [A small Scandinavian-style coffee shop] shot from a 3/4 angle so two walls are visible and the space reads with depth. Light oak tables about 1.5 m apart, green plants, a brushed brass counter. 24mm, eye level at 1.5 m, vertical lines kept straight. Late afternoon sun through large windows on the left, warm light patches on the concrete floor. Real wood grain and matte ceramic. No people, no text.\nNEGATIVE: CGI render look, fisheye distortion, people, signage, text.",
+     "caption": "Локация для сайта и референс для будущих видео.",
+     "kicker": "Промпт 6 · фото"
+    },
+    {
+     "type": "prompt",
+     "title": "Баннер под заголовок",
+     "text": "Editorial still life photograph, 16:9, live-action. [A bouquet of white peonies wrapped in kraft paper] lies on [a pale linen tablecloth] in the right third of the frame. The left 60% is plain empty background reserved for headline text. One hard late-morning sun key from the right, crisp leaf shadows across the cloth, 5600K. 70mm, f/4, slightly high angle. Palette: cream, soft green, one accent of [dusty pink]. ABSOLUTELY NO TEXT, no letters, no logos anywhere.\nNEGATIVE: objects in the empty area, CGI, oversaturated colours, watermark.",
+     "caption": "Левая часть пустая — под заголовок в Canva.",
+     "kicker": "Промпт 7 · фото"
+    },
+    {
+     "type": "image",
+     "kicker": "Промпт 7 · результат",
+     "title": "Место под заголовок",
+     "image": "gen-banner.webp",
+     "caption": "Левые 60% пустые — заголовок и цену добавляешь в Canva.",
+     "prompt": "Editorial still life photograph, 16:9, live-action. A bouquet of white peonies wrapped in kraft paper lies on a pale linen tablecloth in the right third of the frame. The left 60% is plain empty background reserved for headline text. One hard late-morning sun key from the right, crisp leaf shadows across the cloth, 5600K. 70mm, f/4, slightly high angle. Palette: cream, soft green, one accent of dusty pink. ABSOLUTELY NO TEXT, no letters, no logos anywhere.\nNEGATIVE: objects in the empty area, CGI, oversaturated colours, watermark."
+    },
+    {
+     "type": "prompt",
+     "title": "Вывеска с текстом",
+     "text": "Live-action photograph, 4:5, 35mm film grain. [A small bakery storefront] at dusk in winter. Above the door hangs a wooden sign; the only text is \"[NAN]\" in hand-painted cream serif capital letters, centred on the sign, nothing else is written anywhere. Warm light spills from the shop window onto the snowy pavement. Eye level, 35mm, f/2.8.\nNEGATIVE: extra words, misspelled letters, random signs, watermark, CGI.",
+     "caption": "Вывеска в 1-3 слова. GPT Image 2.5.",
+     "kicker": "Промпт 8 · текст"
+    },
+    {
+     "type": "prompt",
+     "title": "Лист персонажа",
+     "text": "Character reference sheet, three panels side by side on a flat medium-grey background (#808080, never white), thin dividers. Panel 1: full body front view, feet visible. Panel 2: full body back view. Panel 3: head-and-shoulders close-up. The face is visible only in panel 3; erase the face from the full-body panels. Character: [a 30-year-old barista, 175 cm, short dark hair, small scar through the LEFT eyebrow, olive linen apron over a white T-shirt, black jeans]. Neutral soft even wrap-around light, near-shadowless, 5600K, eye catchlights. One identical person in all panels.\nNEGATIVE: text, gradient, vignette, cast shadows, second person.",
+     "caption": "Герой в трёх видах — потом сохраняешь как Element.",
+     "kicker": "Промпт 9 · герой"
+    },
+    {
+     "type": "prompt",
+     "title": "Товар: медленный наезд",
+     "text": "The whole scene is a frozen still photograph. The ONLY motion is the camera: an extremely slow, smooth, steady push-in toward the [bottle], about 30 cm over the clip, then settle and hold. No zoom, no pan, no tilt, no handheld drift. The product, its label, the background colour, every prop and all shadows stay exactly as in the first frame; the label stays sharp and readable.\nNEGATIVE: label change, new objects, background colour change, shadow change, fast motion.",
+     "caption": "Image-to-video в Kling 3.0: едет только камера.",
+     "kicker": "Промпт 10 · видео"
+    },
+    {
+     "type": "prompt",
+     "title": "Напиток: живая жидкость",
+     "text": "Static locked-off camera: no zoom, no pan. Milk keeps slowly marbling down into the iced espresso exactly as started in the first frame; tiny condensation droplets slide down the cup. The cup, its logo, the ice cubes, the counter and every prop stay perfectly still. Calm, slow, realistic liquid physics. ICE-COLD drink: the air stays completely clear.\nNEGATIVE: steam, vapour, smoke, mist, hands, straws, new objects, camera movement, logo distortion.",
+     "caption": "Камера стоит, движется только жидкость, пара нет.",
+     "kicker": "Промпт 11 · видео"
+    },
+    {
+     "type": "prompt",
+     "title": "Портрет: живой взгляд",
+     "text": "One continuous take, no cuts. Slow dolly in at eye level from medium shot to medium close-up, about 50 cm of travel, then settle and hold; no zoom, no pan, no handheld drift. The [doctor] breathes calmly, glances down at [the tablet in her hands], then lifts her eyes to the lens and her half-smile slowly widens. Hair and coat move only slightly. Face, identity and clothing stay 100% as in the first frame. Lips stay closed. Real unretouched skin.\nAUDIO: quiet clinic room tone only. No music.",
+     "caption": "Seedance 2.5: человек дышит, смотрит в камеру, лицо не меняется.",
+     "kicker": "Промпт 12 · видео"
+    },
+    {
+     "type": "prompt",
+     "title": "Рекламная сцена (text-to-video)",
+     "text": "GLOBAL STYLE: photoreal live-action, warm documentary look, 35mm film grain, 24fps, 9:16. No 3D render look, real unretouched skin.\nSCENE: a barista makes the first cappuccino of the morning in [a small coffee shop]. 8 seconds, one single continuous take, no cuts.\nFIRST FRAME: extreme close-up of a metal pitcher pouring milk into a white cup.\nSHOT (0-8s): 100mm macro, a latte-art heart forms (0-4s); the camera slowly pulls back about 1 m to a medium shot as the barista slides the cup across the counter (4-8s). No zoom, no pan.\nLIGHTING: low morning sun from the window behind the camera, 4500K.\nPOSITIVE LOCKS: exactly one person, exactly one cup.\nAUDIO: espresso machine hiss, milk pour, cup on saucer. No music.",
+     "caption": "Text-to-video в Seedance 2.5, режиссёрская структура.",
+     "kicker": "Промпт 13 · видео"
+    }
+   ]
+  },
+  {
+   "id": "finish",
+   "title": "Ошибки, итоги, словарь",
+   "slides": [
+    {
+     "type": "cover",
+     "title": "Ошибки, итоги, словарь",
+     "image": "cover-finish.webp",
+     "text": "Десять частых ошибок, чек-лист «готово, если» и словарь — чтобы всё закрепилось."
+    },
+    {
+     "type": "cards",
+     "kicker": "Частые ошибки · 1 из 2",
+     "title": "Симптом → что делать",
+     "items": [
+      {
+       "front": "Кожа как пластик",
+       "back": "Поры, пушок, зерно явно; один чёткий свет; убрать perfect и cinematic; «no CGI»"
+      },
+      {
+       "front": "Товар «похож, но не мой»",
+       "back": "Реальное фото как Image 1 и что сохранить: форма, этикетка, цвет"
+      },
+      {
+       "front": "Буквы и лого — каша",
+       "back": "GPT Image 2.5, 1-3 слова в кавычках; лого файлом; длинный текст — в Canva"
+      },
+      {
+       "front": "Лицо меняется от кадра к кадру",
+       "back": "Лист персонажа или Soul ID; лицо от 20% кадра; одна модель на серию"
+      },
+      {
+       "front": "Пишешь «not smiling» — он улыбается",
+       "back": "Пиши позитивом, что должно быть: «calm neutral face, lips closed»"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "kicker": "Частые ошибки · 2 из 2",
+     "title": "Симптом → что делать",
+     "items": [
+      {
+       "front": "Камера мешает движения",
+       "back": "Одно движение + запрет соседних: «slow push-in, no zoom, no pan, no tilt»"
+      },
+      {
+       "front": "Лишняя лампа или два солнца",
+       "back": "Один источник; невидимый — без слова-предмета: «as if from an unseen window»"
+      },
+      {
+       "front": "Лишние пальцы",
+       "back": "Напиши, где каждая рука и что держит; меньше рук в кадре"
+      },
+      {
+       "front": "Видео «несётся»",
+       "back": "1-3 действия на клип; длинную историю — на клипы и склеить"
+      },
+      {
+       "front": "4 плохих дубля подряд",
+       "back": "Проблема в промпте, а не в удаче: перепиши одну конкретную строку"
+      }
+     ]
+    },
+    {
+     "type": "quiz",
+     "kicker": "Итоговый вопрос",
+     "title": "Кадр почти хорош, но кожа «пластиковая». Что делаешь?",
+     "options": [
+      "Перегенерирую 20 раз",
+      "Правлю: убираю perfect и cinematic, добавляю поры и зерно, при нужде — Skin Enhancer",
+      "Беру другую модель посреди серии"
+     ],
+     "answer": 1,
+     "explain": "Почти хороший кадр не перегенерируют, а правят по порядку. Одна правка за раз — и видно, что она дала."
+    },
+    {
+     "type": "checklist",
+     "title": "Готово, если",
+     "items": [
+      "Товар и лица — по фото, роли референсов подписаны",
+      "Промпт: 7 слоёв + NEGATIVE",
+      "Формат под площадку, фото 2K, финал 1080p",
+      "Кожа живая, лого и цвет — как у оригинала",
+      "Одно движение, одна камера, клип просмотрен до конца",
+      "Музыка тише голоса, титры от 2 секунд",
+      "Промпты и итерации — в библиотеке"
+     ]
+    },
+    {
+     "type": "cards",
+     "title": "Словарь: кадр",
+     "items": [
+      {
+       "front": "Промпт",
+       "back": "Текстовое описание кадра или ролика для нейросети"
+      },
+      {
+       "front": "Модель",
+       "back": "Конкретная нейросеть внутри Higgsfield: GPT Image 2.5, Kling 3.0, Seedance 2.5"
+      },
+      {
+       "front": "Референс",
+       "back": "Картинка-образец: товар, лицо, стиль или свет, которые модель должна повторить"
+      },
+      {
+       "front": "Hero-кадр",
+       "back": "Главный утверждённый кадр серии, по которому делаются остальные"
+      },
+      {
+       "front": "NEGATIVE",
+       "back": "Строка в конце промпта: чего в кадре быть не должно"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "title": "Словарь: видео",
+     "items": [
+      {
+       "front": "Text-to-video",
+       "back": "Видео из текстового описания сцены"
+      },
+      {
+       "front": "Image-to-video",
+       "back": "Видео из готовой картинки: кадр оживает"
+      },
+      {
+       "front": "Start / end frame",
+       "back": "Первый и последний кадр, между которыми модель строит движение"
+      },
+      {
+       "front": "Aspect ratio",
+       "back": "Формат кадра: 9:16, 4:5, 1:1, 16:9"
+      },
+      {
+       "front": "Inpaint / Outpaint",
+       "back": "Перерисовать выбранную зону / расширить кадр за края"
+      }
+     ]
+    },
+    {
+     "type": "cards",
+     "title": "Словарь: герои и звук",
+     "items": [
+      {
+       "front": "Лист персонажа",
+       "back": "Картинка с героем в 2-3 видах на сером фоне для консистентности"
+      },
+      {
+       "front": "Soul ID",
+       "back": "Обученная модель лица реального человека по 20+ фото"
+      },
+      {
+       "front": "Element",
+       "back": "Сохранённый персонаж, товар или локация, подставляется через @тег"
+      },
+      {
+       "front": "Voiceover",
+       "back": "Закадровый голос из текста"
+      },
+      {
+       "front": "Липсинк",
+       "back": "Подгонка движения губ под звук"
+      }
+     ]
+    },
+    {
+     "type": "links",
+     "title": "Полезные ссылки",
+     "items": [
+      {
+       "label": "Higgsfield",
+       "url": "https://higgsfield.ai",
+       "text": "Генерация фото, видео и голоса"
+      },
+      {
+       "label": "ElevenLabs",
+       "url": "https://elevenlabs.io",
+       "text": "Голос и озвучка, в том числе на казахском"
+      },
+      {
+       "label": "CapCut",
+       "url": "https://www.capcut.com",
+       "text": "Монтаж, музыка и титры"
+      },
+      {
+       "label": "Canva",
+       "url": "https://www.canva.com",
+       "text": "Заголовки и текст поверх визуалов"
+      },
+      {
+       "label": "Suno",
+       "url": "https://suno.com",
+       "text": "Музыка для роликов"
+      }
+     ],
+     "note": "Модели и интерфейс Higgsfield обновляются каждые пару месяцев. Формула кадра, референсы и «одна правка за раз» остаются."
+    }
+   ]
+  }
+ ]
+}
