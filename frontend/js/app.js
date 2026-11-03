@@ -8,6 +8,7 @@ const APP = (() => {
   const toast = document.getElementById('toast');
 
   let modules = [];
+  let student = null;
   let ready = false;
   let currentId = null;       // открытый модуль
   let lesson = null;          // { moduleId, data } — ответ /lesson для открытого модуля
@@ -54,9 +55,11 @@ const APP = (() => {
     try {
       const [me, list] = await Promise.all([API.getMe(), API.getModules()]);
       modules = list;
+      student = me;
       renderHero(me);
       renderModules();
       route();
+      TOUR.maybeWelcome();
     } catch (error) {
       if (error.message !== 'unauthorized') showToast('Не удалось загрузить программу');
     }
@@ -569,7 +572,16 @@ const APP = (() => {
     });
   };
 
-  return { init };
+  // Для тура (js/tour.js): кто ученик, какой блок «текущий», перерисовка прогресса после тура
+  const tourModule = () => modules.find(m => m.status === 'active') || modules.find(m => m.status !== 'locked') || modules[0];
+  const refreshProgress = () => {
+    renderSide();
+    renderHeroNow(modules.find(m => m.status === 'active'));
+    renderDeckEntry();
+  };
+  const hasDeck = () => !!lesson?.data?.deck;
+
+  return { init, student: () => student, tourModule, refreshProgress, hasDeck };
 })();
 
 // Старт: если есть сессия — сразу в кабинет (сервер сам вернёт 401, если она истекла)

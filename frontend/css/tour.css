@@ -1,0 +1,153 @@
+/* Приветствие и тур по кабинету — «Лаванда 2026». Движение: transform/opacity, 200–280 мс. */
+
+html.tour-open, html.tour-open body { overscroll-behavior: none; }
+
+/* ---------- общие кнопки тура ---------- */
+.tour-btn {
+  height: 46px;
+  padding: 0 18px;
+  border-radius: 14px;
+  border: none;
+  font: 600 15px var(--f-text);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 140ms cubic-bezier(0.23, 1, 0.32, 1), background-color 160ms ease, opacity 160ms ease;
+}
+.tour-btn:active { transform: scale(0.97); }
+.tour-btn:focus-visible, .tour-x:focus-visible { outline: 2px solid var(--violet); outline-offset: 2px; }
+.tour-next { background: var(--violet); color: #fff; box-shadow: 0 8px 22px rgba(139, 92, 246, 0.32); }
+.tour-back { background: #EFEBE4; color: var(--ink); }
+.tour-back:disabled { opacity: 0.4; cursor: default; transform: none; }
+
+/* ---------- приветствие ---------- */
+.welcome { position: fixed; inset: 0; z-index: 1300; display: grid; place-items: end center; padding: 12px 12px calc(12px + env(safe-area-inset-bottom, 0px)); }
+.welcome-bg { position: absolute; inset: 0; background: rgba(12, 7, 24, 0.72); opacity: 0; transition: opacity 240ms ease; }
+.welcome.is-open .welcome-bg { opacity: 1; }
+.welcome-card {
+  position: relative;
+  width: min(460px, 100%);
+  max-height: calc(100dvh - 24px);
+  overflow: auto;
+  border-radius: 24px;
+  background: var(--paper2);
+  color: var(--ink);
+  box-shadow: 0 30px 80px rgba(12, 7, 24, 0.5);
+  outline: none;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 220ms ease, transform 280ms cubic-bezier(0.32, 0.72, 0, 1);
+}
+.welcome.is-open .welcome-card { opacity: 1; transform: none; }
+.welcome-media { position: relative; height: 148px; background: var(--dusk); overflow: hidden; }
+.welcome-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: 50% 35%; }
+.welcome-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12, 7, 24, 0) 40%, rgba(12, 7, 24, 0.55) 100%); }
+.welcome-body { padding: 20px 20px 18px; display: flex; flex-direction: column; gap: 12px; }
+.welcome-kicker { font: 500 11px var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--violet-ink); }
+.welcome-title { margin: -4px 0 0; font: 500 24px/30px var(--f-head); letter-spacing: -0.02em; text-wrap: balance; }
+.welcome-text { margin: 0; font: 400 15px/22px var(--f-text); color: var(--text2); text-wrap: pretty; }
+.welcome-list { list-style: none; margin: 2px 0 4px; padding: 0; display: flex; flex-direction: column; border-radius: 16px; background: #fff; border: 1px solid var(--line); counter-reset: w; }
+.welcome-list li { counter-increment: w; display: grid; grid-template-columns: 28px 1fr; column-gap: 12px; padding: 10px 14px; border-top: 1px solid #EFEBE4; }
+.welcome-list li:first-child { border-top: none; }
+.welcome-list li::before { content: counter(w); grid-row: 1 / span 2; align-self: center; width: 28px; height: 28px; border-radius: 9px; display: grid; place-items: center; background: var(--lavender); color: var(--deep); font: 500 12px var(--f-mono); }
+.welcome-list b { font: 600 14px/19px var(--f-text); }
+.welcome-list span { font: 400 13px/18px var(--f-text); color: var(--text2); }
+.welcome-actions { display: flex; flex-direction: column; gap: 8px; }
+.welcome-actions .tour-btn { width: 100%; height: 50px; }
+
+/* ---------- тур ---------- */
+.tour { position: fixed; inset: 0; z-index: 1300; --safe-b: env(safe-area-inset-bottom, 0px); }
+.tour[hidden] { display: none; }
+.tour-block { position: absolute; inset: 0; } /* ловит клики: под туром ничего не нажимается */
+.tour-hole {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 16px;
+  box-shadow: 0 0 0 200vmax rgba(12, 7, 24, 0.7), 0 0 0 2px var(--lavender) inset;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 220ms ease, transform 280ms cubic-bezier(0.23, 1, 0.32, 1), width 280ms cubic-bezier(0.23, 1, 0.32, 1), height 280ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.tour.is-open .tour-hole { opacity: 1; }
+.tour.no-target .tour-hole { width: 0 !important; height: 0 !important; }
+
+.tour-card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: min(380px, calc(100vw - 24px));
+  padding: 18px 18px 16px;
+  border-radius: 20px;
+  background: var(--paper2);
+  color: var(--ink);
+  box-shadow: 0 24px 64px rgba(12, 7, 24, 0.45);
+  outline: none;
+  opacity: 0;
+  transition: opacity 200ms ease, transform 280ms cubic-bezier(0.23, 1, 0.32, 1);
+  touch-action: none; /* свайпы по карточке — наши (шаги / закрыть) */
+}
+.tour.is-open .tour-card { opacity: 1; }
+.tour.is-moving .tour-card { opacity: 0.55; }
+.tour-x { position: absolute; top: 10px; right: 10px; width: 36px; height: 36px; display: grid; place-items: center; border: none; border-radius: 10px; background: none; color: var(--mute); cursor: pointer; }
+.tour-x svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+.tour-step { font: 500 11px var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: var(--violet-ink); }
+.tour-title { margin: 6px 40px 6px 0; font: 500 18px/24px var(--f-head); letter-spacing: -0.015em; text-wrap: balance; }
+.tour-text { margin: 0; font: 400 15px/22px var(--f-text); color: var(--text2); text-wrap: pretty; }
+.tour-dots { display: flex; gap: 5px; margin: 14px 0 12px; }
+.tour-dots i { flex: 1; height: 3px; border-radius: 3px; background: var(--line); transition: background-color 200ms ease; }
+.tour-dots i.is-past { background: var(--lavender); }
+.tour-dots i.is-on { background: var(--violet); }
+.tour-nav { display: grid; grid-template-columns: 1fr 1.4fr; gap: 8px; }
+
+/* ---------- кнопки «Как пользоваться» ---------- */
+.header-actions { display: flex; align-items: center; gap: 8px; }
+.side-help {
+  display: none;
+}
+@media (min-width: 1100px) {
+  .side-help {
+    display: flex; align-items: center; gap: 12px; margin-top: auto; margin-bottom: 8px; padding: 10px; border: none; border-radius: 12px;
+    background: none; color: rgba(247, 245, 240, 0.82); font: 500 14px var(--f-text); text-align: left; cursor: pointer;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .side-help svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+  .side-help + .side-foot { margin-top: 0; }
+
+  .welcome { place-items: center; }
+  .welcome-card { width: min(560px, 100%); display: grid; grid-template-columns: 1fr; }
+  .welcome-media { height: 200px; }
+  .welcome-body { padding: 26px 28px 24px; gap: 14px; }
+  .welcome-title { font-size: 30px; line-height: 36px; }
+  .welcome-text { font-size: 16px; line-height: 24px; }
+  .welcome-actions { flex-direction: row-reverse; }
+  .welcome-actions .tour-btn { width: auto; flex: 1; }
+  .welcome-actions .welcome-go { flex: 1.6; }
+  .tour-card { width: 380px; padding: 20px 20px 18px; }
+}
+.header-help { display: inline-flex; align-items: center; gap: 6px; white-space: nowrap; }
+.header-help svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.header-logo { white-space: nowrap; }
+/* узкий телефон: вопрос-иконка вместо подписи */
+@media (max-width: 479px) {
+  .header-help { width: 36px; height: 36px; padding: 0; justify-content: center; }
+  .header-help span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+}
+@media (max-height: 700px) {
+  .welcome-media { height: 104px; }
+  .welcome-body { gap: 10px; padding-top: 16px; }
+  .welcome-list li { padding: 8px 12px; }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .tour-next:hover { background: var(--violet-ink); }
+  .tour-back:not(:disabled):hover { background: #E5E0D6; }
+  .tour-x:hover { background: #EFEBE4; color: var(--ink); }
+  .side-help:hover { background: rgba(255, 255, 255, 0.05); color: #fff; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .welcome-bg, .welcome-card, .tour-hole, .tour-card, .tour-dots i { transition: none !important; }
+  .welcome-card { transform: none; }
+}
+.tour.no-anim .tour-card, .tour.no-anim .tour-hole { transition: opacity 200ms ease; }
