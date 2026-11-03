@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 354" width="100%" role="img" aria-label="Первый день агента онлайн-школы">
+<defs><marker id="a-day" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ОНЛАЙН-ШКОЛА · ПЕРВЫЙ ДЕНЬ</text>
+<line x1="70" y1="50" x2="70" y2="320" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<text x="20" y="54" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">10:05</text>
+<circle cx="70" cy="50" r="7" fill="#8B5CF6"/>
+<text x="88" y="54" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Роль</text>
+<text x="88" y="72" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">контент-ассистент, дружелюбно, на ты</text>
+<text x="20" y="106" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">10:15</text>
+<circle cx="70" cy="102" r="7" fill="#8B5CF6"/>
+<text x="88" y="106" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Память</text>
+<text x="88" y="124" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">форматы, ученики и их страхи</text>
+<text x="20" y="158" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">10:30</text>
+<circle cx="70" cy="154" r="7" fill="#8B5CF6"/>
+<text x="88" y="158" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Задача</text>
+<text x="88" y="176" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">по понедельникам в 9:00 — план 5 постов</text>
+<text x="20" y="210" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">10:40</text>
+<circle cx="70" cy="206" r="7" fill="#FFB59A"/>
+<text x="88" y="210" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Тест</text>
+<text x="88" y="228" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">слишком общо → «опирайся на страхи»</text>
+<text x="20" y="262" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9"></text>
+<circle cx="70" cy="258" r="7" fill="#8B5CF6"/>
+<text x="88" y="262" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Второй прогон</text>
+<text x="88" y="280" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">попал в точку</text>
+<circle cx="70" cy="320" r="9" fill="#24124A"/>
+<rect x="88" y="298" width="260" height="46" rx="12" fill="#8B5CF6"/>
+<text x="102" y="316" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Следующий понедельник, 9:00</text>
+<text x="102" y="334" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">план пришёл сам</text>
+</svg>

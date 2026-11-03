@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 322" width="100%" role="img" aria-label="Тихий режим: молчит в коридоре нормы, пишет при отклонении">
+<defs><marker id="a-norm" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ЗАЯВКИ ЗА ДЕНЬ · УСЛОВНО</text>
+<rect x="44" y="72.3333" width="296" height="118.056" rx="6" fill="#D2C2FF" opacity="0.55"/>
+<line x1="44" y1="190.389" x2="340" y2="190.389" stroke="#8B5CF6" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 4"/>
+<text x="36" y="194.389" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end">5</text>
+<line x1="44" y1="72.3333" x2="340" y2="72.3333" stroke="#8B5CF6" stroke-width="1" stroke-linecap="round" stroke-dasharray="4 4"/>
+<text x="36" y="76.3333" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end">30</text>
+<text x="54" y="90.3333" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A">норма — агент молчит</text>
+<path d="M54.0 147.9 L75.2 129.0 L96.5 157.3 L117.7 114.8 L138.9 133.7 L160.2 143.2 L181.4 124.3 L202.6 110.1 L223.8 138.4 L245.1 152.6 L266.3 199.8 L287.5 143.2 L308.8 129.0 L330.0 119.6" fill="none" stroke="#24124A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<circle cx="54" cy="147.889" r="3.5" fill="#24124A"/>
+<circle cx="75.2308" cy="129" r="3.5" fill="#24124A"/>
+<circle cx="96.4615" cy="157.333" r="3.5" fill="#24124A"/>
+<circle cx="117.692" cy="114.833" r="3.5" fill="#24124A"/>
+<circle cx="138.923" cy="133.722" r="3.5" fill="#24124A"/>
+<circle cx="160.154" cy="143.167" r="3.5" fill="#24124A"/>
+<circle cx="181.385" cy="124.278" r="3.5" fill="#24124A"/>
+<circle cx="202.615" cy="110.111" r="3.5" fill="#24124A"/>
+<circle cx="223.846" cy="138.444" r="3.5" fill="#24124A"/>
+<circle cx="245.077" cy="152.611" r="3.5" fill="#24124A"/>
+<circle cx="266.308" cy="199.833" r="6" fill="#FFB59A" stroke="#0F1112" stroke-width="1.5"/>
+<circle cx="287.538" cy="143.167" r="3.5" fill="#24124A"/>
+<circle cx="308.769" cy="129" r="3.5" fill="#24124A"/>
+<circle cx="330" cy="119.556" r="3.5" fill="#24124A"/>
+<line x1="44" y1="214" x2="340" y2="214" stroke="#D6D0C6" stroke-width="1" stroke-linecap="round"/>
+<rect x="12" y="232" width="336" height="62" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="26" y="252" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#24124A" letter-spacing="0.5">НИЖЕ 5 — ОДНО СООБЩЕНИЕ</text>
+<text x="26" y="272" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">что случилось, насколько важно</text>
+<text x="26" y="288" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">и что сделать</text>
+<line x1="266.308" y1="207.833" x2="266.308" y2="228" stroke="#FFB59A" stroke-width="1.5" stroke-linecap="round" stroke-dasharray="3 3"/>
+<text x="180" y="314" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">всё в норме — ни одного сообщения</text>
+</svg>

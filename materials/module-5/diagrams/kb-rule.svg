@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 404" width="100%" role="img" aria-label="Правило: нет в базе — не выдумывай">
+<defs><marker id="a-kbr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="70" y="12" width="220" height="40" rx="14" fill="#8B5CF6"/>
+<text x="180" y="36.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Вопрос клиента</text>
+<line x1="180" y1="56" x2="180" y2="74" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-kbr)"/>
+<rect x="70" y="80" width="220" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="104.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112" text-anchor="middle">Ищет фрагмент в knowledge/</text>
+<path d="M180 124 L180 140 L90 140 L90 158" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-kbr)"/>
+<path d="M180 140 L270 140 L270 158" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-kbr)"/>
+<text x="90" y="178" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" text-anchor="middle">нашёл</text>
+<text x="270" y="178" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#45433F" text-anchor="middle">нет или неполно</text>
+<rect x="12" y="188" width="162" height="64" rx="12" fill="#D2C2FF"/>
+<text x="93" y="214" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#24124A" text-anchor="middle">Отвечает</text>
+<text x="93" y="232" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#24124A" text-anchor="middle">по файлу базы</text>
+<rect x="186" y="188" width="162" height="64" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="267" y="214" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">«Уточню</text>
+<text x="267" y="232" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" text-anchor="middle">у владельца»</text>
+<text x="20" y="284" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F" letter-spacing="0.5">НИКОГДА НЕ ПРИДУМЫВАЕТ</text>
+<rect x="12" y="294" width="68.1133" height="32" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="27" cy="310" r="7" fill="#0F1112"/>
+<path d="M23.5 306.5 L30.5 313.5 M30.5 306.5 L23.5 313.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="39" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#45433F">цены</text>
+<rect x="86.1133" y="294" width="73.0508" height="32" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="101.113" cy="310" r="7" fill="#0F1112"/>
+<path d="M97.6133 306.5 L104.613 313.5 M104.613 306.5 L97.6133 313.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="113.113" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#45433F">сроки</text>
+<rect x="165.164" y="294" width="80.4766" height="32" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="180.164" cy="310" r="7" fill="#0F1112"/>
+<path d="M176.664 306.5 L183.664 313.5 M183.664 306.5 L176.664 313.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="192.164" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#45433F">скидки</text>
+<rect x="251.641" y="294" width="98.8633" height="32" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="266.641" cy="310" r="7" fill="#0F1112"/>
+<path d="M263.141 306.5 L270.141 313.5 M270.141 306.5 L263.141 313.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="278.641" y="314.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#45433F">обещания</text>
+<rect x="12" y="340" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="365" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Проверка: 3 вопроса, которых нет</text>
+<text x="26" y="383" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">в базе. Уверенный ответ = правило жёстче</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 464" width="100%" role="img" aria-label="Структура папки базы знаний">
+<defs><marker id="a-kb" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ПАПКА АГЕНТА</text>
+<rect x="12" y="32" width="336" height="40" rx="12" fill="#24124A"/>
+<text x="28" y="57" font-family="IBM Plex Mono, monospace" font-size="14" font-weight="600" fill="#FFFFFF">knowledge/</text>
+<text x="334" y="57" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF" text-anchor="end">база знаний</text>
+<line x1="30" y1="72" x2="30" y2="324" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<line x1="30" y1="104" x2="44" y2="104" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="84" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="101" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">00-index.md</text>
+<text x="60" y="117" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">оглавление: какой файл за что</text>
+<line x1="30" y1="148" x2="44" y2="148" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="128" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="145" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">faq.md</text>
+<text x="60" y="161" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">вопрос клиента → короткий ответ</text>
+<line x1="30" y1="192" x2="44" y2="192" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="172" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="189" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">price.md</text>
+<text x="60" y="205" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">цены, что входит (дата!)</text>
+<line x1="30" y1="236" x2="44" y2="236" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="216" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="233" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">rules.md</text>
+<text x="60" y="249" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сроки, оплата, возвраты</text>
+<line x1="30" y1="280" x2="44" y2="280" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="260" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="277" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">tone.md</text>
+<text x="60" y="293" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">тон и 2-3 примера ответов</text>
+<line x1="30" y1="324" x2="44" y2="324" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round"/>
+<rect x="48" y="304" width="300" height="40" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="60" y="321" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#5B33C9">not-doing.md</text>
+<text x="60" y="337" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">чего мы не делаем</text>
+<line x1="30" y1="324" x2="30" y2="368" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<line x1="30" y1="368" x2="44" y2="368" stroke="#D2C2FF" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 3"/>
+<rect x="48" y="348" width="300" height="40" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="60" y="365" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#8C8880">archive/</text>
+<text x="60" y="381" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#8C8880">старые версии — агент их не берёт</text>
+<rect x="12" y="400" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="425" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Один документ — одна тема.</text>
+<text x="26" y="443" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">Один факт — в одном месте.</text>
+</svg>

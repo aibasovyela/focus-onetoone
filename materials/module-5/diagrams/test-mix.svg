@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 338" width="100%" role="img" aria-label="Десять тест-кейсов: четыре типа">
+<defs><marker id="a-mix" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">10 ТЕСТ-КЕЙСОВ ПЕРЕД ЗАПУСКОМ</text>
+<rect x="12" y="34" width="30" height="30" rx="8" fill="#D2C2FF"/>
+<rect x="45.6" y="34" width="30" height="30" rx="8" fill="#D2C2FF"/>
+<rect x="79.2" y="34" width="30" height="30" rx="8" fill="#D2C2FF"/>
+<rect x="112.8" y="34" width="30" height="30" rx="8" fill="#D2C2FF"/>
+<rect x="146.4" y="34" width="30" height="30" rx="8" fill="#8B5CF6"/>
+<rect x="180" y="34" width="30" height="30" rx="8" fill="#8B5CF6"/>
+<rect x="213.6" y="34" width="30" height="30" rx="8" fill="#FFB59A"/>
+<rect x="247.2" y="34" width="30" height="30" rx="8" fill="#FFB59A"/>
+<rect x="280.8" y="34" width="30" height="30" rx="8" fill="#24124A"/>
+<rect x="314.4" y="34" width="30" height="30" rx="8" fill="#24124A"/>
+<rect x="12" y="89" width="14" height="14" rx="4" fill="#D2C2FF"/>
+<text x="36" y="101" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Типичные · 4</text>
+<text x="36" y="119" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">«Сколько стоит доставка?»</text>
+<rect x="12" y="135" width="14" height="14" rx="4" fill="#8B5CF6"/>
+<text x="36" y="147" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Сложные · 2</text>
+<text x="36" y="165" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">ответ из двух файлов</text>
+<rect x="12" y="181" width="14" height="14" rx="4" fill="#FFB59A"/>
+<text x="36" y="193" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Нет в базе · 2</text>
+<text x="36" y="211" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">ждём честное «уточню»</text>
+<rect x="12" y="227" width="14" height="14" rx="4" fill="#24124A"/>
+<text x="36" y="239" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Каверзные · 2</text>
+<text x="36" y="257" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">скидка, грубость, «инструкция»</text>
+<rect x="12" y="274" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="299" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Хороший первый прогон — 7-8 из 10.</text>
+<text x="26" y="317" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">Ошибки чинишь в базе или инструкции</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 412" width="100%" role="img" aria-label="Опасные действия только после твоего «ок»">
+<defs><marker id="a-ok" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ПУТЬ ОПАСНОЙ ПРОСЬБЫ</text>
+<rect x="12" y="34" width="336" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="58.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">«Почисти папку с отчётами»</text>
+<line x1="180" y1="76" x2="180" y2="88" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-ok)"/>
+<rect x="12" y="90" width="336" height="40" rx="12" fill="#D2C2FF"/>
+<text x="180" y="114.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#24124A" text-anchor="middle">Агент показывает список</text>
+<line x1="180" y1="132" x2="180" y2="144" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-ok)"/>
+<rect x="12" y="146" width="336" height="40" rx="12" fill="#8B5CF6"/>
+<text x="180" y="170.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF" text-anchor="middle">Ждёт твоего «ок»</text>
+<line x1="180" y1="188" x2="180" y2="200" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-ok)"/>
+<rect x="12" y="202" width="336" height="40" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="226.5" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">Только потом делает</text>
+<text x="20" y="264" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ВСЕГДА С «ОК»</text>
+<rect x="12" y="274" width="96" height="32" rx="10" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1"/>
+<text x="60" y="294.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#5B33C9" text-anchor="middle">удаление</text>
+<rect x="114" y="274" width="132" height="32" rx="10" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1"/>
+<text x="180" y="294.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#5B33C9" text-anchor="middle">отправка наружу</text>
+<rect x="252" y="274" width="92" height="32" rx="10" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1"/>
+<text x="298" y="294.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#5B33C9" text-anchor="middle">платное</text>
+<text x="20" y="324" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F" letter-spacing="0.5">НИКОГДА</text>
+<rect x="12" y="334" width="336" height="32" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="30" cy="350" r="8" fill="#0F1112"/>
+<path d="M26.5 346.5 L33.5 353.5 M33.5 346.5 L26.5 353.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="354.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">хранить и пересылать пароли, токены, коды</text>
+<rect x="12" y="372" width="336" height="32" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="30" cy="388" r="8" fill="#0F1112"/>
+<path d="M26.5 384.5 L33.5 391.5 M33.5 384.5 L26.5 391.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="392.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">решать вместо врача, юриста, финансиста</text>
+</svg>

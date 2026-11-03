@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 412" width="100%" role="img" aria-label="Шаблон плюс данные равно документ">
+<defs><marker id="a-doc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ИСХОДЯЩИЙ ДОКУМЕНТ</text>
+<rect x="12" y="34" width="108" height="62" rx="12" fill="#D2C2FF"/>
+<text x="66" y="61" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Шаблон</text>
+<text x="66" y="80" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">структура и тон</text>
+<text x="123" y="71" font-family="Unbounded, Arial, sans-serif" font-size="16" font-weight="600" fill="#5B33C9" text-anchor="middle">+</text>
+<rect x="126" y="34" width="108" height="62" rx="12" fill="#FFB59A"/>
+<text x="180" y="61" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Прайс</text>
+<text x="180" y="80" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">цифры, условия</text>
+<text x="237" y="71" font-family="Unbounded, Arial, sans-serif" font-size="16" font-weight="600" fill="#5B33C9" text-anchor="middle">+</text>
+<rect x="240" y="34" width="108" height="62" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="294" y="61" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Запрос</text>
+<text x="294" y="80" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">от клиента</text>
+<line x1="180" y1="102" x2="180" y2="122" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-doc)"/>
+<rect x="100" y="128" width="160" height="70" rx="14" fill="#8B5CF6"/>
+<text x="180" y="158" font-family="Unbounded, Arial, sans-serif" font-size="18" font-weight="600" fill="#FFFFFF" text-anchor="middle">PDF</text>
+<text x="180" y="180" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF" text-anchor="middle">КП · отчёт · счёт</text>
+<line x1="180" y1="202" x2="180" y2="222" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-doc)"/>
+<rect x="12" y="228" width="336" height="108" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="26" y="250" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#24124A" letter-spacing="0.5">ТВОЯ ПРОВЕРКА ПЕРЕД ОТПРАВКОЙ</text>
+<circle cx="34" cy="272" r="8" fill="#8B5CF6"/>
+<path d="M30 272 L33 275 L38.5 268.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="276.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">цены совпадают с прайсом</text>
+<circle cx="34" cy="294" r="8" fill="#8B5CF6"/>
+<path d="M30 294 L33 297 L38.5 290.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="298.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">сумма посчитана верно</text>
+<circle cx="34" cy="316" r="8" fill="#8B5CF6"/>
+<path d="M30 316 L33 319 L38.5 312.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="320.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">реквизиты клиента правильные</text>
+<rect x="12" y="348" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="373" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Не «сделай красивое КП»,</text>
+<text x="26" y="391" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">а эталон + данные. Подпись — твоя</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 446" width="100%" role="img" aria-label="Клиника: один процесс от ночной заявки до записи">
+<defs><marker id="a-cl" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="12" y="12" width="336" height="56" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="45" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">НОЧЬ</text>
+<text x="92" y="36" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Заявка через вебхук</text>
+<text x="92" y="54" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">«болит зуб, хочу на приём»</text>
+<line x1="180" y1="70" x2="180" y2="82" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cl)"/>
+<rect x="12" y="86" width="336" height="56" rx="12" fill="#D2C2FF"/>
+<text x="26" y="119" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">АГЕНТ</text>
+<text x="92" y="110" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Ответ по базе + 3 слота</text>
+<text x="92" y="128" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">из календаря врачей</text>
+<line x1="180" y1="144" x2="180" y2="156" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cl)"/>
+<rect x="12" y="160" width="336" height="56" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="193" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9">9:00</text>
+<text x="92" y="184" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Черновик и запись в CRM</text>
+<text x="92" y="202" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">ждут администратора</text>
+<line x1="180" y1="218" x2="180" y2="230" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cl)"/>
+<rect x="12" y="234" width="336" height="56" rx="12" fill="#8B5CF6"/>
+<text x="26" y="267" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#D2C2FF">АДМИН</text>
+<text x="92" y="258" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Нажимает «ок»</text>
+<text x="92" y="276" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#D2C2FF">человек в контуре</text>
+<rect x="12" y="314" width="336" height="56" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="26" y="338" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">«острая боль», «отёк»</text>
+<text x="26" y="356" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">сразу сигнал дежурному врачу</text>
+<rect x="12" y="382" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="407" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Диагнозы агент не ставит:</text>
+<text x="26" y="425" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">это записано в «чего мы не делаем»</text>
+</svg>

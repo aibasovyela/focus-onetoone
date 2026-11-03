@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 354" width="100%" role="img" aria-label="Три вопроса для выбора первой задачи агента">
+<defs><marker id="a-pick" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<g opacity="1"></g>
+<circle cx="180" cy="92" r="82" fill="#D2C2FF" fill-opacity="0.45" stroke="#D2C2FF" stroke-width="1.5"/>
+<circle cx="116" cy="192" r="82" fill="#FFB59A" fill-opacity="0.45" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="244" cy="192" r="82" fill="#8B5CF6" fill-opacity="0.45" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="180" y="46" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">Делаю каждую</text>
+<text x="180" y="63" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">неделю одинаково</text>
+<text x="84" y="220" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">Постоянно</text>
+<text x="84" y="237" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">откладываю</text>
+<text x="276" y="220" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">Теряю инфо:</text>
+<text x="276" y="237" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">не успеваю</text>
+<rect x="130" y="144" width="100" height="40" rx="12" fill="#24124A"/>
+<text x="180" y="161" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">первый</text>
+<text x="180" y="177" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#D2C2FF" text-anchor="middle">агент</text>
+<rect x="12" y="290" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="315" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Задача во всех трёх ответах —</text>
+<text x="26" y="333" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">идеальная первая автоматизация</text>
+</svg>
