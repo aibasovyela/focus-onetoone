@@ -26,6 +26,14 @@
   --f-head: "Unbounded", "Helvetica Neue", Arial, sans-serif;
   --f-text: "Golos Text", "Helvetica Neue", Arial, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+  --violet-rgb: 139, 92, 246;
+  --lavender-rgb: 210, 194, 255;
+  --deep-rgb: 36, 18, 74;
+  --end-rgb: 12, 7, 24;
+  --tint: #F3EEFF;
+  --tint-strong: #E2D7FF;
+  --mod-glow: #FFB59A;
+  --mod-bg: linear-gradient(transparent, transparent); /* фактура модуля, css/modules.css */
   --r-card: 16px;
   --r-ctrl: 12px;
   --r-pill: 999px;
@@ -236,7 +244,7 @@ body {
 .input:focus {
   outline: none;
   border-color: var(--violet);
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.18);
+  box-shadow: 0 0 0 3px rgba(var(--violet-rgb), 0.18);
 }
 
 .input::placeholder {

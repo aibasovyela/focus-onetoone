@@ -1,5 +1,5 @@
 // Плеер «урок-слайды» (docs/DECK_FORMAT.md): ← → / свайп / клавиши, главы-сегменты, позиция в localStorage.
-// API: DECK.open({ moduleId, deck, diagrams, start, requestClose, onClose, onHomework }), DECK.goTo(i), DECK.close(),
+// API: DECK.open({ moduleId, mod, deck, diagrams, start, requestClose, onClose, onHomework }), DECK.goTo(i), DECK.close(),
 //      DECK.isOpen(), DECK.progress(moduleId, deck), DECK.flatten(deck)
 const DECK = (() => {
   const E = (s) => MD.esc(String(s ?? ''));
@@ -898,6 +898,7 @@ const DECK = (() => {
     if (S) { goTo(opts.start ?? S.idx); return; }
     const { chapters, slides } = flatten(opts.deck);
     if (!slides.length) return;
+    if (opts.mod) root.dataset.mod = opts.mod; else delete root.dataset.mod; // стиль модуля (css/modules.css)
     const st = load(opts.moduleId);
     const fresh = st.n !== slides.length;
     S = {

@@ -1,0 +1,118 @@
+/* Визуальные стили модулей поверх «Лаванды» (docs/MODULE_STYLES.md).
+   data-mod="1…5" на карточке маршрута, пункте боковой панели, странице модуля и плеере
+   переопределяет фирменные токены — все компоненты внутри берут цвет модуля сами.
+   Каркас, шрифты и сетка общие; модуль меняет только палитру, фактуру (--mod-bg) и картинки. */
+
+[data-mod="1"] { /* LLM · «Ультрамарин» — риограф, полутон */
+  --violet: #3B5BFF; --violet-ink: #2538C4; --lavender: #C8D3FF; --deep: #0F1A55; --end: #060B26;
+  --violet-rgb: 59, 91, 255; --lavender-rgb: 200, 211, 255; --deep-rgb: 15, 26, 85; --end-rgb: 6, 11, 38;
+  --tint: #EEF1FF; --tint-strong: #DCE3FF; --mod-glow: #FFB59A;
+  --mod-bg: radial-gradient(circle, rgba(255, 255, 255, 0.15) 1.1px, transparent 1.7px) 0 0 / 9px 9px;
+}
+
+[data-mod="2"] { /* Higgsfield · «Кинокадр» — кармин и янтарь, плёнка */
+  --violet: #E5243F; --violet-ink: #B4142E; --lavender: #FFC3CB; --deep: #3A0714; --end: #12030A;
+  --violet-rgb: 229, 36, 63; --lavender-rgb: 255, 195, 203; --deep-rgb: 58, 7, 20; --end-rgb: 18, 3, 10;
+  --tint: #FFF0F2; --tint-strong: #FFDCE1; --mod-glow: #FFB547;
+  --mod-bg:
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 10px, transparent 10px 24px) 0 6px / 100% 7px no-repeat,
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.16) 0 10px, transparent 10px 24px) 0 calc(100% - 6px) / 100% 7px no-repeat,
+    linear-gradient(105deg, transparent 38%, rgba(255, 181, 71, 0.2) 55%, transparent 72%);
+}
+
+[data-mod="3"] { /* Claude · «Бумага и глина» — терракота, волокна бумаги */
+  --violet: #C2603C; --violet-ink: #9A4526; --lavender: #F4D3C0; --deep: #3A1E12; --end: #1A0D07;
+  --violet-rgb: 194, 96, 60; --lavender-rgb: 244, 211, 192; --deep-rgb: 58, 30, 18; --end-rgb: 26, 13, 7;
+  --tint: #FBF0E9; --tint-strong: #F6E0D2; --mod-glow: #E9B48F;
+  --mod-bg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 .92 0 0 0 0 .84 0 0 0 .16 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E") 0 0 / 180px 180px;
+}
+
+[data-mod="4"] { /* Агент на Ductor · «Чертёж» — бирюза, сетка синьки */
+  --violet: #0E8F86; --violet-ink: #0A6B64; --lavender: #AEEDE5; --deep: #062E33; --end: #021417;
+  --violet-rgb: 14, 143, 134; --lavender-rgb: 174, 237, 229; --deep-rgb: 6, 46, 51; --end-rgb: 2, 20, 23;
+  --tint: #ECFAF8; --tint-strong: #D3F3EF; --mod-glow: #5EEAD4;
+  --mod-bg:
+    linear-gradient(rgba(174, 237, 229, 0.16) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(90deg, rgba(174, 237, 229, 0.16) 1px, transparent 1px) 0 0 / 28px 28px,
+    linear-gradient(rgba(174, 237, 229, 0.07) 1px, transparent 1px) 0 0 / 7px 7px,
+    linear-gradient(90deg, rgba(174, 237, 229, 0.07) 1px, transparent 1px) 0 0 / 7px 7px;
+}
+
+[data-mod="5"] { /* Агенты advanced · «Система» — графит и кислотный лайм, сеть узлов */
+  --violet: #4E8A0E; --violet-ink: #3F6F09; --lavender: #D6F59C; --deep: #152308; --end: #080D03;
+  --violet-rgb: 78, 138, 14; --lavender-rgb: 214, 245, 156; --deep-rgb: 21, 35, 8; --end-rgb: 8, 13, 3;
+  --tint: #F2FBE3; --tint-strong: #E3F6C4; --mod-glow: #B8F03A;
+  --mod-bg:
+    radial-gradient(circle, rgba(184, 240, 58, 0.55) 1.2px, transparent 1.9px) 0 0 / 28px 28px,
+    repeating-linear-gradient(45deg, rgba(184, 240, 58, 0.08) 0 1px, transparent 1px 14px),
+    repeating-linear-gradient(-45deg, rgba(184, 240, 58, 0.08) 0 1px, transparent 1px 14px);
+}
+
+[data-mod] {
+  --dusk: radial-gradient(130% 90% at 50% 112%, var(--lavender) 0%, var(--violet) 30%, var(--deep) 72%, var(--end) 100%);
+  --cursor: linear-gradient(180deg, var(--lavender), var(--violet) 62%);
+}
+
+/* Фактура модуля поверх заката: шапка модуля, обложки глав, пустые превью */
+[data-mod] .module-detail-header,
+[data-mod] .s-cover,
+[data-mod] .lc-media,
+[data-mod] .ch-thumb,
+[data-mod] .ch-cover { background: var(--mod-bg), var(--dusk); }
+[data-mod] .module-detail-header .eyebrow { color: var(--mod-glow); }
+
+/* Схемы: фирменные цвета SVG → цвета модуля (персик остаётся общим) */
+[data-mod] svg [fill="#8B5CF6" i] { fill: var(--violet); }
+[data-mod] svg [fill="#5B33C9" i] { fill: var(--violet-ink); }
+[data-mod] svg [fill="#D2C2FF" i] { fill: var(--lavender); }
+[data-mod] svg [fill="#24124A" i] { fill: var(--deep); }
+[data-mod] svg [stroke="#8B5CF6" i] { stroke: var(--violet); }
+[data-mod] svg [stroke="#5B33C9" i] { stroke: var(--violet-ink); }
+[data-mod] svg [stroke="#D2C2FF" i] { stroke: var(--lavender); }
+[data-mod] svg [stroke="#24124A" i] { stroke: var(--deep); }
+[data-mod] svg [stop-color="#8B5CF6" i] { stop-color: var(--violet); }
+[data-mod] svg [stop-color="#D2C2FF" i] { stop-color: var(--lavender); }
+[data-mod] svg [stop-color="#24124A" i] { stop-color: var(--deep); }
+
+/* Карточка маршрута: полоса с обложкой модуля, номером и фактурой */
+.route-media {
+  position: relative;
+  display: block;
+  height: 104px;
+  margin: -18px -18px 14px;
+  border-radius: var(--r-card) var(--r-card) 0 0;
+  overflow: hidden;
+  background: var(--mod-bg), var(--dusk);
+}
+.route-media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 28%; }
+.route-media::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--mod-bg), linear-gradient(90deg, rgba(var(--end-rgb), 0.82) 0%, rgba(var(--end-rgb), 0.35) 46%, rgba(var(--end-rgb), 0) 75%);
+}
+.route-num {
+  position: absolute;
+  left: 16px;
+  bottom: 10px;
+  z-index: 1;
+  font: 500 40px/1 var(--f-head);
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+.route-num i { display: inline-block; width: 0.32em; height: 0.52em; margin-left: 0.06em; background: var(--mod-glow); font-style: normal; }
+.is-locked .route-media img { filter: grayscale(0.55) brightness(0.8); }
+.route-card .eyebrow { color: var(--violet-ink); }
+
+/* Боковая панель: открытый блок подсвечен цветом своего модуля */
+.side-item[data-mod] .side-n { box-shadow: inset 0 0 0 1.5px rgba(var(--lavender-rgb), 0.45); }
+
+@media (min-width: 768px) {
+  .route-media { height: 124px; margin: -22px -24px 16px; }
+}
+
+@media (min-width: 1100px) {
+  .route-media { height: 132px; }
+  .is-active .route-media { height: 190px; margin: -28px -32px 20px; }
+  .is-active .route-num { font-size: 56px; left: 24px; bottom: 16px; }
+}

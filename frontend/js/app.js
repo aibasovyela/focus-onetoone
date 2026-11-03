@@ -98,7 +98,7 @@ const APP = (() => {
     const frac = st ? (st.done ? 1 : st.seen / st.n) : 0;
     const sub = st ? (st.done ? 'Урок пройден' : `Слайд ${st.pos + 1} из ${st.n}`) : 'Урок ещё не начат';
     box.innerHTML = `
-      <a class="now-card" href="#${esc(current.id)}">
+      <a class="now-card" href="#${esc(current.id)}" data-mod="${current.number}">
         <span class="now-num" aria-hidden="true">${current.number}</span>
         <span class="now-body">
           <span class="now-kicker">Сейчас · блок ${current.number}</span>
@@ -118,7 +118,7 @@ const APP = (() => {
       const ds = m.status !== 'locked' ? deckState(m.id) : null;
       const frac = ds ? (ds.done ? 1 : ds.seen / ds.n) : m.status === 'done' ? 1 : 0;
       return `
-        <li><a href="#${esc(m.id)}" class="side-item is-${m.status}${m.id === id ? ' is-on' : ''}"${m.id === id ? ' aria-current="page"' : ''}>
+        <li><a href="#${esc(m.id)}" class="side-item is-${m.status}${m.id === id ? ' is-on' : ''}" data-mod="${m.number}"${m.id === id ? ' aria-current="page"' : ''}>
           <span class="side-n">${m.status === 'done' ? '✓' : m.number}</span>
           <span class="side-t"><b>${esc(m.title)}</b><small>${esc(st.label)}${ds && !ds.done ? ` · ${Math.round(frac * 100)}%` : ''}</small></span>
           ${frac ? `<span class="side-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>` : ''}
@@ -134,9 +134,10 @@ const APP = (() => {
       const st = STATUS[m.status] || STATUS.locked;
       const open = m.status !== 'locked';
       return `
-        <li class="route-step is-${m.status}">
+        <li class="route-step is-${m.status}" data-mod="${m.number}">
           <div class="route-dot">${m.status === 'done' ? '✓' : m.number}</div>
           <a href="#${m.id}" class="route-card">
+            <span class="route-media" aria-hidden="true">${m.card ? `<img src="media/${esc(m.id)}/${esc(m.card)}" alt="" loading="lazy" onerror="this.remove()">` : ''}<span class="route-num">${String(m.number).padStart(2, '0')}<i></i></span></span>
             <div class="route-top">
               <span class="eyebrow">Блок ${m.number} · ${esc(m.tag || '')}</span>
             </div>
@@ -156,6 +157,7 @@ const APP = (() => {
   const showModuleDetail = (module) => {
     modulesView.style.display = 'none';
     moduleDetailView.style.display = 'block';
+    moduleDetailView.dataset.mod = module.number;
     const locked = module.status === 'locked';
     lesson = null;
 
@@ -300,6 +302,7 @@ const APP = (() => {
       }
       DECK.open({
         moduleId: id,
+        mod: modules.find(m => m.id === id)?.number,
         title: modules.find(m => m.id === id)?.title || '',
         deck,
         diagrams: lesson.data.diagrams,
