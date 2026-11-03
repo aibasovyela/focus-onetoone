@@ -36,6 +36,19 @@ const readDiagrams = (moduleId) => {
     .map(f => [f.slice(0, -4), cleanSvg(fs.readFileSync(join(dir, f), 'utf8'))]));
 };
 
+// Урок-слайды (docs/DECK_FORMAT.md): materials/<id>/deck.json; битый JSON — тихо откатываемся на лонгрид
+const readDeck = (moduleId) => {
+  const file = join(materialsPath, moduleId, process.env.DECK_FILE || 'deck.json');
+  if (!fs.existsSync(file)) return null;
+  try {
+    const deck = JSON.parse(fs.readFileSync(file, 'utf8'));
+    return Array.isArray(deck?.chapters) && deck.chapters.some(c => c.slides?.length) ? deck : null;
+  } catch (e) {
+    console.error(`deck.json ${moduleId}:`, e.message);
+    return null;
+  }
+};
+
 const modulesFor = (student) => {
   const { modules = [] } = readJson('modules.json', {});
   const calls = student.calls || {};
@@ -96,7 +109,8 @@ router.get('/:moduleId/lesson', (req, res) => {
     locked: false,
     ...preview,
     markdown: fs.existsSync(file) ? fs.readFileSync(file, 'utf8') : '',
-    diagrams: readDiagrams(module.id)
+    diagrams: readDiagrams(module.id),
+    deck: readDeck(module.id)
   });
 });
 
