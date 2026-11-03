@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 403" width="100%" role="img" aria-label="Три режима Claude: что получается на выходе">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Что должно получиться?</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">По ответу выбираешь режим</text>
+<rect x="12" y="66" width="336" height="83" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="66" width="108" height="83" rx="12" fill="#8B5CF6"/>
+<rect x="100" y="66" width="20" height="83" fill="#8B5CF6"/>
+<text x="66" y="112.5" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">Chat</text>
+<text x="134" y="92" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Текст, вывод, идея, разбор</text>
+<text x="134" y="116" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">пост, договор, сравнение КП</text>
+<rect x="12" y="159" width="336" height="100" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="159" width="108" height="100" rx="12" fill="#FFB59A"/>
+<rect x="100" y="159" width="20" height="100" fill="#FFB59A"/>
+<text x="66" y="214.0" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700" text-anchor="middle">Cowork</text>
+<text x="134" y="185" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Сделать что-то с файлами</text>
+<text x="134" y="209" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">разложить, собрать, посчитать</text>
+<text x="134" y="226" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">по десяткам документов</text>
+<rect x="12" y="269" width="336" height="100" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="269" width="108" height="100" rx="12" fill="#24124A"/>
+<rect x="100" y="269" width="20" height="100" fill="#24124A"/>
+<text x="66" y="324.0" font-family="Unbounded, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700" text-anchor="middle">Claude Code</text>
+<text x="134" y="295" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Работающая штука</text>
+<text x="134" y="319" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">страница, калькулятор,</text>
+<text x="134" y="336" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">скрипт, бот</text>
+<text x="16" y="391" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#5B33C9" font-weight="600">Сомневаешься — начни с Chat</text>
+</svg>

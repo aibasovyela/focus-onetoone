@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 440" width="100%" role="img" aria-label="Артефакт: готовая вещь рядом с чатом">
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Артефакт рядом с чатом</text>
+<rect x="12" y="46" width="128" height="214" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="24" y="68" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ЧАТ</text>
+<rect x="38" y="82" width="90" height="28" rx="10" fill="#D2C2FF"/>
+<rect x="24" y="122" width="70" height="28" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="32" y="162" width="96" height="28" rx="10" fill="#D2C2FF"/>
+<rect x="24" y="202" width="60" height="28" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="150" y="46" width="198" height="214" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="164" y="68" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">АРТЕФАКТ</text>
+<rect x="164" y="82" width="54" height="22" rx="4" fill="#8B5CF6"/>
+<rect x="222" y="82" width="54" height="22" rx="4" fill="#8B5CF6"/>
+<rect x="280" y="82" width="54" height="22" rx="4" fill="#8B5CF6"/>
+<rect x="164" y="108" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="222" y="108" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="280" y="108" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="164" y="134" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="222" y="134" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="280" y="134" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="164" y="160" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="222" y="160" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="280" y="160" width="54" height="22" rx="4" fill="#F7F5F0"/>
+<rect x="164" y="194" width="170" height="50" rx="10" fill="#D2C2FF"/>
+<text x="249" y="224" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">таблица · схема · страница</text>
+<circle cx="24" cy="288" r="9" fill="#8B5CF6"/>
+<path d="M19.5 288 L23 291.5 L29 284.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="285" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Правь словами</text>
+<text x="42" y="302" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">«добавь колонку с доставкой»</text>
+<circle cx="24" cy="328" r="9" fill="#8B5CF6"/>
+<path d="M19.5 328 L23 331.5 L29 324.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="325" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Версии</text>
+<text x="42" y="342" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">новая хуже — вернись к прошлой</text>
+<circle cx="24" cy="368" r="9" fill="#8B5CF6"/>
+<path d="M19.5 368 L23 371.5 L29 364.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="365" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Скачать, скопировать</text>
+<text x="42" y="382" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">в документ или коллеге</text>
+<circle cx="24" cy="408" r="9" fill="#8B5CF6"/>
+<path d="M19.5 408 L23 411.5 L29 404.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="42" y="405" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Поделиться</text>
+<text x="42" y="422" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">в некоторых аккаунтах — ссылкой</text>
+</svg>

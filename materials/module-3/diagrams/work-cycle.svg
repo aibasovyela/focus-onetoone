@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 454" width="100%" role="img" aria-label="Цикл работы с Claude Code: описал, сделал, проверил, уточнил">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<path d="M212.8 59.8 A96 96 0 0 1 270.2 117.2" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M270.2 182.8 A96 96 0 0 1 212.8 240.2" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M147.2 240.2 A96 96 0 0 1 89.8 182.8" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ar)"/>
+<path d="M89.8 117.2 A96 96 0 0 1 147.2 59.8" fill="none" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ar)"/>
+<rect x="126.0" y="37.0" width="108" height="34" rx="12" fill="#24124A"/>
+<text x="180.0" y="58.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="600" text-anchor="middle">1 · Описал</text>
+<rect x="222.0" y="133.0" width="108" height="34" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="276.0" y="154.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">2 · Сделал</text>
+<rect x="126.0" y="229.0" width="108" height="34" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180.0" y="250.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">3 · Проверил</text>
+<rect x="30.0" y="133.0" width="108" height="34" rx="12" fill="#D2C2FF"/>
+<text x="84.0" y="154.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">4 · Уточнил</text>
+<text x="180" y="148" font-family="Unbounded, Arial, sans-serif" font-size="26" fill="#5B33C9" font-weight="600" text-anchor="middle">3-5</text>
+<text x="180" y="168" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">кругов —</text>
+<text x="180" y="183" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">норма</text>
+<text x="20" y="290" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">ПРАВКИ, КОТОРЫЕ РАБОТАЮТ</text>
+<rect x="12" y="300" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="316" r="9" fill="#8B5CF6"/>
+<path d="M25.5 316 L29 319.5 L35 312.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="320.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="500">Одна правка — одна мысль</text>
+<rect x="12" y="338" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="354" r="9" fill="#8B5CF6"/>
+<path d="M25.5 354 L29 357.5 L35 350.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="358.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="500">Скриншот вместо трёх абзацев</text>
+<rect x="12" y="376" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="392" r="9" fill="#8B5CF6"/>
+<path d="M25.5 392 L29 395.5 L35 388.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="396.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="500">«Остальное не трогай»</text>
+<rect x="12" y="414" width="336" height="32" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="30" cy="430" r="9" fill="#0F1112"/>
+<path d="M26.5 426.5 L33.5 433.5 M33.5 426.5 L26.5 433.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="434.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F" font-weight="500">«Переделай всё» → наугад</text>
+</svg>

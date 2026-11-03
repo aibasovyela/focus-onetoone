@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="100%" role="img" aria-label="Project: инструкции и файлы, которые знает каждый чат внутри">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Project — второй мозг</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Один раз положил — знают все чаты</text>
+<rect x="12" y="62" width="336" height="132" rx="12" fill="#D2C2FF"/>
+<text x="26" y="84" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" letter-spacing="0.5">PROJECT «МАРКЕТИНГ»</text>
+<rect x="26" y="96" width="150" height="84" rx="10" fill="#FFFFFF"/>
+<text x="40" y="118" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Инструкции</text>
+<text x="40" y="138" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">кто ты, кому продаёшь,</text>
+<text x="40" y="155" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">тон, чего нельзя</text>
+<rect x="184" y="96" width="150" height="84" rx="10" fill="#FFFFFF"/>
+<text x="198" y="118" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="700">Файлы</text>
+<text x="198" y="138" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">прайс, услуги,</text>
+<text x="198" y="155" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">отзывы, примеры</text>
+<path d="M80 196 L80 226" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ar)"/>
+<rect x="40" y="232" width="80" height="50" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="80" y="254" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">Чат 1</text>
+<text x="80" y="272" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">в контексте</text>
+<path d="M180 196 L180 226" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ar)"/>
+<rect x="140" y="232" width="80" height="50" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="254" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">Чат 2</text>
+<text x="180" y="272" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">в контексте</text>
+<path d="M280 196 L280 226" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#ar)"/>
+<rect x="240" y="232" width="80" height="50" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="280" y="254" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112" font-weight="600" text-anchor="middle">Чат 3</text>
+<text x="280" y="272" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">в контексте</text>
+<rect x="12" y="298" width="336" height="50" rx="12" fill="#24124A"/>
+<text x="28" y="328" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF" font-weight="700">Один проект = одна область работы</text>
+</svg>

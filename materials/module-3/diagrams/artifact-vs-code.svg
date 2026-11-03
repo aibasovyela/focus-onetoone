@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 386" width="100%" role="img" aria-label="Граница: артефакт живёт внутри Claude, остальное — Claude Code">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Артефакт или Claude Code?</text>
+<rect x="12" y="50" width="336" height="104" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="74" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">АРТЕФАКТ · ВНУТРИ CLAUDE</text>
+<text x="26" y="98" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Калькулятор для менеджера,</text>
+<text x="26" y="116" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">таблица, схема, черновик страницы</text>
+<path d="M180 168 l0 26" stroke="#8B5CF6" stroke-width="2" marker-end="url(#ar)"/>
+<text x="196" y="186" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">как только нужно</text>
+<rect x="12" y="206" width="336" height="168" rx="12" fill="#24124A"/>
+<text x="26" y="232" font-family="IBM Plex Mono, monospace" font-size="12" fill="#D2C2FF" font-weight="600" letter-spacing="0.5">CLAUDE CODE</text>
+<circle cx="34" cy="256" r="5" fill="#FFB59A"/>
+<text x="48" y="260.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF">своя страница со своим адресом</text>
+<circle cx="34" cy="284" r="5" fill="#FFB59A"/>
+<text x="48" y="288.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF">форма заявок</text>
+<circle cx="34" cy="312" r="5" fill="#FFB59A"/>
+<text x="48" y="316.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF">сохранение данных</text>
+<circle cx="34" cy="340" r="5" fill="#FFB59A"/>
+<text x="48" y="344.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#FFFFFF">регулярный запуск</text>
+</svg>

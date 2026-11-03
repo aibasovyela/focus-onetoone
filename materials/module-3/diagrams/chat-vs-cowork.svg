@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 358" width="100%" role="img" aria-label="Chat и Cowork: кто носит файлы">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="16" y="30" font-family="Unbounded, Arial, sans-serif" font-size="16" fill="#0F1112" font-weight="700">Chat или Cowork</text>
+<text x="16" y="50" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#45433F">Кто открывает файлы и сохраняет итог</text>
+<rect x="12" y="56" width="336" height="124" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="80" font-family="IBM Plex Mono, monospace" font-size="12" fill="#45433F" font-weight="600" letter-spacing="0.5">CHAT</text>
+<text x="334" y="80" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">ты носишь файлы</text>
+<rect x="26" y="98" width="92" height="64" rx="10" fill="#EEEAE2"/>
+<text x="72.0" y="124" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">Ты</text>
+<text x="72.0" y="141" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">загружаешь</text>
+<line x1="121" y1="130" x2="133" y2="130" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="136" y="98" width="92" height="64" rx="10" fill="#EEEAE2"/>
+<text x="182.0" y="124" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">Claude</text>
+<text x="182.0" y="141" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">отвечает</text>
+<line x1="231" y1="130" x2="243" y2="130" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="246" y="98" width="92" height="64" rx="10" fill="#EEEAE2"/>
+<text x="292.0" y="124" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">Ты</text>
+<text x="292.0" y="141" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">сохраняешь</text>
+<rect x="12" y="194" width="336" height="124" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="26" y="218" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">COWORK</text>
+<text x="334" y="218" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="end">одно поручение</text>
+<rect x="26" y="236" width="92" height="64" rx="10" fill="#D2C2FF"/>
+<text x="72.0" y="262" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">Claude</text>
+<text x="72.0" y="279" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">открывает</text>
+<line x1="121" y1="268" x2="133" y2="268" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="136" y="236" width="92" height="64" rx="10" fill="#D2C2FF"/>
+<text x="182.0" y="262" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">делает</text>
+<text x="182.0" y="279" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">таблицу</text>
+<line x1="231" y1="268" x2="243" y2="268" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#ar)"/>
+<rect x="246" y="236" width="92" height="64" rx="10" fill="#D2C2FF"/>
+<text x="292.0" y="262" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">кладёт</text>
+<text x="292.0" y="279" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112" font-weight="600" text-anchor="middle">в папку</text>
+<text x="16" y="346" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#5B33C9" font-weight="600">40 PDF → таблица рядом с ними</text>
+</svg>

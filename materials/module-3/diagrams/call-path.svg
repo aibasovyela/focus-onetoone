@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380" width="100%" role="img" aria-label="Путь по уроку: 120 минут созвона">
+<text x="20" y="20" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" font-weight="600" letter-spacing="0.5">120 МИНУТ НА СОЗВОНЕ</text>
+<rect x="13.0" y="30" width="27.0" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="42.0" y="30" width="40.5" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="84.5" y="30" width="54.0" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="140.5" y="30" width="54.0" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="196.5" y="30" width="94.5" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="293.0" y="30" width="27.0" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="322.0" y="30" width="27.0" height="14" rx="4" fill="#8B5CF6"/>
+<line x1="30" y1="74" x2="30" y2="350" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<circle cx="30" cy="74" r="15" fill="#8B5CF6"/>
+<text x="30" y="78.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">10</text>
+<text x="56" y="72" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Разбор ДЗ и твоих задач</text>
+<text x="56" y="89" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">3 рутины, которые отдадим Claude</text>
+<circle cx="30" cy="120" r="15" fill="#D2C2FF"/>
+<text x="30" y="124.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">15</text>
+<text x="56" y="118" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Карта трёх режимов</text>
+<text x="56" y="135" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Chat, Cowork, Code: что куда</text>
+<circle cx="30" cy="166" r="15" fill="#8B5CF6"/>
+<text x="30" y="170.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">20</text>
+<text x="56" y="164" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Chat и Projects</text>
+<text x="56" y="181" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">документ, Project, артефакт</text>
+<circle cx="30" cy="212" r="15" fill="#D2C2FF"/>
+<text x="30" y="216.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">20</text>
+<text x="56" y="210" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Cowork на копии папки</text>
+<text x="56" y="227" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">план → подтверждение → отчёт</text>
+<circle cx="30" cy="258" r="15" fill="#8B5CF6"/>
+<text x="30" y="262.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">35</text>
+<text x="56" y="256" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Claude Code: мини-лендинг</text>
+<text x="56" y="273" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">ТЗ, план, 3-5 кругов правок</text>
+<circle cx="30" cy="304" r="15" fill="#D2C2FF"/>
+<text x="30" y="308.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#24124A" font-weight="600" text-anchor="middle">10</text>
+<text x="56" y="302" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">CLAUDE.md и скиллы</text>
+<text x="56" y="319" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">правила проекта и скиллы</text>
+<circle cx="30" cy="350" r="15" fill="#8B5CF6"/>
+<text x="30" y="354.5" font-family="IBM Plex Mono, monospace" font-size="12" fill="#FFFFFF" font-weight="600" text-anchor="middle">10</text>
+<text x="56" y="348" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112" font-weight="600">Итоги и домашка</text>
+<text x="56" y="365" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">что куда нести, задача на неделю</text>
+</svg>
