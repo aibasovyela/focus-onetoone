@@ -1,5 +1,5 @@
 """Автопроверка урока-слайдов: все слайды на телефоне и десктопе.
-PIN=… python3 scripts/deck_check.py [mobile|safari|se|android|desktop|all] [--shots]  → отчёт в stdout, скрины в $OUT/<mode>/NN.png
+PIN=… [MODULE=module-2] python3 scripts/deck_check.py [mobile|safari|se|android|desktop|all] [--shots]  → отчёт в stdout, скрины в $OUT/<mode>/NN.png
 """
 import json, os, sys, time
 from playwright.sync_api import sync_playwright
@@ -7,6 +7,7 @@ from playwright.sync_api import sync_playwright
 BASE = os.environ.get('BASE', 'http://127.0.0.1:3010/')
 PIN = os.environ['PIN']
 OUT = os.environ.get('OUT', '/tmp/deck-check')
+MODULE = os.environ.get('MODULE', 'module-1')
 mode = sys.argv[1] if len(sys.argv) > 1 else 'all'
 SHOTS = '--shots' in sys.argv
 
@@ -74,8 +75,8 @@ def run(p, name, ctxopts):
     page.fill('#pinInput', PIN)
     page.press('#pinInput', 'Enter')
     page.wait_for_selector('#dashboardScreen', state='visible')
-    page.evaluate("localStorage.removeItem('focus.deck.module-1')")
-    page.goto(BASE + '#module-1')
+    page.evaluate(f"localStorage.removeItem('focus.deck.{MODULE}')")
+    page.goto(BASE + '#' + MODULE)
     page.wait_for_selector('.lesson-card')
     page.wait_for_timeout(500)
     if SHOTS:
