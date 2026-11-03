@@ -3,7 +3,8 @@ import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 
-const dbPath = join(dirname(fileURLToPath(import.meta.url)), '../db');
+// FOCUS_DB_DIR — отдельная папка данных для тестового стенда (по умолчанию backend/db)
+const dbPath = process.env.FOCUS_DB_DIR || join(dirname(fileURLToPath(import.meta.url)), '../db');
 const SESSION_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 дней
 
 export const readJson = (name, fallback) => {

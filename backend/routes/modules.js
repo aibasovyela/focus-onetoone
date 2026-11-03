@@ -68,6 +68,7 @@ const modulesFor = (student) => {
 router.get('/me', (req, res) => {
   const { program = {} } = readJson('modules.json', {});
   res.json({
+    id: req.student.id,
     name: req.student.name,
     openModules: Number(req.student.openModules) || 1,
     program
