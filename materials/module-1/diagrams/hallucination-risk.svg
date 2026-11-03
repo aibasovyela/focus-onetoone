@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 380" width="100%" role="img" aria-label="Где риск галлюцинаций низкий, а где высокий">
+<defs><marker id="a-risk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<defs><linearGradient id="g-risk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#D2C2FF"/><stop offset="0.5" stop-color="#FFB59A"/><stop offset="1" stop-color="#24124A"/></linearGradient></defs>
+<rect x="14" y="12" width="10" height="392" rx="5" fill="url(#g-risk)"/>
+<rect x="34" y="12" width="314" height="112" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="48" y="34" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">НИЗКИЙ РИСК</text>
+<circle cx="52" cy="52" r="2.5" fill="#45433F"/>
+<text x="62" y="56" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Переписать, сократить, сменить тон</text>
+<circle cx="52" cy="72" r="2.5" fill="#45433F"/>
+<text x="62" y="76" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Идеи, заголовки, мозговой штурм</text>
+<rect x="48" y="90" width="147.547" height="26" rx="9" fill="#8B5CF6"/>
+<text x="59" y="107.5" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">→ Бери и редактируй</text>
+<rect x="34" y="134" width="314" height="92" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="48" y="156" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F1112" letter-spacing="0.5">СРЕДНИЙ</text>
+<circle cx="52" cy="174" r="2.5" fill="#45433F"/>
+<text x="62" y="178" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Пересказ загруженного документа</text>
+<rect x="48" y="192" width="156.316" height="26" rx="9" fill="#8B5CF6"/>
+<text x="59" y="209.5" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">→ Проси номер пункта</text>
+<rect x="34" y="236" width="314" height="132" rx="12" fill="#EEEAE2" stroke="#FFB59A" stroke-width="1.5"/>
+<text x="48" y="258" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F1112" letter-spacing="0.5">ВЫСОКИЙ</text>
+<circle cx="52" cy="276" r="2.5" fill="#45433F"/>
+<text x="62" y="280" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Цифры, даты, цены, статистика</text>
+<circle cx="52" cy="296" r="2.5" fill="#45433F"/>
+<text x="62" y="300" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Законы, налоги, медицина</text>
+<circle cx="52" cy="316" r="2.5" fill="#45433F"/>
+<text x="62" y="320" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Ссылки и цитаты</text>
+<rect x="48" y="334" width="203.953" height="26" rx="9" fill="#24124A"/>
+<text x="59" y="351.5" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#FFFFFF">→ Проверяй в первоисточнике</text>
+</svg>

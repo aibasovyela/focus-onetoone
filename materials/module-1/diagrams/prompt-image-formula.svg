@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 512" width="100%" role="img" aria-label="Формула промпта на картинке: слабый и сильный промпт">
+<defs><marker id="a-img" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">СЛАБЫЙ ПРОМПТ</text>
+<rect x="12" y="32" width="336" height="50" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="54" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="500" fill="#0F1112">a coffee shop</text>
+<text x="26" y="72" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">3 слова — всё остальное модель угадывает</text>
+<text x="20" y="110" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">СИЛЬНЫЙ = 5 ЧАСТЕЙ ФОРМУЛЫ</text>
+<rect x="12" y="120" width="336" height="57" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="20" y="128" width="96" height="24" rx="8" fill="#8B5CF6"/>
+<text x="68" y="144.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">РОЛЬ</text>
+<text x="126" y="143" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">Editorial photograph</text>
+<text x="126" y="162" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">снимок как для журнала</text>
+<rect x="12" y="183" width="336" height="72" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="20" y="191" width="96" height="24" rx="8" fill="#D2C2FF"/>
+<text x="68" y="207.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F1112" text-anchor="middle">КОНТЕКСТ</text>
+<text x="126" y="206" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">coffee shop in Astana, golden</text>
+<text x="126" y="221" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">hour, tall windows</text>
+<text x="126" y="240" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">где и когда</text>
+<rect x="12" y="261" width="336" height="87" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="20" y="269" width="96" height="24" rx="8" fill="#FFB59A"/>
+<text x="68" y="285.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F1112" text-anchor="middle">ДЕТАЛИ</text>
+<text x="126" y="284" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">barista, linen apron,</text>
+<text x="126" y="299" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">latte art, oak counter,</text>
+<text x="126" y="314" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">lavender cups, steam</text>
+<text x="126" y="333" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">что именно в кадре</text>
+<rect x="12" y="354" width="336" height="87" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="20" y="362" width="96" height="24" rx="8" fill="#24124A"/>
+<text x="68" y="378.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">ФОРМАТ</text>
+<text x="126" y="377" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">35mm film, shallow depth</text>
+<text x="126" y="392" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">of field, fine grain,</text>
+<text x="126" y="407" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">calm premium mood</text>
+<text x="126" y="426" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">как снято и какое настроение</text>
+<rect x="12" y="447" width="336" height="57" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="20" y="455" width="96" height="24" rx="8" fill="#0F1112"/>
+<text x="68" y="471.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">ОГРАНИЧЕНИЯ</text>
+<text x="126" y="470" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">no text, natural skin texture</text>
+<text x="126" y="489" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">без надписей и «пластиковой» кожи</text>
+</svg>

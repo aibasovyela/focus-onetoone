@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 436" width="100%" role="img" aria-label="Петля итераций: черновик, правка, лучше">
+<defs><marker id="a-loop" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<path d="M220.7 40.6 A100 100 0 0 1 271.4 91.3" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-loop)"/>
+<path d="M271.4 172.7 A100 100 0 0 1 220.7 223.4" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-loop)"/>
+<path d="M139.3 223.4 A100 100 0 0 1 88.6 172.7" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-loop)"/>
+<path d="M88.6 91.3 A100 100 0 0 1 139.3 40.6" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#a-loop)"/>
+<rect x="135.074" y="15" width="89.8516" height="34" rx="12" fill="#24124A"/>
+<text x="180" y="36.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">1 · Промпт</text>
+<rect x="227.912" y="115" width="104.176" height="34" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="280" y="136.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112" text-anchor="middle">2 · Черновик</text>
+<rect x="122.93" y="215" width="114.141" height="34" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="236.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112" text-anchor="middle">3 · Что не так?</text>
+<rect x="35.168" y="115" width="89.6641" height="34" rx="12" fill="#D2C2FF"/>
+<text x="80" y="136.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112" text-anchor="middle">4 · Правка</text>
+<text x="180" y="126" font-family="Unbounded, Arial, sans-serif" font-size="26" font-weight="600" fill="#5B33C9" text-anchor="middle">2-4</text>
+<text x="180" y="146" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">круга</text>
+<text x="180" y="161" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">в одном чате</text>
+<text x="20" y="276" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ПРАВКИ, КОТОРЫЕ РАБОТАЮТ</text>
+<rect x="12" y="286" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="302" r="8" fill="#8B5CF6"/>
+<path d="M26 302 L29 305 L34.5 298.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="306.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">«Короче в два раза»</text>
+<rect x="12" y="324" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="340" r="8" fill="#8B5CF6"/>
+<path d="M26 340 L29 343 L34.5 336.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="344.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">«Тон проще, как другу»</text>
+<rect x="12" y="362" width="336" height="32" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="30" cy="378" r="8" fill="#8B5CF6"/>
+<path d="M26 378 L29 381 L34.5 374.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="382.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">«Добавь цифру: −15% до 10 утра»</text>
+<rect x="12" y="400" width="336" height="32" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="30" cy="416" r="8" fill="#0F1112"/>
+<path d="M26.5 412.5 L33.5 419.5 M33.5 412.5 L26.5 419.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="46" y="420.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">«Не нравится, переделай» → наугад</text>
+</svg>

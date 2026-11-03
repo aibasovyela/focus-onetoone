@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 420" width="100%" role="img" aria-label="Контекстное окно как рабочий стол: старое падает со стола">
+<defs><marker id="a-desk" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">СТОЛ МОДЕЛИ = КОНТЕКСТНОЕ ОКНО</text>
+<rect x="12" y="32" width="336" height="236" rx="14" fill="#EEEAE2" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="24" y="46" width="152" height="54" rx="10" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<circle cx="164" cy="46" r="5" fill="#8B5CF6"/>
+<text x="36" y="68" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112">Инструкции о тебе</text>
+<text x="36" y="87" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#5B33C9">лежат всегда</text>
+<rect x="184" y="46" width="152" height="54" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="196" y="68" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#0F1112">Файл: прайс.pdf</text>
+<text x="196" y="87" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">загружен в этот чат</text>
+<g opacity="1">
+<rect x="24" y="112" width="312" height="44" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="36" y="131" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F">Сообщение 40</text>
+<text x="36" y="148" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">найм бариста</text>
+</g>
+<text x="324" y="131" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end">НОВОЕ</text>
+<g opacity="0.75">
+<rect x="24" y="164" width="312" height="44" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="36" y="183" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F">Сообщение 20</text>
+<text x="36" y="200" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">акция −15% студентам</text>
+</g>
+<text x="324" y="183" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#8C8880" text-anchor="end">СЕРЕДИНА · ТЕРЯЕТСЯ</text>
+<g opacity="0.45">
+<rect x="24" y="216" width="312" height="44" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="36" y="235" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F">Сообщение 1</text>
+<text x="36" y="252" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">меню на лето</text>
+</g>
+<text x="324" y="235" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#8C8880" text-anchor="end">КРАЙ · РАЗМЫВАЕТСЯ</text>
+<path d="M70 262 C 66 280, 62 292, 58 304" fill="none" stroke="#8B5CF6" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="3 3" marker-end="url(#a-desk)"/>
+<g transform="rotate(-7 120 336)" opacity="0.55">
+<rect x="30" y="312" width="180" height="46" rx="10" fill="#FFFFFF" stroke="#8C8880" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="42" y="331" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F">Сообщение 0</text>
+<text x="42" y="348" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#0F1112">что ты писал час назад</text>
+</g>
+<text x="226" y="326" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#5B33C9">упало со стола —</text>
+<text x="226" y="343" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">модель это</text>
+<text x="226" y="359" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">уже не видит</text>
+<rect x="12" y="376" width="336" height="40" rx="12" fill="#24124A"/>
+<text x="180" y="401" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="500" fill="#FFFFFF" text-anchor="middle">Важное — в начало запроса или повтори в конце</text>
+</svg>

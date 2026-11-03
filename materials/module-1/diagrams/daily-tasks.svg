@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 384" width="100%" role="img" aria-label="Шесть ежедневных задач для ИИ и кого звать">
+<defs><marker id="a-daily" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="12" y="12" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="24" y="24" width="22" height="6" rx="3" fill="#8B5CF6"/>
+<text x="24" y="48" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ТЕКСТЫ</text>
+<text x="24" y="68" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Пост, письмо, ответ на</text>
+<text x="24" y="84" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">отзыв</text>
+<text x="24" y="115" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ Claude · ChatGPT</text>
+<rect x="183" y="12" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="195" y="24" width="22" height="6" rx="3" fill="#D2C2FF"/>
+<text x="195" y="48" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ПЕРЕВОДЫ</text>
+<text x="195" y="68" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Меню на казахском и</text>
+<text x="195" y="84" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">английском</text>
+<text x="195" y="115" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ Claude + Gemini</text>
+<rect x="12" y="134" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="24" y="146" width="22" height="6" rx="3" fill="#FFB59A"/>
+<text x="24" y="170" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ДОКУМЕНТЫ</text>
+<text x="24" y="190" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Риски в договоре</text>
+<text x="24" y="206" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">аренды</text>
+<text x="24" y="237" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ Claude</text>
+<rect x="183" y="134" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="195" y="146" width="22" height="6" rx="3" fill="#D2C2FF"/>
+<text x="195" y="170" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ТАБЛИЦЫ</text>
+<text x="195" y="190" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Что не продавалось 3</text>
+<text x="195" y="206" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">месяца</text>
+<text x="195" y="237" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ ChatGPT · Gemini</text>
+<rect x="12" y="256" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="24" y="268" width="22" height="6" rx="3" fill="#8B5CF6"/>
+<text x="24" y="292" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ИДЕИ</text>
+<text x="24" y="312" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">20 идей акции к</text>
+<text x="24" y="328" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Наурызу</text>
+<text x="24" y="359" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ Любая, лучше две</text>
+<rect x="183" y="256" width="165" height="116" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="195" y="268" width="22" height="6" rx="3" fill="#FFB59A"/>
+<text x="195" y="292" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">СВЕЖЕЕ</text>
+<text x="195" y="312" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Цены конкурентов,</text>
+<text x="195" y="328" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">конспект вебинара</text>
+<text x="195" y="359" font-family="Golos Text, Arial, sans-serif" font-size="12" font-weight="600" fill="#24124A">→ Gemini · поиск</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 378" width="100%" role="img" aria-label="Безопасность данных: что можно загружать в нейросеть">
+<defs><marker id="a-safe" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="14" y="12" width="52" height="316" rx="14" fill="#24124A"/>
+<rect x="78" y="20" width="270" height="92" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="40" cy="66" r="18" fill="#FFB59A"/>
+<text x="92" y="44" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#0F1112" letter-spacing="0.5">НЕЛЬЗЯ</text>
+<text x="92" y="66" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Пароли, данные карт, паспорта,</text>
+<text x="92" y="83" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">медкарты пациентов, коммерческая</text>
+<text x="92" y="100" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">тайна партнёров</text>
+<rect x="78" y="120" width="270" height="92" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="40" cy="166" r="18" fill="#D2C2FF"/>
+<text x="92" y="144" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">ОБЕЗЛИЧЬ</text>
+<text x="92" y="166" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Таблицы с клиентами: имена →</text>
+<text x="92" y="183" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">«Клиент 1», телефоны и адреса убери</text>
+<rect x="78" y="220" width="270" height="92" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="40" cy="266" r="18" fill="#8B5CF6"/>
+<text x="92" y="244" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#5B33C9" letter-spacing="0.5">МОЖНО</text>
+<text x="92" y="266" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">Свои тексты, прайс, публичные</text>
+<text x="92" y="283" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#0F1112">материалы, обезличенные выгрузки</text>
+<text x="16" y="350" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Ещё: в настройках реши, можно ли сервису</text>
+<text x="16" y="367" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">учиться на твоих переписках</text>
+</svg>

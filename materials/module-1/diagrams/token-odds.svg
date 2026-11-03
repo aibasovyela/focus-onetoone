@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 414" width="100%" role="img" aria-label="Почему один и тот же запрос даёт разные ответы">
+<defs><marker id="a-odds" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ЗАПРОС</text>
+<rect x="59.0625" y="32" width="288.938" height="36" rx="14" fill="#8B5CF6"/>
+<text x="203.531" y="55" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#FFFFFF" text-anchor="middle">Название для кофейни у вуза, одно слово</text>
+<text x="20" y="98" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ШАНСЫ СЛЕДУЮЩЕГО СЛОВА</text>
+<text x="340" y="98" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#8C8880" text-anchor="end" letter-spacing="0.5">УСЛОВНО</text>
+<text x="20" y="124" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">«Перемена»</text>
+<rect x="108" y="111" width="188.6" height="18" rx="5" fill="#8B5CF6"/>
+<text x="304.6" y="124" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">41%</text>
+<text x="20" y="152" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112">«Конспект»</text>
+<rect x="108" y="139" width="124.2" height="18" rx="5" fill="#D2C2FF"/>
+<text x="240.2" y="152" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">27%</text>
+<text x="20" y="180" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112">«Зачётка»</text>
+<rect x="108" y="167" width="82.8" height="18" rx="5" fill="#D2C2FF"/>
+<text x="198.8" y="180" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">18%</text>
+<text x="20" y="208" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112">«Сессия»</text>
+<rect x="108" y="195" width="41.4" height="18" rx="5" fill="#D2C2FF"/>
+<text x="157.4" y="208" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">9%</text>
+<text x="20" y="236" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112">другое</text>
+<rect x="108" y="223" width="23" height="18" rx="5" fill="#D2C2FF"/>
+<text x="139" y="236" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">5%</text>
+<text x="20" y="268" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ТРИ ПОПЫТКИ — РАЗНЫЕ ОТВЕТЫ</text>
+<rect x="12" y="278" width="108" height="56" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="66" y="299" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="middle">попытка 1</text>
+<text x="66" y="320" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Перемена</text>
+<rect x="126" y="278" width="108" height="56" rx="12" fill="#FFFFFF" stroke="#8B5CF6" stroke-width="1.5"/>
+<text x="180" y="299" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="middle">попытка 2</text>
+<text x="180" y="320" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Конспект</text>
+<rect x="240" y="278" width="108" height="56" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="294" y="299" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880" text-anchor="middle">попытка 3</text>
+<text x="294" y="320" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112" text-anchor="middle">Перемена</text>
+<rect x="12" y="350" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="375" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Модель тянет «жребий» среди вероятных.</text>
+<text x="26" y="393" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">Не зашло — жми «Сгенерировать заново».</text>
+</svg>

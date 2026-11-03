@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 432" width="100%" role="img" aria-label="Путь по уроку: 120 минут созвона">
+<defs><marker id="a-path" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="20" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">120 МИНУТ НА СОЗВОНЕ</text>
+<rect x="13" y="30" width="26" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="41" y="30" width="54" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="97" y="30" width="54" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="153" y="30" width="54" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="209" y="30" width="68" height="14" rx="4" fill="#8B5CF6"/>
+<rect x="279" y="30" width="54" height="14" rx="4" fill="#D2C2FF"/>
+<rect x="335" y="30" width="12" height="14" rx="4" fill="#8B5CF6"/>
+<line x1="30" y1="72" x2="30" y2="348" stroke="#D2C2FF" stroke-width="3" stroke-linecap="round"/>
+<circle cx="30" cy="72" r="15" fill="#8B5CF6"/>
+<text x="30" y="76.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">10</text>
+<text x="56" y="70" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Старт и твои задачи</text>
+<text x="56" y="87" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">5 задач из твоей недели</text>
+<circle cx="30" cy="118" r="15" fill="#D2C2FF"/>
+<text x="30" y="122.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#24124A" text-anchor="middle">20</text>
+<text x="56" y="116" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Как думает LLM</text>
+<text x="56" y="133" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">токены, окно, галлюцинации</text>
+<circle cx="30" cy="164" r="15" fill="#8B5CF6"/>
+<text x="30" y="168.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">20</text>
+<text x="56" y="162" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Три аккаунта</text>
+<text x="56" y="179" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">регистрация, инструкции, приватность</text>
+<circle cx="30" cy="210" r="15" fill="#D2C2FF"/>
+<text x="30" y="214.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#24124A" text-anchor="middle">20</text>
+<text x="56" y="208" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Тест-драйв</text>
+<text x="56" y="225" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">одна задача в трёх моделях</text>
+<circle cx="30" cy="256" r="15" fill="#8B5CF6"/>
+<text x="30" y="260.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">25</text>
+<text x="56" y="254" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Формула промпта</text>
+<text x="56" y="271" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">5 частей и итерации</text>
+<circle cx="30" cy="302" r="15" fill="#D2C2FF"/>
+<text x="30" y="306.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#24124A" text-anchor="middle">20</text>
+<text x="56" y="300" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Твои задачи</text>
+<text x="56" y="317" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">текст, перевод, документ, таблица</text>
+<circle cx="30" cy="348" r="15" fill="#8B5CF6"/>
+<text x="30" y="352.5" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="56" y="346" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Итоги</text>
+<text x="56" y="363" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">библиотека промптов и домашка</text>
+<rect x="12" y="378" width="336" height="50" rx="12" fill="#24124A"/>
+<text x="26" y="399" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">На выходе: 3 настроенных сервиса</text>
+<text x="26" y="417" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">и 3-5 своих промптов в заметках</text>
+</svg>

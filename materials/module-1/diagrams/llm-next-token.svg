@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 524" width="100%" role="img" aria-label="Как LLM пишет ответ: токены, контекстное окно, выбор следующего слова">
 <text x="20" y="34" font-family="Unbounded, Arial, sans-serif" font-size="16" font-weight="700" fill="#0F1112">Как LLM пишет ответ</text>
 <text x="20" y="54" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Слово за словом — как умная автоподстановка</text>
-<text x="20" y="84" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="0.5">ШАГ 1 · ТЕКСТ РЕЖЕТСЯ НА ТОКЕНЫ</text>
+<text x="20" y="84" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" letter-spacing="0.5">ШАГ 1 · ТЕКСТ РЕЖЕТСЯ НА ТОКЕНЫ</text>
 <rect x="12" y="94" width="336" height="118" rx="12" fill="#F7F5F0" stroke="#8B5CF6" stroke-width="1.5" stroke-dasharray="5 4"/>
-<text x="24" y="113" font-family="IBM Plex Mono, monospace" font-size="11" fill="#8B5CF6">КОНТЕКСТНОЕ ОКНО</text>
+<text x="24" y="113" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8B5CF6">КОНТЕКСТНОЕ ОКНО</text>
 <rect x="24" y="122" width="46" height="26" rx="8" fill="#FFFFFF" stroke="#D6D0C6"/>
 <text x="47" y="139.5" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="500" fill="#0F1112">Кофе</text>
 <rect x="76" y="122" width="39" height="26" rx="8" fill="#FFFFFF" stroke="#D6D0C6"/>
@@ -22,8 +22,8 @@
 <text x="103" y="171.5" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="500" fill="#0F1112">в</text>
 <rect x="121" y="154" width="24" height="26" rx="8" fill="#FFB59A" stroke="#FFB59A"/>
 <text x="133" y="171.5" text-anchor="middle" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">?</text>
-<text x="24" y="200" font-family="Golos Text, Arial, sans-serif" font-size="11" fill="#45433F">+ всё, что выше в чате: сообщения и файлы</text>
-<text x="20" y="242" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="0.5">ШАГ 2 · МОДЕЛЬ ОЦЕНИВАЕТ ВАРИАНТЫ</text>
+<text x="24" y="200" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">+ всё, что выше в чате: сообщения и файлы</text>
+<text x="20" y="242" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" letter-spacing="0.5">ШАГ 2 · МОДЕЛЬ ОЦЕНИВАЕТ ВАРИАНТЫ</text>
 <text x="24" y="269" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="700" fill="#0F1112">8:00</text>
 <rect x="104" y="256" width="176" height="18" rx="5" fill="#8B5CF6"/>
 <text x="288" y="269" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9">52%</text>
@@ -36,7 +36,7 @@
 <text x="24" y="353" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="400" fill="#0F1112">полночь</text>
 <rect x="104" y="340" width="10" height="18" rx="5" fill="#D2C2FF"/>
 <text x="122" y="353" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">3%</text>
-<text x="20" y="392" font-family="IBM Plex Mono, monospace" font-size="11" fill="#5B33C9" letter-spacing="0.5">ШАГ 3 · ВЫБИРАЕТ И ПОВТОРЯЕТ</text>
+<text x="20" y="392" font-family="IBM Plex Mono, monospace" font-size="12" fill="#5B33C9" letter-spacing="0.5">ШАГ 3 · ВЫБИРАЕТ И ПОВТОРЯЕТ</text>
 <text x="20" y="416" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#0F1112">«…открывается в <tspan font-weight="700" fill="#5B33C9">8:00</tspan>» → снова шаг 1</text>
 <text x="20" y="436" font-family="Golos Text, Arial, sans-serif" font-size="13" fill="#45433F">и так сотни раз, пока ответ не готов</text>
 <rect x="12" y="454" width="336" height="58" rx="12" fill="#24124A"/>
