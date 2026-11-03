@@ -77,7 +77,7 @@ const DECK = (() => {
   };
 
   // ---------- DOM ----------
-  let root, stage, segs, chTitle, chSub, counter, btnPrev, btnNext, nextLabel, sheet, sheetGrid, zoom, zoomBody, hint;
+  let root, stage, rail, segs, chTitle, chSub, counter, btnPrev, btnNext, nextLabel, sheet, sheetGrid, zoom, zoomBody, hint;
   let S = null;
   let anim = null;
   let drag = null;
@@ -94,6 +94,11 @@ const DECK = (() => {
     root.setAttribute('aria-modal', 'true');
     root.setAttribute('aria-label', 'Урок');
     root.innerHTML = `
+      <aside class="deck-rail" aria-label="Оглавление урока">
+        <div class="rail-top"><span class="rail-kicker"></span><b class="rail-title"></b>
+          <span class="rail-prog" aria-hidden="true"><i></i></span><span class="rail-meta"></span></div>
+        <ol class="rail-list"></ol>
+      </aside>
       <header class="deck-top">
         <div class="deck-segs" aria-hidden="true"></div>
         <div class="deck-bar">
@@ -129,6 +134,7 @@ const DECK = (() => {
       </div>`;
     document.body.appendChild(root);
     stage = root.querySelector('.deck-stage');
+    rail = root.querySelector('.rail-list');
     segs = root.querySelector('.deck-segs');
     chTitle = root.querySelector('.deck-ch-title');
     chSub = root.querySelector('.deck-ch-sub');
@@ -591,6 +597,7 @@ const DECK = (() => {
     nextLabel.textContent = label;
     btnNext.classList.toggle('is-chapter', wide);
     btnNext.setAttribute('aria-label', label);
+    updateRail();
   };
 
   const save = () => {
@@ -600,6 +607,64 @@ const DECK = (() => {
   };
 
   const hideHint = () => { root.classList.remove('show-hint'); };
+
+  // ---------- оглавление-рельс (десктоп): главы, внутри текущей — список слайдов ----------
+  const plain = (t) => String(t ?? '').replace(/[*_`]/g, '').replace(/\s+/g, ' ').trim();
+  const slideName = (it) => {
+    const s = it.s;
+    if (s.type === 'cover') return 'Обложка главы';
+    if (s.type === 'quiz') return `Вопрос: ${plain(s.title)}`;
+    return plain(s.title || s.kicker || it.ch.title);
+  };
+
+  const renderRail = () => {
+    root.querySelector('.rail-kicker').textContent = `Урок · ${slidesWord(S.slides.length)}`;
+    root.querySelector('.rail-title').textContent = S.title || 'Урок';
+    rail.innerHTML = S.chapters.map((c, k) => `
+      <li class="rc" data-chn="${k}">
+        <button type="button" class="rc-btn" data-ch="${k}">
+          <span class="rc-thumb">${c.cover ? `<img src="media/${E(S.moduleId)}/${E(c.cover)}" alt="" loading="lazy">` : ''}<span>${k + 1}</span></span>
+          <span class="rc-t"><b>${E(c.title)}</b><small></small></span>
+        </button>
+        <div class="rc-fold"><ol class="rc-slides">${S.slides.slice(c.start, c.start + c.count).map((it, j) => `
+          <li><button type="button" class="rs" data-go="${c.start + j}"><span class="rs-n">${j + 1}</span><span class="rs-t">${E(slideName(it))}</span></button></li>`).join('')}
+        </ol></div>
+      </li>`).join('');
+    rail.querySelectorAll('img').forEach(im => im.addEventListener('error', () => im.remove(), { once: true }));
+  };
+
+  const updateRail = () => {
+    if (!rail || !rail.children.length) return;
+    const { idx, slides, chapters, seen } = S;
+    const fin = idx >= slides.length;
+    const curCh = fin ? -1 : slides[idx].ch.n;
+    chapters.forEach((c, k) => {
+      const li = rail.children[k];
+      let n = 0;
+      for (let i = c.start; i < c.start + c.count; i++) if (seen.has(i)) n++;
+      li.classList.toggle('is-current', k === curCh);
+      li.classList.toggle('is-done', n === c.count);
+      li.querySelector('small').textContent = n === c.count ? `${slidesWord(c.count)} · пройдена` : n ? `${n} из ${c.count}` : slidesWord(c.count);
+    });
+    rail.querySelectorAll('.rs').forEach(b => {
+      const i = Number(b.dataset.go);
+      b.classList.toggle('is-current', i === idx);
+      b.classList.toggle('is-seen', seen.has(i));
+      if (i === idx) b.setAttribute('aria-current', 'step'); else b.removeAttribute('aria-current');
+    });
+    const total = slides.length;
+    root.querySelector('.rail-prog i').style.transform = `scaleX(${fin ? 1 : seen.size / total})`;
+    root.querySelector('.rail-meta').textContent = fin ? 'Урок пройден' : `${Math.round((seen.size / total) * 100)}% просмотрено · осталось ~${Math.max(1, Math.round((total - idx) * 0.4))} мин`;
+    // текущий слайд — в зону видимости рельса (только скролл самого списка)
+    const cur = rail.querySelector('.rs.is-current') || rail.querySelector('.rc.is-current');
+    if (cur && rail.offsetParent) {
+      requestAnimationFrame(() => {
+        const r = rail.getBoundingClientRect();
+        const b = cur.getBoundingClientRect();
+        if (b.top < r.top + 8 || b.bottom > r.bottom - 8) rail.scrollTo({ top: rail.scrollTop + (b.top - r.top) - r.height / 3, behavior: reduced() ? 'auto' : 'smooth' });
+      });
+    }
+  };
 
   // ---------- шторка глав ----------
   const openSheet = () => {
@@ -711,6 +776,8 @@ const DECK = (() => {
 
     const ch = t.closest('[data-ch]');
     if (ch) { closeSheet(); show(S.chapters[Number(ch.dataset.ch)].start); return; }
+    const goEl = t.closest('[data-go]');
+    if (goEl) { show(Number(goEl.dataset.go)); return; }
 
     const copyBtn = t.closest('[data-copy]');
     if (copyBtn) {
@@ -845,6 +912,7 @@ const DECK = (() => {
       cur: null
     };
     segs.innerHTML = chapters.map(c => `<span class="deck-seg" style="flex:${c.count} 1 0"><i></i></span>`).join('');
+    renderRail();
     stage.innerHTML = '';
     root.hidden = false;
     root.classList.remove('is-closing');

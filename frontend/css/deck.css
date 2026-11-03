@@ -544,7 +544,7 @@ a.lnk:active { transform: scale(0.98); }
 
 /* десктоп/ландшафт: сцена-карточка 16:10 по центру */
 @media (min-width: 900px) and (min-height: 560px) and (orientation: landscape) {
-  .deck { --card-w: min(1180px, calc((100dvh - 190px) * 1.6), calc(100vw - 96px)); }
+  .deck { --card-w: min(calc((100dvh - 170px) * 1.6), calc(100vw - var(--rail-w, 0px) - 96px)); }
   .deck-top, .deck-foot { width: var(--card-w); margin: 0 auto; padding-left: 0; padding-right: 0; }
   .deck-top { padding-top: 18px; }
   .deck-stage { width: var(--card-w); aspect-ratio: 16 / 10; margin: auto; align-self: center; }
@@ -749,4 +749,116 @@ a.lnk:active { transform: scale(0.98); }
   .b-out-wrap { padding: 10px; gap: 8px; }
   .stat-value { font-size: 64px !important; }
   .t-diagram .s-inner { padding-left: 10px; padding-right: 10px; }
+}
+
+
+/* ---------- десктоп ≥1200: постоянное оглавление слева, слайд крупно ---------- */
+.deck-rail { display: none; }
+
+@media (min-width: 1200px) and (min-height: 600px) {
+  .deck { --rail-w: clamp(272px, 19vw, 340px); grid-template-columns: var(--rail-w) minmax(0, 1fr); }
+  .deck-top, .deck-stage, .deck-foot { grid-column: 2; }
+  .deck-top { grid-row: 1; }
+  .deck-stage { grid-row: 2; }
+  .deck-foot { grid-row: 3; }
+  .deck-bar [data-act="menu"].deck-ic { display: none; }
+
+  .deck-rail {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.025);
+    box-shadow: inset -1px 0 0 rgba(210, 194, 255, 0.1);
+  }
+  .rail-top { padding: 24px 22px 18px; display: flex; flex-direction: column; gap: 6px; }
+  .rail-kicker { font: 500 11px var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(210, 194, 255, 0.7); }
+  .rail-title { font: 500 20px/26px var(--f-head); letter-spacing: -0.02em; color: #fff; }
+  .rail-prog { display: block; height: 4px; margin-top: 10px; border-radius: 4px; background: rgba(255, 255, 255, 0.12); overflow: hidden; }
+  .rail-prog i { display: block; height: 100%; background: var(--lavender); transform-origin: left center; transform: scaleX(0); transition: transform 260ms var(--ease-out); }
+  .rail-meta { font: 400 12px var(--f-text); color: rgba(247, 245, 240, 0.6); }
+
+  .rail-list { list-style: none; margin: 0; padding: 4px 12px 24px; min-height: 0; overflow-y: auto; overscroll-behavior: contain; scrollbar-width: thin; scrollbar-color: rgba(210, 194, 255, 0.2) transparent; }
+  .rc + .rc { margin-top: 2px; }
+  .rc-btn {
+    width: 100%; display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 12px; align-items: center;
+    padding: 8px 10px; border: none; border-radius: 12px; background: none; text-align: left;
+    transition: background-color 160ms ease;
+  }
+  .rc.is-current > .rc-btn { background: rgba(210, 194, 255, 0.12); }
+  .rc-thumb { position: relative; width: 44px; height: 44px; border-radius: 10px; overflow: hidden; background: var(--deep); }
+  .rc-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.85; }
+  .rc-thumb span { position: absolute; left: 4px; bottom: 4px; min-width: 18px; height: 18px; padding: 0 4px; border-radius: 5px; display: grid; place-items: center; background: rgba(12, 7, 24, 0.7); font: 500 10px var(--f-mono); color: #fff; }
+  .rc.is-done .rc-thumb span { background: var(--lavender); color: var(--deep); }
+  .rc-t { min-width: 0; display: flex; flex-direction: column; gap: 2px; }
+  .rc-t b { font: 500 14px/18px var(--f-text); color: rgba(247, 245, 240, 0.9); }
+  .rc.is-current .rc-t b { color: #fff; }
+  .rc-t small { font: 400 12px/15px var(--f-text); color: rgba(247, 245, 240, 0.5); }
+
+  /* раскрытие текущей главы — плавно, через grid-rows */
+  .rc-fold { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 280ms var(--ease-out); }
+  .rc.is-current .rc-fold { grid-template-rows: 1fr; }
+  .rc-slides { list-style: none; margin: 0; padding: 0 0 0 30px; min-height: 0; overflow: hidden; }
+  .rc.is-current .rc-slides { padding-top: 4px; padding-bottom: 8px; }
+  .rs {
+    position: relative; width: 100%; display: grid; grid-template-columns: 22px minmax(0, 1fr); gap: 8px; align-items: baseline;
+    padding: 6px 10px; border: none; border-radius: 9px; background: none; text-align: left;
+    color: rgba(247, 245, 240, 0.62); transition: background-color 140ms ease, color 140ms ease;
+  }
+  .rs-n { font: 500 11px var(--f-mono); color: rgba(210, 194, 255, 0.5); }
+  .rs-t { font: 400 13px/18px var(--f-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .rs.is-seen { color: rgba(247, 245, 240, 0.82); }
+  .rs.is-seen .rs-n { color: var(--lavender); }
+  .rs.is-current { background: var(--violet); color: #fff; }
+  .rs.is-current .rs-n { color: #fff; }
+
+  .deck-top { padding-left: 0; padding-right: 0; }
+  /* слайд занимает всю высоту колонки; ширина — без «простыни» на ультрашироких */
+  .deck { --card-w: min(calc(100vw - var(--rail-w) - 96px), calc((100dvh - 170px) * 1.8)); }
+  .deck-stage { aspect-ratio: auto; align-self: stretch; margin: 0 auto; }
+}
+
+@media (min-width: 1200px) and (min-height: 600px) and (hover: hover) and (pointer: fine) {
+  .rc-btn:hover { background: rgba(255, 255, 255, 0.05); }
+  .rs:not(.is-current):hover { background: rgba(255, 255, 255, 0.06); color: #fff; }
+}
+
+/* крупный кадр (1100+ по ширине слайда): шрифт и отступы растут вместе со слайдом */
+@container slide (min-width: 1100px) {
+  .s-inner { padding: 52px 72px 44px; gap: 22px; }
+  .s-title { font-size: 42px; line-height: 50px; }
+  .s-kicker { font-size: 13px; }
+  .s-text p { font-size: 22px; line-height: 34px; }
+  .s-text-lg p { font-size: 24px; line-height: 37px; max-width: 860px; }
+  .is-centered .s-inner > * { max-width: 960px; }
+  .s-side > .s-caption { font-size: 19px; line-height: 29px; }
+  .bul li, .check button, .q-opt { font-size: 20px !important; line-height: 29px !important; padding: 16px 20px; }
+  .steps strong { font-size: 21px; line-height: 27px; }
+  .steps li > div > span { font-size: 18px; line-height: 26px; }
+  .msg-user, .msg-ai .msg-text { font-size: 18px; line-height: 27px; }
+  .chat { max-width: 700px; }
+  .cmp-pane p { font-size: 22px; line-height: 33px; }
+  .s-cover .s-title { font-size: 60px; line-height: 66px; }
+  .s-cover .s-text p { font-size: 21px; line-height: 31px; }
+  .cover-text { padding: 64px 72px; max-width: 980px; }
+  .stat-value { font-size: 160px; }
+  .tbl-grid th, .tbl-grid td { font-size: 18px; line-height: 26px; padding: 14px 18px; }
+  .s-prompt pre { font-size: 17px; line-height: 27px; }
+  .b-out { font-size: 17px; line-height: 25px; }
+  .b-chip { height: 46px; font-size: 16px !important; }
+  .flip-front { font-size: 21px; line-height: 28px; }
+  .flip-back { font-size: 18px; line-height: 26px; }
+  .flip-in, .flip-face { min-height: 180px; }
+  .lnk-t b { font-size: 17px; }
+  .lnk-t span { font-size: 15px; }
+  .q-explain { font-size: 18px; line-height: 27px; }
+}
+
+/* широкий, но невысокий кадр (ноутбук 1280×800): плотнее по вертикали */
+@container slide (min-width: 720px) and (max-height: 700px) {
+  .s-inner { padding-top: 30px; padding-bottom: 26px; gap: 14px; }
+  .s-title { font-size: 30px; line-height: 37px; }
+  .tbl-grid th, .tbl-grid td { padding: 9px 14px; font-size: 14px; line-height: 19px; }
+  .tbl-grid thead th { font-size: 10.5px; }
 }
