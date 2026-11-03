@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 448" width="100%" role="img" aria-label="Задача по расписанию: исполнитель читает только описание">
+<defs><marker id="a-cron" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="12" y="12" width="336" height="46" rx="14" fill="#8B5CF6"/>
+<text x="26" y="40" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#FFFFFF">Ты: «каждый будний день в 8:30 присылай…»</text>
+<line x1="180" y1="62" x2="180" y2="82" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cron)"/>
+<text x="20" y="104" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">АГЕНТ СОЗДАЁТ ЗАДАЧУ</text>
+<rect x="12" y="114" width="108" height="54" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="66" y="136" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">имя</text>
+<text x="66" y="154" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">дайджест</text>
+<rect x="126" y="114" width="108" height="54" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="180" y="136" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">описание</text>
+<text x="180" y="154" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">в файле</text>
+<rect x="240" y="114" width="108" height="54" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<text x="294" y="136" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112" text-anchor="middle">будильник</text>
+<text x="294" y="154" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F" text-anchor="middle">Пн-Пт 8:30</text>
+<line x1="180" y1="172" x2="180" y2="192" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cron)"/>
+<rect x="12" y="198" width="336" height="104" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<text x="26" y="220" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">8:30 · ИСПОЛНИТЕЛЬ ПРОСЫПАЕТСЯ</text>
+<circle cx="34" cy="244" r="8" fill="#8B5CF6"/>
+<path d="M30 244 L33 247 L38.5 240.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="248.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">читает описание задачи</text>
+<circle cx="34" cy="268" r="8" fill="#8B5CF6"/>
+<path d="M30 268 L33 271 L38.5 264.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="272.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">и свою небольшую память задачи</text>
+<circle cx="34" cy="292" r="8" fill="#0F1112"/>
+<path d="M30.5 288.5 L37.5 295.5 M37.5 288.5 L30.5 295.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="50" y="296.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#5B33C9">вашу переписку не видит</text>
+<line x1="180" y1="306" x2="180" y2="326" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" marker-end="url(#a-cron)"/>
+<rect x="12" y="332" width="336" height="40" rx="12" fill="#D2C2FF"/>
+<text x="180" y="356.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">Результат приходит тебе в Telegram</text>
+<rect x="12" y="384" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="409" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Описание — самодостаточное: тема,</text>
+<text x="26" y="427" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">источники, формат, объём, «если пусто»</text>
+</svg>

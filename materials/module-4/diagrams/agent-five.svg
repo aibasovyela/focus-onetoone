@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 410" width="100%" role="img" aria-label="Пять частей агента">
+<defs><marker id="a-five" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="12" y="12" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="41" r="13" fill="#8B5CF6"/>
+<text x="38" y="45.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="62" y="37" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Роль и инструкции</text>
+<text x="62" y="55" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">«должностная»: кто он и что можно</text>
+<text x="336" y="37" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">CLAUDE.md</text>
+<rect x="12" y="78" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="107" r="13" fill="#D2C2FF"/>
+<text x="38" y="111.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">2</text>
+<text x="62" y="103" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Память</text>
+<text x="62" y="121" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">факты о тебе, решения, тон</text>
+<text x="336" y="103" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">/memory</text>
+<rect x="12" y="144" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="173" r="13" fill="#D2C2FF"/>
+<text x="38" y="177.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">3</text>
+<text x="62" y="169" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Инструменты</text>
+<text x="62" y="187" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">поиск, файлы, отчёты, скиллы</text>
+<text x="336" y="169" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">руки</text>
+<rect x="12" y="210" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="239" r="13" fill="#D2C2FF"/>
+<text x="38" y="243.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">4</text>
+<text x="62" y="235" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Расписание</text>
+<text x="62" y="253" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">будильник с заданием</text>
+<text x="336" y="235" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">/cron</text>
+<rect x="12" y="276" width="336" height="58" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="38" cy="305" r="13" fill="#D2C2FF"/>
+<text x="38" y="309.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#24124A" text-anchor="middle">5</text>
+<text x="62" y="301" font-family="Golos Text, Arial, sans-serif" font-size="13.5" font-weight="600" fill="#0F1112">Канал</text>
+<text x="62" y="319" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">Telegram: текст, файлы, кнопки</text>
+<text x="336" y="301" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">чат</text>
+<rect x="12" y="346" width="336" height="60" rx="12" fill="#24124A"/>
+<text x="26" y="371" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Одна часть пустая или спорит с другой —</text>
+<text x="26" y="389" font-family="Golos Text, Arial, sans-serif" font-size="12.5" fill="#D2C2FF">и умный движок выглядит «тупым»</text>
+</svg>

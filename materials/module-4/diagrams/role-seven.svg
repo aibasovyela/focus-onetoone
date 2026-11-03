@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 394" width="100%" role="img" aria-label="Семь вопросов хорошей роли">
+<defs><marker id="a-r7" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<text x="20" y="22" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">РОЛЬ ОТВЕЧАЕТ НА 7 ВОПРОСОВ</text>
+<rect x="12" y="34" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="57" r="11" fill="#8B5CF6"/>
+<text x="34" y="61.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">1</text>
+<text x="54" y="54" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Кто ты?</text>
+<text x="54" y="71" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">одна роль, не «во всём»</text>
+<rect x="12" y="85" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="108" r="11" fill="#8B5CF6"/>
+<text x="34" y="112.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">2</text>
+<text x="54" y="105" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">На кого работаешь?</text>
+<text x="54" y="122" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">я, бизнес, город, клиенты</text>
+<rect x="12" y="136" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="159" r="11" fill="#8B5CF6"/>
+<text x="34" y="163.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">3</text>
+<text x="54" y="156" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">3-5 главных задач</text>
+<text x="54" y="173" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">конкретные, проверяемые</text>
+<rect x="12" y="187" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="210" r="11" fill="#8B5CF6"/>
+<text x="34" y="214.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">4</text>
+<text x="54" y="207" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Как говорить?</text>
+<text x="54" y="224" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">«ты» или «вы», язык</text>
+<rect x="12" y="238" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="261" r="11" fill="#8B5CF6"/>
+<text x="34" y="265.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">5</text>
+<text x="54" y="258" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Формат ответов</text>
+<text x="54" y="275" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">под телефон, итог сверху</text>
+<rect x="12" y="289" width="336" height="46" rx="12" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="34" cy="312" r="11" fill="#8B5CF6"/>
+<text x="34" y="316.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">6</text>
+<text x="54" y="309" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Если непонятно</text>
+<text x="54" y="326" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">максимум 2 вопроса</text>
+<rect x="12" y="340" width="336" height="46" rx="12" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="34" cy="363" r="11" fill="#24124A"/>
+<text x="34" y="367.5" font-family="IBM Plex Mono, monospace" font-size="12.5" font-weight="600" fill="#FFFFFF" text-anchor="middle">7</text>
+<text x="54" y="360" font-family="Golos Text, Arial, sans-serif" font-size="13" font-weight="600" fill="#0F1112">Где границы?</text>
+<text x="54" y="377" font-family="Golos Text, Arial, sans-serif" font-size="12" fill="#45433F">сам / с «ок» / никогда</text>
+</svg>

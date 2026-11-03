@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 366" width="100%" role="img" aria-label="Что агент записывает в память и чего не записывает">
+<defs><marker id="a-mem" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M1 1 L9 5 L1 9 Z" fill="#8B5CF6"/></marker></defs>
+<rect x="12" y="12" width="336" height="112" rx="12" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<rect x="12" y="12" width="336" height="30" rx="12" fill="#EEEAE2"/>
+<rect x="12" y="30" width="336" height="12" rx="0" fill="#EEEAE2"/>
+<text x="26" y="32" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#24124A" letter-spacing="0.5">MAINMEMORY.md</text>
+<text x="334" y="32" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" text-anchor="end" letter-spacing="0.5">/memory</text>
+<text x="26" y="64" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">2026-11-03</text>
+<text x="116" y="64" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">по пятницам не провожу встречи</text>
+<text x="26" y="86" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">2026-11-03</text>
+<text x="116" y="86" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">тон: на «ты», коротко</text>
+<text x="26" y="108" font-family="IBM Plex Mono, monospace" font-size="12" fill="#8C8880">2026-11-03</text>
+<text x="116" y="108" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">с подрядчиком X не работаем</text>
+<text x="20" y="150" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#5B33C9" letter-spacing="0.5">ЗАПИСЫВАЕТ</text>
+<text x="196" y="150" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" fill="#45433F" letter-spacing="0.5">НЕ ЗАПИСЫВАЕТ</text>
+<rect x="12" y="162" width="166" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="29" cy="179" r="8" fill="#8B5CF6"/>
+<path d="M25 179 L28 182 L33.5 175.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="44" y="183.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">факты о бизнесе</text>
+<rect x="182" y="162" width="166" height="34" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="199" cy="179" r="8" fill="#0F1112"/>
+<path d="M195.5 175.5 L202.5 182.5 M202.5 175.5 L195.5 182.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="214" y="183.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">разовые вопросы</text>
+<rect x="12" y="202" width="166" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="29" cy="219" r="8" fill="#8B5CF6"/>
+<path d="M25 219 L28 222 L33.5 215.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="44" y="223.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">твои предпочтения</text>
+<rect x="182" y="202" width="166" height="34" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="199" cy="219" r="8" fill="#0F1112"/>
+<path d="M195.5 215.5 L202.5 222.5 M202.5 215.5 L195.5 222.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="214" y="223.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">временный мусор</text>
+<rect x="12" y="242" width="166" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="29" cy="259" r="8" fill="#8B5CF6"/>
+<path d="M25 259 L28 262 L33.5 255.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="44" y="263.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">решения надолго</text>
+<rect x="182" y="242" width="166" height="34" rx="10" fill="#FFFFFF" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="199" cy="259" r="8" fill="#0F1112"/>
+<path d="M195.5 255.5 L202.5 262.5 M202.5 255.5 L195.5 262.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="214" y="263.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">то, что уже есть</text>
+<rect x="12" y="282" width="166" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="29" cy="299" r="8" fill="#8B5CF6"/>
+<path d="M25 299 L28 302 L33.5 295.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="44" y="303.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">частые сценарии</text>
+<rect x="182" y="282" width="166" height="34" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="199" cy="299" r="8" fill="#0F1112"/>
+<path d="M195.5 295.5 L202.5 302.5 M202.5 295.5 L195.5 302.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="214" y="303.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">пароли и токены</text>
+<rect x="12" y="322" width="166" height="34" rx="10" fill="#F7F5F0" stroke="#D6D0C6" stroke-width="1"/>
+<circle cx="29" cy="339" r="8" fill="#8B5CF6"/>
+<path d="M25 339 L28 342 L33.5 335.5" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="44" y="343.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#0F1112">всё, что попросил</text>
+<rect x="182" y="322" width="166" height="34" rx="10" fill="#FFFFFF" stroke="#FFB59A" stroke-width="1.5"/>
+<circle cx="199" cy="339" r="8" fill="#0F1112"/>
+<path d="M195.5 335.5 L202.5 342.5 M202.5 335.5 L195.5 342.5" fill="none" stroke="#FFB59A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="214" y="343.5" font-family="Golos Text, Arial, sans-serif" font-size="12.5" font-weight="500" fill="#45433F">данные клиентов</text>
+</svg>
