@@ -422,6 +422,46 @@ html.deck-open, html.deck-open body { overflow: hidden; overscroll-behavior: non
 .check-prog .progress > i { width: 100%; transform-origin: left center; transition: transform 260ms var(--ease-out); }
 
 /* ---------- links ---------- */
+/* галерея примеров (type: gallery): листание на телефоне, сетка на широком слайде */
+.gal { display: grid; grid-auto-flow: column; grid-auto-columns: 82%; gap: 12px; margin: 0 -16px; padding: 2px 16px 6px; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; overscroll-behavior-x: contain; scrollbar-width: none; }
+.gal::-webkit-scrollbar { display: none; }
+.gal-card { scroll-snap-align: start; display: flex; flex-direction: column; min-width: 0; border: 1px solid var(--line); border-radius: 16px; background: #fff; overflow: hidden; }
+.gal-media { position: relative; aspect-ratio: 4 / 3; background: var(--mod-bg), var(--dusk); overflow: hidden; }
+.gal-img { position: absolute; inset: 0; display: block; }
+.gal-img img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 400ms var(--ease-out); }
+.gal-play, .gal-src { position: absolute; display: inline-flex; align-items: center; gap: 5px; padding: 5px 10px; border-radius: 999px; background: rgba(var(--end-rgb), 0.72); color: #fff; font: 500 11px/14px var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; text-decoration: none; -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.gal-play { left: 10px; top: 10px; padding-left: 8px; }
+.gal-play svg { width: 12px; height: 12px; fill: currentColor; }
+.gal-src { right: 8px; bottom: 8px; text-transform: none; letter-spacing: 0; }
+.gal-body { flex: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 6px; padding: 12px; }
+.gal-meta { display: flex; flex-wrap: wrap; gap: 4px 8px; align-items: center; }
+.gal-model { padding: 3px 8px; border-radius: 999px; background: var(--tint); color: var(--violet-ink); font: 500 10px/14px var(--f-mono); letter-spacing: 0.06em; text-transform: uppercase; }
+.gal-ref { font: 400 10px/14px var(--f-mono); color: var(--mute); }
+.gal-title { font: 500 15px/20px var(--f-head); letter-spacing: -0.01em; }
+.gal-prompt { margin: 0; font: 400 12px/17px var(--f-mono); color: var(--text2); display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+.gal-more { padding: 2px 0; border: none; background: none; font: 500 13px var(--f-text); color: var(--violet-ink); cursor: pointer; }
+.gal-body .s-btn { align-self: stretch; margin-top: auto; height: 40px; padding: 0 10px; font-size: 13px !important; white-space: nowrap; }
+@container slide (min-width: 720px) {
+  .gal { grid-auto-flow: row; grid-template-columns: repeat(var(--n, 4), minmax(0, 1fr)); margin: 0; padding: 0; overflow: visible; gap: 16px; }
+  .gal-media { aspect-ratio: 1 / 1; }
+}
+@container slide (min-width: 720px) and (max-height: 560px) {
+  .gal-media { aspect-ratio: 4 / 3; }
+}
+@container slide (max-width: 719px) and (max-height: 620px) { /* iPhone с панелями Safari */
+  .gal-media { aspect-ratio: 16 / 9; }
+  .gal-prompt { -webkit-line-clamp: 2; line-clamp: 2; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .gal-card:hover .gal-media img { transform: scale(1.04); }
+  .gal-src:hover { background: rgba(var(--end-rgb), 0.9); }
+}
+
+/* крупная ссылка (links с "feature": true) — Библиотека промптов и т.п. */
+.lnks-feature .lnk { padding: 18px; border-color: var(--lavender); background: var(--tint); }
+.lnks-feature .lnk-t b { font: 500 18px/24px var(--f-head); letter-spacing: -0.01em; }
+.lnks-feature .lnk-go { width: 44px; height: 44px; background: var(--violet); color: #fff; }
+
 .lnks { display: flex; flex-direction: column; gap: 8px; }
 .lnk { display: flex; align-items: center; gap: 12px; padding: 14px; border-radius: 14px; background: #fff; border: 1px solid var(--line); color: var(--ink); text-decoration: none; transition: transform 140ms var(--ease-out), border-color 160ms ease; -webkit-touch-callout: none; }
 a.lnk:active { transform: scale(0.98); }

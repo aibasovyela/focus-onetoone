@@ -312,6 +312,9 @@ a.route-card:active { transform: scale(0.99); }
 .material-type { font: 500 11px var(--f-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--mute); }
 .material-title { font: 500 15px/20px var(--f-text); }
 .material-badge { font: 400 12px var(--f-mono); color: var(--violet-ink); text-align: right; max-width: 110px; }
+.material-text { margin-top: 2px; font: 400 13px/18px var(--f-text); color: var(--text2); }
+.useful .material-item { background: var(--tint); border-color: var(--lavender); width: 100%; text-align: left; font: inherit; cursor: pointer; }
+.useful .material-icon { background: var(--violet); color: #fff; }
 .material-unavailable { opacity: 0.65; }
 .material-unavailable .material-icon { background: var(--line); color: var(--mute); }
 .material-unavailable .material-badge { color: var(--mute); }

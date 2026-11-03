@@ -33,7 +33,7 @@
 .md-main, .md-aside { display: contents; }
 #lockedNote { order: 0; }
 #chaptersBlock { order: 1; }
-#overview { order: 2; }
+#overview, #useful { order: 2; }
 #toc, #lesson, #homework, #materials, .back-bottom { order: 3; }
 
 /* ---------- боковая панель ---------- */

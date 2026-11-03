@@ -192,6 +192,7 @@ const APP = (() => {
         </li>`;
     }).join('');
 
+    renderUseful(module.useful || [], locked);
     renderHomework(module, module.homework, locked);
     document.getElementById('lesson').innerHTML = '';
     document.getElementById('lesson').style.display = '';
@@ -201,6 +202,27 @@ const APP = (() => {
     loadLesson(module);
     if (!locked) { loadCheatsheet(module.id); loadHomeworkStatus(module.id); }
     window.scrollTo(0, 0);
+  };
+
+  // «Полезное» (meta.json → useful): внешние ссылки и переходы к главе урока ({ chapter: "examples" })
+  const renderUseful = (list, locked) => {
+    const box = document.getElementById('useful');
+    box.hidden = locked || !list.length;
+    document.getElementById('usefulList').innerHTML = list.map(it => {
+      const url = /^https?:\/\//i.test(it.url || '') ? it.url : '';
+      const tag = it.chapter ? `button type="button" data-useful-ch="${esc(it.chapter)}"` : url ? `a href="${esc(url)}" target="_blank" rel="noopener"` : 'div';
+      return `
+        <li>
+          <${tag} class="material-item">
+            <span class="material-icon" aria-hidden="true">${it.chapter ? '▶' : '↗'}</span>
+            <div class="material-info">
+              ${it.kicker ? `<div class="material-type">${esc(it.kicker)}</div>` : ''}
+              <div class="material-title">${esc(it.label)}</div>
+              ${it.text ? `<div class="material-text">${esc(it.text)}</div>` : ''}
+            </div>
+          </${tag.split(' ')[0]}>
+        </li>`;
+    }).join('');
   };
 
   const renderOutcomes = (list) => {
@@ -537,6 +559,14 @@ const APP = (() => {
     document.addEventListener('click', (e) => {
       const start = e.target.closest('[data-deck-start]');
       if (start) { openDeck(Number(start.dataset.deckStart) || 0); return; }
+
+      const usefulCh = e.target.closest('[data-useful-ch]');
+      if (usefulCh) {
+        if (!lesson?.data.deck) return;
+        const ch = DECK.progress(lesson.moduleId, lesson.data.deck).chapters.find(c => c.id === usefulCh.dataset.usefulCh);
+        if (ch) openDeck(ch.start);
+        return;
+      }
 
       const tab = e.target.closest('[data-tab-key]');
       if (tab) { selectTab(tab.dataset.tabKey); return; }

@@ -27,6 +27,7 @@ const DECK = (() => {
     check: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>',
     replay: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.5 12a7.5 7.5 0 1 0 2.2-5.3M4.5 4.5v4h4"/></svg>',
     up: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>',
+    play: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>',
     code: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 7l-5 5 5 5M15 7l5 5-5 5"/></svg>',
     copy: '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.5"/><path d="M16 8V6.5A2.5 2.5 0 0 0 13.5 4h-7A2.5 2.5 0 0 0 4 6.5v7A2.5 2.5 0 0 0 6.5 16H8"/></svg>'
   };
@@ -294,12 +295,38 @@ const DECK = (() => {
         <ul class="check">${items.map((t, k) => `<li><button type="button" role="checkbox" aria-checked="${saved.has(k)}" data-k="${k}"><span class="check-box">${ICON.check}</span><span>${I(t)}</span></button></li>`).join('')}</ul>
         <div class="check-prog"><div class="progress"><i style="transform:scaleX(${items.length ? saved.size / items.length : 0})"></i></div><span>${saved.size} из ${items.length}</span></div>${note(s)}`;
     },
-    links: (s) => `${head(s, 'Ссылки')}<div class="lnks">${(s.items || []).map(it => {
+    links: (s) => `${head(s, 'Ссылки')}<div class="lnks${s.feature ? ' lnks-feature' : ''}">${(s.items || []).map(it => {
       const url = safeUrl(it.url);
       let host = '';
       try { host = url ? new URL(url).hostname.replace(/^www\./, '') : ''; } catch { /* битая ссылка */ }
       return `<${url ? `a href="${E(url)}" target="_blank" rel="noopener"` : 'div'} class="lnk"><span class="lnk-t"><b>${E(it.label)}</b>${it.text ? `<span>${I(it.text)}</span>` : ''}${host ? `<i>${E(host)}</i>` : ''}</span><span class="lnk-go" aria-hidden="true">↗</span></${url ? 'a' : 'div'}>`;
     }).join('')}</div>${note(s)}`,
+    // галерея готовых примеров: сетка на широком экране, листание на телефоне; у каждой карточки — промпт, модель, источник
+    gallery: (s) => {
+      const items = s.items || [];
+      return `${head(s, 'Примеры')}
+        <div class="gal" data-noswipe style="--n:${Math.min(4, Math.max(1, items.length))}">${items.map((it, k) => {
+          const f = safeFile(it.image);
+          const src = safeUrl(it.source);
+          const video = safeUrl(it.video);
+          return `<article class="gal-card" data-copy-scope>
+            <div class="gal-media">
+              <${video || src ? `a href="${E(video || src)}" target="_blank" rel="noopener"` : 'div'} class="gal-img" aria-label="${E(video ? `Смотреть видео: ${it.title || ''}` : `Открыть на Higgsfield: ${it.title || ''}`)}">
+                ${f ? `<img src="media/${E(S.moduleId)}/${E(f)}" alt="" decoding="async">` : ''}
+                ${video ? `<span class="gal-play">${ICON.play}Видео</span>` : ''}
+              </${video || src ? 'a' : 'div'}>
+              ${src ? `<a class="gal-src" href="${E(src)}" target="_blank" rel="noopener">Higgsfield ↗</a>` : ''}
+            </div>
+            <div class="gal-body">
+              <div class="gal-meta"><span class="gal-model">${E(it.model)}</span>${it.ref ? `<span class="gal-ref">${E(it.ref)}</span>` : ''}</div>
+              <b class="gal-title">${E(it.title)}</b>
+              <p class="gal-prompt" data-copy-body>${E(it.prompt)}</p>
+              <button class="gal-more" type="button" data-act="gal-how">Весь промпт</button>
+              <button class="s-btn" type="button" data-copy>${ICON.copy}Скопировать промпт</button>
+            </div>
+          </article>`;
+        }).join('')}</div>${caption(s.caption)}${note(s)}`;
+    },
     finish: () => `
       <div class="fin">
         <div class="fin-mark">${ICON.check}</div>
@@ -768,6 +795,12 @@ const DECK = (() => {
     if (act === 'restart') { show(0); return; }
     if (act === 'homework') { S.onHomework?.(); (S.requestClose || close)(); return; }
     if (act === 'replay' && slide?._replay) { slide._replay(); return; }
+    if (act === 'gal-how' && slide) {
+      const card = t.closest('.gal-card');
+      const src = card.querySelector('a.gal-src');
+      openPanel(`<div class="how" data-copy-scope><div class="s-kicker">${E(card.querySelector('.gal-model').textContent)} · ${E(card.querySelector('.gal-title').textContent)}</div><pre data-copy-body>${card.querySelector('[data-copy-body]').innerHTML}</pre><button class="s-btn" type="button" data-copy>${ICON.copy}Скопировать промпт</button>${src ? `<a class="s-link" href="${src.getAttribute('href')}" target="_blank" rel="noopener">Источник на Higgsfield ↗</a>` : ''}</div>`);
+      return;
+    }
     if (act === 'how' && slide) {
       const tpl = slide.querySelector('.s-how-tpl');
       openPanel(`<div class="how" data-copy-scope><div class="s-kicker">Промпт этой картинки</div><pre data-copy-body>${tpl.innerHTML}</pre><button class="s-btn" type="button" data-copy>${ICON.copy}Скопировать промпт</button></div>`);

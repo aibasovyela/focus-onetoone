@@ -58,6 +58,7 @@ const modulesFor = (student) => {
       ...m,
       promise: meta?.promise || null,
       card: meta?.card || null,     // обложка модуля для карточки маршрута (media/<id>/…)
+      useful: meta?.useful || [],   // блок «Полезное» на странице модуля
       homework: meta?.homework || m.homework,
       status: moduleStatus(student, m.number),
       callDate: calls[m.number] || null
