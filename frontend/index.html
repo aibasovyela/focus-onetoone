@@ -6,9 +6,10 @@
   <meta name="theme-color" content="#0C0718">
   <meta name="robots" content="noindex">
   <title>Фокус ИИ 1:1 — кабинет ученика · Yelumio</title>
-  <link rel="stylesheet" href="css/brand.css?v=4">
-  <link rel="stylesheet" href="css/app.css?v=4">
-  <link rel="stylesheet" href="css/deck.css?v=4">
+  <link rel="stylesheet" href="css/brand.css?v=5">
+  <link rel="stylesheet" href="css/app.css?v=5">
+  <link rel="stylesheet" href="css/deck.css?v=5">
+  <link rel="stylesheet" href="css/desktop.css?v=5">
 </head>
 <body>
   <!-- Экран входа -->
@@ -37,6 +38,19 @@
 
   <!-- Кабинет -->
   <div id="dashboardScreen" style="display: none;">
+    <!-- Боковая панель (десктоп ≥1100px): маршрут из 5 блоков -->
+    <aside class="side" id="sideNav" aria-label="Программа">
+      <a class="side-logo" href="#">Фокус ИИ <span>1:1</span></a>
+      <a class="side-home" href="#" id="sideHome">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9"/></svg>Маршрут
+      </a>
+      <div class="side-label">Блоки программы</div>
+      <ol class="side-list" id="sideModules"></ol>
+      <div class="side-foot">
+        <div class="side-user"><span class="side-ava" id="sideAva" aria-hidden="true"></span><span id="sideName"></span></div>
+        <button type="button" class="side-exit" id="sideLogout">Выйти</button>
+      </div>
+    </aside>
     <header class="header">
       <div class="container">
         <div class="header-content">
@@ -58,6 +72,7 @@
               <div class="progress"><i id="routeProgress" style="width: 0%"></i></div>
               <span class="label" id="routeProgressLabel">0 из 5</span>
             </div>
+            <div class="hero-now" id="heroNow"></div>
           </div>
         </section>
 
@@ -83,6 +98,7 @@
         </div>
 
         <section class="container module-detail">
+          <div class="md-main">
           <div id="lockedNote" class="locked-note" style="display: none;"></div>
 
           <div class="block chapters" id="chaptersBlock" hidden>
@@ -92,17 +108,6 @@
             </div>
             <ol class="ch-list" id="chaptersPanel"></ol>
             <button type="button" class="text-version" id="textVersionBtn" hidden>Текстовая версия урока — всё на одной странице</button>
-          </div>
-
-          <div class="block overview" id="overview">
-            <div class="seg overview-tabs" role="tablist" id="overviewTabs"></div>
-            <div class="tab-panel" data-panel="outcomes" role="tabpanel">
-              <ul class="outcome-list" id="detailOutcomes"></ul>
-            </div>
-            <div class="tab-panel" data-panel="plan" role="tabpanel" id="plan">
-              <p class="section-sub" id="planTotal"></p>
-              <ol class="timeline" id="planList"></ol>
-            </div>
           </div>
 
           <nav class="toc" id="toc" aria-label="Содержание урока">
@@ -129,6 +134,20 @@
           </div>
 
           <button id="detailBackBtn2" class="btn btn-ghost back-bottom">← Вернуться к маршруту</button>
+          </div>
+          <aside class="md-aside">
+          <div class="block overview" id="overview">
+            <div class="seg overview-tabs" role="tablist" id="overviewTabs"></div>
+            <div class="tab-panel" data-panel="outcomes" role="tabpanel">
+              <ul class="outcome-list" id="detailOutcomes"></ul>
+            </div>
+            <div class="tab-panel" data-panel="plan" role="tabpanel" id="plan">
+              <p class="section-sub" id="planTotal"></p>
+              <ol class="timeline" id="planList"></ol>
+            </div>
+          </div>
+
+          </aside>
         </section>
       </div>
     </main>
@@ -153,10 +172,10 @@
 
   <div id="toast" class="toast" role="status"></div>
 
-  <script src="js/auth.js?v=4"></script>
-  <script src="js/data.js?v=4"></script>
-  <script src="js/markdown.js?v=4"></script>
-  <script src="js/deck.js?v=4"></script>
-  <script src="js/app.js?v=4"></script>
+  <script src="js/auth.js?v=5"></script>
+  <script src="js/data.js?v=5"></script>
+  <script src="js/markdown.js?v=5"></script>
+  <script src="js/deck.js?v=5"></script>
+  <script src="js/app.js?v=5"></script>
 </body>
 </html>

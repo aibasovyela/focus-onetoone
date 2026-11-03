@@ -72,6 +72,56 @@ const APP = (() => {
       : 'Программа пройдена. Все материалы остаются с тобой.';
     document.getElementById('routeProgress').style.width = `${(done / modules.length) * 100}%`;
     document.getElementById('routeProgressLabel').textContent = `${done} из ${modules.length} пройдено`;
+    const name = me.name || 'Ученик';
+    document.getElementById('sideName').textContent = name;
+    document.getElementById('sideAva').textContent = name.trim().charAt(0).toUpperCase();
+    renderHeroNow(current);
+  };
+
+  // Прогресс урока-слайдов из localStorage плеера (без загрузки deck.json): { pos, seen, n, done }
+  const deckState = (id) => {
+    try {
+      const st = JSON.parse(localStorage.getItem(`focus.deck.${id}`)) || {};
+      return st.n ? { pos: Math.min(Number(st.pos) || 0, st.n - 1), seen: (st.seen || []).length, n: st.n, done: !!st.done } : null;
+    } catch { return null; }
+  };
+
+  // Карточка «Сейчас» в хиро маршрута (на десктопе — справа от приветствия)
+  const renderHeroNow = (current) => {
+    const box = document.getElementById('heroNow');
+    if (!current) { box.innerHTML = ''; return; }
+    const st = deckState(current.id);
+    const frac = st ? (st.done ? 1 : st.seen / st.n) : 0;
+    const sub = st ? (st.done ? 'Урок пройден' : `Слайд ${st.pos + 1} из ${st.n}`) : 'Урок ещё не начат';
+    box.innerHTML = `
+      <a class="now-card" href="#${esc(current.id)}">
+        <span class="now-num" aria-hidden="true">${current.number}</span>
+        <span class="now-body">
+          <span class="now-kicker">Сейчас · блок ${current.number}</span>
+          <span class="now-title">${esc(current.title)}</span>
+          <span class="now-sub">${esc(sub)} · созвон ${esc(formatDate(current.callDate))}</span>
+          <span class="now-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>
+        </span>
+        <span class="now-go">${st && !st.done ? 'Продолжить' : 'Открыть'}</span>
+      </a>`;
+  };
+
+  // Боковая панель: 5 блоков, подсвечен ровно один — открытый
+  const renderSide = () => {
+    const { id } = parseHash();
+    document.getElementById('sideModules').innerHTML = modules.map(m => {
+      const st = STATUS[m.status] || STATUS.locked;
+      const ds = m.status !== 'locked' ? deckState(m.id) : null;
+      const frac = ds ? (ds.done ? 1 : ds.seen / ds.n) : m.status === 'done' ? 1 : 0;
+      return `
+        <li><a href="#${esc(m.id)}" class="side-item is-${m.status}${m.id === id ? ' is-on' : ''}"${m.id === id ? ' aria-current="page"' : ''}>
+          <span class="side-n">${m.status === 'done' ? '✓' : m.number}</span>
+          <span class="side-t"><b>${esc(m.title)}</b><small>${esc(st.label)}${ds && !ds.done ? ` · ${Math.round(frac * 100)}%` : ''}</small></span>
+          ${frac ? `<span class="side-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>` : ''}
+        </a></li>`;
+    }).join('');
+    document.getElementById('sideHome').classList.toggle('is-on', !id);
+    if (!id) document.getElementById('sideHome').setAttribute('aria-current', 'page'); else document.getElementById('sideHome').removeAttribute('aria-current');
   };
 
   // Маршрут 1→5
@@ -246,6 +296,7 @@ const APP = (() => {
       }
       DECK.open({
         moduleId: id,
+        title: modules.find(m => m.id === id)?.title || '',
         deck,
         diagrams: lesson.data.diagrams,
         start: slide - 1,
@@ -254,6 +305,7 @@ const APP = (() => {
         onHomework: () => { afterDeckClose = () => document.getElementById('homework').scrollIntoView({ behavior: 'smooth', block: 'start' }); },
         onClose: () => {
           renderDeckEntry();
+          renderSide();
           const next = afterDeckClose;
           afterDeckClose = null;
           requestAnimationFrame(() => { next ? next() : document.querySelector('.lesson-card')?.focus({ preventScroll: true }); });
@@ -410,9 +462,11 @@ const APP = (() => {
   // Навигация через #module-N — работает кнопка «назад» в браузере
   const route = () => {
     const { id } = parseHash();
+    renderSide();
     const module = modules.find(m => m.id === id);
     if (!module) {
       if (DECK.isOpen()) DECK.close();
+      renderHeroNow(modules.find(m => m.status === 'active'));
       showList();
       return;
     }
@@ -425,6 +479,8 @@ const APP = (() => {
 
   const goBack = () => {
     history.pushState('', '', location.pathname + location.search);
+    renderSide();
+    renderHeroNow(modules.find(m => m.status === 'active'));
     showList();
     window.scrollTo(0, 0);
   };
@@ -462,6 +518,7 @@ const APP = (() => {
     window.addEventListener('hashchange', route);
     window.addEventListener('scroll', updateReadProgress, { passive: true });
     document.getElementById('detailBackBtn').addEventListener('click', goBack);
+    document.getElementById('sideLogout').addEventListener('click', () => AUTH.logout());
     document.getElementById('detailBackBtn2').addEventListener('click', goBack);
     document.getElementById('homeworkCancel').addEventListener('click', closeHomeworkModal);
     homeworkModal.addEventListener('click', (e) => {

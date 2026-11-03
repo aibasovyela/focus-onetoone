@@ -1,0 +1,170 @@
+/* Кабинет на широких экранах: боковая панель + раскладки в колонки. Телефон (до 1100px) — как было,
+   здесь для него только карточка «Сейчас» и порядок блоков страницы модуля. */
+
+/* ---------- карточка «Сейчас» в хиро маршрута ---------- */
+.hero-now:empty { display: none; }
+.hero-now { margin-top: 22px; max-width: 560px; }
+.now-card {
+  display: grid;
+  grid-template-columns: 52px minmax(0, 1fr);
+  gap: 4px 16px;
+  align-items: center;
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(12, 7, 24, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(210, 194, 255, 0.2);
+  color: var(--paper);
+  text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 200ms ease;
+  -webkit-tap-highlight-color: transparent;
+}
+.now-card:active { transform: scale(0.985); }
+.now-num { grid-row: 1 / span 2; width: 52px; height: 52px; border-radius: 16px; display: grid; place-items: center; background: var(--violet); color: #fff; font: 500 22px var(--f-head); }
+.now-body { display: flex; flex-direction: column; gap: 3px; min-width: 0; }
+.now-kicker { font: 500 11px/14px var(--f-mono); letter-spacing: 0.12em; text-transform: uppercase; color: var(--lavender); }
+.now-title { font: 500 18px/24px var(--f-head); letter-spacing: -0.015em; color: #fff; }
+.now-sub { font: 400 13px/18px var(--f-text); color: rgba(247, 245, 240, 0.75); }
+.now-bar { display: block; height: 4px; margin-top: 8px; border-radius: 4px; background: rgba(255, 255, 255, 0.16); overflow: hidden; }
+.now-bar i { display: block; height: 100%; background: var(--lavender); transform-origin: left center; }
+.now-go { grid-column: 1 / -1; margin-top: 10px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: #fff; color: var(--deep); font: 600 15px var(--f-text); }
+
+/* ---------- страница модуля: на телефоне одна колонка, обзор сразу после глав ---------- */
+.module-detail { display: flex; flex-direction: column; }
+.md-main, .md-aside { display: contents; }
+#lockedNote { order: 0; }
+#chaptersBlock { order: 1; }
+#overview { order: 2; }
+#toc, #lesson, #homework, #materials, .back-bottom { order: 3; }
+
+/* ---------- боковая панель ---------- */
+.side { display: none; }
+
+@media (min-width: 1100px) {
+  :root { --side-w: clamp(248px, 17vw, 300px); --gut: clamp(32px, 3.4vw, 72px); }
+
+  .side {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 40;
+    width: var(--side-w);
+    display: flex;
+    flex-direction: column;
+    padding: 24px 14px 18px;
+    background: var(--end);
+    color: var(--paper);
+    box-shadow: inset -1px 0 0 rgba(210, 194, 255, 0.1);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .side-logo { padding: 0 10px 22px; font: 500 18px var(--f-head); letter-spacing: -0.02em; color: #fff; text-decoration: none; }
+  .side-logo span { color: var(--lavender); }
+  .side-home {
+    display: flex; align-items: center; gap: 12px; padding: 10px 10px; border-radius: 12px;
+    font: 500 14px var(--f-text); color: rgba(247, 245, 240, 0.82); text-decoration: none;
+    transition: background-color 160ms ease, color 160ms ease;
+  }
+  .side-home svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; }
+  .side-home.is-on { background: rgba(210, 194, 255, 0.12); color: #fff; }
+  .side-label { margin: 22px 10px 8px; font: 500 11px var(--f-mono); letter-spacing: 0.1em; text-transform: uppercase; color: rgba(210, 194, 255, 0.6); }
+  .side-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 2px; }
+  .side-item {
+    position: relative; display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 2px 12px; align-items: center;
+    padding: 10px; border-radius: 12px; color: rgba(247, 245, 240, 0.82); text-decoration: none;
+    transition: background-color 160ms ease;
+  }
+  .side-item.is-on { background: rgba(210, 194, 255, 0.12); color: #fff; }
+  .side-n { width: 30px; height: 30px; border-radius: 10px; display: grid; place-items: center; font: 500 13px var(--f-mono); background: rgba(255, 255, 255, 0.07); color: rgba(247, 245, 240, 0.7); }
+  .side-item.is-active .side-n { background: var(--violet); color: #fff; }
+  .side-item.is-done .side-n { background: var(--lavender); color: var(--deep); }
+  .side-t { min-width: 0; display: flex; flex-direction: column; gap: 1px; }
+  .side-t b { font: 500 14px/19px var(--f-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .side-t small { font: 400 12px/16px var(--f-text); color: rgba(247, 245, 240, 0.55); }
+  .side-item.is-locked .side-t b { color: rgba(247, 245, 240, 0.6); }
+  .side-bar { grid-column: 2; height: 3px; margin-top: 5px; border-radius: 3px; background: rgba(255, 255, 255, 0.1); overflow: hidden; }
+  .side-bar i { display: block; height: 100%; background: var(--lavender); transform-origin: left center; }
+  .side-foot { margin-top: auto; padding: 16px 10px 0; display: flex; align-items: center; justify-content: space-between; gap: 10px; border-top: 1px solid rgba(210, 194, 255, 0.1); }
+  .side-user { display: flex; align-items: center; gap: 10px; min-width: 0; font: 500 14px var(--f-text); }
+  .side-user span:last-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .side-ava { flex: none; width: 32px; height: 32px; border-radius: 50%; display: grid; place-items: center; background: var(--deep); color: var(--lavender); font: 500 14px var(--f-head); }
+  .side-exit { flex: none; padding: 7px 12px; border: 1px solid rgba(210, 194, 255, 0.22); border-radius: 999px; background: none; color: rgba(247, 245, 240, 0.8); font: 500 13px var(--f-text); cursor: pointer; transition: background-color 160ms ease; }
+
+  #dashboardScreen > .header { display: none; }
+  #dashboardScreen > main { margin-left: var(--side-w); }
+  .container { max-width: 1760px; padding-left: var(--gut); padding-right: var(--gut); }
+  .read-progress { left: var(--side-w); }
+
+  /* ----- маршрут: приветствие + «Сейчас», блоки сеткой; текущий блок шире ----- */
+  .hero { padding: 64px 0 56px; }
+  .hero > .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, 520px); column-gap: clamp(40px, 5vw, 96px); align-items: end; }
+  .hero > .container > :not(.hero-now) { grid-column: 1; }
+  .hero-now { grid-column: 2; grid-row: 1 / span 4; margin: 0; max-width: none; align-self: end; }
+  .hero-title { font-size: 48px; line-height: 54px; }
+  .hero-sub { font-size: 17px; line-height: 26px; max-width: 620px; }
+  .now-card { padding: 22px; grid-template-columns: 64px minmax(0, 1fr); }
+  .now-num { width: 64px; height: 64px; font-size: 28px; border-radius: 18px; }
+  .now-title { font-size: 22px; line-height: 28px; }
+
+  .route-section { padding-top: 40px; padding-bottom: 64px; }
+  .route { max-width: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+  .route-step, .route-step:not(:last-child) { display: block; padding: 0; }
+  .route-step::before { display: none !important; }
+  .route-step { position: relative; }
+  .route-dot { position: absolute; top: 20px; right: 20px; width: 34px; height: 34px; }
+  .route-card { height: 100%; padding: 22px 24px; display: flex; flex-direction: column; }
+  .route-card .route-top { padding-right: 44px; }
+  .route-open { margin-top: auto; padding-top: 16px; }
+  .route-step.is-active { grid-column: span 2; }
+  .is-active .route-card { padding: 28px 32px; background: #fff; }
+  .is-active .route-title { font-size: 28px; line-height: 34px; margin: 12px 0 10px; }
+  .is-active .route-result { font-size: 16px; line-height: 24px; max-width: 62ch; }
+
+  /* ----- страница модуля: хиро в 2 колонки, ниже основная колонка + боковая «Что получишь / План» ----- */
+  .module-detail-header { padding: 36px 0 48px; }
+  .module-detail-header > .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(400px, 560px); column-gap: clamp(40px, 5vw, 96px); align-items: center; }
+  .module-detail-header > .container > :not(.detail-cta) { grid-column: 1; justify-self: start; }
+  .module-detail-header .detail-cta { grid-column: 2; grid-row: 1 / span 6; margin: 0; max-width: none; align-self: center; }
+  .detail-title { font-size: 48px; line-height: 54px; }
+  .detail-promise { font-size: 18px; line-height: 28px; max-width: 640px; }
+  .detail-promise.is-clamped { display: block; -webkit-line-clamp: unset; overflow: visible; cursor: auto; }
+  .lc-media { aspect-ratio: 16 / 10; }
+  .lc-body { max-width: none; padding: 22px 24px 92px; }
+  .lc-btn { left: 24px; right: 24px; bottom: 24px; }
+
+  .module-detail { max-width: none; display: grid; grid-template-columns: minmax(0, 1fr) clamp(340px, 25vw, 460px); gap: 24px; align-items: start; padding-top: 32px; }
+  .md-main { display: block; min-width: 0; }
+  .md-aside { display: block; position: sticky; top: 24px; }
+  .md-aside .block { margin-bottom: 0; }
+
+  /* главы — карточки с обложками */
+  .chapters .ch-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 18px 16px; }
+  .chapters .ch-row, .chapters .ch-list li:first-child .ch-row, .chapters .ch-list li:nth-child(2) .ch-row {
+    position: relative; display: flex; flex-direction: column; align-items: stretch; gap: 10px; height: 100%; padding: 0; border: none;
+  }
+  .chapters .ch-thumb { width: 100%; height: auto; aspect-ratio: 16 / 10; border-radius: 14px; }
+  .chapters .ch-thumb img { transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1); }
+  .chapters .ch-num { left: 10px; bottom: 10px; min-width: 26px; height: 26px; border-radius: 8px; font-size: 12px; }
+  .chapters .ch-st { position: absolute; top: 10px; right: 10px; background: rgba(12, 7, 24, 0.55); color: #fff; }
+  .chapters .ch-row:not(.is-done):not(.is-current) .ch-st { opacity: 0; transition: opacity 160ms ease; }
+  .chapters .ch-txt { padding: 0 2px; }
+  .chapters .ch-txt b { font-size: 15px; line-height: 20px; }
+  .chapters .ch-row.is-current .ch-thumb { box-shadow: 0 0 0 2px var(--paper2), 0 0 0 4px var(--violet); }
+  .chapters .block-head { margin-bottom: 18px; }
+  .chapters .ch-row:active { transform: scale(0.98); }
+}
+
+@media (min-width: 1100px) and (hover: hover) and (pointer: fine) {
+  .side-home:not(.is-on):hover, .side-item:not(.is-on):hover { background: rgba(255, 255, 255, 0.05); color: #fff; }
+  .side-exit:hover { background: rgba(255, 255, 255, 0.06); }
+  .now-card:hover { background: rgba(12, 7, 24, 0.58); }
+  .chapters .ch-row:hover .ch-thumb img { transform: scale(1.04); }
+  .chapters .ch-row:hover .ch-st { opacity: 1; }
+}
+
+@media (min-width: 1600px) {
+  .hero-title, .detail-title { font-size: 56px; line-height: 62px; }
+  .module-detail-header > .container, .hero > .container { grid-template-columns: minmax(0, 1fr) minmax(460px, 640px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .chapters .ch-thumb img { transition: none; }
+}
