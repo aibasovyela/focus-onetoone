@@ -6,23 +6,31 @@ const APP = (() => {
   const homeworkModal = document.getElementById('homeworkModal');
   const homeworkSubmit = document.getElementById('homeworkSubmit');
   const toast = document.getElementById('toast');
+  const TITLE = document.title;
 
   let modules = [];
   let student = null;
   let ready = false;
   let currentId = null;       // открытый модуль
+  let currentPage = null;     // 'module' — шапка + ДЗ, 'lesson' — материал урока
   let lesson = null;          // { moduleId, data } — ответ /lesson для открытого модуля
   let afterDeckClose = null;  // действие после закрытия плеера (например, прокрутка к ДЗ)
 
-  // #module-1 — страница модуля, #module-1/12 — плеер на 12-м слайде
+  // #module-1 — страница модуля с ДЗ, #module-1/lesson — материал урока, #module-1/lesson/12 — плеер на 12-м слайде.
+  // Старые ссылки #module-1/12 ведут в плеер (legacy: адрес переписывается на новый).
   const parseHash = () => {
-    const [id = '', slide = ''] = decodeURIComponent(location.hash.slice(1)).split('/');
-    return { id, slide: /^\d+$/.test(slide) ? Number(slide) : null };
+    const [id = '', a = '', b = ''] = decodeURIComponent(location.hash.slice(1)).split('/');
+    const num = (v) => (/^\d+$/.test(v) ? Number(v) : null);
+    if (a === 'lesson') return { id, page: 'lesson', slide: num(b) };
+    const slide = num(a);
+    return { id, page: slide ? 'lesson' : 'module', slide, legacy: !!slide };
   };
+  const hashOf = (id, page = 'module', slide = null) => `#${id}${page === 'lesson' ? '/lesson' : ''}${slide ? `/${slide}` : ''}`;
 
   const ICON_PLAY = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.86l10.2-6.5a1 1 0 0 0 0-1.72L9.5 4.64A1 1 0 0 0 8 5.5z"/></svg>';
   const ICON_CHECK = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
   const ICON_NEXT = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+  const ICON_LESSON = '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="11.5" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 8.6v4.3l3.6-2.15z" fill="currentColor"/><path d="M8 20h8M12 16.5V20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>';
   const ICON_READ = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 6.5C10 5 7 4.5 4 5v13c3-.5 6 0 8 1.5 2-1.5 5-2 8-1.5V5c-3-.5-6 0-8 1.5zM12 6.5v13" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>';
 
   const STATUS = {
@@ -98,7 +106,7 @@ const APP = (() => {
     const frac = st ? (st.done ? 1 : st.seen / st.n) : 0;
     const sub = st ? (st.done ? 'Урок пройден' : `Слайд ${st.pos + 1} из ${st.n}`) : 'Урок ещё не начат';
     box.innerHTML = `
-      <a class="now-card" href="#${esc(current.id)}" data-mod="${current.number}">
+      <a class="now-card" href="${esc(hashOf(current.id, st && !st.done ? 'lesson' : 'module'))}" data-mod="${current.number}">
         <span class="now-num" aria-hidden="true">${current.number}</span>
         <span class="now-body">
           <span class="now-kicker">Сейчас · блок ${current.number}</span>
@@ -147,13 +155,14 @@ const APP = (() => {
               <span class="pill ${st.pill}">${st.label}</span>
               <span class="label">Созвон: ${formatDate(m.callDate)}</span>
             </div>
-            <span class="route-open">${open ? 'Открыть урок →' : 'Посмотреть план →'}</span>
+            <span class="route-open">${open ? 'Урок и домашка →' : 'Посмотреть план →'}</span>
           </a>
         </li>`;
     }).join('');
   };
 
-  // Детали модуля: компактное хиро с «Начать урок» → табы (главы / что получишь / план) → урок → ДЗ → материалы
+  // Модуль: страница «шапка + ДЗ» и страница урока (#…/lesson: карточка «Начать урок», главы, план, текст, материалы).
+  // Обе страницы — один экран moduleDetailView, переключаются data-page.
   const showModuleDetail = (module) => {
     modulesView.style.display = 'none';
     moduleDetailView.style.display = 'block';
@@ -170,6 +179,12 @@ const APP = (() => {
     document.getElementById('detailMeta').innerHTML =
       `<span class="pill pill-light">${st.label}</span><span class="label">Созвон: ${formatDate(module.callDate)} · 2 часа</span>`;
     document.getElementById('detailCta').innerHTML = locked ? '' : '<div class="lc-skeleton" aria-hidden="true"></div>';
+    const ds = locked ? null : deckState(module.id);
+    renderLessonEntry(module.id, locked
+      ? { sub: 'Предпросмотр: что получишь и план созвона' }
+      : ds ? { sub: ds.done ? 'Урок пройден · слайды, план и материалы' : `Продолжить с ${ds.pos + 1} слайда из ${ds.n}`, frac: ds.done ? 1 : ds.seen / ds.n }
+        : { sub: 'Слайды, план созвона и материалы' });
+    document.getElementById('toHomework').href = hashOf(module.id);
     document.getElementById('chaptersBlock').hidden = true;
     moduleDetailView.classList.remove('has-deck');
     renderOutcomes(module.goals || []);
@@ -202,6 +217,41 @@ const APP = (() => {
     loadLesson(module);
     if (!locked) { loadCheatsheet(module.id); loadHomeworkStatus(module.id); }
     window.scrollTo(0, 0);
+  };
+
+  // Кнопка «Открыть материал урока» на странице модуля
+  const renderLessonEntry = (id, { sub, frac = 0 }) => {
+    document.getElementById('lessonEntry').innerHTML = `
+      <a class="lesson-entry" href="${esc(hashOf(id, 'lesson'))}" data-to-lesson>
+        <span class="le-ic">${ICON_LESSON}</span>
+        <span class="le-txt"><b>Открыть материал урока</b><small>${esc(sub)}</small>
+          ${frac ? `<span class="le-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>` : ''}</span>
+        <span class="le-go" aria-hidden="true">${ICON_NEXT}</span>
+      </a>`;
+  };
+
+  const setPage = (page) => {
+    const module = modules.find(m => m.id === currentId);
+    moduleDetailView.dataset.page = page;
+    document.getElementById('detailBackBtn').textContent = page === 'lesson' ? '← К модулю и домашке' : '← Маршрут';
+    document.getElementById('detailModuleNumber').textContent = page === 'lesson'
+      ? `Материал урока · блок ${module.number} из ${modules.length}`
+      : `Блок ${module.number} из ${modules.length} · ${module.tag || ''}`;
+    document.getElementById('detailPromise').classList.add('is-clamped');
+    document.title = `${page === 'lesson' ? 'Урок: ' : ''}${module.title} · ${TITLE}`;
+  };
+
+  // со страницы урока — к модулю: назад по истории, если пришли с него, иначе новый шаг
+  const toModulePage = () => {
+    const h = parseHash();
+    if (history.state?.fromModule && h.page === 'lesson' && !h.slide) { history.back(); return; }
+    history.pushState(null, '', hashOf(currentId));
+    route();
+  };
+
+  const toLessonPage = () => {
+    history.pushState({ fromModule: 1 }, '', hashOf(currentId, 'lesson'));
+    route();
   };
 
   // «Полезное» (meta.json → useful): внешние ссылки и переходы к главе урока ({ chapter: "examples" })
@@ -298,29 +348,35 @@ const APP = (() => {
     }).join('');
     document.getElementById('chaptersBlock').hidden = false;
     document.getElementById('textVersionBtn').hidden = !lesson.data.markdown;
+    renderLessonEntry(id, {
+      sub: resume ? `Продолжить с ${p.pos + 1} слайда · глава ${curCh.n + 1} из ${p.chapters.length}`
+        : p.done ? 'Урок пройден · можно пройти ещё раз'
+          : `${p.chapters.length} ${DECK.plural(p.chapters.length, ['глава', 'главы', 'глав'])} · ~${minutes(p.total)} мин · план созвона`,
+      frac
+    });
   };
 
   const openDeck = (start) => {
     const { id } = parseHash();
-    history.pushState({ deck: 1 }, '', `#${id}/${Number(start) + 1}`);
+    history.pushState({ deck: 1 }, '', hashOf(id, 'lesson', Number(start) + 1));
     syncDeck();
   };
 
   const closeDeck = () => {
     if (history.state?.deck) { history.back(); return; } // hashchange → route → DECK.close()
-    history.replaceState(null, '', `#${parseHash().id}`);
+    history.replaceState(null, '', hashOf(parseHash().id, 'lesson'));
     DECK.close();
   };
 
-  // Плеер следует за хэшем: #module-1/N — открыт, #module-1 — закрыт (кнопка «назад» закрывает плеер)
+  // Плеер следует за хэшем: #module-1/lesson/N — открыт, без номера — закрыт (кнопка «назад» закрывает плеер)
   const syncDeck = () => {
     const { id, slide } = parseHash();
     const deck = lesson && lesson.moduleId === id ? lesson.data.deck : null;
     if (slide && deck) {
       if (DECK.isOpen()) { DECK.goTo(slide - 1); return; }
-      if (!history.state?.deck) { // прямая ссылка на слайд: подкладываем страницу модуля под плеер
-        history.replaceState(null, '', `#${id}`);
-        history.pushState({ deck: 1 }, '', `#${id}/${slide}`);
+      if (!history.state?.deck) { // прямая ссылка на слайд: подкладываем страницу урока под плеер
+        history.replaceState(null, '', hashOf(id, 'lesson'));
+        history.pushState({ deck: 1 }, '', hashOf(id, 'lesson', slide));
       }
       DECK.open({
         moduleId: id,
@@ -329,9 +385,9 @@ const APP = (() => {
         deck,
         diagrams: lesson.data.diagrams,
         start: slide - 1,
-        onChange: (i) => history.replaceState(history.state, '', `#${id}/${i + 1}`),
+        onChange: (i) => history.replaceState(history.state, '', hashOf(id, 'lesson', i + 1)),
         requestClose: closeDeck,
-        onHomework: () => { afterDeckClose = () => document.getElementById('homework').scrollIntoView({ behavior: 'smooth', block: 'start' }); },
+        onHomework: () => { afterDeckClose = () => { if (parseHash().id === id) toModulePage(); }; },
         onClose: () => {
           renderDeckEntry();
           renderSide();
@@ -343,20 +399,57 @@ const APP = (() => {
     } else if (!slide && DECK.isOpen()) {
       DECK.close();
     } else if (slide && lesson && lesson.moduleId === id && !deck) {
-      history.replaceState(null, '', `#${id}`); // у модуля нет слайдов — остаёмся на лонгриде
+      history.replaceState(null, '', hashOf(id, 'lesson')); // у модуля нет слайдов — остаёмся на лонгриде
     }
   };
 
+  // Условие ДЗ: «…: 1) …; 2) …; 3) … . Дальше текст» → вступление + шаги списком + продолжение
+  const splitSteps = (text) => {
+    const t = String(text || '');
+    const m = t.match(/^([\s\S]*?)\s1\)\s([\s\S]+)$/);
+    if (!m || !/\s2\)\s/.test(m[2])) return { intro: t, steps: [], tail: '' };
+    const steps = m[2].split(/\s+\d\)\s+/);
+    const last = steps.pop();
+    const lm = last.match(/^([\s\S]*?[.!?])\s+([\s\S]+)$/);
+    steps.push(lm ? lm[1] : last);
+    const cap = (x) => x.replace(/[;,.]\s*$/, '').replace(/^./, c => c.toUpperCase());
+    return { intro: m[1], steps: steps.map(cap), tail: lm ? lm[2] : '' };
+  };
+
   const renderHomework = (module, hw, locked) => {
-    document.getElementById('detailHomeworkContent').innerHTML = hw ? `
+    const meta = document.getElementById('homeworkMeta');
+    if (!hw) {
+      meta.textContent = '';
+      document.getElementById('detailHomeworkContent').innerHTML = '<p class="label">Задание появится после созвона</p>';
+      return;
+    }
+    const due = hw.dueDate ? formatDate(hw.dueDate) : esc(hw.dueLabel || 'дата уточняется');
+    meta.innerHTML = `Срок: ${due}`;
+    const { intro, steps, tail } = splitSteps(hw.description);
+    document.getElementById('detailHomeworkContent').innerHTML = `
       <div class="homework-item">
         <h3 class="homework-title">${esc(hw.title)}</h3>
-        <p class="homework-desc">${esc(hw.description)}</p>
-        ${hw.criteria?.length ? `<div class="label hw-label">Готово, если</div><ul class="criteria-list">${hw.criteria.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
-        <div class="homework-due">Срок: ${hw.dueDate ? formatDate(hw.dueDate) : esc(hw.dueLabel || 'дата уточняется')}</div>
-        <div class="homework-status" id="homeworkStatus"></div>
-        ${locked ? '' : `<button class="btn btn-primary hw-btn" data-hw="${esc(module.id)}">Сдать ДЗ</button>`}
-      </div>` : '<p class="label">Задание появится после созвона</p>';
+        <div class="hw-grid">
+          <div class="hw-main">
+            <div class="label hw-label">Условие</div>
+            ${intro ? `<p class="homework-desc">${esc(intro)}</p>` : ''}
+            ${steps.length ? `<ol class="hw-steps">${steps.map(x => `<li>${esc(x)}</li>`).join('')}</ol>` : ''}
+            ${tail ? `<p class="homework-desc">${esc(tail)}</p>` : ''}
+            ${hw.criteria?.length ? `<div class="label hw-label">Готово, если</div><ul class="criteria-list">${hw.criteria.map(c => `<li>${esc(c)}</li>`).join('')}</ul>` : ''}
+          </div>
+          <div class="hw-side">
+            <div class="label hw-label">Как сдать</div>
+            <ol class="hw-how">
+              <li>Сделай задание по условию и проверь себя по критериям</li>
+              <li>Нажми «Сдать ДЗ»: опиши, что получилось, и вставь ссылки на результаты</li>
+              <li>Куратор посмотрит работу до созвона</li>
+            </ol>
+            <div class="homework-due">Срок: ${due}</div>
+            <div class="homework-status" id="homeworkStatus"></div>
+            ${locked ? `<p class="hw-locked">Сдать можно после созвона ${module.number}, когда блок откроется</p>` : `<button class="btn btn-primary hw-btn" type="button" data-hw="${esc(module.id)}">Сдать ДЗ</button>`}
+          </div>
+        </div>
+      </div>`;
   };
 
   // Урок: план по минутам + слайды (deck.json) или лонгрид (lesson.md); для закрытого блока — только предпросмотр
@@ -391,6 +484,7 @@ const APP = (() => {
         lockedNote.style.display = '';
         lockedNote.innerHTML = `<span class="eyebrow">Блок закрыт</span><p>Полный урок, промпты и материалы откроются после созвона ${module.number}. Пока — план, чтобы знать, что нас ждёт.</p>`;
         cta.innerHTML = '';
+        renderLessonEntry(module.id, { sub: 'Предпросмотр: что получишь и план созвона' });
         renderTabs(true, 'plan');
         buildToc([]);
         return;
@@ -419,6 +513,7 @@ const APP = (() => {
           <span class="cta-txt"><b>Читать урок</b><small>${toc.length} разделов · ~${Math.max(3, Math.round(words / 180))} мин чтения</small></span>
           <span class="cta-go" aria-hidden="true">↓</span>
         </button>` : '';
+      if (html.trim()) renderLessonEntry(module.id, { sub: `Текст урока · ${toc.length} разделов · ~${Math.max(3, Math.round(words / 180))} мин чтения` });
       renderTabs(false, 'outcomes');
       buildToc(toc);
       syncDeck();
@@ -444,7 +539,7 @@ const APP = (() => {
   const buildToc = (toc) => {
     const tocEl = document.getElementById('toc');
     tocEl.style.display = toc.length ? '' : 'none';
-    const items = [{ id: 'overview', title: 'Что получишь и план созвона' }, ...toc, { id: 'homework', title: 'Домашнее задание' }, { id: 'materials', title: 'Материалы' }]
+    const items = [{ id: 'overview', title: 'Что получишь и план созвона' }, ...toc, { id: 'materials', title: 'Материалы' }]
       .filter(i => document.getElementById(i.id) && document.getElementById(i.id).style.display !== 'none');
     document.getElementById('tocList').innerHTML = items.map(i => `<li><a href="#${esc(i.id)}" data-toc="${esc(i.id)}">${esc(i.title)}</a></li>`).join('');
     document.getElementById('tocCount').textContent = `${items.length} разделов`;
@@ -455,6 +550,7 @@ const APP = (() => {
   const updateReadProgress = () => {
     const bar = document.getElementById('readProgress');
     if (!bar || moduleDetailView.style.display === 'none' || DECK.isOpen()) return;
+    if (currentPage !== 'lesson') { bar.style.width = '0%'; return; }
     const max = document.documentElement.scrollHeight - window.innerHeight;
     bar.style.width = `${max > 0 ? Math.min(100, (window.scrollY / max) * 100) : 0}%`;
   };
@@ -483,14 +579,17 @@ const APP = (() => {
 
   const showList = () => {
     currentId = null;
+    currentPage = null;
+    document.title = TITLE;
     lesson = null;
     moduleDetailView.style.display = 'none';
     modulesView.style.display = 'block';
   };
 
-  // Навигация через #module-N — работает кнопка «назад» в браузере
+  // Навигация через #module-N[/lesson[/слайд]] — работает кнопка «назад» в браузере
   const route = () => {
-    const { id } = parseHash();
+    const { id, page, slide, legacy } = parseHash();
+    if (legacy) history.replaceState(history.state, '', hashOf(id, 'lesson', slide));
     renderSide();
     const module = modules.find(m => m.id === id);
     if (!module) {
@@ -501,7 +600,14 @@ const APP = (() => {
     }
     if (currentId !== id) {
       currentId = id;
+      currentPage = null;
       showModuleDetail(module);
+    }
+    if (currentPage !== page) {
+      currentPage = page;
+      setPage(page);
+      if (!slide) window.scrollTo(0, 0);
+      updateReadProgress();
     }
     syncDeck();
   };
@@ -546,7 +652,8 @@ const APP = (() => {
   const setupEventListeners = () => {
     window.addEventListener('hashchange', route);
     window.addEventListener('scroll', updateReadProgress, { passive: true });
-    document.getElementById('detailBackBtn').addEventListener('click', goBack);
+    document.getElementById('detailBackBtn').addEventListener('click', () => (currentPage === 'lesson' ? toModulePage() : goBack()));
+    document.getElementById('lessonBackBtn2').addEventListener('click', toModulePage);
     document.getElementById('sideLogout').addEventListener('click', () => AUTH.logout());
     document.getElementById('detailBackBtn2').addEventListener('click', goBack);
     document.getElementById('homeworkCancel').addEventListener('click', closeHomeworkModal);
@@ -565,6 +672,13 @@ const APP = (() => {
         if (!lesson?.data.deck) return;
         const ch = DECK.progress(lesson.moduleId, lesson.data.deck).chapters.find(c => c.id === usefulCh.dataset.usefulCh);
         if (ch) openDeck(ch.start);
+        return;
+      }
+
+      const nav = e.target.closest('[data-to-lesson], #toHomework');
+      if (nav && !(e.metaKey || e.ctrlKey || e.shiftKey || e.button)) { // с модификатором — как обычная ссылка (новая вкладка)
+        e.preventDefault();
+        nav.id === 'toHomework' ? toModulePage() : toLessonPage();
         return;
       }
 

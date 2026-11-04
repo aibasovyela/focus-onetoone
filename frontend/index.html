@@ -7,9 +7,9 @@
   <meta name="robots" content="noindex">
   <title>Фокус ИИ 1:1 — кабинет ученика · Yelumio</title>
   <link rel="stylesheet" href="css/brand.css?v=6">
-  <link rel="stylesheet" href="css/app.css?v=7">
+  <link rel="stylesheet" href="css/app.css?v=8">
   <link rel="stylesheet" href="css/deck.css?v=6">
-  <link rel="stylesheet" href="css/desktop.css?v=7">
+  <link rel="stylesheet" href="css/desktop.css?v=8">
   <link rel="stylesheet" href="css/tour.css?v=7">
   <link rel="stylesheet" href="css/modules.css?v=1">
 </head>
@@ -91,21 +91,35 @@
       </div>
 
       <!-- Модуль: хиро + «Начать урок» → плеер слайдов (deck.json) или лонгрид (lesson.md) -->
-      <div id="moduleDetailView" style="display: none;">
+      <div id="moduleDetailView" data-page="module" style="display: none;">
         <div class="read-progress" aria-hidden="true"><i id="readProgress"></i></div>
 
         <div class="module-detail-header">
           <div class="container">
-            <button id="detailBackBtn" class="back-link">← Маршрут</button>
+            <button id="detailBackBtn" class="back-link" type="button">← Маршрут</button>
             <div class="eyebrow" id="detailModuleNumber"></div>
             <h1 id="detailModuleTitle" class="detail-title"></h1>
             <p id="detailPromise" class="detail-promise"></p>
             <div class="detail-meta" id="detailMeta"></div>
-            <div class="detail-cta" id="detailCta"></div>
+            <div class="lesson-entry-box module-only" id="lessonEntry"></div>
+            <div class="detail-cta lesson-only" id="detailCta"></div>
           </div>
         </div>
 
-        <section class="container module-detail">
+        <!-- Страница модуля: сразу домашнее задание -->
+        <section class="container hw-page module-only">
+          <div class="block hw-block" id="homework">
+            <div class="block-head">
+              <h2 class="section-title">Домашнее задание</h2>
+              <span class="block-meta" id="homeworkMeta"></span>
+            </div>
+            <div id="detailHomeworkContent"></div>
+          </div>
+          <button id="detailBackBtn2" class="btn btn-ghost back-bottom" type="button">← Вернуться к маршруту</button>
+        </section>
+
+        <!-- Страница урока: слайды, план, текст, материалы -->
+        <section class="container module-detail lesson-only" id="lessonPage">
           <div class="md-main">
           <div id="lockedNote" class="locked-note" style="display: none;"></div>
 
@@ -127,11 +141,6 @@
 
           <article class="md lesson-body" id="lesson"></article>
 
-          <div class="block" id="homework">
-            <h2 class="section-title">Домашнее задание</h2>
-            <div id="detailHomeworkContent"></div>
-          </div>
-
           <div class="block" id="materials">
             <h2 class="section-title">Материалы</h2>
             <ul class="materials-list" id="detailMaterialsList"></ul>
@@ -141,7 +150,12 @@
             </details>
           </div>
 
-          <button id="detailBackBtn2" class="btn btn-ghost back-bottom">← Вернуться к маршруту</button>
+          <a class="to-hw" id="toHomework" href="#">
+            <span class="to-hw-ic" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 4.5h6M8 4.5H6.5A1.5 1.5 0 0 0 5 6v13.5A1.5 1.5 0 0 0 6.5 21h11a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H16M9 3h6v3H9zM8.5 13l2.5 2.5 4.5-5"/></svg></span>
+            <span class="to-hw-txt"><b>Домашнее задание</b><small>Условие, критерии и сдача — на странице блока</small></span>
+            <span class="to-hw-go" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></span>
+          </a>
+          <button id="lessonBackBtn2" class="btn btn-ghost back-bottom" type="button">← К модулю и домашке</button>
           </div>
           <aside class="md-aside">
           <div class="block overview" id="overview">
@@ -187,8 +201,8 @@
   <script src="js/auth.js?v=5"></script>
   <script src="js/data.js?v=5"></script>
   <script src="js/markdown.js?v=5"></script>
-  <script src="js/deck.js?v=7"></script>
-  <script src="js/tour.js?v=6"></script>
-  <script src="js/app.js?v=7"></script>
+  <script src="js/deck.js?v=8"></script>
+  <script src="js/tour.js?v=7"></script>
+  <script src="js/app.js?v=8"></script>
 </body>
 </html>

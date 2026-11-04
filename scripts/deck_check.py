@@ -76,7 +76,7 @@ def run(p, name, ctxopts):
     page.press('#pinInput', 'Enter')
     page.wait_for_selector('#dashboardScreen', state='visible')
     page.evaluate(f"localStorage.removeItem('focus.deck.{MODULE}')")
-    page.goto(BASE + '#' + MODULE)
+    page.goto(BASE + '#' + MODULE + '/lesson')  # страница урока (на #module-N — шапка и ДЗ)
     page.wait_for_selector('.lesson-card')
     page.wait_for_timeout(500)
     if SHOTS:

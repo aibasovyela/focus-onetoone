@@ -663,3 +663,73 @@ a.route-card:active { transform: scale(0.99); }
   .lesson-card:hover .lc-btn { background: var(--violet-ink); }
   .text-version:hover { border-color: var(--lavender); }
 }
+
+/* ---------- Модуль: две страницы — «шапка + ДЗ» (#module-N) и материал урока (#module-N/lesson) ---------- */
+#moduleDetailView[data-page="module"] .lesson-only,
+#moduleDetailView[data-page="lesson"] .module-only { display: none !important; }
+[data-page="module"] .detail-promise.is-clamped { -webkit-line-clamp: 2; }
+[data-page="module"] .module-detail-header { padding: 14px 0 20px; }
+[data-page="module"] .back-link { margin-bottom: 10px; }
+[data-page="module"] .detail-title { margin-bottom: 8px; }
+
+.lesson-entry-box { margin-top: 16px; max-width: 640px; }
+.lesson-entry-box:empty { display: none; }
+.lesson-entry {
+  display: grid; grid-template-columns: 44px minmax(0, 1fr) 24px; gap: 14px; align-items: center;
+  padding: 14px 14px 14px 14px; border-radius: 16px; background: #fff; color: var(--deep); text-decoration: none;
+  box-shadow: 0 14px 34px rgba(var(--end-rgb), 0.35);
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+.lesson-entry:active { transform: scale(0.985); }
+.lesson-entry:focus-visible { outline: 2px solid var(--lavender); outline-offset: 3px; }
+.le-ic { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; background: var(--violet); color: #fff; }
+.le-ic svg { width: 24px; height: 24px; }
+.le-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.le-txt b { font: 600 16px/21px var(--f-text); color: var(--ink); }
+.le-txt small { font: 400 13px/18px var(--f-text); color: var(--text2); }
+.le-bar { display: block; height: 3px; margin-top: 6px; border-radius: 3px; background: var(--tint-strong); overflow: hidden; }
+.le-bar i { display: block; height: 100%; background: var(--violet); transform-origin: left center; }
+.le-go { width: 24px; height: 24px; color: var(--violet-ink); }
+.le-go svg { width: 24px; height: 24px; }
+
+.hw-page { padding-top: 14px; padding-bottom: 48px; max-width: 760px; }
+.hw-block { scroll-margin-top: 16px; }
+.hw-block .homework-title { font-size: 19px; line-height: 25px; margin-bottom: 14px; }
+.hw-block .hw-label { margin-top: 4px; }
+.hw-steps { list-style: none; counter-reset: hw; margin: 0 0 16px; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.hw-steps li { counter-increment: hw; position: relative; padding: 12px 14px 12px 50px; border-radius: var(--r-ctrl); background: var(--tint); font: 400 15px/22px var(--f-text); color: var(--ink); }
+.hw-steps li::before { content: counter(hw); position: absolute; left: 12px; top: 11px; width: 26px; height: 26px; border-radius: 50%; display: grid; place-items: center; background: var(--violet); color: #fff; font: 500 13px var(--f-mono); }
+.hw-side { margin-top: 6px; padding-top: 16px; border-top: 1px solid #EFEBE4; }
+.hw-how { margin: 0 0 14px; padding-left: 20px; font: 400 14px/20px var(--f-text); color: var(--text2); }
+.hw-how li { margin-bottom: 6px; }
+.hw-how li::marker { color: var(--violet-ink); font: 500 12px var(--f-mono); }
+.hw-locked { margin: 0; padding: 12px 14px; border-radius: var(--r-ctrl); border: 1px dashed var(--line); font: 400 14px/20px var(--f-text); color: var(--text2); }
+
+.to-hw {
+  display: grid; grid-template-columns: 40px minmax(0, 1fr) 24px; gap: 14px; align-items: center; margin-bottom: 16px; padding: 16px 18px;
+  border-radius: var(--r-card); background: var(--deep); color: var(--paper); text-decoration: none;
+  transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1); -webkit-tap-highlight-color: transparent;
+}
+.to-hw:active { transform: scale(0.985); }
+.to-hw-ic { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: var(--lavender); color: var(--deep); }
+.to-hw svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.to-hw-txt { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.to-hw-txt b { font: 600 16px/21px var(--f-text); color: #fff; }
+.to-hw-txt small { font: 400 13px/18px var(--f-text); color: rgba(247, 245, 240, 0.75); }
+.to-hw-go { color: var(--lavender); }
+
+@media (min-width: 768px) {
+  .lesson-entry-box { margin-top: 24px; }
+  .hw-grid { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 28px; align-items: start; }
+  .hw-side { margin: 0; padding: 0 0 0 28px; border-top: none; border-left: 1px solid #EFEBE4; }
+  .hw-side .hw-btn { width: 100%; }
+}
+@media (hover: hover) and (pointer: fine) {
+  .lesson-entry:hover .le-go { transform: translateX(2px); }
+  .le-go { transition: transform 160ms ease; }
+  .to-hw:hover .to-hw-go { transform: translateX(2px); }
+  .to-hw-go { transition: transform 160ms ease; }
+}
+.hw-block .block-head { flex-wrap: wrap; row-gap: 4px; }
+.hw-block .block-meta { white-space: normal; color: var(--violet-ink); }

@@ -34,7 +34,7 @@
 #lockedNote { order: 0; }
 #chaptersBlock { order: 1; }
 #overview, #useful { order: 2; }
-#toc, #lesson, #homework, #materials, .back-bottom { order: 3; }
+#toc, #lesson, #materials, .to-hw, .back-bottom { order: 3; }
 
 /* ---------- боковая панель ---------- */
 .side { display: none; }
@@ -121,8 +121,20 @@
   /* ----- страница модуля: хиро в 2 колонки, ниже основная колонка + боковая «Что получишь / План» ----- */
   .module-detail-header { padding: 36px 0 48px; }
   .module-detail-header > .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(400px, 560px); column-gap: clamp(40px, 5vw, 96px); align-items: center; }
-  .module-detail-header > .container > :not(.detail-cta) { grid-column: 1; justify-self: start; }
-  .module-detail-header .detail-cta { grid-column: 2; grid-row: 1 / span 6; margin: 0; max-width: none; align-self: center; }
+  .module-detail-header > .container > :not(.detail-cta):not(.lesson-entry-box) { grid-column: 1; justify-self: start; }
+  .module-detail-header .detail-cta, .module-detail-header .lesson-entry-box { grid-column: 2; grid-row: 1 / span 6; margin: 0; max-width: none; align-self: center; }
+  [data-page="module"] .module-detail-header { padding: 32px 0 36px; }
+  .lesson-entry { grid-template-columns: 56px minmax(0, 1fr) 28px; gap: 18px; padding: 20px 22px; border-radius: 20px; }
+  .le-ic { width: 56px; height: 56px; border-radius: 16px; }
+  .le-ic svg { width: 28px; height: 28px; }
+  .le-txt b { font-size: 18px; line-height: 24px; }
+  .le-txt small { font-size: 14px; line-height: 20px; }
+  .hw-page { max-width: none; padding-top: 28px; }
+  .hw-block { padding: 30px 32px; }
+  .hw-block .homework-title { font-size: 24px; line-height: 30px; margin-bottom: 18px; }
+  .hw-grid { grid-template-columns: minmax(0, 1fr) clamp(300px, 26vw, 420px); gap: 40px; }
+  .hw-side { position: sticky; top: 24px; padding-left: 40px; }
+  .hw-page .back-bottom { width: auto; }
   .detail-title { font-size: 48px; line-height: 54px; }
   .detail-promise { font-size: 18px; line-height: 28px; max-width: 640px; }
   .detail-promise.is-clamped { display: block; -webkit-line-clamp: unset; overflow: visible; cursor: auto; }

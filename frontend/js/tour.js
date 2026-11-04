@@ -32,15 +32,21 @@ const TOUR = (() => {
     setHash('');
     await find('#modulesView .route-card');
   };
+  // страница блока (#module-N: шапка + ДЗ) и страница урока (#module-N/lesson)
   const goModule = async () => {
     if (DECK.isOpen()) { setHash(`#${modId()}`); await wait(260); }
     setHash(`#${modId()}`);
+    await find('#lessonEntry .lesson-entry');
+  };
+  const goLesson = async () => {
+    if (DECK.isOpen()) { setHash(`#${modId()}/lesson`); await wait(260); }
+    setHash(`#${modId()}/lesson`);
     await find('#detailCta .lesson-card, #detailCta .cta-start');
   };
   const goSlide = async (n) => {
-    await goModule();
+    await goLesson();
     if (!APP.hasDeck()) return;
-    setHash(`#${modId()}/${n}`);
+    setHash(`#${modId()}/lesson/${n}`);
     await find('.slide.is-current');
     await wait(reduced() ? 0 : 320);
   };
@@ -72,24 +78,24 @@ const TOUR = (() => {
       text: 'Карточка «Сейчас» — текущий блок. Кабинет помнит слайд, на котором ты остановился, и откроет урок именно там.'
     },
     {
-      sel: '#detailCta .lesson-card, #detailCta .cta-start',
+      sel: '#lessonEntry .lesson-entry',
       go: goModule,
-      title: 'Урок в слайдах',
-      text: 'Урок — короткие слайды со схемами, примерами диалогов и генерациями. Около получаса; его стоит пройти до созвона.'
+      title: 'Домашка и урок',
+      text: 'На странице блока сразу под шапкой — домашнее задание: условие, критерии, срок и «Сдать ДЗ». Урок в слайдах — по кнопке «Открыть материал урока», около получаса; его стоит пройти до созвона.'
     },
     {
       sel: '#chaptersBlock',
       mob: { sel: '#chaptersBlock', parts: ['.block-head', '.ch-list li:nth-child(3)'] },
-      go: goModule,
+      go: goLesson,
       title: 'Главы и прогресс',
-      text: 'Главы урока с прогрессом — любую можно открыть сразу. Внизу «Текстовая версия»: весь урок на одной странице, если удобнее читать.'
+      text: 'Это страница урока. Главы с прогрессом — любую можно открыть сразу. Внизу «Текстовая версия»: весь урок на одной странице, если удобнее читать.'
     },
     {
       sel: '#overview',
       mob: { sel: '#overview', parts: ['.overview-tabs', '.tab-panel:not([hidden]) li:nth-child(2)'] },
-      go: goModule,
+      go: goLesson,
       title: 'Что получишь и план',
-      text: 'Результаты, с которыми ты уйдёшь с созвона, и план двух часов по минутам. Ниже на странице — домашнее задание и материалы.'
+      text: 'Результаты, с которыми ты уйдёшь с созвона, и план двух часов по минутам. Ниже — материалы и переход к домашнему заданию.'
     },
     {
       desk: { sel: '.deck-rail', place: 'right' },

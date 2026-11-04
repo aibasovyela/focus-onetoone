@@ -335,7 +335,7 @@ const DECK = (() => {
         <p class="s-text">${S.chapters.length} ${plural(S.chapters.length, ['глава', 'главы', 'глав'])} и ${slidesWord(S.slides.length)} позади. Теперь закрепим на своих задачах — это главное.</p>
         <div class="fin-actions">
           <button class="btn btn-primary" type="button" data-act="homework">Перейти к домашнему заданию</button>
-          <button class="btn btn-ghost" type="button" data-act="close">К странице модуля</button>
+          <button class="btn btn-ghost" type="button" data-act="close">К материалам урока</button>
           <button class="s-link" type="button" data-act="restart">↺ Пройти заново</button>
         </div>
       </div>`
