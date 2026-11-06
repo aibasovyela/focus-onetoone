@@ -37,6 +37,16 @@ def login(pin):
     return api('api/auth/login', data={'pin': pin})[1]['sessionId']
 
 
+def save_sheet(pg):
+    """«Сохранить» в шторке → ждём ответ PATCH и закрытие шторки; возвращаем отправленное тело."""
+    with pg.expect_response(lambda r: r.request.method == 'PATCH' and '/api/calls/host/students/' in r.url) as resp:
+        pg.click('#csSave')
+    r = resp.value
+    assert r.ok, f'PATCH {r.status}'
+    pg.wait_for_selector('#callSheet:not(.open)', state='attached')
+    return json.loads(r.request.post_data)['calls']
+
+
 def ymd(dt):
     return dt.strftime('%Y-%m-%d')
 
@@ -82,6 +92,8 @@ with sync_playwright() as p:
         pg.wait_for_selector('.h-row[data-call="1"] [data-host-edit]')
         pg.click('.h-row[data-call="1"] [data-host-edit]')
         pg.wait_for_selector('#callSheet.open')
+        pg.wait_for_function("document.activeElement && document.activeElement.id === 'csDate'")
+        ok(f'{vp}: шторка — автофокус на дате', True)
         pg.fill('#csDate', ymd(base_day))
         pg.fill('#csTime', '19:00')
         pg.click('#csDur [data-dur="120"]')
@@ -89,17 +101,20 @@ with sync_playwright() as p:
         pg.fill('#csMeet', 'https://meet.google.com/abc-defg-hij')
         pg.check('#csWeeklyOn')
         pg.select_option('#csWeeklyCount', '3')
-        pg.wait_for_timeout(200)
+        pg.wait_for_selector('#csWeeklyPreview li >> nth=2')
         ok(f'{vp}: превью «каждую неделю» — 3 созвона', pg.locator('#csWeeklyPreview li').count() == 3)
+        ok(f'{vp}: поля шторки заполнены перед сохранением', pg.input_value('#csMeet') == 'https://meet.google.com/abc-defg-hij'
+           and pg.input_value('#csTopic') == 'Знакомство и база ИИ' and pg.input_value('#csDate') == ymd(base_day), pg.input_value('#csMeet'))
         pg.screenshot(path=f'{SHOTS}/{vp}-host-sheet.png')
-        pg.click('#csSave')
-        pg.wait_for_selector('#callSheet:not(.open)', state='attached')
-        pg.wait_for_timeout(400)
+        sent = save_sheet(pg)
+        ok(f'{vp}: в PATCH ушли 4 блока с Meet и 120 мин', sorted(sent) == ['1', '2', '3', '4']
+           and all(c['meet'] == 'https://meet.google.com/abc-defg-hij' and c['dur'] == 120 for c in sent.values()), json.dumps(sent))
+        pg.wait_for_function("document.querySelectorAll('.h-row:not(.is-none)').length === 4")
         st = next(s for s in api('api/calls/host/students', H)[1]['students'] if s['id'] == SID)
         want = {str(i + 1): f'{ymd(base_day + timedelta(days=7 * i))} 19:00' for i in range(4)}
         got = {n: (c or {}).get('at') for n, c in st['calls'].items()}
         ok(f'{vp}: 4 созвона раз в неделю', all(got[n] == want[n] for n in want) and got['5'] is None, json.dumps(got))
-        ok(f'{vp}: Meet и длительность скопированы', all(st['calls'][n]['meet'] and st['calls'][n]['dur'] == 120 for n in want))
+        ok(f'{vp}: Meet и длительность скопированы', all(st['calls'][n]['meet'] and st['calls'][n]['dur'] == 120 for n in want), json.dumps(st['calls']))
         ok(f'{vp}: в списке 4 назначено, 1 нет', pg.locator('.h-row:not(.is-none)').count() == 4 and pg.locator('.h-row.is-none').count() == 1)
         # перенос 3-го: на день позже, 18:30, 90 мин
         moved = ymd(base_day + timedelta(days=15))
@@ -108,12 +123,20 @@ with sync_playwright() as p:
         pg.fill('#csDate', moved)
         pg.fill('#csTime', '18:30')
         pg.click('#csDur [data-dur="90"]')
-        pg.click('#csSave')
-        pg.wait_for_selector('#callSheet:not(.open)', state='attached')
-        pg.wait_for_timeout(400)
+        save_sheet(pg)
+        pg.wait_for_function("(document.querySelector('.h-row[data-call=\"3\"]') || {}).innerText.includes('18:30')")
         c3 = next(s for s in api('api/calls/host/students', H)[1]['students'] if s['id'] == SID)['calls']['3']
         ok(f'{vp}: перенос созвона 3', c3['at'] == f'{moved} 18:30' and c3['dur'] == 90, json.dumps(c3))
         ok(f'{vp}: перенос виден в строке', '18:30' in pg.inner_text('.h-row[data-call="3"]'))
+        # быстрый ввод сразу после открытия шторки — автофокус на дату не должен перехватывать курсор
+        # открытие и фокус в одной задаче JS → автофокус (через 50 мс) гарантированно приходится на середину ввода
+        pg.evaluate("""() => { document.querySelector('.h-row[data-call="5"] [data-host-edit]').click();
+          const m = document.getElementById('csMeet'); m.value = ''; m.focus(); }""")
+        pg.keyboard.type('https://meet.google.com/xyz-quick-in', delay=10)
+        pg.wait_for_timeout(100)
+        ok(f'{vp}: быстрый ввод Meet не теряется', pg.input_value('#csMeet') == 'https://meet.google.com/xyz-quick-in', pg.input_value('#csMeet'))
+        pg.click('#csCancel')
+        pg.wait_for_selector('#callSheet:not(.open)', state='attached')
         # удаление 4-го
         pg.click('.h-row[data-call="4"] [data-host-del]')
         pg.wait_for_selector('[data-host-del-yes="4"]')

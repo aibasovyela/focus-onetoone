@@ -267,7 +267,8 @@ const CALLS = (() => {
     $('csError').textContent = '';
     updateWeekly();
     $('callSheet').classList.add('open');
-    setTimeout(() => $('csDate').focus({ preventScroll: true }), 50);
+    // автофокус не забирает курсор, если за 50 мс уже начали вводить в другое поле шторки (иначе текст уходил в дату и Meet терялся)
+    setTimeout(() => { if (editing === n && !$('callSheet').contains(document.activeElement)) $('csDate').focus({ preventScroll: true }); }, 50);
   };
   const closeEditor = () => { $('callSheet').classList.remove('open'); editing = null; };
   const durValue = () => Number($('csDur').querySelector('[aria-checked="true"]')?.dataset.dur) || 120;
