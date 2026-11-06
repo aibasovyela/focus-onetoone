@@ -35,10 +35,12 @@ const API = (() => {
     hostStudents: () => request('/calls/host/students'),
     hostPatch: (studentId, calls) =>
       request(`/calls/host/students/${encodeURIComponent(studentId)}`, { method: 'PATCH', body: JSON.stringify({ calls }) }),
-    submitHomework: (moduleId, content) =>
+    hostHomework: () => request('/homework/host/all'),
+    // payload: { content, link, files: [id загруженных файлов] }
+    submitHomework: (moduleId, payload) =>
       request('/homework/submit', {
         method: 'POST',
-        body: JSON.stringify({ moduleId, content })
+        body: JSON.stringify({ moduleId, ...payload })
       })
   };
 })();

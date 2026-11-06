@@ -1,7 +1,7 @@
 // Календарь созвонов: ближайший созвон в хиро маршрута, страница #calls (план ученика) и #host (режим ведущего).
 // Время везде Алматы (UTC+5 круглый год): calls[N] приходят строками «YYYY-MM-DD HH:MM» (или «YYYY-MM-DD» — время уточняется).
 const CALLS = (() => {
-  const TZ = 'Etc/GMT-5'; // фикс. UTC+5: у старых браузеров в базе поясов Asia/Almaty ещё +6 (до 03.2024)
+  const TZ = 'Etc/GMT-5'; // фикс. UTC+5: у старых браузеров в базе поясов Asia/Almaty ещё +6 (до 03.2024); в Google-ссылке — Asia/Almaty: у Google база свежая.
   const MEET_EARLY_MIN = 15;   // Meet активна за 15 минут до начала и до конца созвона
   const DURS = [60, 90, 120, 150];
 
@@ -202,6 +202,7 @@ const CALLS = (() => {
         <span class="h-ava" aria-hidden="true">${esc((s.name || '?').trim().charAt(0).toUpperCase())}</span><span>${esc(s.name)}</span><small>${n}/${host.modules.length}</small></button>`;
     }).join('');
     const st = hostStudent();
+    HW.renderHost(st);
     if (!st) { $('hostBody').innerHTML = '<p class="h-empty">Выбери ученика — откроется его план созвонов.</p>'; return; }
     $('hostBody').innerHTML = `
       <div class="block-head"><h2 class="section-title">${esc(st.name)}</h2><span class="block-meta">созвоны по блокам · Алматы</span></div>
@@ -228,12 +229,15 @@ const CALLS = (() => {
   const loadHost = async () => {
     try {
       host = await API.hostStudents();
+      const want = decodeURIComponent(location.hash.slice(1)).split('/')[1]; // #host/<id> — из уведомления в Telegram
+      if (want && host.students.some(s => s.id === want)) hostSel = want;
       if (!hostSel || !hostStudent()) hostSel = (host.students.find(s => s.id !== me.id) || host.students[0])?.id || null;
     } catch (e) {
       if (e.message !== 'unauthorized') $('hostBody').innerHTML = `<p class="h-empty">${esc(e.message)}</p>`;
       return;
     }
     renderHost();
+    HW.loadHost(hostStudent());
   };
 
   // шторка «Созвон · блок N»: дата, время, длительность, тема, Meet, «каждую неделю»
@@ -354,7 +358,7 @@ const CALLS = (() => {
       const ics = e.target.closest('[data-ics]');
       if (ics) { openIcs(ics.dataset.ics === 'all' ? 'all' : Number(ics.dataset.ics), ics); return; }
       const chip = e.target.closest('[data-host-student]');
-      if (chip) { hostSel = chip.dataset.hostStudent; confirmDel = null; renderHost(); return; }
+      if (chip) { hostSel = chip.dataset.hostStudent; confirmDel = null; history.replaceState(history.state, '', `#host/${encodeURIComponent(hostSel)}`); renderHost(); return; }
       const ed = e.target.closest('[data-host-edit]');
       if (ed) { openEditor(Number(ed.dataset.hostEdit)); return; }
       const del = e.target.closest('[data-host-del]');

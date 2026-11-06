@@ -1,0 +1,87 @@
+/* Сдача ДЗ: форма с файлами и ссылкой, статус сдачи, сдачи в режиме ведущего, просмотр картинки (js/homework.js) */
+
+/* форма — шторка снизу на телефоне, по центру на десктопе; тело прокручивается, кнопки всегда видны */
+.hw-content { max-height: 92dvh; display: flex; flex-direction: column; }
+.hw-body { overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 14px; }
+.hw-sub { margin: 6px 0 0; }
+.hw-body textarea { min-height: 112px; }
+.hw-note { font-style: normal; text-transform: none; letter-spacing: 0; color: var(--mute); font: 400 12px var(--f-text); margin-left: 6px; }
+.hw-err { font: 400 13px/18px var(--f-text); color: var(--danger); }
+.input.is-bad { border-color: var(--danger); }
+
+.hw-pick {
+  display: flex; align-items: center; justify-content: center; gap: 8px; width: 100%; min-height: 52px; padding: 0 16px;
+  border: 1px dashed rgba(var(--violet-rgb), 0.55); border-radius: var(--r-ctrl); background: var(--tint);
+  color: var(--violet-ink); font: 500 15px var(--f-text); cursor: pointer; -webkit-tap-highlight-color: transparent;
+  transition: background-color 160ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hw-pick svg { width: 20px; height: 20px; flex: none; }
+.hw-pick:active { transform: scale(0.98); }
+@media (hover: hover) { .hw-pick:hover { background: var(--tint-strong); } }
+.hw-pick[hidden] { display: none; }
+.hw-content.is-drop { box-shadow: 0 0 0 3px var(--violet); }
+.hw-content.is-drop .hw-pick { background: var(--tint-strong); }
+
+.hw-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.hw-list:empty { display: none; }
+.hw-item {
+  position: relative; overflow: hidden; display: grid; grid-template-columns: 44px minmax(0, 1fr) 40px; align-items: center; gap: 10px;
+  padding: 6px 4px 6px 6px; border: 1px solid var(--line); border-radius: var(--r-ctrl); background: #fff;
+}
+.hw-item.is-err { border-color: rgba(210, 59, 46, 0.45); background: #FFF6F5; }
+.hw-item-pic { width: 44px; height: 44px; border-radius: 8px; object-fit: cover; background: var(--paper); }
+.hw-item-pic.is-doc { display: grid; place-items: center; font: 500 10px var(--f-mono); color: var(--violet-ink); background: var(--tint); letter-spacing: 0.04em; }
+.hw-item-txt { min-width: 0; display: flex; flex-direction: column; }
+.hw-item-txt b { font: 500 14px/19px var(--f-text); color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hw-item-txt small { font: 400 12px/16px var(--f-text); color: var(--mute); }
+.hw-item.is-err small { color: var(--danger); }
+.hw-item-x { width: 40px; height: 40px; display: grid; place-items: center; border: 0; background: none; color: var(--mute); border-radius: 10px; cursor: pointer; -webkit-tap-highlight-color: transparent; }
+.hw-item-x svg { width: 18px; height: 18px; }
+@media (hover: hover) { .hw-item-x:hover { color: var(--ink); background: var(--paper2); } }
+.hw-item-bar { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--violet); transform-origin: left; transition: transform 200ms ease; }
+
+/* сданное: ссылка и файлы (статус ученика и карточки ведущего) */
+.hw-sent { margin-top: 10px; display: flex; flex-direction: column; gap: 8px; }
+.hw-link {
+  display: inline-flex; align-items: center; gap: 6px; max-width: 100%; min-height: 32px;
+  font: 400 14px/20px var(--f-mono); color: var(--violet-ink); text-decoration: none;
+}
+.hw-link svg { width: 16px; height: 16px; flex: none; }
+.hw-link span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+@media (hover: hover) { .hw-link:hover span { text-decoration: underline; } }
+.hw-files { display: grid; grid-template-columns: repeat(auto-fill, minmax(132px, 1fr)); gap: 8px; }
+.hw-thumb, .hw-doc {
+  min-width: 0; display: flex; flex-direction: column; gap: 4px; padding: 0; border: 1px solid var(--line); border-radius: var(--r-ctrl);
+  background: #fff; text-align: left; cursor: pointer; overflow: hidden; -webkit-tap-highlight-color: transparent;
+  transition: border-color 160ms ease, transform 160ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.hw-thumb:active, .hw-doc:active { transform: scale(0.98); }
+@media (hover: hover) { .hw-thumb:hover, .hw-doc:hover { border-color: var(--violet); } }
+.hw-thumb img { display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: var(--paper); }
+.hw-thumb.is-broken img { visibility: hidden; }
+.hw-thumb span, .hw-doc span { padding: 0 10px; font: 400 12px/16px var(--f-text); color: var(--text2); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hw-thumb span { padding-bottom: 8px; }
+.hw-doc { padding: 10px 0; aspect-ratio: auto; }
+.hw-doc b { margin: 0 10px 4px; align-self: flex-start; padding: 4px 8px; border-radius: 6px; background: var(--tint); color: var(--violet-ink); font: 500 11px var(--f-mono); letter-spacing: 0.04em; }
+.hw-doc small { padding: 0 10px; font: 400 11px var(--f-mono); color: var(--mute); }
+
+/* режим ведущего */
+.hw-host { margin-top: 14px; }
+.hw-feed { list-style: none; margin: 0; padding: 0; }
+.hw-card { display: flex; flex-direction: column; gap: 8px; padding: 14px 0; border-top: 1px solid var(--line); }
+.hw-card:first-child { border-top: none; padding-top: 4px; }
+.hw-card-top { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 2px 10px; }
+.hw-card-top time { font: 400 12px/15px var(--f-mono); color: var(--mute); }
+.hw-text { margin: 0; font: 400 15px/22px var(--f-text); color: var(--ink); white-space: pre-wrap; overflow-wrap: anywhere; }
+
+/* просмотр картинки */
+.hw-viewer { position: fixed; inset: 0; z-index: 1050; display: none; flex-direction: column; background: rgba(var(--end-rgb), 0.94); }
+.hw-viewer.open { display: flex; }
+.hw-viewer-bar { display: flex; align-items: center; gap: 8px; padding: calc(10px + env(safe-area-inset-top)) 12px 10px 16px; color: #fff; }
+.hw-viewer-bar span { flex: 1; min-width: 0; font: 400 14px var(--f-text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.hw-viewer-btn { height: 40px; min-width: 40px; padding: 0 14px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.22); background: rgba(255, 255, 255, 0.08); color: #fff; font: 500 14px var(--f-text); cursor: pointer; }
+.hw-viewer img { flex: 1; min-height: 0; width: 100%; object-fit: contain; padding: 0 12px calc(12px + env(safe-area-inset-bottom)); }
+
+@media (min-width: 768px) {
+  .hw-files { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); }
+}

@@ -13,6 +13,7 @@
   <link rel="stylesheet" href="css/tour.css?v=7">
   <link rel="stylesheet" href="css/modules.css?v=1">
   <link rel="stylesheet" href="css/calls.css?v=1">
+  <link rel="stylesheet" href="css/homework.css?v=2">
 </head>
 <body>
   <!-- Экран входа -->
@@ -217,13 +218,14 @@
           <div class="container">
             <button id="hostBack" class="back-link" type="button">← Маршрут</button>
             <div class="eyebrow">Режим ведущего</div>
-            <h1 class="detail-title">Созвоны учеников</h1>
-            <p class="detail-promise">Выбери ученика, назначь или перенеси созвоны. Ученик сразу видит план в кабинете, блоки отмечаются «пройден» по датам.</p>
+            <h1 class="detail-title">Созвоны и ДЗ учеников</h1>
+            <p class="detail-promise">Выбери ученика: назначь или перенеси созвоны, посмотри сданные ДЗ. Ученик сразу видит план в кабинете, блоки отмечаются «пройден» по датам.</p>
           </div>
         </div>
         <section class="container host-page">
           <div class="h-chips" id="hostChips" role="group" aria-label="Ученики"></div>
           <div class="block h-block" id="hostBody"></div>
+          <div class="block h-block hw-host" id="hostHw" hidden></div>
         </section>
       </div>
     </main>
@@ -258,31 +260,49 @@
     </div>
   </div>
 
-  <!-- Модальное окно ДЗ -->
-  <div id="homeworkModal" class="modal">
-    <div class="modal-content">
+  <!-- Модальное окно ДЗ: текст + ссылка + файлы (js/homework.js) -->
+  <div id="homeworkModal" class="modal hw-modal" role="dialog" aria-modal="true" aria-labelledby="homeworkModalHead">
+    <div class="modal-content hw-content">
       <div class="modal-header">
-        <h2>Сдать ДЗ</h2>
+        <h2 id="homeworkModalHead">Сдать ДЗ</h2>
+        <p id="homeworkModalTitle" class="modal-hint hw-sub"></p>
       </div>
-      <div class="modal-body">
-        <p id="homeworkModalTitle" class="modal-hint"></p>
-        <textarea id="homeworkTextarea" placeholder="Опиши, что получилось, и вставь ссылки на результаты (Google Drive, Higgsfield, чат и т.п.)"></textarea>
+      <div class="modal-body hw-body">
+        <label class="cs-field"><span>Что получилось</span>
+          <textarea id="homeworkTextarea" placeholder="Коротко: что сделал(а), что получилось, где застрял(а)"></textarea>
+        </label>
+        <label class="cs-field"><span>Ссылка на результат</span>
+          <input id="hwLink" class="input" type="url" inputmode="url" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="https://drive.google.com/… или Higgsfield">
+          <small id="hwLinkErr" class="hw-err" hidden>Нужна ссылка вида https://…</small>
+        </label>
+        <div class="cs-field"><span>Файлы <em id="hwFilesNote" class="hw-note">картинки, PDF, документы · до 5 файлов по 20 МБ</em></span>
+          <ul id="hwFileList" class="hw-list"></ul>
+          <button type="button" id="hwPick" class="hw-pick"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5l-7.8 7.8a5 5 0 0 1-7.1-7.1l8.3-8.3a3.4 3.4 0 0 1 4.8 4.8l-8.3 8.3a1.7 1.7 0 0 1-2.4-2.4l7.6-7.6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>Прикрепить файлы</button>
+          <input type="file" id="hwFileInput" multiple hidden>
+        </div>
       </div>
       <div class="modal-footer">
-        <button id="homeworkCancel" class="btn btn-ghost">Отмена</button>
-        <button id="homeworkSubmit" class="btn btn-primary">Отправить</button>
+        <button type="button" id="homeworkCancel" class="btn btn-ghost">Отмена</button>
+        <button type="button" id="homeworkSubmit" class="btn btn-primary">Отправить</button>
       </div>
     </div>
+  </div>
+
+  <!-- Просмотр картинки из ДЗ -->
+  <div id="hwViewer" class="hw-viewer" role="dialog" aria-modal="true" aria-label="Картинка из ДЗ">
+    <div class="hw-viewer-bar"><span id="hwViewerName"></span><button type="button" id="hwViewerDl" class="hw-viewer-btn">Скачать</button><button type="button" class="hw-viewer-btn" aria-label="Закрыть">✕</button></div>
+    <img id="hwViewerImg" alt="">
   </div>
 
   <div id="toast" class="toast" role="status"></div>
 
   <script src="js/auth.js?v=5"></script>
-  <script src="js/data.js?v=6"></script>
+  <script src="js/data.js?v=7"></script>
   <script src="js/markdown.js?v=5"></script>
   <script src="js/deck.js?v=8"></script>
   <script src="js/tour.js?v=7"></script>
-  <script src="js/calls.js?v=3"></script>
-  <script src="js/app.js?v=9"></script>
+  <script src="js/calls.js?v=4"></script>
+  <script src="js/homework.js?v=3"></script>
+  <script src="js/app.js?v=10"></script>
 </body>
 </html>
