@@ -2,7 +2,7 @@ import express from 'express';
 import fs from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { readJson, moduleStatus, requireSession } from '../lib/store.js';
+import { readJson, moduleStatus, callAt, callOf, requireSession } from '../lib/store.js';
 
 const router = express.Router();
 const materialsPath = join(dirname(fileURLToPath(import.meta.url)), '../../materials');
@@ -61,7 +61,8 @@ const modulesFor = (student) => {
       useful: meta?.useful || [],   // блок «Полезное» на странице модуля
       homework: meta?.homework || m.homework,
       status: moduleStatus(student, m.number),
-      callDate: calls[m.number] || null
+      callDate: callAt(calls[m.number]) || null, // строка «YYYY-MM-DD[ HH:MM]», как раньше
+      call: callOf(calls[m.number])             // { at, dur, topic, meet } — календарь созвонов
     };
   });
   const current = list.find(m => m.status === 'open');
@@ -76,6 +77,7 @@ router.get('/me', (req, res) => {
     id: req.student.id,
     name: req.student.name,
     openModules: Number(req.student.openModules) || 1,
+    host: req.session.host === true,
     program
   });
 });

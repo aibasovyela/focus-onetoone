@@ -30,6 +30,11 @@ const API = (() => {
     getLesson: (moduleId) => request(`/modules/${moduleId}/lesson`),
     getCheatsheet: (moduleId) => request(`/modules/${moduleId}/cheatsheet`, {}, 'text'),
     getHomework: (moduleId) => request(`/homework/${moduleId}`),
+    getCalls: () => request('/calls'),
+    icsLink: (n) => request('/calls/ics-link', { method: 'POST', body: JSON.stringify({ n }) }),
+    hostStudents: () => request('/calls/host/students'),
+    hostPatch: (studentId, calls) =>
+      request(`/calls/host/students/${encodeURIComponent(studentId)}`, { method: 'PATCH', body: JSON.stringify({ calls }) }),
     submitHomework: (moduleId, content) =>
       request('/homework/submit', {
         method: 'POST',

@@ -1,5 +1,5 @@
 import express from 'express';
-import { findStudentByPin, createSession, deleteSession, requireSession } from '../lib/store.js';
+import { findStudentByPin, isHostPin, createSession, deleteSession, requireSession } from '../lib/store.js';
 
 const router = express.Router();
 
@@ -30,7 +30,7 @@ router.post('/login', (req, res) => {
     return res.status(401).json({ error: 'Неверный PIN' });
   }
 
-  const session = createSession(student.id);
+  const session = createSession(student.id, { host: isHostPin(pin.trim()) });
   res.json({
     success: true,
     sessionId: session.sessionId,
