@@ -3,8 +3,6 @@ const APP = (() => {
   const modulesView = document.getElementById('modulesView');
   const moduleDetailView = document.getElementById('moduleDetailView');
   const modulesGrid = document.getElementById('modulesGrid');
-  const homeworkModal = document.getElementById('homeworkModal');
-  const homeworkSubmit = document.getElementById('homeworkSubmit');
   const toast = document.getElementById('toast');
   const TITLE = document.title;
 
@@ -444,7 +442,7 @@ const APP = (() => {
             <div class="label hw-label">Как сдать</div>
             <ol class="hw-how">
               <li>Сделай задание по условию и проверь себя по критериям</li>
-              <li>Нажми «Сдать ДЗ»: опиши, что получилось, и вставь ссылки на результаты</li>
+              <li>Нажми «Сдать ДЗ»: опиши, что получилось, прикрепи файлы или дай ссылку на результат</li>
               <li>Куратор посмотрит работу до созвона</li>
             </ol>
             <div class="homework-due">Срок: ${due}</div>
@@ -573,10 +571,7 @@ const APP = (() => {
     try {
       const hw = await API.getHomework(moduleId);
       const el = document.getElementById('homeworkStatus');
-      const last = hw.submissions?.[hw.submissions.length - 1];
-      if (el && last) {
-        el.innerHTML = `<span class="pill pill-done">Отправлено ${formatDate(last.submittedAt.slice(0, 10))}</span>${last.feedback ? `<p class="homework-desc">${esc(last.feedback)}</p>` : ''}`;
-      }
+      HW.renderStatus(el, hw.submissions);
     } catch { /* статус необязателен */ }
   };
 
@@ -639,31 +634,7 @@ const APP = (() => {
 
   const openHomeworkModal = (moduleId) => {
     const module = modules.find(m => m.id === moduleId);
-    document.getElementById('homeworkModalTitle').textContent = module?.homework?.title || '';
-    document.getElementById('homeworkTextarea').value = '';
-    homeworkModal.classList.add('open');
-    homeworkSubmit.onclick = () => submitHomework(moduleId);
-  };
-
-  const closeHomeworkModal = () => homeworkModal.classList.remove('open');
-
-  const submitHomework = async (moduleId) => {
-    const content = document.getElementById('homeworkTextarea').value.trim();
-    if (!content) {
-      showToast('Напиши, что получилось');
-      return;
-    }
-    homeworkSubmit.disabled = true;
-    try {
-      await API.submitHomework(moduleId, content);
-      closeHomeworkModal();
-      showToast('ДЗ отправлено — куратор посмотрит до созвона');
-      loadHomeworkStatus(moduleId);
-    } catch (error) {
-      if (error.message !== 'unauthorized') showToast('Ошибка отправки: ' + error.message);
-    } finally {
-      homeworkSubmit.disabled = false;
-    }
+    HW.open(moduleId, module?.homework?.title || '');
   };
 
   const setupEventListeners = () => {
@@ -673,10 +644,7 @@ const APP = (() => {
     document.getElementById('lessonBackBtn2').addEventListener('click', toModulePage);
     document.getElementById('sideLogout').addEventListener('click', () => AUTH.logout());
     document.getElementById('detailBackBtn2').addEventListener('click', goBack);
-    document.getElementById('homeworkCancel').addEventListener('click', closeHomeworkModal);
-    homeworkModal.addEventListener('click', (e) => {
-      if (e.target === homeworkModal) closeHomeworkModal();
-    });
+    HW.wire((moduleId) => { if (currentId === moduleId) loadHomeworkStatus(moduleId); });
 
     document.getElementById('detailPromise').addEventListener('click', (e) => e.currentTarget.classList.remove('is-clamped'));
 
@@ -757,7 +725,7 @@ const APP = (() => {
     } catch { /* не критично */ }
   };
 
-  return { init, student: () => student, tourModule, refreshProgress, hasDeck, reloadModules, title: TITLE };
+  return { init, student: () => student, tourModule, refreshProgress, hasDeck, reloadModules, title: TITLE, toast: showToast };
 })();
 
 // Старт: если есть сессия — сразу в кабинет (сервер сам вернёт 401, если она истекла)
