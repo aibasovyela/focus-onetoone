@@ -19,6 +19,8 @@
 .hw-pick:active { transform: scale(0.98); }
 @media (hover: hover) { .hw-pick:hover { background: var(--tint-strong); } }
 .hw-pick[hidden] { display: none; }
+.hw-content.is-drop { box-shadow: 0 0 0 3px var(--violet); }
+.hw-content.is-drop .hw-pick { background: var(--tint-strong); }
 
 .hw-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .hw-list:empty { display: none; }

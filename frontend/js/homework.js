@@ -222,6 +222,11 @@ const HW = (() => {
     $('hwFileInput').accept = ACCEPT;
     $('hwPick').addEventListener('click', () => $('hwFileInput').click());
     $('hwFileInput').addEventListener('change', (e) => { addFiles([...e.target.files]); e.target.value = ''; });
+    // десктоп: файлы можно перетащить на шторку
+    const sheet = $('homeworkModal').querySelector('.hw-content');
+    sheet.addEventListener('dragover', (e) => { if ([...e.dataTransfer.types].includes('Files')) { e.preventDefault(); sheet.classList.add('is-drop'); } });
+    sheet.addEventListener('dragleave', (e) => { if (!sheet.contains(e.relatedTarget)) sheet.classList.remove('is-drop'); });
+    sheet.addEventListener('drop', (e) => { e.preventDefault(); sheet.classList.remove('is-drop'); addFiles([...e.dataTransfer.files]); });
     $('hwLink').addEventListener('blur', () => { if ($('hwLink').value.trim()) linkValue(); });
     $('hwLink').addEventListener('input', () => { if (!$('hwLinkErr').hidden) linkValue(); });
     $('homeworkSubmit').addEventListener('click', () => submit(onDone));
