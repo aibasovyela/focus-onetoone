@@ -64,7 +64,7 @@ const CALLS = (() => {
       ? `${stamp(c.at)}/${stamp(c.at, c.dur)}`
       : `${stamp(c.at).slice(0, 8)}/${stamp(c.at, 24 * 60).slice(0, 8)}`;
     const details = [`Персональный созвон «Фокус ИИ 1:1», блок ${c.n}: ${c.title}.`, c.meet ? `Google Meet: ${c.meet}` : '', `Кабинет: ${location.origin}${location.pathname}`].filter(Boolean).join('\n');
-    const q = new URLSearchParams({ action: 'TEMPLATE', text: `Фокус ИИ 1:1 · созвон ${c.n}: ${titleOf(c)}`, dates, ctz: TZ, details });
+    const q = new URLSearchParams({ action: 'TEMPLATE', text: `Фокус ИИ 1:1 · созвон ${c.n}: ${titleOf(c)}`, dates, ctz: 'Asia/Almaty', details });
     if (c.meet) q.set('location', c.meet);
     return `https://calendar.google.com/calendar/render?${q}`;
   };
