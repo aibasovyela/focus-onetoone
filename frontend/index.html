@@ -7,11 +7,12 @@
   <meta name="robots" content="noindex">
   <title>Фокус ИИ 1:1 — кабинет ученика · Yelumio</title>
   <link rel="stylesheet" href="css/brand.css?v=6">
-  <link rel="stylesheet" href="css/app.css?v=8">
+  <link rel="stylesheet" href="css/app.css?v=9">
   <link rel="stylesheet" href="css/deck.css?v=6">
-  <link rel="stylesheet" href="css/desktop.css?v=8">
+  <link rel="stylesheet" href="css/desktop.css?v=9">
   <link rel="stylesheet" href="css/tour.css?v=7">
   <link rel="stylesheet" href="css/modules.css?v=1">
+  <link rel="stylesheet" href="css/calls.css?v=1">
 </head>
 <body>
   <!-- Экран входа -->
@@ -46,6 +47,12 @@
       <a class="side-home" href="#" id="sideHome">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 6h14M5 12h14M5 18h9"/></svg>Маршрут
       </a>
+      <a class="side-home" href="#calls" id="sideCalls">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg>Созвоны
+      </a>
+      <a class="side-home" href="#host" id="sideHost" data-host-only hidden>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M15.5 6.5h5M15.5 10.5h5M17.5 14.5h3"/></svg>Режим ведущего
+      </a>
       <div class="side-label">Блоки программы</div>
       <ol class="side-list" id="sideModules"></ol>
       <button type="button" class="side-help" data-tour-start>
@@ -61,6 +68,8 @@
         <div class="header-content">
           <div class="header-logo">Фокус ИИ <span>1:1</span></div>
           <div class="header-actions">
+            <a class="header-exit header-help" href="#host" data-host-only hidden aria-label="Режим ведущего" title="Режим ведущего"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8.5" r="3.2"/><path d="M3.5 19c.6-3.2 2.8-5 5.5-5s4.9 1.8 5.5 5M15.5 6.5h5M15.5 10.5h5M17.5 14.5h3"/></svg><span>Ведущий</span></a>
+            <a class="header-exit header-help" href="#calls" aria-label="Созвоны" title="Созвоны"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5.5" width="16" height="14" rx="2.5"/><path d="M4 10h16M8.5 3.5v4M15.5 3.5v4"/></svg><span>Созвоны</span></a>
             <button type="button" class="header-exit header-help" data-tour-start aria-label="Как пользоваться" title="Как пользоваться"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M9.6 9.4a2.5 2.5 0 0 1 4.8.9c0 1.7-2.4 2.2-2.4 3.7M12 16.8v.2"/></svg><span>Как пользоваться</span></button>
             <button id="logoutBtn" class="header-exit">Выйти</button>
           </div>
@@ -80,7 +89,10 @@
               <div class="progress"><i id="routeProgress" style="width: 0%"></i></div>
               <span class="label" id="routeProgressLabel">0 из 5</span>
             </div>
-            <div class="hero-now" id="heroNow"></div>
+            <div class="hero-aside">
+              <div class="hero-now" id="heroNow"></div>
+              <div class="hero-call" id="heroCall"></div>
+            </div>
           </div>
         </section>
 
@@ -176,7 +188,74 @@
           </aside>
         </section>
       </div>
+
+      <!-- План созвонов ученика -->
+      <div id="callsView" style="display: none;">
+        <div class="module-detail-header calls-header">
+          <div class="container">
+            <button id="callsBack" class="back-link" type="button">← Маршрут</button>
+            <div class="eyebrow">План созвонов</div>
+            <h1 class="detail-title">Созвоны</h1>
+            <p class="detail-promise">5 созвонов один на один — по одному на блок. Время — Алматы (UTC+5).</p>
+          </div>
+        </div>
+        <section class="container calls-page">
+          <div class="calls-main">
+            <div id="callsNext"></div>
+            <div class="block calls-all" id="callsAll" hidden></div>
+          </div>
+          <div class="block calls-list-block">
+            <div class="block-head"><h2 class="section-title">Все созвоны</h2></div>
+            <ol class="cl-list" id="callsList"></ol>
+          </div>
+        </section>
+      </div>
+
+      <!-- Режим ведущего: созвоны учеников -->
+      <div id="hostView" style="display: none;">
+        <div class="module-detail-header calls-header">
+          <div class="container">
+            <button id="hostBack" class="back-link" type="button">← Маршрут</button>
+            <div class="eyebrow">Режим ведущего</div>
+            <h1 class="detail-title">Созвоны учеников</h1>
+            <p class="detail-promise">Выбери ученика, назначь или перенеси созвоны. Ученик сразу видит план в кабинете, блоки отмечаются «пройден» по датам.</p>
+          </div>
+        </div>
+        <section class="container host-page">
+          <div class="h-chips" id="hostChips" role="group" aria-label="Ученики"></div>
+          <div class="block h-block" id="hostBody"></div>
+        </section>
+      </div>
     </main>
+  </div>
+
+  <!-- Шторка ведущего: созвон блока -->
+  <div id="callSheet" class="modal cs-modal" role="dialog" aria-modal="true" aria-labelledby="csTitle">
+    <div class="modal-content cs-content">
+      <div class="modal-header">
+        <h2 id="csTitle">Созвон</h2>
+        <p class="modal-hint cs-sub" id="csSub"></p>
+      </div>
+      <div class="modal-body cs-body">
+        <div class="cs-row2">
+          <label class="cs-field"><span>Дата</span><input type="date" id="csDate" class="input" required></label>
+          <label class="cs-field"><span>Время, Алматы</span><input type="time" id="csTime" class="input" step="300" required></label>
+        </div>
+        <div class="cs-field"><span>Длительность</span><div class="cs-dur" id="csDur" role="radiogroup" aria-label="Длительность"></div></div>
+        <label class="cs-field"><span>Тема</span><input type="text" id="csTopic" class="input" maxlength="120" placeholder="Тема созвона"></label>
+        <label class="cs-field"><span>Ссылка Google Meet</span><input type="url" id="csMeet" class="input" maxlength="300" inputmode="url" placeholder="https://meet.google.com/…" autocomplete="off"></label>
+        <div class="cs-weekly" id="csWeekly">
+          <label class="cs-check"><input type="checkbox" id="csWeeklyOn"><span>Каждую неделю — заполнить следующие блоки</span></label>
+          <div class="cs-weekly-n"><span>Сколько ещё созвонов</span><select id="csWeeklyCount" class="input"></select></div>
+          <ol class="cs-preview" id="csWeeklyPreview"></ol>
+        </div>
+        <div class="login-error" id="csError" role="alert"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="csCancel" class="btn btn-ghost">Отмена</button>
+        <button type="button" id="csSave" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
   </div>
 
   <!-- Модальное окно ДЗ -->
@@ -199,10 +278,11 @@
   <div id="toast" class="toast" role="status"></div>
 
   <script src="js/auth.js?v=5"></script>
-  <script src="js/data.js?v=5"></script>
+  <script src="js/data.js?v=6"></script>
   <script src="js/markdown.js?v=5"></script>
   <script src="js/deck.js?v=8"></script>
   <script src="js/tour.js?v=7"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/calls.js?v=1"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>

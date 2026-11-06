@@ -67,6 +67,7 @@ const APP = (() => {
       student = me;
       renderHero(me);
       renderModules();
+      CALLS.init(me, list);
       route();
       TOUR.maybeWelcome();
     } catch (error) {
@@ -132,8 +133,10 @@ const APP = (() => {
           ${frac ? `<span class="side-bar" aria-hidden="true"><i style="transform:scaleX(${frac})"></i></span>` : ''}
         </a></li>`;
     }).join('');
-    document.getElementById('sideHome').classList.toggle('is-on', !id);
-    if (!id) document.getElementById('sideHome').setAttribute('aria-current', 'page'); else document.getElementById('sideHome').removeAttribute('aria-current');
+    for (const [el, on] of [['sideHome', !id], ['sideCalls', id === 'calls'], ['sideHost', id === 'host']]) {
+      document.getElementById(el).classList.toggle('is-on', on);
+      if (on) document.getElementById(el).setAttribute('aria-current', 'page'); else document.getElementById(el).removeAttribute('aria-current');
+    }
   };
 
   // Маршрут 1→5
@@ -177,7 +180,7 @@ const APP = (() => {
     promise.classList.add('is-clamped');
     const st = STATUS[module.status] || STATUS.locked;
     document.getElementById('detailMeta').innerHTML =
-      `<span class="pill pill-light">${st.label}</span><span class="label">Созвон: ${formatDate(module.callDate)} · 2 часа</span>`;
+      `<span class="pill pill-light">${st.label}</span><span class="label">Созвон: ${formatDate(module.callDate)} · ${CALLS.durLabel(module.call?.dur || 120)}</span>`;
     document.getElementById('detailCta').innerHTML = locked ? '' : '<div class="lc-skeleton" aria-hidden="true"></div>';
     const ds = locked ? null : deckState(module.id);
     renderLessonEntry(module.id, locked
@@ -582,8 +585,20 @@ const APP = (() => {
     currentPage = null;
     document.title = TITLE;
     lesson = null;
+    CALLS.hide();
     moduleDetailView.style.display = 'none';
     modulesView.style.display = 'block';
+  };
+
+  // #calls — план созвонов ученика, #host — режим ведущего (только для сессии ведущего)
+  const showCallsView = (view) => {
+    if (DECK.isOpen()) DECK.close();
+    currentId = null;
+    currentPage = null;
+    lesson = null;
+    modulesView.style.display = 'none';
+    moduleDetailView.style.display = 'none';
+    CALLS.show(view);
   };
 
   // Навигация через #module-N[/lesson[/слайд]] — работает кнопка «назад» в браузере
@@ -591,6 +606,7 @@ const APP = (() => {
     const { id, page, slide, legacy } = parseHash();
     if (legacy) history.replaceState(history.state, '', hashOf(id, 'lesson', slide));
     renderSide();
+    if (id === 'calls' || (id === 'host' && student?.host)) { showCallsView(id); return; }
     const module = modules.find(m => m.id === id);
     if (!module) {
       if (DECK.isOpen()) DECK.close();
@@ -601,6 +617,7 @@ const APP = (() => {
     if (currentId !== id) {
       currentId = id;
       currentPage = null;
+      CALLS.hide();
       showModuleDetail(module);
     }
     if (currentPage !== page) {
@@ -729,7 +746,18 @@ const APP = (() => {
   };
   const hasDeck = () => !!lesson?.data?.deck;
 
-  return { init, student: () => student, tourModule, refreshProgress, hasDeck };
+  // после правки созвонов ведущим (если правил свой же план): статусы блоков зависят от дат
+  const reloadModules = async () => {
+    try {
+      modules = await API.getModules();
+      CALLS.setModules(modules);
+      renderHero(student);
+      renderModules();
+      renderSide();
+    } catch { /* не критично */ }
+  };
+
+  return { init, student: () => student, tourModule, refreshProgress, hasDeck, reloadModules, title: TITLE };
 })();
 
 // Старт: если есть сессия — сразу в кабинет (сервер сам вернёт 401, если она истекла)

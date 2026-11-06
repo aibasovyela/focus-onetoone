@@ -96,8 +96,9 @@
   /* ----- маршрут: приветствие + «Сейчас», блоки сеткой; текущий блок шире ----- */
   .hero { padding: 64px 0 56px; }
   .hero > .container { display: grid; grid-template-columns: minmax(0, 1fr) minmax(380px, 520px); column-gap: clamp(40px, 5vw, 96px); align-items: end; }
-  .hero > .container > :not(.hero-now) { grid-column: 1; }
-  .hero-now { grid-column: 2; grid-row: 1 / span 4; margin: 0; max-width: none; align-self: end; }
+  .hero > .container > :not(.hero-aside) { grid-column: 1; }
+  .hero-aside { grid-column: 2; grid-row: 1 / span 4; align-self: end; display: flex; flex-direction: column; gap: 12px; }
+  .hero-now { margin: 0; max-width: none; }
   .hero-title { font-size: 48px; line-height: 54px; }
   .hero-sub { font-size: 17px; line-height: 26px; max-width: 620px; }
   .now-card { padding: 22px; grid-template-columns: 64px minmax(0, 1fr); }
