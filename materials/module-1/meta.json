@@ -10,13 +10,41 @@
     "первые 3-5 сохранённых промптов под твои ежедневные задачи: тексты, переводы, документы, идеи, таблицы"
   ],
   "plan": [
-    { "min": 10, "title": "Старт и твои задачи", "text": "Знакомимся, выписываем 5 задач из твоей недели, которые будем отдавать ИИ" },
-    { "min": 20, "title": "Как думает LLM", "text": "Токены, предсказание следующего слова, контекстное окно и галлюцинации на живых примерах" },
-    { "min": 20, "title": "Три аккаунта и настройка", "text": "Регистрируем ChatGPT, Claude и Gemini, пишем персональные инструкции, проверяем приватность" },
-    { "min": 20, "title": "Тест-драйв трёх моделей", "text": "Одна твоя задача в трёх нейросетях — сравниваем характер ответов и собираем карту «какую когда»" },
-    { "min": 25, "title": "Формула промпта", "text": "Роль, контекст, задача, формат, ограничения, примеры и итерации: плохой промпт против хорошего" },
-    { "min": 20, "title": "Твои ежедневные задачи", "text": "Закрываем 2-3 реальные задачи: текст, перевод, разбор документа или таблица" },
-    { "min": 5, "title": "Итоги и домашка", "text": "Фиксируем личную промпт-библиотеку и разбираем задание до созвона 2" }
+    {
+      "min": 10,
+      "title": "Старт и твои задачи",
+      "text": "Знакомимся, выписываем 5 задач из твоей недели, которые будем отдавать ИИ"
+    },
+    {
+      "min": 20,
+      "title": "Как думает LLM",
+      "text": "Токены, предсказание следующего слова, контекстное окно и галлюцинации на живых примерах"
+    },
+    {
+      "min": 20,
+      "title": "Три аккаунта и настройка",
+      "text": "Регистрируем ChatGPT, Claude и Gemini, пишем персональные инструкции, проверяем приватность"
+    },
+    {
+      "min": 20,
+      "title": "Тест-драйв трёх моделей",
+      "text": "Одна твоя задача в трёх нейросетях — сравниваем характер ответов и собираем карту «какую когда»"
+    },
+    {
+      "min": 25,
+      "title": "Формула промпта",
+      "text": "Роль, контекст, задача, формат, ограничения, примеры и итерации: плохой промпт против хорошего"
+    },
+    {
+      "min": 20,
+      "title": "Твои ежедневные задачи",
+      "text": "Закрываем 2-3 реальные задачи: текст, перевод, разбор документа или таблица"
+    },
+    {
+      "min": 5,
+      "title": "Итоги и домашка",
+      "text": "Фиксируем личную промпт-библиотеку и разбираем задание до созвона 2"
+    }
   ],
   "homework": {
     "title": "Три нейросети — один реальный клиент",
@@ -31,5 +59,205 @@
     ],
     "dueDate": null,
     "dueLabel": "до созвона 2"
-  }
+  },
+  "useful": [
+    {
+      "kicker": "Набор · архив",
+      "label": "Весь набор одним архивом",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/yelumio-kit-module-1.zip",
+      "text": "Все шаблоны, промпты, 7 скиллов и ссылки в одном zip."
+    },
+    {
+      "kicker": "Набор",
+      "label": "README: как пользоваться набором",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/README.md",
+      "text": "Порядок: сначала инструкции, потом промпты, потом скиллы."
+    },
+    {
+      "kicker": "Настройка",
+      "label": "Персональные инструкции ChatGPT",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/custom-instructions-chatgpt.md",
+      "text": "Заполненный пример для предпринимателя и пустой шаблон."
+    },
+    {
+      "kicker": "Настройка",
+      "label": "Проекты и Стили в Claude",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/claude-project-instructions.md",
+      "text": "Шаблон инструкций проекта, свои стили, готовый пример."
+    },
+    {
+      "kicker": "Настройка",
+      "label": "Gems в Gemini",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/gemini-gem-template.md",
+      "text": "Шаблон Gem и 3 готовых: маркетолог, проверка договоров, аналитик таблиц."
+    },
+    {
+      "kicker": "Промпты",
+      "label": "Формула промпта",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/prompt-formula.md",
+      "text": "Роль → контекст → задача → формат → ограничения, 10 пар «плохо → хорошо», 7 техник."
+    },
+    {
+      "kicker": "Промпты",
+      "label": "35 промптов для бизнеса",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/prompt-library-business.md",
+      "text": "Тексты, отзывы, договоры, таблицы, КП, продажи, найм, стратегия."
+    },
+    {
+      "kicker": "Карта",
+      "label": "Какую нейросеть когда",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/which-model-when.md",
+      "text": "ChatGPT, Claude, Gemini и др.: сильные стороны, режимы, приватность."
+    },
+    {
+      "kicker": "Проверка",
+      "label": "Чек-лист против галлюцинаций",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/hallucinations-checklist.md",
+      "text": "Как поймать выдуманные факты и цифры за 2 минуты."
+    },
+    {
+      "kicker": "Агенты",
+      "label": "Пример CLAUDE.md",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/CLAUDE.md-example.md",
+      "text": "Память и правила для агента Claude, как у нас в студии."
+    },
+    {
+      "kicker": "Агенты",
+      "label": "Пример AGENTS.md",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/AGENTS.md-example.md",
+      "text": "Те же правила в универсальном формате для любых агентов."
+    },
+    {
+      "kicker": "Скиллы",
+      "label": "7 скиллов для Claude + установка",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/README.md",
+      "text": "Что делает каждый скилл и как загрузить его в Claude."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "prompt-architect",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/prompt-architect.zip",
+      "text": "Сырую задачу превращает в промпт по формуле."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "doc-reviewer",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/doc-reviewer.zip",
+      "text": "Разбор договора: риски с цитатами и вопросы юристу."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "business-writer",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/business-writer.zip",
+      "text": "Посты, отзывы и письма в тоне бренда."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "kp-builder",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/kp-builder.zip",
+      "text": "Коммерческое предложение с пакетами и письмом."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "table-analyst",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/table-analyst.zip",
+      "text": "Выгрузки и таблицы: итоги, выводы, формулы."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "meeting-notes",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/meeting-notes.zip",
+      "text": "Итоги встречи: решения, задачи, сроки."
+    },
+    {
+      "kicker": "Скилл · zip",
+      "label": "content-planner",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/skills/content-planner.zip",
+      "text": "Контент-план на месяц с готовыми постами."
+    },
+    {
+      "kicker": "Студия",
+      "label": "Что мы используем с агентами",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/studio-stack.md",
+      "text": "Claude Code, скиллы, память, коннекторы, Telegram-агенты."
+    },
+    {
+      "kicker": "GitHub",
+      "label": "35 полезных репозиториев",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/github-repos.md",
+      "text": "Промпты, скиллы, агенты, все ссылки проверены."
+    },
+    {
+      "kicker": "Ссылки",
+      "label": "Официальные гайды и сервисы",
+      "url": "https://yelumio.kz/courses/media/module-1/kit/links.md",
+      "text": "Гайды OpenAI, Anthropic и Google, рейтинги моделей, NotebookLM."
+    },
+    {
+      "kicker": "Anthropic",
+      "label": "Курс промптинга от Anthropic",
+      "url": "https://github.com/anthropics/prompt-eng-interactive-tutorial",
+      "text": "Официальный пошаговый курс от создателей Claude."
+    },
+    {
+      "kicker": "Anthropic",
+      "label": "Гайд по промптингу Claude",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/overview",
+      "text": "Официальная документация: ясность, примеры, теги, роль."
+    },
+    {
+      "kicker": "OpenAI",
+      "label": "Гайд по промптингу OpenAI",
+      "url": "https://platform.openai.com/docs/guides/prompt-engineering",
+      "text": "Официальные советы для моделей GPT."
+    },
+    {
+      "kicker": "Google",
+      "label": "Стратегии промптинга Gemini",
+      "url": "https://ai.google.dev/gemini-api/docs/prompting-strategies",
+      "text": "Официальный гайд Google по промптам."
+    },
+    {
+      "kicker": "Google",
+      "label": "Gemini Cookbook",
+      "url": "https://github.com/google-gemini/cookbook",
+      "text": "Примеры Google по Gemini: файлы, видео, картинки."
+    },
+    {
+      "kicker": "Промпты",
+      "label": "prompts.chat",
+      "url": "https://prompts.chat",
+      "text": "Огромная библиотека готовых промптов-ролей."
+    },
+    {
+      "kicker": "Промпты",
+      "label": "Prompt Engineering Guide (рус.)",
+      "url": "https://www.promptingguide.ai/ru",
+      "text": "Справочник техник промптинга на русском."
+    },
+    {
+      "kicker": "Скиллы",
+      "label": "anthropics/skills",
+      "url": "https://github.com/anthropics/skills",
+      "text": "Официальные скиллы: Word, PDF, Excel, PowerPoint, skill-creator."
+    },
+    {
+      "kicker": "Скиллы",
+      "label": "Справка: скиллы в Claude",
+      "url": "https://support.claude.com/en/articles/12512180-using-skills-in-claude",
+      "text": "Как включить и загрузить скилл."
+    },
+    {
+      "kicker": "Сервис",
+      "label": "NotebookLM",
+      "url": "https://notebooklm.google.com",
+      "text": "Отвечает только по твоим документам, меньше выдумок."
+    },
+    {
+      "kicker": "Рейтинг",
+      "label": "LMArena",
+      "url": "https://lmarena.ai",
+      "text": "Какие модели сейчас лидируют по оценкам людей."
+    }
+  ]
 }
