@@ -206,9 +206,8 @@ const APP = (() => {
             <span class="material-badge">${available ? '↓' : esc(locked ? 'после созвона' : (mt.note || 'скоро'))}</span>
           </${available ? 'a' : 'div'}>
         </li>`;
-    }).join('');
+    }).join('') + usefulItems(module.useful || [], locked);
 
-    renderUseful(module.useful || [], locked);
     renderHomework(module, module.homework, locked);
     document.getElementById('lesson').innerHTML = '';
     document.getElementById('lesson').style.display = '';
@@ -255,26 +254,27 @@ const APP = (() => {
     route();
   };
 
-  // «Полезное» (meta.json → useful): внешние ссылки и переходы к главе урока ({ chapter: "examples" })
-  const renderUseful = (list, locked) => {
-    const box = document.getElementById('useful');
-    box.hidden = locked || !list.length;
-    document.getElementById('usefulList').innerHTML = list.map(it => {
-      const url = /^https?:\/\//i.test(it.url || '') ? it.url : '';
-      const tag = it.chapter ? `button type="button" data-useful-ch="${esc(it.chapter)}"` : url ? `a href="${esc(url)}" target="_blank" rel="noopener"` : 'div';
-      return `
-        <li>
-          <${tag} class="material-item">
-            <span class="material-icon" aria-hidden="true">${it.chapter ? '▶' : '↗'}</span>
-            <div class="material-info">
-              ${it.kicker ? `<div class="material-type">${esc(it.kicker)}</div>` : ''}
-              <div class="material-title">${esc(it.label)}</div>
-              ${it.text ? `<div class="material-text">${esc(it.text)}</div>` : ''}
-            </div>
-          </${tag.split(' ')[0]}>
-        </li>`;
-    }).join('');
-  };
+  // meta.json → useful: пункты в «Материалах» после шпаргалки и записи — файлы набора/внешние ссылки (новая вкладка, .zip — скачать) и переходы к главе урока ({ chapter: "examples" })
+  const usefulItems = (list, locked) => list.map(it => {
+    const url = /^(https?:\/\/|media\/)/i.test(it.url || '') ? it.url : '';
+    const zip = /\.zip$/i.test(url);
+    const open = !locked && (it.chapter || url);
+    const tag = !open ? 'div'
+      : it.chapter ? `button type="button" data-useful-ch="${esc(it.chapter)}"`
+        : `a href="${esc(url)}" target="_blank" rel="noopener"${zip ? ' download' : ''}`;
+    return `
+      <li>
+        <${tag} class="material-item ${open ? '' : 'material-unavailable'}">
+          <span class="material-icon" aria-hidden="true">${it.chapter ? '▶' : zip ? '↓' : '↗'}</span>
+          <div class="material-info">
+            ${it.kicker ? `<div class="material-type">${esc(it.kicker)}</div>` : ''}
+            <div class="material-title">${esc(it.label)}</div>
+            ${it.text ? `<div class="material-text">${esc(it.text)}</div>` : ''}
+          </div>
+          ${open ? '' : `<span class="material-badge">${locked ? 'после созвона' : 'скоро'}</span>`}
+        </${tag.split(' ')[0]}>
+      </li>`;
+  }).join('');
 
   const renderOutcomes = (list) => {
     document.getElementById('detailOutcomes').innerHTML = list
