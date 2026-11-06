@@ -18,7 +18,8 @@ const HW = (() => {
   const toast = (t) => APP.toast(t);
   const size = (n) => (n < 1024 * 1024 ? `${Math.max(1, Math.round(n / 1024))} КБ` : `${(n / 1024 / 1024).toFixed(1).replace('.', ',')} МБ`);
   const extOf = (name) => (/\.([a-z0-9]{1,5})$/i.exec(name) || [])[1]?.toUpperCase() || 'ФАЙЛ';
-  const almaty = (iso) => new Intl.DateTimeFormat('ru-RU', { timeZone: 'Asia/Almaty', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
+  // фикс. UTC+5, как в calls.js: у старых браузеров Asia/Almaty ещё +6
+  const almaty = (iso) => new Intl.DateTimeFormat('ru-RU', { timeZone: 'Etc/GMT-5', day: 'numeric', month: 'long', hour: '2-digit', minute: '2-digit' }).format(new Date(iso));
   const isImage = (f) => f.image ?? (/^image\/(jpeg|png|gif|webp)$/.test(f.mime || ''));
   const linkLabel = (u) => u.replace(/^https?:\/\/(www\.)?/, '').replace(/\/$/, '');
 

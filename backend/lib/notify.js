@@ -13,7 +13,7 @@ const PHOTO_MAX = 10 * 1024 * 1024; // больше — Telegram не приме
 const esc = (s) => String(s ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const scrub = (s) => (TOKEN ? String(s).split(TOKEN).join('***') : String(s));
 const almaty = (iso) => new Intl.DateTimeFormat('ru-RU', {
-  timeZone: 'Asia/Almaty', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'
+  timeZone: 'Etc/GMT-5', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit'
 }).format(new Date(iso)).replace(',', ' ·');
 const short = (s, n) => (s.length > n ? `${s.slice(0, n - 1).trimEnd()}…` : s);
 
