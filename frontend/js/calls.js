@@ -1,7 +1,7 @@
 // Календарь созвонов: ближайший созвон в хиро маршрута, страница #calls (план ученика) и #host (режим ведущего).
 // Время везде Алматы (UTC+5 круглый год): calls[N] приходят строками «YYYY-MM-DD HH:MM» (или «YYYY-MM-DD» — время уточняется).
 const CALLS = (() => {
-  const TZ = 'Etc/GMT-5'; // фикс. UTC+5: у старых браузеров в базе поясов Asia/Almaty ещё +6 (до 03.2024)
+  const TZ = 'Etc/GMT-5'; // фикс. UTC+5: у старых браузеров в базе поясов Asia/Almaty ещё +6 (до 03.2024); в Google-ссылке — Asia/Almaty: у Google база свежая.
   const MEET_EARLY_MIN = 15;   // Meet активна за 15 минут до начала и до конца созвона
   const DURS = [60, 90, 120, 150];
 
@@ -64,7 +64,7 @@ const CALLS = (() => {
       ? `${stamp(c.at)}/${stamp(c.at, c.dur)}`
       : `${stamp(c.at).slice(0, 8)}/${stamp(c.at, 24 * 60).slice(0, 8)}`;
     const details = [`Персональный созвон «Фокус ИИ 1:1», блок ${c.n}: ${c.title}.`, c.meet ? `Google Meet: ${c.meet}` : '', `Кабинет: ${location.origin}${location.pathname}`].filter(Boolean).join('\n');
-    const q = new URLSearchParams({ action: 'TEMPLATE', text: `Фокус ИИ 1:1 · созвон ${c.n}: ${titleOf(c)}`, dates, ctz: TZ, details });
+    const q = new URLSearchParams({ action: 'TEMPLATE', text: `Фокус ИИ 1:1 · созвон ${c.n}: ${titleOf(c)}`, dates, ctz: 'Asia/Almaty', details });
     if (c.meet) q.set('location', c.meet);
     return `https://calendar.google.com/calendar/render?${q}`;
   };
