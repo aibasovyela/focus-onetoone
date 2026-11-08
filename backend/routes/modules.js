@@ -78,6 +78,7 @@ router.get('/me', (req, res) => {
     name: req.student.name,
     openModules: Number(req.student.openModules) || 1,
     host: req.session.host === true,
+    owner: req.session.owner === true,
     program
   });
 });

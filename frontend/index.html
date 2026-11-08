@@ -13,7 +13,8 @@
   <link rel="stylesheet" href="css/tour.css?v=7">
   <link rel="stylesheet" href="css/modules.css?v=1">
   <link rel="stylesheet" href="css/calls.css?v=1">
-  <link rel="stylesheet" href="css/homework.css?v=2">
+  <link rel="stylesheet" href="css/homework.css?v=3">
+  <link rel="stylesheet" href="css/students.css?v=1">
 </head>
 <body>
   <!-- Экран входа -->
@@ -213,14 +214,16 @@
           <div class="container">
             <button id="hostBack" class="back-link" type="button">← Маршрут</button>
             <div class="eyebrow">Режим ведущего</div>
-            <h1 class="detail-title">Созвоны и ДЗ учеников</h1>
-            <p class="detail-promise">Выбери ученика: назначь или перенеси созвоны, посмотри сданные ДЗ. Ученик сразу видит план в кабинете, блоки отмечаются «пройден» по датам.</p>
+            <h1 class="detail-title">Ученики, созвоны и ДЗ</h1>
+            <p class="detail-promise">Выбери ученика: открой ему блоки, назначь созвоны, ответь на ДЗ. «＋ Ученик» — новый ученик с PIN. Ученик сразу видит всё в кабинете.</p>
           </div>
         </div>
         <section class="container host-page">
           <div class="h-chips" id="hostChips" role="group" aria-label="Ученики"></div>
+          <div class="block h-block st-manage" id="hostManage" hidden></div>
           <div class="block h-block" id="hostBody"></div>
           <div class="block h-block hw-host" id="hostHw" hidden></div>
+          <div class="block h-block st-archive" id="hostArchive" hidden></div>
         </section>
       </div>
     </main>
@@ -251,6 +254,36 @@
       <div class="modal-footer">
         <button type="button" id="csCancel" class="btn btn-ghost">Отмена</button>
         <button type="button" id="csSave" class="btn btn-primary">Сохранить</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Шторка ведущего: новый ученик / имя / PIN один раз (js/students.js) -->
+  <div id="stSheet" class="modal cs-modal st-modal" role="dialog" aria-modal="true" aria-labelledby="stTitle">
+    <div class="modal-content cs-content">
+      <div class="modal-header">
+        <h2 id="stTitle">Новый ученик</h2>
+        <p class="modal-hint cs-sub" id="stSub"></p>
+      </div>
+      <div class="modal-body cs-body">
+        <div id="stForm" class="st-form">
+          <label class="cs-field"><span>Имя</span><input type="text" id="stName" class="input" maxlength="60" autocomplete="off" placeholder="Как показывать в кабинете"></label>
+          <div class="cs-field" id="stModsField"><span>Открытые блоки</span><ul class="st-mods" id="stMods"></ul></div>
+        </div>
+        <div id="stPinBox" class="st-pinbox" hidden>
+          <div class="st-pin" id="stPin" aria-live="polite"></div>
+          <div class="st-pin-btns">
+            <button type="button" class="h-btn is-main" id="stCopyPin">Скопировать PIN</button>
+            <button type="button" class="h-btn" id="stCopyInvite">Скопировать приглашение</button>
+          </div>
+          <pre class="st-invite" id="stInvite"></pre>
+          <p class="st-note">После «Готово» PIN больше не покажем. Потерялся — «Новый PIN» в карточке ученика.</p>
+        </div>
+        <div class="login-error" id="stError" role="alert"></div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" id="stCancel" class="btn btn-ghost">Отмена</button>
+        <button type="button" id="stSave" class="btn btn-primary">Добавить</button>
       </div>
     </div>
   </div>
@@ -292,12 +325,13 @@
   <div id="toast" class="toast" role="status"></div>
 
   <script src="js/auth.js?v=5"></script>
-  <script src="js/data.js?v=7"></script>
+  <script src="js/data.js?v=8"></script>
   <script src="js/markdown.js?v=5"></script>
   <script src="js/deck.js?v=8"></script>
   <script src="js/tour.js?v=7"></script>
-  <script src="js/calls.js?v=5"></script>
-  <script src="js/homework.js?v=3"></script>
+  <script src="js/calls.js?v=6"></script>
+  <script src="js/homework.js?v=4"></script>
+  <script src="js/students.js?v=1"></script>
   <script src="js/app.js?v=11"></script>
 </body>
 </html>
