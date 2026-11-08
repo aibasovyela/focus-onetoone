@@ -11,6 +11,9 @@ const HW = (() => {
   let sending = false;
   let hostList = null;     // сдачи всех учеников (режим ведущего)
   let hostFor = null;
+  let fbEdit = null;       // id сдачи, на которую ведущий сейчас пишет ответ
+  let fbSaving = false;
+  let fbDraft = null;      // набранный текст ответа: не теряется при перерисовке
   const blobs = new Map(); // url → objectURL (картинки и скачивания, пока открыта вкладка)
 
   const $ = (id) => document.getElementById(id);
@@ -165,6 +168,18 @@ const HW = (() => {
     }
   };
 
+  // ответ ведущего — у последней сдачи, на которую он ответил (если после неё сдано ещё — подписываем, к какой он)
+  const fbHtml = (submissions) => {
+    const last = submissions[submissions.length - 1];
+    const fb = [...submissions].reverse().find(h => h.feedback);
+    if (!fb) return '';
+    return `<div class="hw-fb is-student">
+      <span class="hw-fb-head">Ответ ведущего${fb.feedbackAt ? ` · ${esc(almaty(fb.feedbackAt))}` : ''}</span>
+      <p class="hw-fb-text">${esc(fb.feedback)}</p>
+      ${fb !== last ? `<small class="hw-fb-on">к сдаче ${esc(almaty(fb.submittedAt))}</small>` : ''}
+    </div>`;
+  };
+
   // ---------- статус у ученика: последняя сдача ----------
   const renderStatus = (el, submissions = []) => {
     const last = submissions[submissions.length - 1];
@@ -172,7 +187,7 @@ const HW = (() => {
     const n = (last.files || []).length;
     el.innerHTML = `<span class="pill pill-done">Отправлено ${esc(almaty(last.submittedAt))}</span>
       ${n || last.link ? `<div class="hw-sent">${last.link ? `<a class="hw-link" href="${esc(last.link)}" target="_blank" rel="noopener noreferrer">${ICON_LINK}<span>${esc(linkLabel(last.link))}</span></a>` : ''}${filesHtml(last.files)}</div>` : ''}
-      ${last.feedback ? `<p class="homework-desc">${esc(last.feedback)}</p>` : ''}`;
+      ${fbHtml(submissions)}`;
     hydrate(el);
   };
 
@@ -188,7 +203,50 @@ const HW = (() => {
     }
     renderHost(hostFor);
   };
+  // ответ ведущего в карточке сдачи: текст + «Изменить» или поле ввода
+  const hostFb = (s) => {
+    if (fbEdit === s.id) {
+      return `<div class="hw-fb is-edit">
+        <label class="cs-field"><span>Ответ ученику</span>
+          <textarea id="hwFbText" class="hw-fb-input" maxlength="4000" placeholder="Что получилось хорошо, что поправить к созвону"${fbSaving ? ' readonly' : ''}>${esc(fbDraft ?? s.feedback ?? '')}</textarea></label>
+        <div class="h-act hw-fb-act">
+          <button type="button" class="h-btn is-main" data-hw-fb-save="${esc(s.id)}"${fbSaving ? ' disabled' : ''}>${fbSaving ? 'Сохраняю…' : 'Отправить ответ'}</button>
+          <button type="button" class="h-btn" data-hw-fb-cancel>Отмена</button>
+          ${s.feedback ? `<button type="button" class="h-btn hw-fb-clear" data-hw-fb-clear="${esc(s.id)}">Убрать ответ</button>` : ''}
+        </div>
+      </div>`;
+    }
+    if (s.feedback) {
+      return `<div class="hw-fb">
+        <span class="hw-fb-head">Ваш ответ${s.feedbackAt ? ` · ${esc(almaty(s.feedbackAt))}` : ''}</span>
+        <p class="hw-fb-text">${esc(s.feedback)}</p>
+        <div class="h-act hw-fb-act"><button type="button" class="h-btn" data-hw-fb-edit="${esc(s.id)}">Изменить ответ</button></div>
+      </div>`;
+    }
+    return `<div class="h-act hw-fb-act"><button type="button" class="h-btn is-main" data-hw-fb-edit="${esc(s.id)}">Ответить</button><span class="hw-fb-hint">ученик увидит ответ у своего ДЗ</span></div>`;
+  };
+
+  const saveFb = async (id, text) => {
+    if (fbSaving) return;
+    fbSaving = true;
+    renderHost(hostFor);
+    try {
+      const out = await API.hostFeedback(id, text);
+      const s = hostList.find(x => x.id === id);
+      if (s) Object.assign(s, { feedback: out.feedback, feedbackAt: out.feedbackAt, status: out.status });
+      fbEdit = null;
+      fbDraft = null;
+      toast(text ? 'Ответ сохранён — ученик увидит его у ДЗ' : 'Ответ убран');
+    } catch (e) {
+      if (e.message !== 'unauthorized') toast(e.message);
+    } finally {
+      fbSaving = false;
+      renderHost(hostFor);
+    }
+  };
+
   const renderHost = (student) => {
+    if (student?.id !== hostFor?.id) { fbEdit = null; fbDraft = null; }
     hostFor = student;
     const box = $('hostHw');
     if (!box) return;
@@ -204,6 +262,7 @@ const HW = (() => {
           ${s.content ? `<p class="hw-text">${esc(s.content)}</p>` : ''}
           ${s.link ? `<a class="hw-link" href="${esc(s.link)}" target="_blank" rel="noopener noreferrer">${ICON_LINK}<span>${esc(linkLabel(s.link))}</span></a>` : ''}
           ${filesHtml(s.files)}
+          ${hostFb(s)}
         </li>`).join('')}</ol>` : `<p class="h-empty">${esc(student.name)} ещё ничего не сдавал(а). Когда сдаст — придёт уведомление в Telegram.</p>`}`;
     hydrate(box);
   };
@@ -228,6 +287,7 @@ const HW = (() => {
     sheet.addEventListener('dragover', (e) => { if ([...e.dataTransfer.types].includes('Files')) { e.preventDefault(); sheet.classList.add('is-drop'); } });
     sheet.addEventListener('dragleave', (e) => { if (!sheet.contains(e.relatedTarget)) sheet.classList.remove('is-drop'); });
     sheet.addEventListener('drop', (e) => { e.preventDefault(); sheet.classList.remove('is-drop'); addFiles([...e.dataTransfer.files]); });
+    document.addEventListener('input', (e) => { if (e.target.id === 'hwFbText') fbDraft = e.target.value; });
     $('hwLink').addEventListener('blur', () => { if ($('hwLink').value.trim()) linkValue(); });
     $('hwLink').addEventListener('input', () => { if (!$('hwLinkErr').hidden) linkValue(); });
     $('homeworkSubmit').addEventListener('click', () => submit(onDone));
@@ -244,7 +304,24 @@ const HW = (() => {
       const v = e.target.closest('[data-hw-view]');
       if (v) { view(v.dataset.hwView, v.dataset.hwName); return; }
       const dl = e.target.closest('[data-hw-dl]');
-      if (dl) download(dl.dataset.hwDl, dl.dataset.hwName);
+      if (dl) { download(dl.dataset.hwDl, dl.dataset.hwName); return; }
+      const fe = e.target.closest('[data-hw-fb-edit]');
+      if (fe) {
+        fbEdit = fe.dataset.hwFbEdit; fbDraft = null; renderHost(hostFor);
+        const ta = $('hwFbText');
+        if (ta) { ta.focus({ preventScroll: true }); ta.setSelectionRange(ta.value.length, ta.value.length); }
+        return;
+      }
+      if (e.target.closest('[data-hw-fb-cancel]')) { fbEdit = null; fbDraft = null; renderHost(hostFor); return; }
+      const fs = e.target.closest('[data-hw-fb-save]');
+      if (fs) {
+        const text = ($('hwFbText')?.value || '').trim();
+        if (!text) { toast('Напиши ответ'); $('hwFbText')?.focus(); return; }
+        saveFb(fs.dataset.hwFbSave, text);
+        return;
+      }
+      const fc = e.target.closest('[data-hw-fb-clear]');
+      if (fc) saveFb(fc.dataset.hwFbClear, '');
     });
   };
 

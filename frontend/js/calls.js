@@ -196,12 +196,13 @@ const CALLS = (() => {
 
   const renderHost = () => {
     if (!host) { $('hostBody').innerHTML = '<p class="label">Загружаю учеников…</p>'; return; }
-    $('hostChips').innerHTML = host.students.map(s => {
+    $('hostChips').innerHTML = STUDENTS.addChip() + host.students.map(s => {
       const n = Object.values(s.calls).filter(Boolean).length;
       return `<button type="button" class="h-chip${s.id === hostSel ? ' is-on' : ''}" data-host-student="${esc(s.id)}" aria-pressed="${s.id === hostSel}">
         <span class="h-ava" aria-hidden="true">${esc((s.name || '?').trim().charAt(0).toUpperCase())}</span><span>${esc(s.name)}</span><small>${n}/${host.modules.length}</small></button>`;
     }).join('');
     const st = hostStudent();
+    STUDENTS.render(st?.id || null);
     HW.renderHost(st);
     if (!st) { $('hostBody').innerHTML = '<p class="h-empty">Выбери ученика — откроется его план созвонов.</p>'; return; }
     $('hostBody').innerHTML = `
@@ -226,19 +227,23 @@ const CALLS = (() => {
       }).join('')}</ol>`;
   };
 
-  const loadHost = async () => {
+  const loadHost = async (select) => {
+    STUDENTS.load();
     try {
       host = await API.hostStudents();
-      const want = decodeURIComponent(location.hash.slice(1)).split('/')[1]; // #host/<id> — из уведомления в Telegram
+      const want = select || decodeURIComponent(location.hash.slice(1)).split('/')[1]; // #host/<id> — из уведомления в Telegram
       if (want && host.students.some(s => s.id === want)) hostSel = want;
       if (!hostSel || !hostStudent()) hostSel = (host.students.find(s => s.id !== me.id) || host.students[0])?.id || null;
     } catch (e) {
       if (e.message !== 'unauthorized') $('hostBody').innerHTML = `<p class="h-empty">${esc(e.message)}</p>`;
       return;
     }
+    if (hostSel && location.hash.startsWith('#host')) history.replaceState(history.state, '', `#host/${encodeURIComponent(hostSel)}`);
     renderHost();
     HW.loadHost(hostStudent());
   };
+  // после правок на экране «Ученики» (students.js): заново список, при необходимости выбрать ученика
+  const reloadHost = (select) => loadHost(select);
 
   // шторка «Созвон · блок N»: дата, время, длительность, тема, Meet, «каждую неделю»
   const openEditor = (n) => {
@@ -352,6 +357,7 @@ const CALLS = (() => {
     $('callsView').style.display = 'none';
     $('hostView').style.display = 'none';
     closeEditor();
+    STUDENTS.close();
   };
 
   const wire = () => {
@@ -386,5 +392,5 @@ const CALLS = (() => {
     }, 30000);
   };
 
-  return { init, show, hide, setModules, durLabel };
+  return { init, show, hide, setModules, durLabel, reloadHost };
 })();

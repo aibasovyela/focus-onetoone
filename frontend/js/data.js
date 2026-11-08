@@ -36,6 +36,9 @@ const API = (() => {
     hostPatch: (studentId, calls) =>
       request(`/calls/host/students/${encodeURIComponent(studentId)}`, { method: 'PATCH', body: JSON.stringify({ calls }) }),
     hostHomework: () => request('/homework/host/all'),
+    // ответ ведущего на сдачу ДЗ; пустая строка — убрать ответ
+    hostFeedback: (homeworkId, feedback) =>
+      request(`/homework/host/${encodeURIComponent(homeworkId)}/feedback`, { method: 'PATCH', body: JSON.stringify({ feedback }) }),
     // payload: { content, link, files: [id загруженных файлов] }
     submitHomework: (moduleId, payload) =>
       request('/homework/submit', {

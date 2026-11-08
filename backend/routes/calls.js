@@ -144,7 +144,7 @@ router.post('/ics-link', requireSession, (req, res) => {
 // ---------- ведущий (сессия по пину из hostPins) ----------
 router.get('/host/students', requireHost, (req, res) => {
   const modules = modulesList().map(m => ({ n: m.number, id: m.id, title: m.title }));
-  const students = (readJson('users.json', { students: [] }).students || []).map(s => ({
+  const students = (readJson('users.json', { students: [] }).students || []).filter(s => !s.archived).map(s => ({
     id: s.id,
     name: s.name,
     calls: Object.fromEntries(modules.map(m => {

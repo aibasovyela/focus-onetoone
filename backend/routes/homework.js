@@ -3,7 +3,7 @@ import fs from 'fs';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { readJson, writeJson, requireSession, requireHost, getStudents } from '../lib/store.js';
+import { readJson, writeJson, requireSession, requireHost, getAllStudents } from '../lib/store.js';
 import { saveUpload, claimUploads, dropUpload, readMeta, filePath, isFileId, MAX_FILE, UploadError } from '../lib/uploads.js';
 import { notifyHomework } from '../lib/notify.js';
 
@@ -84,12 +84,30 @@ router.get('/files/:sid/:id', (req, res) => {
 
 // GET /api/homework/host/all — все сдачи всех учеников (режим ведущего), новые сверху
 router.get('/host/all', requireHost, (req, res) => {
-  const names = Object.fromEntries(getStudents().map(s => [s.id, s.name]));
+  const names = Object.fromEntries(getAllStudents().map(s => [s.id, s.name]));
   const mods = Object.fromEntries(modulesList().map(m => [m.id, { number: m.number, title: m.title }]));
   const list = readJson('homework.json', [])
     .map(h => ({ ...h, studentName: names[h.studentId] || h.studentId, module: mods[h.moduleId] || null, files: filesOf(h) }))
     .sort((a, b) => (a.submittedAt < b.submittedAt ? 1 : -1));
   res.json({ submissions: list });
+});
+
+// PATCH /api/homework/host/:id/feedback { feedback } — ответ ведущего на сдачу; ученик видит его у своего ДЗ.
+// Пустой текст — убрать ответ.
+router.patch('/host/:id/feedback', requireHost, (req, res) => {
+  try {
+    const raw = (req.body || {}).feedback;
+    if (raw !== null && raw !== undefined && typeof raw !== 'string') throw new UploadError('feedback: нужен текст');
+    const text = String(raw ?? '').replace(/\r\n/g, '\n').trim();
+    if (text.length > 4000) throw new UploadError('Ответ — до 4000 символов');
+    const all = readJson('homework.json', []);
+    const hw = all.find(h => h.id === req.params.id);
+    if (!hw) throw new UploadError('Сдача не найдена', 404);
+    if (text) Object.assign(hw, { feedback: text, feedbackAt: new Date().toISOString(), status: 'reviewed' });
+    else { Object.assign(hw, { feedback: null, status: 'submitted' }); delete hw.feedbackAt; }
+    writeJson('homework.json', all);
+    res.json({ success: true, feedback: hw.feedback, feedbackAt: hw.feedbackAt || null, status: hw.status });
+  } catch (e) { fail(res, e); }
 });
 
 // POST /api/homework/submit — сдать ДЗ: { moduleId, content?, link?, files?: [id] } — нужно хоть что-то одно

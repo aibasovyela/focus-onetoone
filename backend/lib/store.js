@@ -29,7 +29,9 @@ export const writeJson = (name, data) => {
   fs.renameSync(tmp, file);
 };
 
-export const getStudents = () => readJson('users.json', { students: [] }).students || [];
+// Все ученики, включая архив (экран «Ученики» у ведущего); вход, сессии и списки — только активные
+export const getAllStudents = () => readJson('users.json', { students: [] }).students || [];
+export const getStudents = () => getAllStudents().filter(s => !s.archived);
 
 const samePin = (given) => (p) => {
   const real = Buffer.from(String(p));
@@ -47,9 +49,15 @@ export const isHostPin = (pin) => {
   return Array.isArray(list) && list.filter(Boolean).some(samePin(Buffer.from(String(pin))));
 };
 
+// Пин владельца (users.json → ownerPins, Еламан/Данияр): ведущий, которому можно ещё и удалять учеников (через архив)
+export const isOwnerPin = (pin) => {
+  const list = readJson('users.json', {}).ownerPins;
+  return Array.isArray(list) && list.filter(Boolean).some(samePin(Buffer.from(String(pin))));
+};
+
 export const findStudentById = (id) => getStudents().find(s => s.id === id);
 
-// Модуль N открыт, если N <= openModules ученика; пройден — только когда день его созвона уже позади (Алматы).
+// Модуль N открыт, если N <= openModules ученика и его нет в closedModules (закрыл ведущий); пройден — только когда день его созвона уже позади (Алматы).
 // Первый открытый непройденный модуль модулем «Сейчас» (active) делает modulesFor.
 // calls[N] — строка «YYYY-MM-DD» / «YYYY-MM-DD HH:MM» (старый формат, правка руками) или объект
 // { at: «YYYY-MM-DD HH:MM», dur: минуты, topic, meet, seq } (пишет режим ведущего). Время — Алматы.
@@ -63,7 +71,7 @@ export const callOf = (value) => {
 const todayAlmaty = () => new Intl.DateTimeFormat('en-CA', { timeZone: 'Asia/Almaty' }).format(new Date());
 export const moduleStatus = (student, number) => {
   const open = Number(student.openModules) || 1;
-  if (number > open) return 'locked';
+  if (number > open || (student.closedModules || []).map(Number).includes(number)) return 'locked';
   const call = callAt((student.calls || {})[number]).slice(0, 10);
   return call && call < todayAlmaty() ? 'done' : 'open';
 };
@@ -74,12 +82,13 @@ const loadSessions = () => {
   return Array.isArray(sessions) ? sessions.filter(s => s.studentId && new Date(s.expiresAt).getTime() > now) : [];
 };
 
-export const createSession = (studentId, { host = false } = {}) => {
+export const createSession = (studentId, { host = false, owner = false } = {}) => {
   const sessions = loadSessions();
   const session = {
     sessionId: crypto.randomBytes(24).toString('hex'),
     studentId,
     ...(host ? { host: true } : {}),
+    ...(host && owner ? { owner: true } : {}),
     createdAt: new Date().toISOString(),
     expiresAt: new Date(Date.now() + SESSION_TTL_MS).toISOString()
   };
@@ -95,6 +104,11 @@ export const findSession = (sessionId) => {
 
 export const deleteSession = (sessionId) => {
   writeJson('sessions.json', loadSessions().filter(s => s.sessionId !== sessionId));
+};
+
+// Выйти из всех сессий ученика (архив, новый PIN)
+export const dropStudentSessions = (studentId) => {
+  writeJson('sessions.json', loadSessions().filter(s => s.studentId !== studentId));
 };
 
 // Middleware: пускаем только с валидной сессией (заголовок X-Session-Id)
@@ -113,5 +127,11 @@ export const requireSession = (req, res, next) => {
 // Middleware: только сессия, открытая пином ведущего (401 — нет входа, 403 — вход ученика)
 export const requireHost = (req, res, next) => requireSession(req, res, () => {
   if (req.session.host !== true) return res.status(403).json({ error: 'Только для ведущего' });
+  next();
+});
+
+// Middleware: удаление — только Еламан или Данияр (сессия по пину из ownerPins)
+export const requireOwner = (req, res, next) => requireHost(req, res, () => {
+  if (req.session.owner !== true) return res.status(403).json({ error: 'Удалять может только Еламан или Данияр' });
   next();
 });

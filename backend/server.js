@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.js';
 import modulesRoutes from './routes/modules.js';
 import homeworkRoutes from './routes/homework.js';
 import callsRoutes from './routes/calls.js';
+import studentsRoutes from './routes/students.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -25,6 +26,7 @@ app.use('/api/auth', authRoutes);
 app.use('/api/modules', modulesRoutes);
 app.use('/api/homework', homeworkRoutes);
 app.use('/api/calls', callsRoutes);
+app.use('/api/students', studentsRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
